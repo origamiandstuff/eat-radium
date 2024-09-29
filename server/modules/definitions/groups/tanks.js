@@ -3952,7 +3952,7 @@ Class.rangeTriplet = {
     RESET_UPGRADE_MENU: true,
     ON: [
         {
-            event: "fire",
+            event: "altFire",
             handler: ({ body, globalMasterStore: store, gun }) => {
                 if (gun.identifier != 'switcherooGun') return
                 store.switcheroo_i ??= 0;
@@ -3966,11 +3966,19 @@ Class.rangeTriplet = {
     GUNS: [{
         POSITION: {},
         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.morphBarrel]),
+            TYPE: 'bullet',
+            ALT_FIRE: true,
+            IDENTIFIER: 'morphCannon'
+        }, }, {
+        POSITION: {},
+        PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic]),
             TYPE: 'bullet',
             IDENTIFIER: 'switcherooGun'
         }
-    }]
+    }
+    ]
 }
 
 
