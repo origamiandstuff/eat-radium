@@ -3787,6 +3787,165 @@ Class.autoSmasher = makeAuto({
     SKILL_CAP: [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl]
 }, "Auto-Smasher", {type: "autoSmasherTurret", size: 11})
 
+// Custom
+Class.beehive = {
+    PARENT: "genericTank",
+    LABEL: "Beehive",
+    DANGER: 6,
+    STAT_NAMES: statnames.trap,
+    BODY: {
+        SPEED: 0.8 * base.SPEED,
+        FOV: 1.15 * base.FOV
+    },
+    GUNS: [
+        {
+            POSITION: [18, 12, 1, 0, 0, 0, 0],
+        },  {
+            POSITION: [16.5, 6, -2, 0, 0, 0, 0],
+        }, {
+            POSITION: [16.5, 4, 1, 0, 0, 0, 0],
+        }, {
+            POSITION: [2, 12, 1.1, 18, 0, 0, 0],
+            PROPERTIES: {
+                MAX_CHILDREN: 6,
+                SHOOT_SETTINGS: combineStats([g.trap, g.setTrap]),
+                TYPE: "beehiveTrap",
+                SYNCS_SKILLS: true,
+                DESTROY_OLDEST_CHILD: true,
+                STAT_CALCULATOR: "block"
+        }, },
+    ]
+}
+Class.coilgun = {
+    PARENT: "genericTank",
+    LABEL: "Coilgun",
+    DANGER: 8, 
+    CONTROLLERS: ["zoom"],
+    TOOLTIP: "Hold right click to zoom.",
+    GUNS: [
+        {
+            POSITION: [24, 8, -1.3, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.coilBullet]),
+                TYPE: "coilgunBullet"
+            }
+        },
+        {
+            POSITION: [16, 1, 1, 3, -8, 0, 0],
+        },
+        {
+            POSITION: [16, 1, 1, 3, 8, 0, 0],
+        },
+        {
+            POSITION: [2, 12, 1, 15, 0, 0, 0]
+        },
+        {
+            POSITION: [2, 12, 1, 20, 0, 0, 0]
+        },
+        {
+            POSITION: [5.5, 12, -1.3, 6.5, 0, 0, 0]
+        },
+        {
+            POSITION: [15, 7, -1.2, 0, 0, 0, 0]
+        },
+    ]
+}
+Class.railgun = {
+    PARENT: "genericTank", 
+    LABEL: "Railgun",
+    BODY: {
+        FOV: 1.5 * base.FOV
+    },
+    GUNS: [
+      {
+        POSITION: [0, 4.5, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.railgun]),
+            TYPE: "bullet"
+      }, }, {
+        POSITION: [1, 10, 1, 13, 0, 0, 0]
+      }, {
+        POSITION: [1, 10, 1, 18, 0, 0, 0]
+      }, {
+        POSITION: [1, 10, 1, 23, 0, 0, 0]
+      }, {
+        POSITION: [1, 10, 1, 28, 0, 0, 0]
+      }, {
+        POSITION: [32, 2, 1, 0, 5, 0, 0]
+      }, {
+        POSITION: [32, 2, 1, 0, -5, 0, 0]
+      }
+    ]
+}
+Class.lightning = {
+    PARENT: "genericTank",
+    LABEL: "Lightning",
+    DANGER: 7,
+    STAT_NAMES: statnames.drone,
+    BODY: {
+        SPEED: 0.9 * base.SPEED,
+        FOV: 1.1 * base.FOV,
+    },
+    MAX_CHILDREN: 10,
+    GUNS: [
+        {
+        POSITION: [6, 12, 1.1, 8, 0, 45, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.lightning]),
+            TYPE: "drone",
+            AUTOFIRE: true,
+            SYNCS_SKILLS: true,
+            STAT_CALCULATOR: "drone",
+            WAIT_TO_CYCLE: true
+        }, }, {
+        POSITION: [6, 12, 1.1, 8, 0, 325, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.lightning]),
+            TYPE: "drone",
+            AUTOFIRE: true,
+            SYNCS_SKILLS: true,
+            STAT_CALCULATOR: "drone",
+            WAIT_TO_CYCLE: true
+        }, }, 
+    ],
+}
+Class.thunderstorm = {
+    PARENT: "genericTank",
+    LABEL: "Thunderstorm",
+    DANGER: 7,
+    STAT_NAMES: statnames.drone,
+    BODY: {
+        SPEED: 0.9 * base.SPEED,
+        FOV: 1.1 * base.FOV,
+    },
+    MAX_CHILDREN: 8,
+    GUNS: [
+        {
+        POSITION: [6, 12, 1.1, 8, 0, 45, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.lightning]),
+            TYPE: "stormDrone",
+            AUTOFIRE: true,
+            SYNCS_SKILLS: true,
+            STAT_CALCULATOR: "drone",
+            WAIT_TO_CYCLE: true
+        }, }, {
+        POSITION: [6, 12, 1.1, 8, 0, 325, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.lightning]),
+            TYPE: "stormDrone",
+            AUTOFIRE: true,
+            SYNCS_SKILLS: true,
+            STAT_CALCULATOR: "drone",
+            WAIT_TO_CYCLE: true
+        }, }, 
+    ],
+    TURRETS: [{
+        POSITION:[9, 0, 0, 360, 0, 1],
+        TYPE: "stormProp"
+    }],
+}
+
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
     Class.basic.UPGRADES_TIER_2 = ["smasher"]
