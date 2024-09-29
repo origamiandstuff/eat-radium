@@ -3959,10 +3959,10 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
-        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single", "deadeye"]
+        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single", "deadeye", "railgun"]
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "dual", "nimrod"]
-        Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "revolver"]
-        Class.marksman.UPGRADES_TIER_3 = ["deadeye", "nimrod", "revolver", "fork"]
+        Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "revolver", "railgun"]
+        Class.marksman.UPGRADES_TIER_3 = ["deadeye", "nimrod", "revolver", "fork", "railgun"]
 
     Class.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer"]
         Class.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture"]
@@ -3975,22 +3975,23 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"]
 
-    Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner"]
+    Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "lightning"]
         Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese"]
         Class.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"]
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
         Class.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor"]
         Class.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"]
+        Class.lightning.UPGRADES_TIER_3 = ["thunderstorm"]
 
     Class.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher"]
-        Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"]
+        Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle", "coilgun"]
         Class.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct"]
         Class.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun"]
         Class.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "fieldGun", "sidewinder"]
 
     Class.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard"]
         Class.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper"]
-        Class.builder.UPGRADES_TIER_3 = ["construct", "autoBuilder", "engineer", "boomer", "assembler", "architect", "conqueror"]
+        Class.builder.UPGRADES_TIER_3 = ["construct", "autoBuilder", "engineer", "boomer", "assembler", "architect", "conqueror", "beehive"]
         Class.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect"]
         Class.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark"]
 
