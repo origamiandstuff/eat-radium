@@ -3945,6 +3945,34 @@ Class.thunderstorm = {
         TYPE: "stormProp"
     }],
 }
+Class.rangeTriplet = {
+    PARENT: "basic",
+    LABEL: 'Range Triplet',
+    UPGRADES_TIER_0: [],
+    RESET_UPGRADE_MENU: true,
+    ON: [
+        {
+            event: "fire",
+            handler: ({ body, globalMasterStore: store, gun }) => {
+                if (gun.identifier != 'switcherooGun') return
+                store.switcheroo_i ??= 0;
+                store.switcheroo_i++;
+                store.switcheroo_i %= 6;
+                body.define(Class.basic.UPGRADES_TIER_1[store.switcheroo_i]);
+                setTimeout(() => body.define("switcheroo"), 6000);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {},
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            IDENTIFIER: 'switcherooGun'
+        }
+    }]
+}
+
 
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
