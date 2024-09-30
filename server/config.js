@@ -22,11 +22,11 @@ module.exports = {
     LOGS: false, // just dont
   
     // The domain of the client
-    CLIENT_ADDRESS: 'simple-arras-template-client.glitch.me',
+    CLIENT_ADDRESS: 'https://eat-plutonium.glitch.me',
 
     // The \modules\setup\gamemodeconfigs\ files to load.
     // To change specific things about specific gamemodes (such as team count for tdm), edit their config file in \modules\setup\gamemodeconfigs\.
-    GAME_MODES: ['tdm'],
+    GAME_MODES: ['ffa'],
 
     // The room files to load in the setup/rooms folder.
     // NOTE: If a /gamemodeconfig/ file "replaces" the value of ROOM_SETUP, it just adds its own ROOM_SETUP's content to this array.
