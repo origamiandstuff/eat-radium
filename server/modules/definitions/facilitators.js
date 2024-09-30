@@ -858,11 +858,11 @@ exports.makeLaby = (type, level, baseScale = 1) => {
         }))
     };
 }
-exports.makeMorpher = (type, name = -1, baseName, options = {}) => {
+/*exports.makeMorpher = (type, name = -1, baseName, options = {}) => {
     type = ensureIsClass(type);
     let output = exports.dereference(type);
     let cannons = [{
-        POSITION: [19, 2, 1, 0, -2.5, 180, 0],
+        POSITION: [0, 0, 0, 0, 0, 0, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.morphBarrel]),
             TYPE: 'bullet',

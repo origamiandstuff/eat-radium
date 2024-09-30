@@ -3945,12 +3945,26 @@ Class.thunderstorm = {
         TYPE: "stormProp"
     }],
 }
-Class.rangeTriplet0 = makeMorpher({
+Class.rangeTriplet0 = {
     PARENT: "basic",
     LABEL: 'Range Triplet',
     UPGRADES_TIER_0: [],
     RESET_UPGRADE_MENU: true,
+    ON: [{
+        event: "altFire",
+        handler: ({ body, globalMasterStore: store, gun }) => {
+          if (gun.identifier != 'morphCannon') return
+              setTimeout(() => body.define(tonkName), i * options.time);
+        }}
+    }],
     GUNS: [{
+      POSITION: [0, 0, 0, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.morphBarrel]),
+            TYPE: 'bullet',
+            ALT_FIRE: true,
+            IDENTIFIER: 'morphCannon'
+        }
             POSITION: [18, 10, 1, 0, 5, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
@@ -3972,7 +3986,7 @@ Class.rangeTriplet0 = makeMorpher({
             }
         }
     ]
-}, "Triplet-Predator", "rangeTriplet", { frames: 5, time: 0.2, reverse: false })
+}
 Class.rangeTriplet1 = {
     PARENT: "basic",
     LABEL: 'Triplet-Predator',
@@ -3993,15 +4007,43 @@ Class.rangeTriplet2 = {
     UPGRADES_TIER_0: [],
     RESET_UPGRADE_MENU: true,
     GUNS: [{
-            POSITION: [22.6/*+0.6*/, 9.6/*-0.4*/, 1, 0, 0, 0, 0],
+            POSITION: [22.2/*+0.6*/, 9.2/*-0.4*/, 1, 0, 0, 0, 0],
         }, {
-            POSITION: [18.6/*+0.6*/, 10.4/*+0.4*/, 1, 0, -4, 0, 0],
+            POSITION: [19.2/*+0.6*/, 10.8/*+0.4*/, 1, 0, -3, 0, 0],
         }, {
-            POSITION: [18.6/*+0.6*/, 10.8/*+0.8*/, 1, 0, 4, 0, 0],
+            POSITION: [19.2/*+0.6*/, 11.6/*+0.8*/, 1, 0, 3, 0, 0],
         }
     ]
 }
-Class.rangeTriplet4 = {
+Class.rangeTriplet3 = {
+    PARENT: "basic",
+    LABEL: 'Triplet-Predator',
+    UPGRADES_TIER_0: [],
+    RESET_UPGRADE_MENU: true,
+    GUNS: [{
+            POSITION: [22.8/*+0.6*/, 8.8/*-0.4*/, 1, 0, 0, 0, 0],
+        }, {
+            POSITION: [19.8/*+0.6*/, 11.2/*+0.4*/, 1, 0, -2, 0, 0],
+        }, {
+            POSITION: [19.8/*+0.6*/, 12.4/*+0.8*/, 1, 0, 2, 0, 0],
+        }
+    ]
+}
+Class.rangeTriplet5 = {
+    PARENT: "basic",
+    LABEL: 'Triplet-Predator',
+    UPGRADES_TIER_0: [],
+    RESET_UPGRADE_MENU: true,
+    GUNS: [{
+            POSITION: [23.4/*+0.6*/, 8.4/*-0.4*/, 1, 0, 0, 0, 0],
+        }, {
+            POSITION: [20.4/*+0.6*/, 11.6/*+0.4*/, 1, 0, -1, 0, 0],
+        }, {
+            POSITION: [20.4/*+0.6*/, 13.2/*+0.8*/, 1, 0, 1, 0, 0],
+        }
+    ]
+}
+Class.rangeTriplet6 = {
     PARENT: "genericTank",
     LABEL: "Triplet-Predator",
     DANGER: 7,
@@ -4036,7 +4078,7 @@ Class.rangeTriplet4 = {
 }
 
 // Upgrade Paths
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "rangeTriplet0"]
     Class.basic.UPGRADES_TIER_2 = ["smasher"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
