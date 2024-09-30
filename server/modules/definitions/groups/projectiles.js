@@ -710,3 +710,16 @@ Class.beehiveTrap = {
         }, }
     ]
 }
+Class.boostedDrone = {
+    PARENT: "drone",
+    LABEL: "boosted Drone",
+    GUNS: [
+      {
+        POSITION: [10, 6, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.thruster]),
+            TYPE: "bullet"
+        }
+      }
+    ]
+}
