@@ -3975,28 +3975,41 @@ Class.rangeTriplet0 = makeMorpher({
 }, "Triplet-Predator", "rangeTriplet", { frames: 5, time: 0.2, reverse: false })
 Class.rangeTriplet1 = {
     PARENT: "basic",
-    LABEL: 'Range Triplet',
+    LABEL: 'Triplet-Predator',
     UPGRADES_TIER_0: [],
     RESET_UPGRADE_MENU: true,
     GUNS: [{
-            POSITION: [21.6, 10, 1, 0, 0, 0, 0],
+            POSITION: [21.6/*+0.6*/, 9.6/*-0.4*/, 1, 0, 0, 0, 0],
         }, {
-            POSITION: [18, 10, 1, 0, -4, 0, 0],
+            POSITION: [18.6/*+0.6*/, 10.4/*+0.4*/, 1, 0, -4, 0, 0],
         }, {
-            POSITION: [18, 10, 1, 0, 4, 0, 0],
+            POSITION: [18.6/*+0.6*/, 10.8/*+0.8*/, 1, 0, 4, 0, 0],
+        }
+    ]
+}
+Class.rangeTriplet2 = {
+    PARENT: "basic",
+    LABEL: 'Triplet-Predator',
+    UPGRADES_TIER_0: [],
+    RESET_UPGRADE_MENU: true,
+    GUNS: [{
+            POSITION: [22.6/*+0.6*/, 9.6/*-0.4*/, 1, 0, 0, 0, 0],
+        }, {
+            POSITION: [18.6/*+0.6*/, 10.4/*+0.4*/, 1, 0, -4, 0, 0],
+        }, {
+            POSITION: [18.6/*+0.6*/, 10.8/*+0.8*/, 1, 0, 4, 0, 0],
         }
     ]
 }
 Class.rangeTriplet4 = {
     PARENT: "genericTank",
-    LABEL: "Predator",
+    LABEL: "Triplet-Predator",
     DANGER: 7,
     BODY: {
         SPEED: base.SPEED * 0.9,
         FOV: base.FOV * 1.25
     },
     CONTROLLERS: ["zoom"],
-    TOOLTIP: "Hold right click to zoom.",
     GUNS: [
         {
             POSITION: [24, 8, 1, 0, 0, 0, 0],
