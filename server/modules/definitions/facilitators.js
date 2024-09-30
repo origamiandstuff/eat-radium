@@ -874,8 +874,9 @@ exports.makeMorpher = (type, name = -1, frames, time) => {
         event: "altFire",
         handler: ({ body, globalMasterStore: store, gun }) => {
                 if (gun.identifier != 'morphCannon') return
-          for (let i = 1; i < frames + 1; i++)
+          for (let i = 1; i < frames + 1; i++){
                 setTimeout(() => body.define("switcheroo"), 6000);
+          }
             }
     }]
     output.GUNS = type.GUNS == null ? cannons : type.GUNS.concat(cannons);
