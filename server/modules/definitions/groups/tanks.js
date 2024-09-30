@@ -3945,7 +3945,7 @@ Class.thunderstorm = {
         TYPE: "stormProp"
     }],
 }
-Class.rangeTriplet = {
+Class.rangeTriplet0 = {
     PARENT: "basic",
     LABEL: 'Range Triplet',
     UPGRADES_TIER_0: [],
@@ -3980,7 +3980,40 @@ Class.rangeTriplet = {
     }
     ]
 }
-
+Class.rangeTriplet5 = {
+    PARENT: "genericTank",
+    LABEL: "Predator",
+    DANGER: 7,
+    BODY: {
+        SPEED: base.SPEED * 0.9,
+        FOV: base.FOV * 1.25
+    },
+    CONTROLLERS: ["zoom"],
+    TOOLTIP: "Hold right click to zoom.",
+    GUNS: [
+        {
+            POSITION: [24, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.hunterSecondary, g.hunterSecondary, g.predator]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [21, 12, 1, 0, 0, 0, 0.15],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.hunterSecondary, g.predator]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [18, 14, 1, 0, 0, 0, 0.3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.predator]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
 
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]

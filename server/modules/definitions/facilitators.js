@@ -858,7 +858,7 @@ exports.makeLaby = (type, level, baseScale = 1) => {
         }))
     };
 }
-exports.makeMorpher = (type, name = -1, frames, time) => {
+exports.makeMorpher = (type, name = -1, frames, time, baseName) => {
     type = ensureIsClass(type);
     let output = exports.dereference(type);
     let cannons = [{
@@ -870,16 +870,19 @@ exports.makeMorpher = (type, name = -1, frames, time) => {
             IDENTIFIER: 'morphCannon'
         }
     }];
-    let events = [{
+    let events = []
+    events.push({
         event: "altFire",
         handler: ({ body, globalMasterStore: store, gun }) => {
                 if (gun.identifier != 'morphCannon') return
           for (let i = 1; i < frames + 1; i++){
-                setTimeout(() => body.define("switcheroo"), 6000);
+            let tonkName = baseName.concat(i);
+                setTimeout(() => body.define(tonkName), i * time);
           }
             }
-    }]
+    })
     output.GUNS = type.GUNS == null ? cannons : type.GUNS.concat(cannons);
+    output.ON = type.ON == null ? cannons : type.ON.concat(events);
     output.LABEL = name == -1 ? type.LABEL : name;
     return output;
 }
