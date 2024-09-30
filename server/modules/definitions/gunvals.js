@@ -111,6 +111,8 @@ module.exports = {
     aura: { reload: 0.001, recoil: 0.001, shudder: 0.001, size: 6, speed: 0.001, maxSpeed: 0.001, spray: 0.001 },
     noSpread: { shudder: 0, spray: 0 },
     morphBarrel: { range: 10e-8 },
+    lessReload: { reload: 2 },
+    lessSpeed: { speed: 0.5 },
 // Splash
     coilBullet: { health: 1, damage: 0.5, reload: 4, pen: 4, speed: 1.5 },
     coilSplash: { health: 1, damage: 0.1, speed: 0, maxSpeed: 0 },

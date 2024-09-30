@@ -715,9 +715,9 @@ Class.boostedDrone = {
     LABEL: "boosted Drone",
     GUNS: [
       {
-        POSITION: [10, 6, 1, 0, 0, 180, 0],
+        POSITION: [14, 6, 1, 0, 0, 180, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.thruster]),
+            SHOOT_SETTINGS: combineStats([g.thruster, g.lessReload, g.halfrange, g.halfrange, g.halfrange]),
             TYPE: "bullet"
         }
       }

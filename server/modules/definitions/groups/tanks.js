@@ -3948,6 +3948,7 @@ Class.thunderstorm = {
 Class.navyist = {
     PARENT: "genericTank",
     LABEL: "Navyist",
+    MAX_CHILDREN: 5,
     STAT_NAMES: statnames.mixed,
     GUNS:  [
       {
@@ -3960,7 +3961,7 @@ Class.navyist = {
         }
       },
       {
-        POSITION: [3, 10, -1.3, 5, 0, 0]
+        POSITION: [1.5, 10, -1.3, 5, 0, 0]
       }
     ]
 }
