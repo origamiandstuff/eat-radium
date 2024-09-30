@@ -787,36 +787,3 @@ Class.dominationBody = {
     SHAPE: 6,
     INDEPENDENT: true
 }
-// CUSTOM
-Class.stormProp = {
-    PARENT: "overdriveDeco",
-    LABEL: "Storm prop",
-    GUNS: [
-      {
-        POSITION: [7, 7.5, 0.6, 7, 0, 90, 0],
-      }, {
-        POSITION: [7, 7.5, 0.6, 7, 0, 270, 0]
-      }
-    ]
-}
-Class.stormTurret = makeTurret({
-    PARENT: "genericTank",
-    GUNS: [
-        {
-        POSITION: [7, 7.5, 0.6, 7, 0, 90, 0],
-        PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.battleship, g.weak]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: "swarm",
-                LABEL: "Guided"
-        }, }, {
-        POSITION: [7, 7.5, 0.6, 7, 0, 270, 0],
-        PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.battleship, g.weak]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: "swarm",
-                LABEL: "Guided"
-        }, 
-      }
-    ],
-}, {canRepel: true, limitFov: true, fov: 10, independent: true, extraStats: []})
