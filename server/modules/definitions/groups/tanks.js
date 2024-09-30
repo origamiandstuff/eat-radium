@@ -3952,7 +3952,7 @@ Class.navyist = {
     STAT_NAMES: statnames.mixed,
     GUNS:  [
       {
-        POSITION: [8, 9, 1.5, 9, 0, 0, 0],
+        POSITION: [1.5, 9, 1.5, 5.5, 0, 0, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.drone]),
             TYPE: "boostedDrone",
@@ -3961,7 +3961,7 @@ Class.navyist = {
         }
       },
       {
-        POSITION: [1.5, 10, -1.3, 5, 0, 0]
+        POSITION: [6, 10, -1.3, 0, 0, 0, 0]
       }
     ]
 }
