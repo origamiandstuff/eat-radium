@@ -877,7 +877,8 @@ exports.makeMorpher = (type, name = -1, baseName, options = {}) => {
         handler: ({ body, globalMasterStore: store, gun }) => {
           if (gun.identifier != 'morphCannon') return
             for (let i = 1; i == options.frames; i++){
-              let tonkName = baseName.concat(i);
+              let text = num.toString(i);
+              let tonkName = baseName.concat(suffix);
               setTimeout(() => body.define(tonkName), i * options.time);
           }
         }
@@ -887,9 +888,9 @@ exports.makeMorpher = (type, name = -1, baseName, options = {}) => {
         event: "altFire",
         handler: ({ body, globalMasterStore: store, gun }) => {
           if (gun.identifier != 'morphCannon') return
-            for (let i = options.frames; i == 1; i++){
-              let suffix = num.toString();
-              let tonkName = baseName.concat(i);
+            for (let i = options.frames; i == 1; i--){
+              let suffix = num.toString(i);
+              let tonkName = baseName.concat(suffix);
               setTimeout(() => body.define(tonkName), i * options.time);
           }
         }

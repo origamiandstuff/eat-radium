@@ -3951,15 +3951,29 @@ Class.rangeTriplet0 = makeMorpher({
     UPGRADES_TIER_0: [],
     RESET_UPGRADE_MENU: true,
     GUNS: [{
-        POSITION: {},
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
-            TYPE: 'bullet',
-            IDENTIFIER: 'switcherooGun'
+            POSITION: [18, 10, 1, 0, 5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [18, 10, 1, 0, -5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [21, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet"
+            }
         }
-    }
     ]
 }, "Triplet-Predator", "rangeTriplet", { frames: 5, time: 0.2, reverse: false })
+for (i = 1; i < 5)
 Class.rangeTriplet5 = {
     PARENT: "genericTank",
     LABEL: "Predator",
