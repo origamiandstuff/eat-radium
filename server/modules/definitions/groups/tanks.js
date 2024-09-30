@@ -3950,7 +3950,7 @@ Class.thunderstorm = {
     LABEL: 'Range Triplet',
     UPGRADES_TIER_0: [],
     RESET_UPGRADE_MENU: true,
-    /*ON: [
+    ON: [
         {
         event: "altFire",
         handler: ({ body, globalMasterStore: gun }) => {
@@ -3962,7 +3962,7 @@ Class.thunderstorm = {
               setTimeout(() => body.define("rangeTriplet5"), 2.5);
               setTimeout(() => body.define("rangeTriplet6"), 3);
           }
-    }],*/
+    }],
     GUNS: [{
       POSITION: [0, 0, 0, 0, 0, 0, 0],
         PROPERTIES: {
@@ -3999,11 +3999,11 @@ Class.rangeTriplet1 = {
     UPGRADES_TIER_0: [],
     RESET_UPGRADE_MENU: true,
     GUNS: [{
-            POSITION: [21.6/*+0.6*/, 9.6/*-0.4*/, 1, 0, 0, 0, 0],
+            POSITION: [21.6, 9.6, 1, 0, 0, 0, 0],
         }, {
-            POSITION: [18.6/*+0.6*/, 10.4/*+0.4*/, 1, 0, -4, 0, 0],
+            POSITION: [18.6, 10.4, 1, 0, -4, 0, 0],
         }, {
-            POSITION: [18.6/*+0.6*/, 10.8/*+0.8*/, 1, 0, 4, 0, 0],
+            POSITION: [18.6, 10.8, 1, 0, 4, 0, 0],
         }
     ]
 }
@@ -4013,11 +4013,11 @@ Class.rangeTriplet2 = {
     UPGRADES_TIER_0: [],
     RESET_UPGRADE_MENU: true,
     GUNS: [{
-            POSITION: [22.2/*+0.6*/, 9.2/*-0.4*/, 1, 0, 0, 0, 0],
+            POSITION: [22.2, 9.2, 1, 0, 0, 0, 0],
         }, {
-            POSITION: [19.2/*+0.6*/, 10.8/*+0.4*/, 1, 0, -3, 0, 0],
+            POSITION: [19.2, 10.8, 1, 0, -3, 0, 0],
         }, {
-            POSITION: [19.2/*+0.6*/, 11.6/*+0.8*/, 1, 0, 3, 0, 0],
+            POSITION: [19.2, 11.6, 1, 0, 3, 0, 0],
         }
     ]
 }
@@ -4027,11 +4027,11 @@ Class.rangeTriplet3 = {
     UPGRADES_TIER_0: [],
     RESET_UPGRADE_MENU: true,
     GUNS: [{
-            POSITION: [22.8/*+0.6*/, 8.8/*-0.4*/, 1, 0, 0, 0, 0],
+            POSITION: [22.8, 8.8, 1, 0, 0, 0, 0],
         }, {
-            POSITION: [19.8/*+0.6*/, 11.2/*+0.4*/, 1, 0, -2, 0, 0],
+            POSITION: [19.8, 11.2, 1, 0, -2, 0, 0],
         }, {
-            POSITION: [19.8/*+0.6*/, 12.4/*+0.8*/, 1, 0, 2, 0, 0],
+            POSITION: [19.8, 12.4, 1, 0, 2, 0, 0],
         }
     ]
 }
@@ -4041,11 +4041,11 @@ Class.rangeTriplet5 = {
     UPGRADES_TIER_0: [],
     RESET_UPGRADE_MENU: true,
     GUNS: [{
-            POSITION: [23.4/*+0.6*/, 8.4/*-0.4*/, 1, 0, 0, 0, 0],
+            POSITION: [23.4, 8.4, 1, 0, 0, 0, 0],
         }, {
-            POSITION: [20.4/*+0.6*/, 11.6/*+0.4*/, 1, 0, -1, 0, 0],
+            POSITION: [20.4, 11.6, 1, 0, -1, 0, 0],
         }, {
-            POSITION: [20.4/*+0.6*/, 13.2/*+0.8*/, 1, 0, 1, 0, 0],
+            POSITION: [20.4, 13.2, 1, 0, 1, 0, 0],
         }
     ]
 }
@@ -4084,7 +4084,7 @@ Class.rangeTriplet6 = {
 }*/
 
 // Upgrade Paths
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "rangeTriplet0"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
     Class.basic.UPGRADES_TIER_2 = ["smasher"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
