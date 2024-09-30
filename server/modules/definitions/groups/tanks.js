@@ -3945,6 +3945,25 @@ Class.thunderstorm = {
         TYPE: "stormProp"
     }],
 }
+Class.navyist = {
+    PARENT: "genericTank",
+    LABEL: "Navyist",
+    STAT_NAMES: statnames.mixed,
+    GUNS:  [
+      {
+        POSITION: [8, 9, 1.5, 9, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone]),
+            TYPE: "boostedDrone",
+            SYNCS_SKILLS: true,
+            STAT_CALCULATOR: "drone"
+        }
+      },
+      {
+        POSITION: [3, 10, -1.3, 5, 0, 0]
+      }
+    ]
+}
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
     Class.basic.UPGRADES_TIER_2 = ["smasher"]
@@ -3974,7 +3993,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"]
 
-    Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "lightning"]
+    Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "lightning", "navyist"]
         Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese"]
         Class.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"]
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
