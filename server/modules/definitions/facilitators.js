@@ -888,6 +888,7 @@ exports.makeMorpher = (type, name = -1, baseName, options = {}) => {
         handler: ({ body, globalMasterStore: store, gun }) => {
           if (gun.identifier != 'morphCannon') return
             for (let i = options.frames; i == 1; i++){
+              let suffix = num.toString();
               let tonkName = baseName.concat(i);
               setTimeout(() => body.define(tonkName), i * options.time);
           }

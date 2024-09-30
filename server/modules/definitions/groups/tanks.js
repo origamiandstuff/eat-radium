@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, makeOver, makeDeco, makeGuard, makeBird, makeRadialAuto, weaponArray } = require('../facilitators.js');
+const { combineStats, makeAuto, makeOver, makeDeco, makeGuard, makeBird, makeRadialAuto, weaponArray, makeMorpher } = require('../facilitators.js');
 const { base, statnames, dfltskl, smshskl } = require('../constants.js');
 require('./generics.js');
 const g = require('../gunvals.js');
@@ -3945,7 +3945,7 @@ Class.thunderstorm = {
         TYPE: "stormProp"
     }],
 }
-Class.rangeTriplet0 makeMorpher({
+Class.rangeTriplet0 = makeMorpher({
     PARENT: "basic",
     LABEL: 'Range Triplet',
     UPGRADES_TIER_0: [],
@@ -3959,7 +3959,7 @@ Class.rangeTriplet0 makeMorpher({
         }
     }
     ]
-}, )
+}, "Triplet-Predator", "rangeTriplet", { frames: 5, time: 0.2, reverse: false })
 Class.rangeTriplet5 = {
     PARENT: "genericTank",
     LABEL: "Predator",
