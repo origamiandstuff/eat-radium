@@ -3945,18 +3945,24 @@ Class.thunderstorm = {
         TYPE: "stormProp"
     }],
 }
-Class.rangeTriplet0 = {
+/*Class.rangeTriplet0 = {
     PARENT: "basic",
     LABEL: 'Range Triplet',
     UPGRADES_TIER_0: [],
     RESET_UPGRADE_MENU: true,
-    ON: [{
+    /*ON: [
+        {
         event: "altFire",
-        handler: ({ body, globalMasterStore: store, gun }) => {
+        handler: ({ body, globalMasterStore: gun }) => {
           if (gun.identifier != 'morphCannon') return
-              setTimeout(() => body.define(tonkName), i * options.time);
-        }}
-    }],
+              setTimeout(() => body.define("rangeTriplet1"), 0.5);
+              setTimeout(() => body.define("rangeTriplet2"), 1);
+              setTimeout(() => body.define("rangeTriplet3"), 1.5);
+              setTimeout(() => body.define("rangeTriplet4"), 2);
+              setTimeout(() => body.define("rangeTriplet5"), 2.5);
+              setTimeout(() => body.define("rangeTriplet6"), 3);
+          }
+    }],*/
     GUNS: [{
       POSITION: [0, 0, 0, 0, 0, 0, 0],
         PROPERTIES: {
@@ -3964,7 +3970,7 @@ Class.rangeTriplet0 = {
             TYPE: 'bullet',
             ALT_FIRE: true,
             IDENTIFIER: 'morphCannon'
-        }
+        },
             POSITION: [18, 10, 1, 0, 5, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
@@ -4075,7 +4081,7 @@ Class.rangeTriplet6 = {
             }
         }
     ]
-}
+}*/
 
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "rangeTriplet0"]
