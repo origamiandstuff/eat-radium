@@ -4167,6 +4167,88 @@ Class.multitoolStallShort = {
       POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
       }]
 }
+Class.carnivore0 = {
+    PARENT: "genericTank",
+    LABEL: "Carnivore",
+    DANGER: 7,
+    BODY: {
+        SPEED: base.SPEED * 0.9,
+        FOV: base.FOV * 1.25
+    },
+    CONTROLLERS: ["zoom"],
+    TOOLTIP: "Hold right click to zoom.",
+    GUNS: [
+        {
+            POSITION: [24, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.hunterSecondary, g.hunterSecondary, g.predator]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [21, 12, 1, 0, 0, 0, 0.15],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.hunterSecondary, g.predator]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [18, 14, 1, 0, 0, 0, 0.3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.predator]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
+Class.carnivore1 = {
+    PARENT: "genericTank",
+    LABEL: "Carnivore",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [24, 8, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [21, 12, 1, 0, 0, 0, 0.15],
+        },
+        {
+            POSITION: [18, 14, 1, 0, 0, 0, 0.3],
+        }
+    ]
+}
+Class.carnivore5 = {
+    PARENT: "genericTank",
+    DANGER: 7,
+    LABEL: "Carnivore",
+    BODY: {
+        FOV: 1.05 * base.FOV
+    },
+    GUNS: [
+        {
+            POSITION: [18, 10, 1, 0, 5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [18, 10, 1, 0, -5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [21, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
+
 
 
 // Upgrade Paths
