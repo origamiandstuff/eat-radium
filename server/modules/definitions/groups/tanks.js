@@ -4722,7 +4722,7 @@ Class.carnivore6 = {
 }
 // insanity ensues
 Class.corrosiveDrone = {
-    PARENT: 'bullet',
+    PARENT: 'drone',
     ON: [
         {
             event: "collide",
@@ -4734,13 +4734,34 @@ Class.corrosiveDrone = {
         },
      ],
 }
-Class.Corrosion = {
+Class.corrosion = {
     PARENT: "genericTank",
     LABEL: "Corrosion",
+    BODY: {
+        FOV: base.FOV * 1.1
+    },
     GUNS: [
-      {
-        
-      }
+        {
+            POSITION: {
+                LENGTH: 6,
+                WIDTH: 11,
+                ASPECT: 1.3,
+                X: 7
+         },
+            POSITION: [6, 11, 1.3, 7, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone]),
+                TYPE: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                MAX_CHILDREN: 6,
+                WAIT_TO_CYCLE: true
+         }, }, {
+            POSITION: [15, 5, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+            COLOR: "magenta"
+         }, }
     ]
 }
 
@@ -4777,7 +4798,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"]
 
     Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "lightning", "navyist"]
-        Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese"]
+        Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese", "corrosion"]
         Class.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"]
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
         Class.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor"]

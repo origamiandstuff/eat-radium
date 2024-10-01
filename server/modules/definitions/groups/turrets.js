@@ -820,3 +820,4 @@ Class.stormTurret = makeTurret({
       }
     ],
 }, {canRepel: true, limitFov: true, fov: 10, independent: true, extraStats: []})
+Class.corrotionDroneProp = makeDeco("0")
