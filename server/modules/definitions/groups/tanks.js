@@ -4049,7 +4049,8 @@ Class.multitool0 = {
                 setTimeout(() => body.define("multitool2"), 200);
                 setTimeout(() => body.define("multitool3"), 300);
                 setTimeout(() => body.define("multitool4"), 400);
-                setTimeout(() => body.define("multitool5"), 500);
+                setTimeout(() => body.define("multitoolStallShort"), 400);
+                setTimeout(() => body.define("multitool5"), 800);
             }
         }
     ],
@@ -4121,8 +4122,8 @@ Class.multitool5 = {
                 setTimeout(() => body.define("multitool3"), 200);
                 setTimeout(() => body.define("multitool2"), 300);
                 setTimeout(() => body.define("multitool1"), 400);
-                setTimeout(() => body.define("multitoolStallShort"), 500);
-                setTimeout(() => body.define("multitool0"), 1000);
+                setTimeout(() => body.define("multitoolStallLong"), 500);
+                setTimeout(() => body.define("multitool0"), 800);
             }
         }
     ],
@@ -4145,6 +4146,26 @@ Class.multitool5 = {
                 IDENTIFIER: 'morphCannon'
         }}
     ]
+}
+Class.multitoolStallLong = {
+    PARENT: "genericTank",
+    LABEL: "Multitool",
+    DANGER: 7,
+    GUNS: [{
+      POSITION: [24, 8, 1, 0, 0, 0, 0],
+      },{
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+      }]
+}
+Class.multitoolStallShort = {
+    PARENT: "genericTank",
+    LABEL: "Multitool",
+    DANGER: 7,
+    GUNS: [{
+      POSITION: [19, 8, 1, 0, 0, 0, 0],
+      },{
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+      }]
 }
 
 
