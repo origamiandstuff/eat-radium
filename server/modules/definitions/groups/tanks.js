@@ -4742,7 +4742,7 @@ Class.corrosiveDrone = {
             event: "collide",
             handler: ({ instance, other }) => {
                 if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
-                    vulnerable(other, 0.2,3) // people take more damage
+                    vulnerable(other, 2,3) // people take more damage
                 }
             }
         },
@@ -4789,7 +4789,7 @@ Class.toxicDrone = {
             event: "collide",
             handler: ({ instance, other }) => {
                 if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
-                    toxic(other, 2,3) // DOT effect eheheheheheheheheheheheehehehehe
+                    toxic(other, 0.5,3) // DOT effect eheheheheheheheheheheheehehehehe
                 }
             }
         },
