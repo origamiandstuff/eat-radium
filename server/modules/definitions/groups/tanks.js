@@ -4167,6 +4167,7 @@ Class.multitoolStallShort = {
       POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
       }]
 }
+// Carnivore
 Class.carnivore0 = {
     PARENT: "genericTank",
     LABEL: "Carnivore",
@@ -4175,6 +4176,20 @@ Class.carnivore0 = {
         SPEED: base.SPEED * 0.9,
         FOV: base.FOV * 1.25
     },
+    ON: [
+        {
+            event: "altFire",
+            handler: ({ body, globalMasterStore: store, gun }) => {
+                if (gun.identifier != 'morphCannon') return
+                setTimeout(() => body.define("carnivore1"), 100);
+                setTimeout(() => body.define("carnivore2"), 200);
+                setTimeout(() => body.define("carnivore3"), 300);
+                setTimeout(() => body.define("carnivore4"), 400);
+                setTimeout(() => body.define("carnivore5"), 500);
+                setTimeout(() => body.define("carnivore6"), 600);
+            }
+        }
+    ],
     CONTROLLERS: ["zoom"],
     TOOLTIP: "Hold right click to zoom.",
     GUNS: [
@@ -4198,7 +4213,14 @@ Class.carnivore0 = {
                 SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.predator]),
                 TYPE: "bullet"
             }
-        }
+        }, {
+            POSITION: [0, 0, 0, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.morphBarrel]),
+                TYPE: 'bullet',
+                ALT_FIRE: true,
+                IDENTIFIER: 'morphCannon'
+        }}
     ]
 }
 Class.carnivore1 = {
@@ -4206,9 +4228,9 @@ Class.carnivore1 = {
     LABEL: "Carnivore",
     DANGER: 7,
     GUNS: [{
-            POSITION: [23, 8.4, 1, 0, -1, 0, 0],//-1, +0.4, nth
+            POSITION: [23, 8.4, 1, 0, 1, 0, 0],//-1, +0.4, nth
         },{
-            POSITION: [20.4, 11.6, 1, 1, 0, 0, 0],//-0.6, -0.4, nth
+            POSITION: [20.4, 11.6, 1, 0, -1, 0, 0],//-0.6, -0.4, nth
         },{
             POSITION: [18.4, 13, 1, 0, 0, 0, 0],//+0.4, -1, nth
         }]}
@@ -4217,9 +4239,9 @@ Class.carnivore2 = {
     LABEL: "Carnivore",
     DANGER: 7,
     GUNS: [{
-            POSITION: [22, 8.8, 1, 0, 0, 0, 0],//-1, +0.4, nth
+            POSITION: [22, 8.8, 1, 0, 2, 0, 0],//-1, +0.4, nth
         },{
-            POSITION: [19.8, 11.2, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
+            POSITION: [19.8, 11.2, 1, 0, -2, 0, 0],//-0.6, -0.4, nth
         },{
             POSITION: [18.8, 12, 1, 0, 0, 0, 0],//+0.4, -1, nth
         }]}
@@ -4228,9 +4250,9 @@ Class.carnivore3 = {
     LABEL: "Carnivore",
     DANGER: 7,
     GUNS: [{
-            POSITION: [21, 9.2, 1, 0, 0, 0, 0],//-1, +0.4, nth
+            POSITION: [21, 9.2, 1, 0, 3, 0, 0],//-1, +0.4, nth
         },{
-            POSITION: [19.2, 10.8, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
+            POSITION: [19.2, 10.8, 1, 0, -3, 0, 0],//-0.6, -0.4, nth
         },{
             POSITION: [19.2, 11, 1, 0, 0, 0, 0],//+0.4, -1, nth
         }]}
@@ -4239,9 +4261,9 @@ Class.carnivore4 = {
     LABEL: "Carnivore",
     DANGER: 7,
     GUNS: [{
-            POSITION: [20, 9.6, 1, 0, 0, 0, 0],//-1, +0.4, nth
+            POSITION: [20, 9.6, 1, 0, 4, 0, 0],//-1, +0.4, nth
         },{
-            POSITION: [18.6, 10.4, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
+            POSITION: [18.6, 10.4, 1, 0, -4, 0, 0],//-0.6, -0.4, nth
         },{
             POSITION: [19.6, 10, 1, 0, 0, 0, 0],//+0.4, -1, nth
         }]}
@@ -4250,9 +4272,9 @@ Class.carnivore5 = {
     LABEL: "Carnivore",
     DANGER: 7,
     GUNS: [{
-            POSITION: [19, 10, 1, 0, 0, 0, 0],//-1, +0.4, nth
+            POSITION: [19, 10, 1, 0, 4.5, 0, 0],//-1, +0.4, nth
         },{
-            POSITION: [18, 10, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
+            POSITION: [18, 10, 1, 0, 0, -4.5, 0],//-0.6, -0.4, nth
         },{
             POSITION: [20, 10, 1, 0, 0, 0, 0],//+0.4, -1, nth
         }]}
@@ -4263,6 +4285,20 @@ Class.carnivore6 = {
     BODY: {
         FOV: 1.05 * base.FOV
     },
+    ON: [
+        {
+            event: "altFire",
+            handler: ({ body, globalMasterStore: store, gun }) => {
+                if (gun.identifier != 'morphCannon') return
+                setTimeout(() => body.define("carnivore5"), 100);
+                setTimeout(() => body.define("carnivore4"), 200);
+                setTimeout(() => body.define("carnivore3"), 300);
+                setTimeout(() => body.define("carnivore2"), 400);
+                setTimeout(() => body.define("carnivore1"), 500);
+                setTimeout(() => body.define("carnivore0"), 600);
+            }
+        }
+    ],
     GUNS: [
         {
             POSITION: [18, 10, 1, 0, 5, 0, 0.5],
@@ -4284,7 +4320,14 @@ Class.carnivore6 = {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
                 TYPE: "bullet"
             }
-        },
+        }, {
+            POSITION: [0, 0, 0, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.morphBarrel]),
+                TYPE: 'bullet',
+                ALT_FIRE: true,
+                IDENTIFIER: 'morphCannon'
+        }}
     ]
 }
 
@@ -4305,6 +4348,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
         Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single", "deadeye", "railgun", "multitool0"]
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "dual", "nimrod"]
+            Class.predator.UPGRADES_TIER_3 = 
         Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "revolver", "railgun"]
         Class.marksman.UPGRADES_TIER_3 = ["deadeye", "nimrod", "revolver", "fork", "railgun"]
 
