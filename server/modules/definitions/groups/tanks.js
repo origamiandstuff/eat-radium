@@ -4009,7 +4009,7 @@ Class.multitool3 = {
     }, {
       POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
     }, ], };
-Class.multitool2 = {
+Class.multitool4 = {
   PARENT: "genericTank",
   LABEL: "Multitool",
   DANGER: 7,
@@ -4034,16 +4034,22 @@ Class.multitool5 = makeMorpher({
         }
     ]
 }, "Multitool", "multitool", { frames: 5, time: 0.15, reverse: true })
-/*
+*/
 Class.multitool0 = {
     PARENT: "genericTank",
+    LABEL: "Multitool",
+    
     DANGER: 7,
     ON: [
         {
             event: "altFire",
-            handler: ({ body, globalMasterStore: gun }) => {
-                if (gun.identifier != 'switcherooGun') return
-                setTimeout(() => body.define("multitool1"), 0.2);
+            handler: ({ body, globalMasterStore: store, gun }) => {
+                if (gun.identifier != 'morphCannon') return
+                setTimeout(() => body.define("multitool1"), 100);
+                setTimeout(() => body.define("multitool2"), 200);
+                setTimeout(() => body.define("multitool3"), 300);
+                setTimeout(() => body.define("multitool4"), 400);
+                setTimeout(() => body.define("multitool5"), 500);
             }
         }
     ],
@@ -4057,8 +4063,14 @@ Class.multitool0 = {
     },
     {
       POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
-    },
-    ]
+    }, {
+       POSITION: [0, 0, 0, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.morphBarrel]),
+            TYPE: 'bullet',
+            ALT_FIRE: true,
+            IDENTIFIER: 'morphCannon'
+        }}]
 }
 Class.multitool1 = {
   PARENT: "genericTank",
@@ -4111,7 +4123,7 @@ Class.multitool5 = {
             POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
         }
     ]
-}*/
+}
 
 
 // Upgrade Paths

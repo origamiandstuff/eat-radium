@@ -110,7 +110,7 @@ module.exports = {
     halfrange: { range: 0.5 },
     aura: { reload: 0.001, recoil: 0.001, shudder: 0.001, size: 6, speed: 0.001, maxSpeed: 0.001, spray: 0.001 },
     noSpread: { shudder: 0, spray: 0 },
-    morphBarrel: { range: 10e-8 },
+    morphBarrel: { range: 10e-8, recoil: 10e-8 },
     lessReload: { reload: 2 },
     lessSpeed: { speed: 0.5 },
 // Splash
