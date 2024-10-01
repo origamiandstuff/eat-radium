@@ -4755,7 +4755,7 @@ Class.corrosion = {
             POSITION: [6, 11, 1.3, 7, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone]),
-                TYPE: "drone",
+                TYPE: "corrosiveDrone",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
                 STAT_CALCULATOR: "drone",
