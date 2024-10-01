@@ -4034,10 +4034,19 @@ Class.multitool5 = makeMorpher({
         }
     ]
 }, "Multitool", "multitool", { frames: 5, time: 0.15, reverse: true })
-*/
-Class.multitool0 = makeMorpher({
+/*
+Class.multitool0 = {
     PARENT: "genericTank",
     DANGER: 7,
+    ON: [
+        {
+            event: "altFire",
+            handler: ({ body, globalMasterStore: gun }) => {
+                if (gun.identifier != 'switcherooGun') return
+                setTimeout(() => body.define("multitool1"), 0.2);
+            }
+        }
+    ],
     GUNS: [
           {
       POSITION: [24, 8, 1, 0, 0, 0, 0],
@@ -4050,7 +4059,7 @@ Class.multitool0 = makeMorpher({
       POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
     },
     ]
-}, "Multitool", "multitool", { frames: 5, time: 0.15, reverse: false })
+}
 Class.multitool1 = {
   PARENT: "genericTank",
   LABEL: "Multitool",
@@ -4078,7 +4087,7 @@ Class.multitool3 = {
     }, {
       POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
     }, ], };
-Class.multitool2 = {
+Class.multitool4 = {
   PARENT: "genericTank",
   LABEL: "Multitool",
   DANGER: 7,
@@ -4087,7 +4096,7 @@ Class.multitool2 = {
     }, {
       POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
     }, ], };
-Class.multitool5 = makeMorpher({
+Class.multitool5 = {
     PARENT: "genericTank",
     DANGER: 7,
     GUNS: [
@@ -4102,7 +4111,7 @@ Class.multitool5 = makeMorpher({
             POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
         }
     ]
-}, "Multitool", "multitool", { frames: 5, time: 0.15, reverse: true })
+}*/
 
 
 // Upgrade Paths
