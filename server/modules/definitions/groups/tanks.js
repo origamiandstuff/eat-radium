@@ -4171,10 +4171,12 @@ Class.multitoolStallShort = {
 Class.carnivore0 = {
     PARENT: "genericTank",
     LABEL: "Carnivore",
+    TOOLTIP: "Alt fire to morph",
     DANGER: 7,
+    CONTROLLERS: [],
     BODY: {
         SPEED: base.SPEED * 0.9,
-        FOV: base.FOV * 1.25
+        FOV: base.FOV * 1.8
     },
     ON: [
         {
@@ -4190,8 +4192,6 @@ Class.carnivore0 = {
             }
         }
     ],
-    CONTROLLERS: ["zoom"],
-    TOOLTIP: "Hold right click to zoom.",
     GUNS: [
         {
             POSITION: [24, 8, 1, 0, 0, 0, 0],
@@ -4227,6 +4227,7 @@ Class.carnivore1 = {
     PARENT: "genericTank",
     LABEL: "Carnivore",
     DANGER: 7,
+    CONTROLLERS: [],
     GUNS: [{
             POSITION: [23, 8.4, 1, 0, 1, 0, 0],//-1, +0.4, nth
         },{
@@ -4238,6 +4239,7 @@ Class.carnivore2 = {
     PARENT: "genericTank",
     LABEL: "Carnivore",
     DANGER: 7,
+    CONTROLLERS: [],
     GUNS: [{
             POSITION: [22, 8.8, 1, 0, 2, 0, 0],//-1, +0.4, nth
         },{
@@ -4249,6 +4251,7 @@ Class.carnivore3 = {
     PARENT: "genericTank",
     LABEL: "Carnivore",
     DANGER: 7,
+    CONTROLLERS: [],
     GUNS: [{
             POSITION: [21, 9.2, 1, 0, 3, 0, 0],//-1, +0.4, nth
         },{
@@ -4260,6 +4263,7 @@ Class.carnivore4 = {
     PARENT: "genericTank",
     LABEL: "Carnivore",
     DANGER: 7,
+    CONTROLLERS: [],
     GUNS: [{
             POSITION: [20, 9.6, 1, 0, 4, 0, 0],//-1, +0.4, nth
         },{
@@ -4271,16 +4275,18 @@ Class.carnivore5 = {
     PARENT: "genericTank",
     LABEL: "Carnivore",
     DANGER: 7,
+    CONTROLLERS: [],
     GUNS: [{
             POSITION: [19, 10, 1, 0, 4.5, 0, 0],//-1, +0.4, nth
         },{
-            POSITION: [18, 10, 1, 0, 0, -4.5, 0],//-0.6, -0.4, nth
+            POSITION: [18, 10, 1, 0, -4.5, 0, 0],//-0.6, -0.4, nth
         },{
             POSITION: [20, 10, 1, 0, 0, 0, 0],//+0.4, -1, nth
         }]}
 Class.carnivore6 = {
     PARENT: "genericTank",
     DANGER: 7,
+    CONTROLLERS: [],
     LABEL: "Carnivore",
     BODY: {
         FOV: 1.05 * base.FOV
@@ -4343,12 +4349,13 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"]
         Class.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"]
         Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "triplex"]
+            Class.triplet.UPGRADES_TIER_3 = ["carnivore0"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
         Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single", "deadeye", "railgun", "multitool0"]
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "dual", "nimrod"]
-            Class.predator.UPGRADES_TIER_3 = 
+            Class.predator.UPGRADES_TIER_3 = ["carnivore0"]
         Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "revolver", "railgun"]
         Class.marksman.UPGRADES_TIER_3 = ["deadeye", "nimrod", "revolver", "fork", "railgun"]
 
