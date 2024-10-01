@@ -3965,10 +3965,39 @@ Class.navyist = {
       }
     ]
 }
-Class.nigga0 = makeMorpher({
-    PARENT: "genericTank"
+Class.multitool0 = makeMorpher({
+    PARENT: "genericTank",
     
-})
+    GUNS: [
+          {
+      POSITION: [24, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.single, g.sniper]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    },
+    ]
+}, "Multitool", "multitool", { frames: 5, time: 0.15, reverse: false })
+Class.multitool6 = {
+    PARENT: "genericTank",
+    LABEL: "Single",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ]
+}
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
     Class.basic.UPGRADES_TIER_2 = ["smasher"]
