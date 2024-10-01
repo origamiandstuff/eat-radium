@@ -4038,7 +4038,7 @@ Class.multitool5 = makeMorpher({
 Class.multitool0 = {
     PARENT: "genericTank",
     LABEL: "Multitool",
-    
+    TOOLTIP: "Alt fire to morph",
     DANGER: 7,
     ON: [
         {
@@ -4110,7 +4110,22 @@ Class.multitool4 = {
     }, ], };
 Class.multitool5 = {
     PARENT: "genericTank",
+    LABEL: "Multitool",
     DANGER: 7,
+    ON: [
+        {
+            event: "altFire",
+            handler: ({ body, globalMasterStore: store, gun }) => {
+                if (gun.identifier != 'morphCannon') return
+                setTimeout(() => body.define("multitool4"), 100);
+                setTimeout(() => body.define("multitool3"), 200);
+                setTimeout(() => body.define("multitool2"), 300);
+                setTimeout(() => body.define("multitool1"), 400);
+                setTimeout(() => body.define("multitoolStallShort"), 500);
+                setTimeout(() => body.define("multitool0"), 1000);
+            }
+        }
+    ],
     GUNS: [
         {
             POSITION: [19, 8, 1, 0, 0, 0, 0],
@@ -4121,7 +4136,14 @@ Class.multitool5 = {
         },
         {
             POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
-        }
+        }, {
+            POSITION: [0, 0, 0, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.morphBarrel]),
+                TYPE: 'bullet',
+                ALT_FIRE: true,
+                IDENTIFIER: 'morphCannon'
+        }}
     ]
 }
 
