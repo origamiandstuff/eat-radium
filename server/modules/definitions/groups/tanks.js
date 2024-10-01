@@ -4206,12 +4206,25 @@ Class.carnivore1 = {
     LABEL: "Carnivore",
     DANGER: 7,
     GUNS: [{
-            POSITION: [24, 8, 1, 0, 0, 0, 0],//-0.6, 
+            POSITION: [23, 8.4, 1, 0, 0, 0, 0],//-1, +0.4, nth
         },{
-            POSITION: [21, 12, 1, 0, 0, 0, 0],
+            POSITION: [20.4, 11.6, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
         },{
-            POSITION: [18, 14, 1, 0, 0, 0, 0],
+            POSITION: [18.4, 13, 1, 0, 0, 0, 0],//+0.4, -1, nth
         }]}
+Class.carnivore2 = {
+    PARENT: "genericTank",
+    LABEL: "Carnivore",
+    DANGER: 7,
+    GUNS: [{
+            POSITION: [22, 8.8, 1, 0, 0, 0, 0],//-1, +0.4, nth
+        },{
+            POSITION: [20.4, 11, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
+        },{
+            POSITION: [18.4, 12, 1, 0, 0, 0, 0],//+0.4, -1, nth
+        }]}
+
+
 Class.carnivore5 = {
     PARENT: "genericTank",
     DANGER: 7,
@@ -4220,13 +4233,6 @@ Class.carnivore5 = {
         FOV: 1.05 * base.FOV
     },
     GUNS: [
-       {
-            POSITION: [21, 10, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet"
-            }
-        },
         {
             POSITION: [18, 10, 1, 0, 5, 0, 0.5],
             PROPERTIES: {
@@ -4236,6 +4242,13 @@ Class.carnivore5 = {
         },
         {
             POSITION: [18, 10, 1, 0, -5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [21, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
                 TYPE: "bullet"
