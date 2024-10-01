@@ -392,7 +392,7 @@ const toxic = (them, multiplier, duration) => {
         }, 2 * duration * 500);
         wTimer(() => {
             if (them.toxic_active && them.health.amount > 10) {
-                them.health.amount -= them.health.amount - multiplier * 0.5;
+                them.health.amount -= them.health.amount - multiplier;
             }
         }, 2 * duration);
     }
@@ -4749,7 +4749,7 @@ Class.corrosiveDrone = {
      ],
      TURRETS: [{
          POSITION: [9, 0, 0, 0, 360, 1],
-         TYPE: "corrosionDroneProp"
+         TYPE: "corrosionProp"
      }]
 }
 Class.corrosion = {
@@ -4776,12 +4776,60 @@ Class.corrosion = {
                 MAX_CHILDREN: 6,
                 WAIT_TO_CYCLE: true
          }, }, {
-            POSITION: [15, 5, 1, 0, 0, 0, 0],
+            POSITION: [13, 4, 1, 0, 0, 0, 0],
             PROPERTIES: {
             COLOR: "magenta"
          }, }
     ]
 }
+Class.toxicDrone = {
+    PARENT: 'drone',
+    ON: [
+        {
+            event: "collide",
+            handler: ({ instance, other }) => {
+                if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
+                    toxic(other, 2,3) // DOT effect eheheheheheheheheheheheehehehehe
+                }
+            }
+        },
+     ],
+     TURRETS: [{
+         POSITION: [9, 0, 0, 0, 360, 1],
+         TYPE: "toxicProp"
+     }]
+}
+Class.doper = {
+    PARENT: "genericTank",
+    LABEL: "Doper",
+    BODY: {
+        FOV: base.FOV * 1.1
+    },
+    GUNS: [
+        {
+            POSITION: {
+                LENGTH: 6,
+                WIDTH: 11,
+                ASPECT: 1.3,
+                X: 7
+         },
+            POSITION: [6, 11, 1.3, 7, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone]),
+                TYPE: "toxicDrone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                MAX_CHILDREN: 6,
+                WAIT_TO_CYCLE: true
+         }, }, {
+            POSITION: [13, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+            COLOR: "#00ff00"
+         }, }
+    ]
+}
+
 
 
 // Upgrade Paths
@@ -4815,7 +4863,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"]
 
-    Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "lightning", "navyist"]
+    Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "lightning", "doper"]
         Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese", "corrosion"]
         Class.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"]
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
