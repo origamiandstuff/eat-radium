@@ -4733,6 +4733,10 @@ Class.corrosiveDrone = {
             }
         },
      ],
+     TURRETS: [{
+         POSITION: [9, 0, 0, 0, 360, 1],
+         TYPE: "corrosionDroneProp"
+     }]
 }
 Class.corrosion = {
     PARENT: "genericTank",
