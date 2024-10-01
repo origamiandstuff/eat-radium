@@ -4049,7 +4049,7 @@ Class.multitool0 = {
                 setTimeout(() => body.define("multitool2"), 200);
                 setTimeout(() => body.define("multitool3"), 300);
                 setTimeout(() => body.define("multitool4"), 400);
-                setTimeout(() => body.define("multitoolStallShort"), 400);
+                setTimeout(() => body.define("multitoolStallShort"), 500);
                 setTimeout(() => body.define("multitool5"), 800);
             }
         }
