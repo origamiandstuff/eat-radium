@@ -3,6 +3,458 @@ const { base, statnames, dfltskl, smshskl } = require('../constants.js');
 require('./generics.js');
 const g = require('../gunvals.js');
 
+const wTimer = (execute, duration) => {
+    let timer = setInterval(() => execute(), 31.25);
+    setTimeout(() => {
+        clearInterval(wTimer);
+    }, duration * 1000);
+};
+const poison = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.poisoned) {
+        them.poisoned = true;
+        setTimeout(() => {
+            them.poisoned = false;
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.poisoned && them.health.amount > 10) {
+                them.health.amount -= multiplier * 0.5;
+            }
+        }, 2 * duration);
+    }
+};
+const fire = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.isOnFire) {
+        them.isOnFire = true;
+        setTimeout(() => {
+            them.isOnFire = false;
+        }, duration * 1000);
+        wTimer(() => {
+            if (them.isOnFire && them.health.amount > 10) {
+                them.health.amount -= multiplier;
+            }
+        }, duration);
+    }
+};
+const acid = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.acid) {
+        them.acid = true;
+        setTimeout(() => {
+            them.acid = false;
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.acid) {
+                them.shield.amount = Math.max(them.shield.amount - multiplier * 0.2, 0)
+                if (them.shield.amount == 0) {
+                    if (them.health.amount > 10) {
+                        them.health.amount -= 1
+                    }
+                }
+            }
+        }, 2 * duration);
+    }
+};
+const lava = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.lava) {
+        them.lava = true;
+        setTimeout(() => {
+            them.lava = false;
+        }, duration * 1000);
+        wTimer(() => {
+            if (them.lava) {
+                them.shield.amount = Math.max(them.shield.amount - multiplier * 0.4, 0)
+                if (them.shield.amount == 0) {
+                    if (them.health.amount > 10) {
+                        them.health.amount -= 2
+                    }
+                }
+            }
+        }, duration);
+    }
+};
+const paralyze = (them, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.paralyzed) {
+        them.paralyzed = true;
+        setTimeout(() => {
+            them.paralyzed = false;
+        }, duration * 1000 * 0.5);
+        wTimer(() => {
+            if (them.paralyzed) {
+                them.velocity.x = -them.accel.x;
+                them.velocity.y = -them.accel.y;
+            }
+    }, duration * 0.5);
+    }
+};
+const forcedPacify = (them, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.forcedPacify) {
+        them.forcedPacify = true;
+        setTimeout(() => {
+            them.forcedPacify = false;
+            if (them.socket) {
+                if (them.socket.player) {
+                    them.socket.player.command.override = them.$overrideStatus
+                }
+            }
+            them.autoOverride = them.store.$overrideStatus
+            them.$overrideStatus = null
+        }, duration * 1000);
+        wTimer(() => {
+            if (them.forcedPacify) {
+                // save the orginal override status!
+                if (!them.store.$overrideStatus) {
+                    let failed = false;
+                    //a lotta checks to make sure socket exists.
+                    if (them.socket) {
+                        if (them.socket.player) {
+                            them.$overrideStatus = them.socket.player.command.override
+                        } else {
+                            failed = true
+                        }
+                    } else {
+                        failed = true
+                    }
+                    //most likely not a player.
+                    if (failed) {
+                        them.$overrideStatus = them.autoOverride
+                    }
+                }
+
+                // Now lets change override to true!!!
+                if (them.socket) {
+                    if (them.socket.player) {
+                        them.socket.player.override = true
+                    }
+                }
+                //second one to be REALLY sure it does work!
+                them.autoOverride = true
+
+            }
+    }, duration);
+    }
+};
+const toggleGuns = (instance, barrelCanShoot) => {
+    if (instance.guns) {
+        for (let i = 0; i < instance.guns.length; i++) {
+            let gun = instance.guns[i];
+            if (gun.settings && gun.bulletTypes) {
+                gun.canShoot = barrelCanShoot
+            }
+        }
+    }
+    if (instance.turrets) {
+        for (let i = 0; i < instance.turrets.length; i++) {
+            let turret = instance.turrets[i];
+            if (instance.turrets.guns || instance.turrets) {
+                gunsCanShoot(turret, barrelCanShoot)
+            }
+        }
+    }
+}
+const disableWeapons = (them, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.disableWeapons) {
+        them.disableWeapons = true;
+        setTimeout(() => {
+            them.disableWeapons = false;
+                toggleGuns(them, true)
+        }, duration * 1000);
+        wTimer(() => {
+            if (them.disableWeapons) {
+                toggleGuns(them, false)
+            }
+    }, duration);
+    }
+};
+const wither = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.wither) {
+        them.wither = true;
+        setTimeout(() => {
+            them.wither = false;
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.wither && them.health.max > 10) {
+                them.HEALTH -= multiplier * 0.002
+            }
+        }, 2 * duration);
+    }
+};
+const decay = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.decay) {
+        them.decay = true;
+        setTimeout(() => {
+            them.decay = false;
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.decay && them.shield.max > 10) {
+                them.SHIELD -= multiplier * 0.001;
+            }
+        }, 2 * duration);
+    }
+};
+const radiation = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.radiation) {
+        them.radiation = true;
+        setTimeout(() => {
+            them.radiation = false;
+        }, 7 * duration * 1000);
+        wTimer(() => {
+            if (them.radiation && them.health.amount) {
+                them.health.amount -= multiplier * 0.03;
+            }
+        }, 7 * duration);
+    }
+};
+const vulnerable = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.vulnerable) {
+        them.vulnerable = true
+        them.store.$savedResist = them.RESIST;
+        setTimeout(() => {
+            them.vulnerable = false;
+            them.RESIST = them.store.$savedResist 
+            them.store.$savedResist = null
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.vulnerable) {
+                them.RESIST = them.store.$savedResist / multiplier
+            }
+        }, 2 * duration);
+    }
+};
+const emp = (them, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.emp) {
+        them.emp = true
+        setTimeout(() => {
+            them.emp = false;
+            them.store.$oldShieldAmount = null
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.emp) {
+                them.shield.amount = 0
+                them.store.$oldShieldAmount = them.store.$oldShieldAmount ? them.store.$oldShieldAmount : them.shield.amount
+                them.shield.amount = Math.min(them.shield.amount, them.store.$oldShieldAmount)
+                them.store.$oldShieldAmount = them.shield.amount
+            }
+        }, 2 * duration);
+    }
+};
+const fatigued = (them, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.fatigued) {
+        them.fatigued = true
+        setTimeout(() => {
+            them.fatigued = false;
+            them.store.$oldHealthAmount = null
+            them.store.$oldShieldAmount = null
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.fatigued) {
+                them.store.$oldShieldAmount = them.store.$oldShieldAmount ? them.store.$oldShieldAmount : them.shield.amount
+                them.shield.amount = Math.min(them.shield.amount, them.store.$oldShieldAmount)
+                them.store.$oldShieldAmount = them.shield.amount
+
+                them.store.$oldHealthAmount = them.store.$oldHealthAmount ? them.store.$oldHealthAmount : them.health.amount
+                them.health.amount = Math.min(them.health.amount, them.store.$oldHealthAmount)
+                them.store.$oldHealthAmount = them.health.amount
+            }
+        }, 2 * duration);
+    }
+};
+const ice = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.ice) {
+        them.ice = true
+        them.store.$savedAcceleration = them.store.$savedAcceleration ?? them.ACCELERATION;
+        them.store.$iceMulti = multiplier;
+        setTimeout(() => {
+            them.ice = false;
+            them.ACCELERATION = them.store.$savedAcceleration
+            them.store.$savedAcceleration = them.store.$frostbiteMulti ? them.store.$savedAcceleration : null
+            them.store.$iceMulti = null;
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.ice) {
+                them.ACCELERATION = them.store.$savedAcceleration / (multiplier * (them.store.$frostbiteMulti ?? 1))
+            }
+        }, 2 * duration);
+    }
+};
+const frostbite = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.frostbite) {
+        them.frostbite = true
+        them.store.$savedAcceleration = them.store.$savedAcceleration ?? them.ACCELERATION;
+        them.store.$frostbiteMulti = multiplier;
+        them.store.$forstbiteIntensityStore = 0;
+        setTimeout(() => {
+            them.frostbite = false;
+            them.ACCELERATION = them.store.$savedAcceleration
+            them.store.$savedAcceleration = them.store.$iceMulti ? them.store.$savedAcceleration : null
+            them.store.$frostbiteMulti = null
+            them.store.$forstbiteIntensityStore = 0
+        }, 3 * duration * 1000);
+        wTimer(() => {
+            if (them.frostbite) {
+                them.ACCELERATION = them.store.$savedAcceleration / (them.store.$frostbiteMulti * (them.store.$iceMulti ?? 1))
+                them.health.amount =  Math.max(them.health.amount - them.store.$forstbiteIntensityStore, 2)
+                
+                them.store.$forstbiteIntensityStore = Math.min(Math.max((them.store.$forstbiteIntensityStore + 0.025) - Math.min(Math.round(them.velocity.length), 0.1),0), 1.5)
+
+            }
+        }, 3 * duration);
+    }
+};
+const glue = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.glue) {
+        them.glue = true
+        them.store.$savedSpeed = them.SPEED;
+        setTimeout(() => {
+            them.glue = false;
+            them.SPEED = them.store.$savedSpeed;
+            them.store.$savedSpeed = null
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.glue) {
+                them.SPEED = them.store.$savedSpeed / multiplier
+            }
+        }, 2 * duration);
+    }
+};
+const blind = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.blind) {
+        them.blind = true
+        them.store.$savedFOV = them.FOV;
+        them.store.$savedfov = them.fov;
+        setTimeout(() => {
+            them.blind = false;
+            them.FOV = them.store.$savedFOV;
+            them.fov = them.store.$savedfov;
+            them.store.$savedFOV = null
+            them.store.$savedfov = null
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.blind) {
+                them.FOV = them.store.$savedFOV / multiplier
+                them.fov = them.store.$savedfov / multiplier
+            }
+        }, 2 * duration);
+    }
+};
+const curse = (them, multiplier) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.curse) {
+        them.curse = true
+        them.store.$savedDamage = them.DAMAGE;
+        them.store.$savedPenetration = them.PENETRATION;
+        them.store.$savedHetero = them.HETERO;
+        wTimer(() => {
+            if (them.curse) {
+                them.DAMAGE = them.store.$savedDamage / multiplier
+                them.PENETRATION = them.store.$savedPenetration / multiplier
+                them.HETERO = them.store.$savedHetero * multiplier
+            }
+        }, 200000);
+    }
+};
+const suffocation = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.suffocation) {
+        them.suffocation = true;
+        setTimeout(() => {
+            them.suffocation = false;
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.suffocation && them.health.amount > 10) {
+                them.health.amount -= them.health.max * 0.000025;
+            }
+        }, 2 * duration);
+    }
+};
+Class.executorBullet = {
+    PARENT: 'bullet',
+    ON: [
+        {
+            event: "collide",
+            handler: ({ instance, other }) => {
+                if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
+                    poison(other,2,3) // brings people down to 10 health slowly
+                    fire(other,2,3) // poison but does more damage per tick for a shorter amount of time
+                    acid(other,2,3) // shield version of poison, if there is no shield it does massive damage to health
+                    lava(other,2,3) // shield version of fire, if there is no shield it does massive damage to health
+                    paralyze(other, 3) // stops movement
+                    forcedPacify(other, 3) // forces override to be on (minions/drones dont automatically attack)
+                    disableWeapons(other,3) // disables all guns
+                    wither(other,2,3) // slowly lowers max health
+                    decay(other,2,3) // slowly lowers shields max health
+                    radiation(other,2,3) // slow long lasting poison that doesnt stop at ten health
+                    vulnerable(other, 2,3) // people take more damage
+                    curse(other,2) // permanent debuff to body stats damage, penetration and hetero
+                    emp(other,3) // disables shield and shield regen
+                    fatigued(other,3) // disables all regen
+                    glue(other,2,3) // lowers max speed
+                    ice(other,2,3) // lowers acceleration
+                    blind(other,2,3) // lowers fov
+                    suffocation(other,2,3) // does 0.0025% of a players max health damage per tick.
+                    frostbite(other,2,3) // does increasing damage when the player doesnt move.
+                }
+            }
+        },
+     ],
+}
+Class.unnamedTank0022 = {
+    PARENT: "genericTank",
+    LABEL: "executor.",
+    BODY: {
+        FOV: base.FOV
+    },
+    HAS_NO_RECOIL:true,
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, -5, 1/4],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "executorBullet",
+            }
+        },
+        {
+            POSITION: [18, 8, 1, 0, 0, 5, 2/4],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "executorBullet",
+            }
+        },
+        {
+            POSITION: [18, 8, 1, 0, 0, -2.5, 3/4],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "executorBullet",
+            }
+        },
+        {
+            POSITION: [18, 8, 1, 0, 0, 2.5, 4/4],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "executorBullet",
+            }
+        },
+        {
+            POSITION: [18, 8, 1.44144144144, 0, 0, 0, 0],
+        },
+    ]
+}
+
 // Basic & starting upgrades
 Class.basic = {
     PARENT: "genericTank",
@@ -4340,7 +4792,7 @@ Class.carnivore6 = {
 
 
 // Upgrade Paths
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "unnamedTank0022"]
     Class.basic.UPGRADES_TIER_2 = ["smasher"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
