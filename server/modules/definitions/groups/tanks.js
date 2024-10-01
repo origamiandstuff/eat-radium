@@ -4206,9 +4206,9 @@ Class.carnivore1 = {
     LABEL: "Carnivore",
     DANGER: 7,
     GUNS: [{
-            POSITION: [23, 8.4, 1, 0, 0, 0, 0],//-1, +0.4, nth
+            POSITION: [23, 8.4, 1, 0, -1, 0, 0],//-1, +0.4, nth
         },{
-            POSITION: [20.4, 11.6, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
+            POSITION: [20.4, 11.6, 1, 1, 0, 0, 0],//-0.6, -0.4, nth
         },{
             POSITION: [18.4, 13, 1, 0, 0, 0, 0],//+0.4, -1, nth
         }]}
@@ -4219,13 +4219,44 @@ Class.carnivore2 = {
     GUNS: [{
             POSITION: [22, 8.8, 1, 0, 0, 0, 0],//-1, +0.4, nth
         },{
-            POSITION: [20.4, 11, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
+            POSITION: [19.8, 11.2, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
         },{
-            POSITION: [18.4, 12, 1, 0, 0, 0, 0],//+0.4, -1, nth
+            POSITION: [18.8, 12, 1, 0, 0, 0, 0],//+0.4, -1, nth
         }]}
-
-
+Class.carnivore3 = {
+    PARENT: "genericTank",
+    LABEL: "Carnivore",
+    DANGER: 7,
+    GUNS: [{
+            POSITION: [21, 9.2, 1, 0, 0, 0, 0],//-1, +0.4, nth
+        },{
+            POSITION: [19.2, 10.8, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
+        },{
+            POSITION: [19.2, 11, 1, 0, 0, 0, 0],//+0.4, -1, nth
+        }]}
+Class.carnivore4 = {
+    PARENT: "genericTank",
+    LABEL: "Carnivore",
+    DANGER: 7,
+    GUNS: [{
+            POSITION: [20, 9.6, 1, 0, 0, 0, 0],//-1, +0.4, nth
+        },{
+            POSITION: [18.6, 10.4, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
+        },{
+            POSITION: [19.6, 10, 1, 0, 0, 0, 0],//+0.4, -1, nth
+        }]}
 Class.carnivore5 = {
+    PARENT: "genericTank",
+    LABEL: "Carnivore",
+    DANGER: 7,
+    GUNS: [{
+            POSITION: [19, 10, 1, 0, 0, 0, 0],//-1, +0.4, nth
+        },{
+            POSITION: [18, 10, 1, 0, 0, 0, 0],//-0.6, -0.4, nth
+        },{
+            POSITION: [20, 10, 1, 0, 0, 0, 0],//+0.4, -1, nth
+        }]}
+Class.carnivore6 = {
     PARENT: "genericTank",
     DANGER: 7,
     LABEL: "Carnivore",
