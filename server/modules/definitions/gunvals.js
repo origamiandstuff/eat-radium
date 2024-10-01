@@ -113,6 +113,7 @@ module.exports = {
     morphBarrel: { range: 10e-8, recoil: 10e-8 },
     lessReload: { reload: 2 },
     lessSpeed: { speed: 0.5 },
+    lessDamage: { damage: 0.5 },
 // Splash
     coilBullet: { health: 1, damage: 0.5, reload: 4, pen: 4, speed: 1.5 },
     coilSplash: { health: 1, damage: 0.1, speed: 0, maxSpeed: 0 },

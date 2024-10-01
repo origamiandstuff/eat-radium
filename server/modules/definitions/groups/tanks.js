@@ -392,9 +392,9 @@ const toxic = (them, damage, duration) => {
         }, 2 * duration * 500);
         wTimer(() => {
             if (them.toxic_active) {
-                them.health.amount -= them.health.amount - damage;
+                them.health.amount = them.health.amount - damage;
             }
-        }, 2 * duration);
+        }, 4 * duration);
     }
 };
 Class.executorBullet = {
@@ -4742,7 +4742,7 @@ Class.corrosiveDrone = {
             event: "collide",
             handler: ({ instance, other }) => {
                 if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
-                    vulnerable(other, 2,3) // people take more damage
+                    vulnerable(other, 0.2,3) // people take more damage
                 }
             }
         },
@@ -4815,7 +4815,7 @@ Class.doper = {
          },
             POSITION: [6, 11, 1.3, 7, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone]),
+                SHOOT_SETTINGS: combineStats([g.drone, g.lessDamage]),
                 TYPE: "toxicDrone",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
