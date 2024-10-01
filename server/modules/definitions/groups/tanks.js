@@ -383,7 +383,7 @@ const suffocation = (them, multiplier, duration) => {
         }, 2 * duration);
     }
 };
-const toxic = (them, multiplier, duration) => {
+const toxic = (them, damage, duration) => {
     if (!them) return
     if (!them.invuln && !them.passive && !them.godmode && !them.toxic_active) {
         them.toxic_active = true;
@@ -391,8 +391,8 @@ const toxic = (them, multiplier, duration) => {
             them.toxic_active = false;
         }, 2 * duration * 500);
         wTimer(() => {
-            if (them.toxic_active && them.health.amount > 10) {
-                them.health.amount -= them.health.amount - multiplier;
+            if (them.toxic_active) {
+                them.health.amount -= them.health.amount - damage;
             }
         }, 2 * duration);
     }
