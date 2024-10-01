@@ -397,6 +397,20 @@ const toxic = (them, damage, duration) => {
         }, 4 * duration);
     }
 };
+const stackingDOT = (them, damage, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode) {
+        them.DOT_stacks = 
+        setTimeout(() => {
+            them.toxic_active = false;
+        }, 2 * duration * 500);
+        wTimer(() => {
+            if (them.toxic_active) {
+                them.health.amount = them.health.amount - damage;
+            }
+        }, 4 * duration);
+    }
+};
 Class.executorBullet = {
     PARENT: 'bullet',
     ON: [
