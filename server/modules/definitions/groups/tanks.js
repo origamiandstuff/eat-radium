@@ -3965,6 +3965,76 @@ Class.navyist = {
       }
     ]
 }
+/*
+Class.multitool0 = makeMorpher({
+    PARENT: "genericTank",
+    DANGER: 7,
+    GUNS: [
+          {
+      POSITION: [24, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.single, g.sniper]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    },
+    ]
+}, "Multitool", "multitool", { frames: 5, time: 0.15, reverse: false })
+Class.multitool1 = {
+  PARENT: "genericTank",
+  LABEL: "Multitool",
+  DANGER: 7,
+  GUNS: [ {
+      POSITION: [23, 8, 1, 0, 0, 0, 0],
+    }, {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    }, ], };
+Class.multitool2 = {
+  PARENT: "genericTank",
+  LABEL: "Multitool",
+  DANGER: 7,
+  GUNS: [ {
+      POSITION: [22, 8, 1, 0, 0, 0, 0],
+    }, {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    }, ], };
+Class.multitool3 = {
+  PARENT: "genericTank",
+  LABEL: "Multitool",
+  DANGER: 7,
+  GUNS: [ {
+      POSITION: [21, 8, 1, 0, 0, 0, 0],
+    }, {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    }, ], };
+Class.multitool2 = {
+  PARENT: "genericTank",
+  LABEL: "Multitool",
+  DANGER: 7,
+  GUNS: [ {
+      POSITION: [20, 8, 1, 0, 0, 0, 0],
+    }, {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    }, ], };
+Class.multitool5 = makeMorpher({
+    PARENT: "genericTank",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ]
+}, "Multitool", "multitool", { frames: 5, time: 0.15, reverse: true })
+*/
 Class.multitool0 = makeMorpher({
     PARENT: "genericTank",
     DANGER: 7,
@@ -4046,9 +4116,9 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"]
         Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "triplex"]
 
-    Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman"]
+    Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
-        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single", "deadeye", "railgun"]
+        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single", "deadeye", "railgun", "multitool0"]
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "dual", "nimrod"]
         Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "revolver", "railgun"]
         Class.marksman.UPGRADES_TIER_3 = ["deadeye", "nimrod", "revolver", "fork", "railgun"]
