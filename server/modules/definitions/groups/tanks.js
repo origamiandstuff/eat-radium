@@ -412,7 +412,7 @@ const stackingDOT = (them, damage, duration, maxStacks) => {
                 for (let i = 1; i = them.DOT_stacks; i++){
                   them.health.amount = them.health.amount - damage;
             } }
-        }, 4 * duration);
+        }, 3.5 * duration);
     }
 };
 Class.executorBullet = {
@@ -4847,6 +4847,82 @@ Class.doper = {
          }, }
     ]
 }
+Class.DOTStackBullet = {
+    PARENT: 'bullet',
+    ON: [
+        {
+            event: "collide",
+            handler: ({ instance, other }) => {
+                if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
+                    stackingDOT(other, 0.06, 10, 50) // DOT effect eheheheheheheheheheheheehehehehe
+                }
+            }
+        },
+     ],
+     TURRETS: [{
+         POSITION: [9, 0, 0, 0, 360, 1],
+         TYPE: "toxicProp"
+     }]
+}
+Class.pgunner = {
+    PARENT: "genericTank",
+    LABEL: "P-Gunner",
+    DANGER: 6,
+    GUNS: [
+        {
+            POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "DOTStackBullet"
+            }
+        },
+        {
+            POSITION: [12, 3.5, 1, 0, -7.25, 0, 0.75],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "DOTStackBullet"
+            }
+        },
+        {
+            POSITION: [16, 3.5, 1, 0, 3.75, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "DOTStackBullet"
+            }
+        },
+        {
+            POSITION: [16, 3.5, 1, 0, -3.75, 0, 0.25],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "DOTStackBullet"
+            }
+        },
+      {
+            POSITION: [8, 2, 1, 0, 7.25, 0, 0.5],
+            PROPERTIES: {
+                COLOR: "#00ff00"
+            }
+        },
+        {
+            POSITION: [8, 2, 1, 0, -7.25, 0, 0.75],
+            PROPERTIES: {
+                COLOR: "#00ff00"
+            }
+        },
+        {
+            POSITION: [12, 2, 1, 0, 3.75, 0, 0],
+            PROPERTIES: {
+                COLOR: "#00ff00"
+            }
+        },
+        {
+            POSITION: [12, 2, 1, 0, -3.75, 0, 0.25],
+            PROPERTIES: {
+                COLOR: "#00ff00"
+            }
+        }
+    ]
+}
 
 
 
@@ -4872,7 +4948,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer"]
         Class.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture"]
-        Class.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner"]
+        Class.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner", "pgunner"]
         Class.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal"]
 
     Class.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper"]
