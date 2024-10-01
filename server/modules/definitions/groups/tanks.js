@@ -397,17 +397,21 @@ const toxic = (them, damage, duration) => {
         }, 4 * duration);
     }
 };
-const stackingDOT = (them, damage, duration) => {
+const stackingDOT = (them, damage, duration, maxStacks) => {
     if (!them) return
     if (!them.invuln && !them.passive && !them.godmode) {
-        them.DOT_stacks = 
+        them.DOT_stacks = them.DOT_stacks + 1
+        if (them.DOT_stacks > maxStacks) {
+          them.DOT_stacks = maxStacks
+        }
         setTimeout(() => {
-            them.toxic_active = false;
-        }, 2 * duration * 500);
+            them.DOT_stacks = them.DOT_stacks - 1;
+        }, 2 * duration * 400);
         wTimer(() => {
-            if (them.toxic_active) {
-                them.health.amount = them.health.amount - damage;
-            }
+            if (them.DOT_stacks > 0) {
+                for (let i = 1; i = them.DOT_stacks; i++){
+                  them.health.amount = them.health.amount - damage;
+            } }
         }, 4 * duration);
     }
 };
