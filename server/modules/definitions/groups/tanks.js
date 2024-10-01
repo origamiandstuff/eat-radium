@@ -4708,7 +4708,7 @@ Class.carnivore6 = {
             POSITION: [21, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet"
+                TYPE: "bullet" 
             }
         }, {
             POSITION: [0, 0, 0, 0, 0, 0, 0],
@@ -4721,7 +4721,7 @@ Class.carnivore6 = {
     ]
 }
 // insanity ensues
-Class.corrosiveBullet = {
+Class.corrosiveDrone = {
     PARENT: 'bullet',
     ON: [
         {
@@ -4733,6 +4733,15 @@ Class.corrosiveBullet = {
             }
         },
      ],
+}
+Class.Corrosion = {
+    PARENT: "genericTank",
+    LABEL: "Corrosion",
+    GUNS: [
+      {
+        
+      }
+    ]
 }
 
 
