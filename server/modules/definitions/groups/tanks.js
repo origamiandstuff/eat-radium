@@ -3967,7 +3967,7 @@ Class.navyist = {
 }
 Class.multitool0 = makeMorpher({
     PARENT: "genericTank",
-    
+    DANGER: 7,
     GUNS: [
           {
       POSITION: [24, 8, 1, 0, 0, 0, 0],
@@ -3981,9 +3981,44 @@ Class.multitool0 = makeMorpher({
     },
     ]
 }, "Multitool", "multitool", { frames: 5, time: 0.15, reverse: false })
-Class.multitool6 = {
+Class.multitool1 = {
+  PARENT: "genericTank",
+  LABEL: "Multitool",
+  DANGER: 7,
+  GUNS: [ {
+      POSITION: [23, 8, 1, 0, 0, 0, 0],
+    }, {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    }, ], };
+Class.multitool2 = {
+  PARENT: "genericTank",
+  LABEL: "Multitool",
+  DANGER: 7,
+  GUNS: [ {
+      POSITION: [22, 8, 1, 0, 0, 0, 0],
+    }, {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    }, ], };
+Class.multitool3 = {
+  PARENT: "genericTank",
+  LABEL: "Multitool",
+  DANGER: 7,
+  GUNS: [ {
+      POSITION: [21, 8, 1, 0, 0, 0, 0],
+    }, {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    }, ], };
+Class.multitool2 = {
+  PARENT: "genericTank",
+  LABEL: "Multitool",
+  DANGER: 7,
+  GUNS: [ {
+      POSITION: [20, 8, 1, 0, 0, 0, 0],
+    }, {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    }, ], };
+Class.multitool5 = makeMorpher({
     PARENT: "genericTank",
-    LABEL: "Single",
     DANGER: 7,
     GUNS: [
         {
@@ -3997,7 +4032,9 @@ Class.multitool6 = {
             POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
         }
     ]
-}
+}, "Multitool", "multitool", { frames: 5, time: 0.15, reverse: true })
+
+
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
     Class.basic.UPGRADES_TIER_2 = ["smasher"]
