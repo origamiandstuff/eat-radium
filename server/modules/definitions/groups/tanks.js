@@ -2,6 +2,7 @@ const { combineStats, makeAuto, makeOver, makeDeco, makeGuard, makeBird, makeRad
 const { base, statnames, dfltskl, smshskl } = require('../constants.js');
 require('./generics.js');
 const g = require('../gunvals.js');
+//Ty @wait_what_glitch
 
 const wTimer = (execute, duration) => {
     let timer = setInterval(() => execute(), 31.25);
@@ -4417,76 +4418,7 @@ Class.navyist = {
       }
     ]
 }
-/*
-Class.multitool0 = makeMorpher({
-    PARENT: "genericTank",
-    DANGER: 7,
-    GUNS: [
-          {
-      POSITION: [24, 8, 1, 0, 0, 0, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.single, g.sniper]),
-        TYPE: "bullet",
-      },
-    },
-    {
-      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
-    },
-    ]
-}, "Multitool", "multitool", { frames: 5, time: 0.15, reverse: false })
-Class.multitool1 = {
-  PARENT: "genericTank",
-  LABEL: "Multitool",
-  DANGER: 7,
-  GUNS: [ {
-      POSITION: [23, 8, 1, 0, 0, 0, 0],
-    }, {
-      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
-    }, ], };
-Class.multitool2 = {
-  PARENT: "genericTank",
-  LABEL: "Multitool",
-  DANGER: 7,
-  GUNS: [ {
-      POSITION: [22, 8, 1, 0, 0, 0, 0],
-    }, {
-      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
-    }, ], };
-Class.multitool3 = {
-  PARENT: "genericTank",
-  LABEL: "Multitool",
-  DANGER: 7,
-  GUNS: [ {
-      POSITION: [21, 8, 1, 0, 0, 0, 0],
-    }, {
-      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
-    }, ], };
-Class.multitool4 = {
-  PARENT: "genericTank",
-  LABEL: "Multitool",
-  DANGER: 7,
-  GUNS: [ {
-      POSITION: [20, 8, 1, 0, 0, 0, 0],
-    }, {
-      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
-    }, ], };
-Class.multitool5 = makeMorpher({
-    PARENT: "genericTank",
-    DANGER: 7,
-    GUNS: [
-        {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "bullet"
-            }
-        },
-        {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
-        }
-    ]
-}, "Multitool", "multitool", { frames: 5, time: 0.15, reverse: true })
-*/
+// WOOMY TYPE TANKS EXPECT GRADUAL INSANITY
 Class.multitool0 = {
     PARENT: "genericTank",
     LABEL: "Multitool",
@@ -4788,11 +4720,24 @@ Class.carnivore6 = {
         }}
     ]
 }
-
+// insanity ensues
+Class.corrosiveBullet = {
+    PARENT: 'bullet',
+    ON: [
+        {
+            event: "collide",
+            handler: ({ instance, other }) => {
+                if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
+                    vulnerable(other, 2,3) // people take more damage
+                }
+            }
+        },
+     ],
+}
 
 
 // Upgrade Paths
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "unnamedTank0022"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
     Class.basic.UPGRADES_TIER_2 = ["smasher"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
