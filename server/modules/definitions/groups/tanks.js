@@ -4174,6 +4174,8 @@ Class.carnivore0 = {
     TOOLTIP: "Alt fire to morph",
     DANGER: 7,
     CONTROLLERS: [],
+    UPGRADES_TIER_0: [],
+    RESET_UPGRADE_MENU: true,
     BODY: {
         SPEED: base.SPEED * 0.9,
         FOV: base.FOV * 1.8
@@ -4340,7 +4342,7 @@ Class.carnivore6 = {
 
 
 // Upgrade Paths
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "carnivore0"]
     Class.basic.UPGRADES_TIER_2 = ["smasher"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
