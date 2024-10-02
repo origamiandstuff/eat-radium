@@ -315,18 +315,18 @@ const frostbite = (them, multiplier, duration) => {
         }, 3 * duration);
     }
 };
-const glue = (them, multiplier, duration) => {
+const freeze = (them, multiplier, duration) => {
     if (!them) return
-    if (!them.invuln && !them.passive && !them.godmode && !them.glue) {
-        them.glue = true
+    if (!them.invuln && !them.passive && !them.godmode && !them.freeze) {
+        them.freeze = true
         them.store.$savedSpeed = them.SPEED;
         setTimeout(() => {
-            them.glue = false;
+            them.freeze = false;
             them.SPEED = them.store.$savedSpeed;
             them.store.$savedSpeed = null
         }, 2 * duration * 1000);
         wTimer(() => {
-            if (them.glue) {
+            if (them.freeze) {
                 them.SPEED = them.store.$savedSpeed / multiplier
             }
         }, 2 * duration);
@@ -433,7 +433,7 @@ Class.executorBullet = {
                     curse(other,2) // permanent debuff to body stats damage, penetration and hetero
                     emp(other,3) // disables shield and shield regen
                     fatigued(other,3) // disables all regen
-                    glue(other,2,3) // lowers max speed
+                    freeze(other,2,3) // lowers max speed
                     ice(other,2,3) // lowers acceleration
                     blind(other,2,3) // lowers fov
                     suffocation(other,2,3) // does 0.0025% of a players max health damage per tick.
@@ -4927,10 +4927,10 @@ Class.freezeBullet = {
             event: "collide",
             handler: ({ instance, other }) => {
                 if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
-                    glue(other, 2, 3) // DOT effect eheheheheheheheheheheheehehehehe
-                }
+                    freeze(other, 2, 3)
             }
         },
+        }
      ],
      TURRETS: [{
          POSITION: [9, 0, 0, 0, 360, 1],
@@ -5019,6 +5019,25 @@ Class.massacre = {
         }
     ]
 }
+Class.snowstorm = {
+    PARENT: "genericTank",
+    LABEL: "Snowstorm",
+    GUNS: weaponArray([
+        {
+          POSITION: [20, 8, 1, 0, 0, 0, 0],
+          PROPERTIES: {
+              TYPE: "freezeBullet", 
+              SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.flankGuard]),
+          }
+        }, 
+        {
+          POSITION: [15, 6, 1, 0, 0, 0, 0],
+          PROPERTIES: {
+                COLOR: "teal",
+          }
+        }
+    ], 6)
+}
 
 
 
@@ -5049,7 +5068,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper"]
         Class.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"]
-        Class.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper"]
+        Class.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "snowstorm"]
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
             Class.booster.UPGRADES_TIER_3 = ["massacre"]
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"]

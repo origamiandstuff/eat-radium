@@ -1329,3 +1329,14 @@ odin.addLayer({turret: {
     POSITION: [8, 9, 0, null, 160, 0],
     TYPE: "gunnerCruiserTurret",
 }}, true, 4.5);
+
+// Zeus
+let zeus = new LayeredBoss(null, "Zeus", "terrestrial", 7, "#fffc5", "coilGunButTurret", 7, 5.5);
+zeus.addLayer({turret: {
+    POSITION: [8.5, 9, 0, null, 180, 0],
+    TYPE: "snowstormButTurret",
+}});
+zeus.addLayer({turret: {
+    POSITION: [10, 8.5, 0, null, 160, 0],
+    TYPE: ["railGunButTurret", { INDEPENDENT: true }],
+}}, true, 6.5);
