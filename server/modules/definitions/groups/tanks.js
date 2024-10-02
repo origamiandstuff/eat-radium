@@ -401,17 +401,14 @@ const stackingDOT = (them, stacks) => {
     if (!them) return
     if (!them.invuln && !them.passive && !them.godmode) {
         them.DOT_stacks = them.DOT_stacks + 1
-        if (them.DOT_stacks > maxStacks) {
-          them.DOT_stacks = maxStacks
-        }
         setTimeout(() => {
             them.DOT_stacks = them.DOT_stacks - 1;
-        }, 2 * 1000);
+        }, 2500);
         wTimer(() => {
             if (them.DOT_stacks > 0) {
-                for (let i = 1; i = them.DOT_stacks; i++){
-                  them.health.amount = them.health.amount - 11;
-            } }
+                them.totalDamage = base.TOXICDAMAGE * them.DOT_stacks
+                  them.health.amount = them.health.amount - them.totalDamage;
+            }
         }, 6);
     }
 };
@@ -4854,7 +4851,7 @@ Class.DOTStackBullet = {
             event: "collide",
             handler: ({ instance, other }) => {
                 if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
-                    stackingDOT(other, 1) // DOT effect eheheheheheheheheheheheehehehehe
+                    stackingDOT(other, 2) // DOT effect eheheheheheheheheheheheehehehehe
                 }
             }
         },
@@ -4898,31 +4895,27 @@ Class.pgunner = {
             }
         },
       {
-            POSITION: [8, 2, 1, 0, 7.25, 0, 0.5],
+            POSITION: [10, 1.5, 1, 0, 7.25, 0, 0.5],
             PROPERTIES: {
                 COLOR: "#00ff00",
-	              BORDERLESS: true,
             }
         },
         {
-            POSITION: [8, 2, 1, 0, -7.25, 0, 0.75],
+            POSITION: [10, 1.5, 1, 0, -7.25, 0, 0.75],
             PROPERTIES: {
                 COLOR: "#00ff00",
-	              BORDERLESS: true,
             }
         },
         {
-            POSITION: [12, 2, 1, 0, 3.75, 0, 0],
+            POSITION: [14, 1.5, 1, 0, 3.75, 0, 0],
             PROPERTIES: {
                 COLOR: "#00ff00",
-	              BORDERLESS: true,
             }
         },
         {
-            POSITION: [12, 2, 1, 0, -3.75, 0, 0.25],
+            POSITION: [14, 1.5, 1, 0, -3.75, 0, 0.25],
             PROPERTIES: {
                 COLOR: "#00ff00",
-	              BORDERLESS: true,
             }
         }
     ]

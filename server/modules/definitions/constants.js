@@ -87,5 +87,6 @@ module.exports = {
 	    REGEN: 0.025,
 	    FOV: 1.02,
 	    DENSITY: 0.5,
+      TOXICDAMAGE: 0.06,
 	}
 };
