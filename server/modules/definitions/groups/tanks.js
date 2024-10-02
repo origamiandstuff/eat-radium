@@ -4920,21 +4920,21 @@ Class.pgunner = {
         }
     ]
 }
-Class.Bullet = {
+Class.freezeBullet = {
     PARENT: 'bullet',
     ON: [
         {
             event: "collide",
             handler: ({ instance, other }) => {
                 if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
-                    toxic(other, 0.2, 3) // DOT effect eheheheheheheheheheheheehehehehe
+                    glue(other, 2, 3) // DOT effect eheheheheheheheheheheheehehehehe
                 }
             }
         },
      ],
      TURRETS: [{
          POSITION: [9, 0, 0, 0, 360, 1],
-         TYPE: "toxicProp"
+         TYPE: "freezeProp"
      }]
 }
 Class.massacre = {
@@ -4951,7 +4951,7 @@ Class.massacre = {
             POSITION: [18, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.triAngleFront, { recoil: 4 }]),
-                TYPE: "toxicBullet",
+                TYPE: "freezeBullet",
                 LABEL: "Front"
             }
         },
@@ -4959,7 +4959,7 @@ Class.massacre = {
             POSITION: [14, 8, 1, 0, -1, 140, 0.6],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
-                TYPE: "bullet",
+                TYPE: "toxicBullet",
                 LABEL: "thruster"
             }
         },
@@ -4967,7 +4967,7 @@ Class.massacre = {
             POSITION: [14, 8, 1, 0, 1, -140, 0.6],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
-                TYPE: "bullet",
+                TYPE: "toxicBullet",
                 LABEL: "thruster"
             }
         },
@@ -4975,7 +4975,7 @@ Class.massacre = {
             POSITION: [16, 8, 1, 0, 0, 150, 0.1],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
-                TYPE: "bullet",
+                TYPE: "toxicBullet",
                 LABEL: "thruster"
             }
         },
@@ -4983,8 +4983,38 @@ Class.massacre = {
             POSITION: [16, 8, 1, 0, 0, -150, 0.1],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
-                TYPE: "bullet",
+                TYPE: "toxicBullet",
                 LABEL: "thruster"
+            }
+        },
+      {
+            POSITION: [15, 6, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: "teal",
+            }
+        },
+        {
+            POSITION: [11, 6, 1, 0, -1, 140, 0.6],
+            PROPERTIES: {
+                COLOR: "#00ff00",
+            }
+        },
+        {
+            POSITION: [11, 6, 1, 0, 1, -140, 0.6],
+            PROPERTIES: {
+                COLOR: "#00ff00",
+            }
+        },
+        {
+            POSITION: [13, 6, 1, 0, 0, 150, 0.1],
+            PROPERTIES: {
+                COLOR: "#00ff00",
+            }
+        },
+        {
+            POSITION: [13, 6, 1, 0, 0, -150, 0.1],
+            PROPERTIES: {
+                COLOR: "#00ff00",
             }
         }
     ]
@@ -5021,6 +5051,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"]
         Class.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper"]
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
+            Class.booster.UPGRADES_TIER_3 = ["massacre"]
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"]
 
     Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "lightning", "doper"]
