@@ -4844,14 +4844,14 @@ Class.doper = {
          }, }
     ]
 }
-Class.DOTStackBullet = {
+Class.toxicBullet = {
     PARENT: 'bullet',
     ON: [
         {
             event: "collide",
             handler: ({ instance, other }) => {
                 if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
-                    stackingDOT(other, 2) // DOT effect eheheheheheheheheheheheehehehehe
+                    toxic(other, 0.2, 3) // DOT effect eheheheheheheheheheheheehehehehe
                 }
             }
         },
@@ -4870,28 +4870,28 @@ Class.pgunner = {
             POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
-                TYPE: "DOTStackBullet"
+                TYPE: "toxicBullet"
             }
         },
         {
             POSITION: [12, 3.5, 1, 0, -7.25, 0, 0.75],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
-                TYPE: "DOTStackBullet"
+                TYPE: "toxicBullet"
             }
         },
         {
             POSITION: [16, 3.5, 1, 0, 3.75, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
-                TYPE: "DOTStackBullet"
+                TYPE: "toxicBullet"
             }
         },
         {
             POSITION: [16, 3.5, 1, 0, -3.75, 0, 0.25],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
-                TYPE: "DOTStackBullet"
+                TYPE: "toxicBullet"
             }
         },
       {
