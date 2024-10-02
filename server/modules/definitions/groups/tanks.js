@@ -4972,6 +4972,18 @@ Class.massacre = {
             }
         },
         {
+            POSITION: [12, 5, 1, 0, -1, 140, 0.6],
+            PROPERTIES: {
+                COLOR: "#00ff00",
+            }
+        },
+        {
+            POSITION: [12, 5, 1, 0, 1, -140, 0.6],
+            PROPERTIES: {
+                COLOR: "#00ff00",
+            }
+        },
+        {
             POSITION: [16, 8, 1, 0, 0, 150, 0.1],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
@@ -4987,32 +4999,20 @@ Class.massacre = {
                 LABEL: "thruster"
             }
         },
-      {
-            POSITION: [15, 6, 1, 0, 0, 0, 0],
+        {
+            POSITION: [16, 5, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 COLOR: "teal",
             }
         },
         {
-            POSITION: [11, 6, 1, 0, -1, 140, 0.6],
+            POSITION: [14, 5, 1, 0, 0, 150, 0.1],
             PROPERTIES: {
                 COLOR: "#00ff00",
             }
         },
         {
-            POSITION: [11, 6, 1, 0, 1, -140, 0.6],
-            PROPERTIES: {
-                COLOR: "#00ff00",
-            }
-        },
-        {
-            POSITION: [13, 6, 1, 0, 0, 150, 0.1],
-            PROPERTIES: {
-                COLOR: "#00ff00",
-            }
-        },
-        {
-            POSITION: [13, 6, 1, 0, 0, -150, 0.1],
+            POSITION: [14, 5, 1, 0, 0, -150, 0.1],
             PROPERTIES: {
                 COLOR: "#00ff00",
             }
