@@ -96,6 +96,21 @@ const useOldPhotosphere = false;
 // For hexnought merging
 const hexnoughtScaleFactor = 0.9;
 
+// Spinny bois
+Class.spinnyFlankBoi = {
+    PARENT: "genericTank",
+    COLOR: "egg",
+    FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
+    GUNS: weaponArray([
+        {
+            POSITION: [13, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.9}]),
+                TYPE: "bullet"
+            }
+        },
+    ], 2)
+}
 // Misc
 Class.genericDreadnoughtOfficialV2 = {
 	PARENT: "genericTank",
@@ -378,6 +393,22 @@ Class.juggernautOfficialV2 = {
 			TYPE: ['egg', {COLOR: 9}]
 		},
 	],
+}
+Class.coverOfficialV2 = {
+	PARENT: "genericEggnought",
+	LABEL: "Cover",
+	TURRETS: [
+		{
+			POSITION: [9, 0, 0, 0, 360, 2],
+			TYPE: 'spinnyFlankBoi',
+		}
+	],
+	PROPS: [
+		{
+			POSITION: [15, 0, 0, 0, 1],
+			TYPE: 'egg',
+		}
+	]
 }
 
 // T2 Weapons
