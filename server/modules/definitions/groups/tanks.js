@@ -4920,6 +4920,75 @@ Class.pgunner = {
         }
     ]
 }
+Class.Bullet = {
+    PARENT: 'bullet',
+    ON: [
+        {
+            event: "collide",
+            handler: ({ instance, other }) => {
+                if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
+                    toxic(other, 0.2, 3) // DOT effect eheheheheheheheheheheheehehehehe
+                }
+            }
+        },
+     ],
+     TURRETS: [{
+         POSITION: [9, 0, 0, 0, 360, 1],
+         TYPE: "toxicProp"
+     }]
+}
+Class.massacre = {
+    PARENT: "genericTank",
+    LABEL: "Massacre",
+    BODY: {
+        HEALTH: base.HEALTH * 0.4,
+        SHIELD: base.SHIELD * 0.4,
+        DENSITY: base.DENSITY * 0.3
+    },
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.triAngleFront, { recoil: 4 }]),
+                TYPE: "toxicBullet",
+                LABEL: "Front"
+            }
+        },
+        {
+            POSITION: [14, 8, 1, 0, -1, 140, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "thruster"
+            }
+        },
+        {
+            POSITION: [14, 8, 1, 0, 1, -140, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "thruster"
+            }
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, 150, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "thruster"
+            }
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, -150, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "thruster"
+            }
+        }
+    ]
+}
 
 
 
