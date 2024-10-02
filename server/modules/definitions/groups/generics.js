@@ -360,6 +360,14 @@ Class.healAura = {
         DAMAGE: 0.4 / 3,
     },
 };
+Class.burnAura = {
+    PARENT: "auraBase",
+    LABEL: "Aura",
+    COLOR: "teal",
+    BODY: {
+        DAMAGE: 0.4,
+    },
+};
 Class.auraSymbol = {
     PARENT: "genericTank",
     CONTROLLERS: [["spin", {speed: -0.04}]],
