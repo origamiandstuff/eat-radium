@@ -397,7 +397,7 @@ const toxic = (them, damage, duration) => {
         }, 4 * duration);
     }
 };
-const stackingDOT = (them, damage, duration, maxStacks) => {
+const stackingDOT = (them, stacks) => {
     if (!them) return
     if (!them.invuln && !them.passive && !them.godmode) {
         them.DOT_stacks = them.DOT_stacks + 1
@@ -406,13 +406,13 @@ const stackingDOT = (them, damage, duration, maxStacks) => {
         }
         setTimeout(() => {
             them.DOT_stacks = them.DOT_stacks - 1;
-        }, 2 * duration * 400);
+        }, 2 * 1000);
         wTimer(() => {
             if (them.DOT_stacks > 0) {
                 for (let i = 1; i = them.DOT_stacks; i++){
-                  them.health.amount = them.health.amount - damage;
+                  them.health.amount = them.health.amount - 11;
             } }
-        }, 3.5 * duration);
+        }, 6);
     }
 };
 Class.executorBullet = {
@@ -4854,7 +4854,7 @@ Class.DOTStackBullet = {
             event: "collide",
             handler: ({ instance, other }) => {
                 if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
-                    stackingDOT(other, 0.06, 10, 50) // DOT effect eheheheheheheheheheheheehehehehe
+                    stackingDOT(other, 1) // DOT effect eheheheheheheheheheheheehehehehe
                 }
             }
         },
@@ -4900,25 +4900,29 @@ Class.pgunner = {
       {
             POSITION: [8, 2, 1, 0, 7.25, 0, 0.5],
             PROPERTIES: {
-                COLOR: "#00ff00"
+                COLOR: "#00ff00",
+	              BORDERLESS: true,
             }
         },
         {
             POSITION: [8, 2, 1, 0, -7.25, 0, 0.75],
             PROPERTIES: {
-                COLOR: "#00ff00"
+                COLOR: "#00ff00",
+	              BORDERLESS: true,
             }
         },
         {
             POSITION: [12, 2, 1, 0, 3.75, 0, 0],
             PROPERTIES: {
-                COLOR: "#00ff00"
+                COLOR: "#00ff00",
+	              BORDERLESS: true,
             }
         },
         {
             POSITION: [12, 2, 1, 0, -3.75, 0, 0.25],
             PROPERTIES: {
-                COLOR: "#00ff00"
+                COLOR: "#00ff00",
+	              BORDERLESS: true,
             }
         }
     ]
