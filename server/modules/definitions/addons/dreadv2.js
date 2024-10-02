@@ -145,6 +145,7 @@ Class.spinnyFlankTrapBoi = {
         },
     ], 2)
 }
+
 // Misc
 Class.genericDreadnoughtOfficialV2 = {
 	PARENT: "genericTank",
