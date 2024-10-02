@@ -1349,7 +1349,7 @@ Class.sentryOfficialV2 = {
 		}, 3),
 		{
 			POSITION: [9.5, 0, 0, 0, 360, 2],
-			TYPE: "spinnyQuadFlankBoi",
+			TYPE: "spinnyQuadBoi",
 		},
 	],
 	PROPS: [
@@ -1369,7 +1369,7 @@ Class.baseOfficialV2 = {
 		}, 3),
 		{
 			POSITION: [9.5, 0, 0, 0, 360, 2],
-			TYPE: "spinnyQuadFlankBoi",
+			TYPE: "spinnyQuadBoi",
 		},
 	],
 	PROPS: [
@@ -1382,6 +1382,7 @@ Class.baseOfficialV2 = {
 Class.fortressOfficialV2 = {
 	PARENT: "genericTrinought",
 	LABEL: "Fortress",
+  BODY: hpBuffBodyStats[1],
 	TURRETS: [
 		...weaponArray({
 			POSITION: [3.5, 10.5, 0, 60, 180, 2],
@@ -1389,13 +1390,36 @@ Class.fortressOfficialV2 = {
 		}, 3),
 		{
 			POSITION: [9.5, 0, 0, 0, 360, 2],
-			TYPE: "spinnyQuadFlanBoi",
+			TYPE: "spinnyQuadBoi",
 		},
 	],
 	PROPS: [
 		{
-			POSITION: [13, 0, 0, 180, 1],
+			POSITION: [24, 0, 0, 180, 0],
+			TYPE: ['triangle', {COLOR: 9}]
+		}, {
+			POSITION: [12, 0, 0, 180, 1],
 			TYPE: "triangle"
+		}
+	]
+}
+Class.bastionOfficialV2 = {
+	PARENT: "genericTrinought",
+	LABEL: "Bastion",
+  BODY: hpBuffBodyStats[1],
+	TURRETS: [
+		{
+			POSITION: [9.5, 0, 0, 0, 360, 2],
+			TYPE: "spinnyQuadBoi",
+		},
+	],
+	PROPS: [
+		{
+			POSITION: [12, 0, 0, 180, 1],
+			TYPE: "triangle"
+		}, {
+			POSITION: [20, 0, 0, 0, 0],
+			TYPE: "titanTopOfficialV2"
 		},
 	]
 }
@@ -2184,6 +2208,7 @@ Class.addons.UPGRADES_TIER_0.push("dreadOfficialV2");
 					Class.pegasusOfficialV2.UPGRADES_TIER_0 = makeHexnoughtBodyV2("pegasusOfficialV2");
 
 		Class.coverOfficialV2.UPGRADES_TIER_0 = ["hideoutOfficialV2", "quarterOfficialV2"];
+			Class.hideoutOfficialV2.UPGRADES_TIER_0 = ["sentryOfficialV2", "baseOfficialV2", "fortressOfficialV2", "bastionOfficialV2"];
 
 
 const hexDreadNames = {
