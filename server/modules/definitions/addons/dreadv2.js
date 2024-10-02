@@ -758,6 +758,39 @@ Class.colossusOfficialV2 = {
 		},
 	],
 }
+Class.hideoutOfficialV2 = {
+	PARENT: "genericEggnought",
+	LABEL: "Hideout",
+	TURRETS: [
+		{
+			POSITION: [9, 0, 0, 0, 360, 2],
+			TYPE: 'spinnyQuadBoi',
+		}
+	],
+	PROPS: [
+		{
+			POSITION: [14, 0, 0, 0, 1],
+			TYPE: "square"
+		}
+	]
+}
+Class.quarterOfficialV2 = {
+	PARENT: "genericEggnought",
+	LABEL: "Quarter",
+	TURRETS: [
+		{
+			POSITION: [9, 0, 0, 0, 360, 2],
+			TYPE: 'spinnyFlankTrapBoi',
+		}
+	],
+	PROPS: [
+		{
+			POSITION: [14, 0, 0, 0, 1],
+			TYPE: "square"
+		}
+	]
+}
+
 // T3 Weapons
 Class.bladeOfficialV2 = {
 	PARENT: "genericTrinought",
@@ -2029,7 +2062,7 @@ Class.addons.UPGRADES_TIER_0.push("dreadOfficialV2");
 				Class.beelzebubOfficialV2.UPGRADES_TIER_0 = ["luciferOfficialV2"];
 					Class.luciferOfficialV2.UPGRADES_TIER_0 = [];
 
-	Class.dreadBodyOfficialV2.UPGRADES_TIER_0 = ["byteOfficialV2", "atmosphereOfficialV2", "juggernautOfficialV2"];
+	Class.dreadBodyOfficialV2.UPGRADES_TIER_0 = ["byteOfficialV2", "atmosphereOfficialV2", "juggernautOfficialV2", "coverOfficialV2"];
 
 		Class.byteOfficialV2.UPGRADES_TIER_0 = ["automationOfficialV2", "kilobyteOfficialV2"];
 
@@ -2085,6 +2118,9 @@ Class.addons.UPGRADES_TIER_0.push("dreadOfficialV2");
 					Class.valrayvnOfficialV2.UPGRADES_TIER_0 = makeHexnoughtBodyV2("valrayvnOfficialV2");
 				Class.harpyOfficialV2.UPGRADES_TIER_0 = ["pegasusOfficialV2"];
 					Class.pegasusOfficialV2.UPGRADES_TIER_0 = makeHexnoughtBodyV2("pegasusOfficialV2");
+
+		Class.coverOfficialV2.UPGRADES_TIER_0 = ["hideoutOfficialV2", "quarterOfficialV2"];
+
 
 const hexDreadNames = {
 	Javelin: {
