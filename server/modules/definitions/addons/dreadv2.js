@@ -105,7 +105,8 @@ Class.spinnyFlankBoi = {
         {
             POSITION: [13, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.9, size: 1.2}]),
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.7, size: 1.2, reload: 1.5, speed: 0.4}]),
                 TYPE: "bullet"
             }
         },
@@ -119,7 +120,8 @@ Class.spinnyQuadBoi = {
         {
             POSITION: [13, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.9, size: 1.2}]),
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.7, size: 1.2, reload: 1.5, speed: 0.4}]),
                 TYPE: "bullet"
             }
         },
@@ -136,7 +138,8 @@ Class.spinnyFlankTrapBoi = {
         {
             POSITION: [3, 8, 1.5, 13, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, {range: 0.9, size: 1.2}]),
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.trap, {range: 0.7, size: 1.2, reload: 1.5, speed: 0.4}]),
                 TYPE: "trap"
             }
         },
