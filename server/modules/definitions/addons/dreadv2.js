@@ -1339,6 +1339,66 @@ Class.harpyOfficialV2 = {
 		},
 	],
 }
+Class.sentryOfficialV2 = {
+	PARENT: "genericTrinought",
+	LABEL: "Sentry",
+	TURRETS: [
+		...weaponArray({
+			POSITION: [3.5, 10.5, 0, 60, 180, 2],
+			TYPE: ["spamAutoTurret", {GUN_STAT_SCALE: g.triSecondaryAuto}],
+		}, 3),
+		{
+			POSITION: [9.5, 0, 0, 0, 360, 2],
+			TYPE: "spinnyQuadFlankBoi",
+		},
+	],
+	PROPS: [
+		{
+			POSITION: [13, 0, 0, 180, 1],
+			TYPE: "triangle"
+		},
+	]
+}
+Class.baseOfficialV2 = {
+	PARENT: "genericTrinought",
+	LABEL: "Base",
+	TURRETS: [
+		...weaponArray({
+			POSITION: [3.5, 10.5, 0, 60, 180, 2],
+			TYPE: "trinoughtSmallAura",
+		}, 3),
+		{
+			POSITION: [9.5, 0, 0, 0, 360, 2],
+			TYPE: "spinnyQuadFlankBoi",
+		},
+	],
+	PROPS: [
+		{
+			POSITION: [13, 0, 0, 180, 1],
+			TYPE: "triangle"
+		},
+	]
+}
+Class.fortressOfficialV2 = {
+	PARENT: "genericTrinought",
+	LABEL: "Fortress",
+	TURRETS: [
+		...weaponArray({
+			POSITION: [3.5, 10.5, 0, 60, 180, 2],
+			TYPE: "trinoughtSmallAura",
+		}, 3),
+		{
+			POSITION: [9.5, 0, 0, 0, 360, 2],
+			TYPE: "spinnyQuadFlanBoi",
+		},
+	],
+	PROPS: [
+		{
+			POSITION: [13, 0, 0, 180, 1],
+			TYPE: "triangle"
+		},
+	]
+}
 
 // T4 Weapons
 Class.rapierOfficialV2 = {
