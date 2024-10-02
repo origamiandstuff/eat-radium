@@ -105,8 +105,39 @@ Class.spinnyFlankBoi = {
         {
             POSITION: [13, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.9}]),
+                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.9, size: 1.2}]),
                 TYPE: "bullet"
+            }
+        },
+    ], 2)
+}
+Class.spinnyQuadBoi = {
+    PARENT: "genericTank",
+    COLOR: "square",
+    FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
+    GUNS: weaponArray([
+        {
+            POSITION: [13, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.9, size: 1.2}]),
+                TYPE: "bullet"
+            }
+        },
+    ], 4)
+}
+Class.spinnyFlankTrapBoi = {
+    PARENT: "genericTank",
+    COLOR: "square",
+    FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
+    GUNS: weaponArray([
+        {
+            POSITION: [13, 8, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 8, 1.5, 13, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, {range: 0.9, size: 1.2}]),
+                TYPE: "trap"
             }
         },
     ], 2)
