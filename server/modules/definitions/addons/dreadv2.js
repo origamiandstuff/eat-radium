@@ -106,7 +106,7 @@ Class.spinnyFlankBoi = {
             POSITION: [13, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.7, size: 1.2, reload: 1.5, speed: 0.4}]),
+                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.5, size: 1.2, reload: 1.5, speed: 0.4}]),
                 TYPE: "bullet"
             }
         },
@@ -121,7 +121,7 @@ Class.spinnyQuadBoi = {
             POSITION: [13, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.7, size: 1.2, reload: 1.5, speed: 0.4}]),
+                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.5, size: 1.2, reload: 1.5, speed: 0.4}]),
                 TYPE: "bullet"
             }
         },
@@ -139,11 +139,26 @@ Class.spinnyFlankTrapBoi = {
             POSITION: [3, 8, 1.5, 13, 0, 0, 0],
             PROPERTIES: {
                 AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.trap, {range: 0.7, size: 1.2, reload: 1.5, speed: 0.4}]),
+                SHOOT_SETTINGS: combineStats([g.trap, {range: 0.5, size: 1.2, reload: 1.5, speed: 0.4}]),
                 TYPE: "trap"
             }
         },
     ], 2)
+}
+Class.spinnyTriBoi = {
+    PARENT: "genericTank",
+    COLOR: "triangle",
+    FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
+    GUNS: weaponArray([
+        {
+            POSITION: [13, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.5, size: 1.2, reload: 1.5, speed: 0.4, damage: 1.5, health: 1.5}]),
+                TYPE: "bullet"
+            }
+        },
+    ], 3)
 }
 
 // Misc
@@ -1349,7 +1364,7 @@ Class.sentryOfficialV2 = {
 		}, 3),
 		{
 			POSITION: [9.5, 0, 0, 0, 360, 2],
-			TYPE: "spinnyQuadBoi",
+			TYPE: "spinnyTriBoi",
 		},
 	],
 	PROPS: [
@@ -1369,7 +1384,7 @@ Class.baseOfficialV2 = {
 		}, 3),
 		{
 			POSITION: [9.5, 0, 0, 0, 360, 2],
-			TYPE: "spinnyQuadBoi",
+			TYPE: "spinnyTriBoi",
 		},
 	],
 	PROPS: [
@@ -1384,13 +1399,9 @@ Class.fortressOfficialV2 = {
 	LABEL: "Fortress",
   BODY: hpBuffBodyStats[1],
 	TURRETS: [
-		...weaponArray({
-			POSITION: [3.5, 10.5, 0, 60, 180, 2],
-			TYPE: "trinoughtSmallAura",
-		}, 3),
 		{
 			POSITION: [9.5, 0, 0, 0, 360, 2],
-			TYPE: "spinnyQuadBoi",
+			TYPE: "spinnyTriBoi",
 		},
 	],
 	PROPS: [
@@ -1410,7 +1421,7 @@ Class.bastionOfficialV2 = {
 	TURRETS: [
 		{
 			POSITION: [9.5, 0, 0, 0, 360, 2],
-			TYPE: "spinnyQuadBoi",
+			TYPE: "spinnyTriBoi",
 		},
 	],
 	PROPS: [
