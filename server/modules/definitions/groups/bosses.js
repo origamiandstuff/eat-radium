@@ -1375,9 +1375,9 @@ Class.miscBoss1 = {
         }
       }
     ], 3),
-    TURRETS: [
+    /*TURRETS: [
       ...weaponArray({
         POSITION: [12, 10, 0, 0, 360, 15]
       }, 3)
-    ]
+    ]*/
 }
