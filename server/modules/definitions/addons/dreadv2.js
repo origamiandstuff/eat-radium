@@ -196,6 +196,24 @@ Class.spinnyHexaTrapBoi = {
         },
     ], 6)
 }
+Class.spinnyFlankTrapBoiWeak = {
+    PARENT: "genericTank",
+    COLOR: "triangle",
+    FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
+    GUNS: weaponArray([
+        {
+            POSITION: [13, 8, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 8, 1.5, 13, 0, 0, 0],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.trap, {range: 0.3, size: 1.2, reload: 2, speed: 0.4, health: 0.3}]),
+                TYPE: "trap"
+            }
+        },
+    ], 2)
+}
 
 
 // Misc
@@ -1487,6 +1505,46 @@ Class.defenderOfficialV2 = {
 		},
 	]
 }
+Class.shelterOfficialV2 = {
+	PARENT: "genericTrinought",
+	LABEL: "Shelter",
+	TURRETS: [
+		...weaponArray({
+			POSITION: [3.5, 10.5, 0, 60, 180, 2],
+			TYPE: "trinoughtSmallAura",
+		}, 3),
+		{
+			POSITION: [9.5, 0, 0, 0, 360, 2],
+			TYPE: "spinnyTriTrapBoi",
+		},
+	],
+	PROPS: [
+		{
+			POSITION: [13, 0, 0, 180, 1],
+			TYPE: "triangle"
+		},
+	]
+}
+Class.standoffOfficialV2 = {
+	PARENT: "genericTrinought",
+	LABEL: "Standoff",
+	TURRETS: [
+		...weaponArray({
+			POSITION: [3.5, 11, 0, 60, 360, 2],
+			TYPE: "spinnyFlankTrapBoiWeak",
+		}, 3),
+		{
+			POSITION: [10, 0, 0, 0, 360, 2],
+			TYPE: ["kilobyteTurretOfficialV2", {GUN_STAT_SCALE: g.triKilobyte}],
+		},
+	],
+	PROPS: [
+		{
+			POSITION: [13, 0, 0, 180, 1],
+			TYPE: "triangle"
+		},
+	]
+}
 Class.guardianOfficialV2 = {
 	PARENT: "genericTrinought",
 	LABEL: "Guardian",
@@ -2293,6 +2351,7 @@ Class.addons.UPGRADES_TIER_0.push("dreadOfficialV2");
 
 		Class.coverOfficialV2.UPGRADES_TIER_0 = ["hideoutOfficialV2", "quarterOfficialV2"];
 			Class.hideoutOfficialV2.UPGRADES_TIER_0 = ["sentryOfficialV2", "baseOfficialV2", "fortressOfficialV2", "bastionOfficialV2"];
+      Class.quarterOfficialV2.UPGRADES_TIER_0 = ["defenderOfficialV2", "shelterOfficialV2", "standoffOfficialV2", "guardianOfficialV2"];
 
 
 const hexDreadNames = {
