@@ -160,6 +160,43 @@ Class.spinnyTriBoi = {
         },
     ], 3)
 }
+Class.spinnyTriTrapBoi = {
+    PARENT: "genericTank",
+    COLOR: "triangle",
+    FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
+    GUNS: weaponArray([
+        {
+            POSITION: [13, 8, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 8, 1.5, 13, 0, 0, 0],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.trap, {range: 0.5, size: 1.2, reload: 1.5, speed: 0.4}]),
+                TYPE: "trap"
+            }
+        },
+    ], 3)
+}
+Class.spinnyHexaTrapBoi = {
+    PARENT: "genericTank",
+    COLOR: "triangle",
+    FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
+    GUNS: weaponArray([
+        {
+            POSITION: [13, 8, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 8, 1.5, 13, 0, 0, 0],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.trap, {range: 0.5, size: 1.2, reload: 1.5, speed: 0.4}]),
+                TYPE: "trap"
+            }
+        },
+    ], 6)
+}
+
 
 // Misc
 Class.genericDreadnoughtOfficialV2 = {
@@ -1417,7 +1454,7 @@ Class.fortressOfficialV2 = {
 Class.bastionOfficialV2 = {
 	PARENT: "genericTrinought",
 	LABEL: "Bastion",
-  BODY: hpBuffBodyStats[1],
+  BODY: speedBuffBodyStats[0],
 	TURRETS: [
 		{
 			POSITION: [9.5, 0, 0, 0, 360, 2],
@@ -1432,6 +1469,42 @@ Class.bastionOfficialV2 = {
 			POSITION: [20, 0, 0, 0, 0],
 			TYPE: "titanTopOfficialV2"
 		},
+	]
+}
+Class.defenderOfficialV2 = {
+	PARENT: "genericTrinought",
+	LABEL: "Defender",
+	TURRETS: [
+		{
+			POSITION: [9.5, 0, 0, 0, 360, 2],
+			TYPE: "spinnyHexaTrapBoi",
+		},
+	],
+	PROPS: [
+		{
+			POSITION: [13, 0, 0, 180, 1],
+			TYPE: "triangle"
+		},
+	]
+}
+Class.guardianOfficialV2 = {
+	PARENT: "genericTrinought",
+	LABEL: "Guardian",
+  BODY: hpBuffBodyStats[1],
+	TURRETS: [
+		{
+			POSITION: [9.5, 0, 0, 0, 360, 2],
+			TYPE: "spinnyTriTrapBoi",
+		},
+	],
+	PROPS: [
+		{
+			POSITION: [24, 0, 0, 180, 0],
+			TYPE: ['triangle', {COLOR: 9}]
+		}, {
+			POSITION: [12, 0, 0, 180, 1],
+			TYPE: "triangle"
+		}
 	]
 }
 
