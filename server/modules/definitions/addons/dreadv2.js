@@ -2278,6 +2278,46 @@ Class.bunkerOfficialV2 = {
 		},
 	],
 }
+Class.castleOfficialV2 = {
+	PARENT: "genericPentanought",
+	LABEL: "Castle",
+	BODY: hpBuffBodyStats[2],
+	TURRETS: [
+    {
+			POSITION: [9.5, 0, 0, 0, 360, 2],
+			TYPE: "spinnyPentaBoi",
+		},
+  ],
+	PROPS: [
+		{
+			POSITION: [13, 0, 0, 180, 1],
+			TYPE: "pentagon",
+		}, {
+			POSITION: [24, 0, 0, 180, 0],
+			TYPE: ["pentagon", {COLOR: 9}],
+		},
+	],
+}
+Class.dungeonOfficialV2 = {
+	PARENT: "genericPentanought",
+	LABEL: "Dungeon",
+	BODY: speedBuffBodyStats[1],
+	TURRETS: [
+    {
+			POSITION: [9.5, 0, 0, 0, 360, 2],
+			TYPE: "spinnyPentaBoi",
+		},
+  ],
+	PROPS: [
+		{
+			POSITION: [12, 0, 0, 180, 1],
+			TYPE: "pentagon"
+		}, {
+			POSITION: [20, 0, 0, 0, 0],
+			TYPE: "pentagonLeviathanBottomOfficialV2"
+		},
+	],
+}
 
 // Generate split upgrades buffer upgrades
 const firstTier = ['sword', 'pacifier', 'peacekeeper', 'invader', 'centaur'];
