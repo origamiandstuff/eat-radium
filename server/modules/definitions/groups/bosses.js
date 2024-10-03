@@ -1342,9 +1342,9 @@ zeus.addLayer({turret: {
 }}, true, 6.5);
 
 // Burnout
-Class.burnout = {
+Class.miscBoss1 = {
     PARENT: "miniboss",
-    LABE: "Burnout",
+    LABE: "Misc Boss 1",
     COLOR: "red",
     UPGRADE_COLOR: "red",
     SHAPE: 6,
@@ -1360,7 +1360,19 @@ Class.burnout = {
     },
     GUNS: weaponArray([
       {
-        POSITION: 
+        POSITION: [15, 9, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+            TYPE: "bullet"
+        }
+      },
+      {
+        POSITION: [15, 9, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            MAX_CHILDREN: 2,
+            SHOOT_SETTINGS: combineStats([g.drone, g.overseer]),
+            TYPE: "drone"
+        }
       }
     ], 3)
 }
