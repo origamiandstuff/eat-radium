@@ -223,13 +223,30 @@ Class.spinnyPentaBoi = {
             POSITION: [13, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.5, size: 1.2, reload: 1.5, speed: 0.4}]),
+                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.5, size: 1.2, reload: 1.2, speed: 0.4, damage: 1.2, health: 1.2}]),
                 TYPE: "bullet"
+            }
+        },
+    ], 5)
+}
+Class.spinnyDecaTrapBoi = {
+    PARENT: "genericTank",
+    COLOR: "pentagon",
+    FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
+    GUNS: weaponArray([
+        {
+            POSITION: [13, 8, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 8, 1.5, 13, 0, 0, 0],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.trap, {range: 0.5, size: 1.2, reload: 1.5, speed: 0.4}]),
+                TYPE: "trap"
             }
         },
     ], 10)
 }
-
 
 // Misc
 Class.genericDreadnoughtOfficialV2 = {
@@ -2067,17 +2084,7 @@ if (useOldPhotosphere) {
 		}, 5)
 	]
 } else {
-	Class.photosphereOfficialV2.TURRETS = [
-		...weaponArray({
-			POSITION: [4, 8.5, 0, 36, 360, 2],
-			TYPE: "pentanoughtSmallAura",
-		}, 5),
-		{
-			POSITION: [9, 0, 0, 0, 360, 2],
-			TYPE: "pentanoughtBigAura",
-		},
-	]
-}
+
 Class.stratosphereOfficialV2 = {
 	PARENT: "genericPentanought",
 	LABEL: "Stratosphere",
@@ -2230,6 +2237,17 @@ Class.pegasusOfficialV2 = {
 			TYPE: "pentagonLeviathanBottomOfficialV2"
 		},
 	],
+}
+Class.headquarterOfficialV2.TURRETS = [
+		...weaponArray({
+			POSITION: [4, 8.5, 0, 36, 360, 2],
+			TYPE: ["spamAutoTurret", {GUN_STAT_SCALE: g.triSecondaryAuto}],
+		}, 5),
+		{
+			POSITION: [9, 0, 0, 0, 360, 2],
+			TYPE: "pentanoughtBigAura",
+		},
+	]
 }
 
 // Generate split upgrades buffer upgrades
