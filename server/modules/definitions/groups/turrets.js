@@ -827,4 +827,5 @@ Class.freezeProp = makeDeco(0, "teal")
 Class.coilGunButTurret = makeTurret("coilgun", {canRepel: true, limitFov: true, fov: 10, independent: true, extraStats: []})
 Class.railGunButTurret = makeTurret("railgun", {canRepel: true, limitFov: true, fov: 10, independent: true, extraStats: []})
 Class.snowstormButTurret = makeTurret("snowstorm", {canRepel: true, limitFov: true, fov: 10, independent: true, extraStats: []})
+Class.anniButTurret = makeTurret("annihilator", {canRepel: true, limitFov: true, fov: 10, independent: true, extraStats: []})
 

@@ -1341,7 +1341,7 @@ zeus.addLayer({turret: {
     TYPE: ["railGunButTurret", { INDEPENDENT: true }],
 }}, true, 6.5);
 
-// Burnout
+// misc
 Class.miscBoss1 = {
     PARENT: "miniboss",
     LABEL: "Misc Boss 1",
@@ -1394,6 +1394,9 @@ Class.miscBoss1 = {
       ...weaponArray({
         POSITION: [4, 8, 0, 60, 360, 15],
         TYPE: "autoTurret"
-      }, 3)
+      }, 3), {
+        POSITION: [6, 0, 0, 0, 360, 15],
+        TYPE: "anniButTurret"
+      }
     ]
 }
