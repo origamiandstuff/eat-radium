@@ -824,8 +824,26 @@ Class.corrosionProp = makeDeco(0, "magenta")
 Class.toxicProp = makeDeco(0, "#00ff00")
 Class.freezeProp = makeDeco(0, "teal")
 //eheheheheehehueheheheheheheheheheheheheh
-Class.coilGunButTurret = makeTurret("coilgun", {canRepel: true, limitFov: true, fov: 10, independent: true, extraStats: []})
-Class.railGunButTurret = makeTurret("railgun", {canRepel: true, limitFov: true, fov: 10, independent: true, extraStats: []})
-Class.snowstormButTurret = makeTurret("snowstorm", {canRepel: true, limitFov: true, fov: 10, independent: true, extraStats: []})
+Class.coilGunButTurret = makeTurret("coilgun", {canRepel: true, limitFov: true, fov: 15, independent: true, extraStats: []})
+Class.railGunButTurret = makeTurret("railgun", {canRepel: true, limitFov: true, fov: 20, independent: true, extraStats: []})
+Class.snowstormButTurret = makeTurret({
+    PARENT: "genericTank",
+    LABEL: "Snowstorm",
+    GUNS: weaponArray([
+        {
+          POSITION: [20, 8, 1, 0, 0, 0, 0],
+          PROPERTIES: {
+              TYPE: "freezeBullet", 
+              SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.flankGuard, g.lessReload, {range:0.65}]),
+          }
+        }, 
+        {
+          POSITION: [15, 6, 1, 0, 0, 0, 0],
+          PROPERTIES: {
+                COLOR: "teal",
+          }
+        }
+    ], 6)
+}, {canRepel: true, limitFov: true, fov: 15, independent: true, extraStats: []})
 Class.anniButTurret = makeTurret("annihilator", {canRepel: true, limitFov: true, fov: 10, independent: true, extraStats: []})
 
