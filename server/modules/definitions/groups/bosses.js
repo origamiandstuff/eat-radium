@@ -1344,7 +1344,7 @@ zeus.addLayer({turret: {
 // Burnout
 Class.miscBoss1 = {
     PARENT: "miniboss",
-    LABE: "Misc Boss 1",
+    LABEL: "Misc Boss 1",
     COLOR: "red",
     UPGRADE_COLOR: "red",
     SHAPE: 6,
@@ -1375,16 +1375,18 @@ Class.miscBoss1 = {
         }
       },
       {
-        POSITION: [15, 9, 1, 0, 0, 60, 0],
+        POSITION: [15, 8, 1, 0, 0, 60, 0],
       },
       {
-        POSITION: [12, 9, 1, 0, 0, 0, 0],
+        POSITION: [12, 9, 1, 0, 0, 60, 0],
       },
       {
-        POSITION: [15, 9, 1, 0, 0, 0, 0],
+        POSITION: [2, 9, 1.3, 14, 0, 60, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.trap, g.]),
-            TYPE: "pillbox"
+            SHOOT_SETTINGS: combineStats([g.trap, g.pounder, g.pounder, {reload: 1.5, speed: 4, size: 1.3}]),
+            MAX_CHILDREN: 2,
+            DESTROY_OLDEST_CHILD: true,
+            TYPE: "unsetPillbox"
         }
       },
     ], 3),
