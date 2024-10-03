@@ -214,7 +214,7 @@ Class.spinnyFlankTrapBoiWeak = {
         },
     ], 2)
 }
-Class.spinnyPentaBoi = {
+/*Class.spinnyPentaBoi = {
     PARENT: "genericTank",
     COLOR: "pentagon",
     FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
@@ -246,7 +246,7 @@ Class.spinnyDecaTrapBoi = {
             }
         },
     ], 10)
-}
+}*/
 
 // Misc
 Class.genericDreadnoughtOfficialV2 = {
