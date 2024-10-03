@@ -2238,7 +2238,7 @@ Class.pegasusOfficialV2 = {
 		},
 	],
 }
-Class.headquarterOfficialV2 = {
+/*Class.headquarterOfficialV2 = {
 	PARENT: "genericPentanought",
 	LABEL: "Headquarter",
   TURRETS: [
@@ -2317,7 +2317,7 @@ Class.dungeonOfficialV2 = {
 			TYPE: "pentagonLeviathanBottomOfficialV2"
 		},
 	],
-}
+}*/
 
 // Generate split upgrades buffer upgrades
 const firstTier = ['sword', 'pacifier', 'peacekeeper', 'invader', 'centaur'];
@@ -2453,6 +2453,10 @@ Class.addons.UPGRADES_TIER_0.push("dreadOfficialV2");
 
 		Class.coverOfficialV2.UPGRADES_TIER_0 = ["hideoutOfficialV2", "quarterOfficialV2"];
 			Class.hideoutOfficialV2.UPGRADES_TIER_0 = ["sentryOfficialV2", "baseOfficialV2", "fortressOfficialV2", "bastionOfficialV2"];
+	    	/*Class.sentryOfficialV2.UPGRADES_TIER_0 = ["headquarterOfficialV2"];
+  	    Class.baseOfficialV2.UPGRADES_TIER_0 = ["bunkerOfficialV2"];
+      	Class.fortressOfficialV2.UPGRADES_TIER_0 = ["castleOfficialV2"];
+  	    Class.bastionOfficialV2.UPGRADES_TIER_0 = ["dungeonOfficialV2"];*/
       Class.quarterOfficialV2.UPGRADES_TIER_0 = ["defenderOfficialV2", "shelterOfficialV2", "standoffOfficialV2", "guardianOfficialV2"];
 
 
