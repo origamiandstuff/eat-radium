@@ -1367,17 +1367,31 @@ Class.miscBoss1 = {
         }
       },
       {
-        POSITION: [15, 9, 1, 0, 0, 0, 0],
+        POSITION: [5, 9, 1.5, 8, 0, 0, 0.25],
         PROPERTIES: {
             MAX_CHILDREN: 6,
             SHOOT_SETTINGS: combineStats([g.drone, g.overseer]),
             TYPE: "drone"
         }
-      }
+      },
+      {
+        POSITION: [15, 9, 1, 0, 0, 60, 0],
+      },
+      {
+        POSITION: [12, 9, 1, 0, 0, 0, 0],
+      },
+      {
+        POSITION: [15, 9, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.]),
+            TYPE: "pillbox"
+        }
+      },
     ], 3),
-    /*TURRETS: [
+    TURRETS: [
       ...weaponArray({
-        POSITION: [12, 10, 0, 0, 360, 15]
+        POSITION: [4, 8, 0, 60, 360, 15],
+        TYPE: "autoTurret"
       }, 3)
-    ]*/
+    ]
 }
