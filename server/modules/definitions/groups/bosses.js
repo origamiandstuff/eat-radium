@@ -1340,3 +1340,8 @@ zeus.addLayer({turret: {
     POSITION: [10, 8.5, 0, null, 160, 0],
     TYPE: ["railGunButTurret", { INDEPENDENT: true }],
 }}, true, 6.5);
+
+// Burnout
+Class.burnout = {
+    PARENT: "miniboss"
+}
