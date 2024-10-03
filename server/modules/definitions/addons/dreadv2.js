@@ -2238,16 +2238,45 @@ Class.pegasusOfficialV2 = {
 		},
 	],
 }
-Class.headquarterOfficialV2.TURRETS = [
+Class.headquarterOfficialV2 = {
+	PARENT: "genericPentanought",
+	LABEL: "Headquarter",
+  TURRETS: [
 		...weaponArray({
-			POSITION: [4, 8.5, 0, 36, 360, 2],
+			POSITION: [3, 4, 0, 0, 360, 2],
 			TYPE: ["spamAutoTurret", {GUN_STAT_SCALE: g.triSecondaryAuto}],
 		}, 5),
 		{
 			POSITION: [9, 0, 0, 0, 360, 2],
-			TYPE: "pentanoughtBigAura",
+			TYPE: "spinnyPentaBoi",
 		},
-	]
+	],
+	PROPS: [
+		{
+			POSITION: [12, 0, 0, 180, 1],
+			TYPE: "pentagon",
+		},
+	],
+}
+Class.bunkerOfficialV2 = {
+	PARENT: "genericPentanought",
+	LABEL: "Bunker",
+  TURRETS: [
+		...weaponArray({
+			POSITION: [3, 4, 0, 0, 360, 2],
+			TYPE: "photosphereSmallAuraOfficialV2",
+		}, 5),
+		{
+			POSITION: [9, 0, 0, 0, 360, 2],
+			TYPE: "spinnyPentaBoi",
+		},
+	],
+	PROPS: [
+		{
+			POSITION: [12, 0, 0, 180, 1],
+			TYPE: "pentagon",
+		},
+	],
 }
 
 // Generate split upgrades buffer upgrades
