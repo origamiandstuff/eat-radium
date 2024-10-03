@@ -1343,5 +1343,24 @@ zeus.addLayer({turret: {
 
 // Burnout
 Class.burnout = {
-    PARENT: "miniboss"
+    PARENT: "miniboss",
+    LABE: "Burnout",
+    COLOR: "red",
+    UPGRADE_COLOR: "red",
+    SHAPE: 6,
+    SIZE: 30,
+    VALUE: 5e5,
+    CONTROLLERS: ['nearestDifferentMaster', 'onlyAcceptInArc'],
+    BODY: {
+        FOV: 1.4,
+        SPEED: 0.05 * base.SPEED,
+        HEALTH: 16 * base.HEALTH,
+        SHIELD: 3 * base.SHIELD,
+        DAMAGE: 3 * base.DAMAGE,
+    },
+    GUNS: weaponArray([
+      {
+        POSITION: 
+      }
+    ], 3)
 }
