@@ -214,6 +214,21 @@ Class.spinnyFlankTrapBoiWeak = {
         },
     ], 2)
 }
+Class.spinnyPentaBoi = {
+    PARENT: "genericTank",
+    COLOR: "pentagon",
+    FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
+    GUNS: weaponArray([
+        {
+            POSITION: [13, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, {range: 0.5, size: 1.2, reload: 1.5, speed: 0.4}]),
+                TYPE: "bullet"
+            }
+        },
+    ], 10)
+}
 
 
 // Misc
