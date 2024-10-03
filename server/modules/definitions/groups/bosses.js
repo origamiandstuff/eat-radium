@@ -1369,10 +1369,15 @@ Class.miscBoss1 = {
       {
         POSITION: [15, 9, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            MAX_CHILDREN: 2,
+            MAX_CHILDREN: 6,
             SHOOT_SETTINGS: combineStats([g.drone, g.overseer]),
             TYPE: "drone"
         }
       }
-    ], 3)
+    ], 3),
+    TURRETS: [
+      ...weaponArray({
+        POSITION: [12, 10, 0, 0, 360, 15]
+      }, 3)
+    ]
 }
