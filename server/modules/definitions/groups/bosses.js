@@ -1418,19 +1418,18 @@ Class.miscBoss2 = {
     },
     GUNS: weaponArray([
       {
-        POSITION: [15, 9, 1, 0, 0, 0, 0],
+        POSITION: [14, 1.5, -1.1, 0, -4.5, 60, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
-            TYPE: "bullet"
-        }
+            SHOOT_SETTINGS: combineStats([g.swarm, g.battleship]),
+            TYPE: "swarm",
+        },
       },
       {
-        POSITION: [5, 9, 1.5, 8, 0, 0, 0.25],
+        POSITION: [14, 1.5, -1.1, 0, 4.5, 60, 0],
         PROPERTIES: {
-            MAX_CHILDREN: 6,
-            SHOOT_SETTINGS: combineStats([g.drone, g.overseer]),
-            TYPE: "drone"
-        }
+            SHOOT_SETTINGS: combineStats([g.swarm, g.battleship]),
+            TYPE: "swarm",
+        },
       },
       {
         POSITION: [15, 8, 1, 0, 0, 60, 0],
@@ -1439,12 +1438,12 @@ Class.miscBoss2 = {
         POSITION: [12, 9, 1, 0, 0, 60, 0],
       },
       {
-        POSITION: [2, 9, 1.3, 14, 0, 60, 0],
+        POSITION: [2, 9, 1, 14, 0, 60, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.factory, g.pounder, g.pounder, {reload: 1.5, speed: 4, size: 1.3}]),
             MAX_CHILDREN: 2,
             DESTROY_OLDEST_CHILD: true,
-            TYPE: "unsetPillbox"
+            TYPE: "minion"
         }
       },
     ], 3),
