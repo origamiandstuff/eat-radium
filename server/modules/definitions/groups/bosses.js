@@ -1457,3 +1457,48 @@ Class.miscBoss2 = {
       }
     ]
 }
+Class.nameThisLtr = {
+  PARENT: "miniboss",
+  LABEL: "Unnamed dude",
+  GUNS: weaponArray([
+      {
+        POSITION: [22, 0, -8, 0, 0, 0, 0],
+        PROPERTIES: {
+            COLOR: "#000000"
+        }
+      },
+      {
+        POSITION: [15, 8, 1, 0, 0, 0, 0],
+      },
+      {
+        POSITION: [12, 9, 1, 0, 0, 0, 0],
+      },
+      {
+        POSITION: [2, 9, 1, 14, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.factory, g.pounder, g.pounder, { reload: 1.5, speed: 1.2, size: 1.3}]),
+            MAX_CHILDREN: 2,
+            TYPE: "minion"
+        }
+      },
+      {
+        POSITION: [20, 8, 1, 18, 0, 60, 0],
+        PROPERTIES: {           
+            SHOOT_SETTINGS: combineStats([g.basic, g.sniper]),
+            TYPE: "bullet"
+        },
+      },
+      {
+        POSITION: [18, 10, 1, 0, 0, 60, 0]
+      },
+      {
+        POSITION: [2, 10, 1.1, 18, 0, 60, 0],
+        PROPERTIES: {           
+            SHOOT_SETTINGS: combineStats([g.pounder, g.builder, g.pounder, { reload: 1.5, speed: 1.2, size: 1.3}]),
+            MAX_CHILDREN: 3,
+            DESTROY_OLDEST_CHILD: true,
+            TYPE: "unsetTrap"
+        },
+      }
+  ], 3),
+}
