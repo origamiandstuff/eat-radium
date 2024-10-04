@@ -1400,3 +1400,60 @@ Class.miscBoss1 = {
       }
     ]
 }
+Class.miscBoss2 = {
+    PARENT: "miniboss",
+    LABEL: "Misc Boss 2",
+    COLOR: "teal",
+    UPGRADE_COLOR: "teal",
+    SHAPE: 6,
+    SIZE: 30,
+    VALUE: 5e5,
+    CONTROLLERS: ['nearestDifferentMaster', 'onlyAcceptInArc'],
+    BODY: {
+        FOV: 1.4,
+        SPEED: 0.05 * base.SPEED,
+        HEALTH: 16 * base.HEALTH,
+        SHIELD: 3 * base.SHIELD,
+        DAMAGE: 3 * base.DAMAGE,
+    },
+    GUNS: weaponArray([
+      {
+        POSITION: [15, 9, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+            TYPE: "bullet"
+        }
+      },
+      {
+        POSITION: [5, 9, 1.5, 8, 0, 0, 0.25],
+        PROPERTIES: {
+            MAX_CHILDREN: 6,
+            SHOOT_SETTINGS: combineStats([g.drone, g.overseer]),
+            TYPE: "drone"
+        }
+      },
+      {
+        POSITION: [15, 8, 1, 0, 0, 60, 0],
+      },
+      {
+        POSITION: [12, 9, 1, 0, 0, 60, 0],
+      },
+      {
+        POSITION: [2, 9, 1, 14, 0, 60, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.factory, g.pounder, g.pounder, {reload: 1.5, speed: 4, size: 1.3}]),
+            MAX_CHILDREN: 1,
+            TYPE: "minion"
+        }
+      },
+    ], 3),
+    TURRETS: [
+      ...weaponArray({
+        POSITION: [4, 8, 0, 60, 360, 15],
+        TYPE: "autoTurret"
+      }, 3), {
+        POSITION: [6, 0, 0, 0, 360, 15],
+        TYPE: "anniButTurret"
+      }
+    ]
+}
