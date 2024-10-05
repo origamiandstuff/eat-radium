@@ -2678,20 +2678,24 @@ Class.flace = {
 
 
 // Amo elites
-const basicEliteBody = {
-	SPEED: base.SPEED * 0.75,
-	HEALTH: base.HEALTH * 2,
-	SHIELD: base.SHIELD * 1.75,
-	REGEN: base.REGEN * 0.7,
-	FOV: base.FOV,
-	RESIST: base.RESIST,
-	DENSITY: base.DENSITY * 3,
-	ACCELERATION: base.ACCEL * 0.8,
-};
 
 Class.agitatorElit1 = {
-    PARENT: "genericElite",
+    PARENT: "genericTank",
+	  SHAPE: 3,
+  	COLOR: 'crasher',
+  	SIZE: 16,
+	  DANGER: 12,
     LABEL: "Agitator",
+    BODY: {
+	      SPEED: base.SPEED * 0.75,
+	      HEALTH: base.HEALTH * 2,
+	      SHIELD: base.SHIELD * 1.75,
+	      REGEN: base.REGEN * 0.7,
+	      FOV: base.FOV,
+	      RESIST: base.RESIST,
+	      DENSITY: base.DENSITY * 3,
+	      ACCELERATION: base.ACCEL * 0.8,
+    },
     GUNS: weaponArray([
         {
             POSITION: [14.5, 6.25, 1, 0, 5, 180, 0],
