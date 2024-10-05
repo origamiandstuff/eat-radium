@@ -782,34 +782,3 @@ Class.whirlet = {
         return output
     })()
 }
-Class.whirlDrone = {
-  PARENT:'drone',
-  HAS_NO_RECOIL: true,
-  CONTROLLERS: ["whirlwind"],
-    TURRETS: [
-        {
-            POSITION: [8, 0, 0, 0, 360, 1],
-            TYPE: "whirlwindDeco"
-        }
-    ],
-    AI: {
-        SPEED: 2, 
-    },
-    GUNS: (() => { 
-        let output = []
-        for (let i = 0; i < 6; i++) { 
-            output.push({ 
-                POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.satellite]), 
-                    TYPE: ["subSatellite", {ANGLE: i * 60},], 
-                    MAX_CHILDREN: 1,   
-                    AUTOFIRE: true,  
-                    SYNCS_SKILLS: false,
-                    WAIT_TO_CYCLE: true
-                }
-            }) 
-        }
-        return output
-    })()
-}

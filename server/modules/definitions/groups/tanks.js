@@ -5027,7 +5027,7 @@ Class.snowstorm = {
           POSITION: [20, 8, 1, 0, 0, 0, 0],
           PROPERTIES: {
               TYPE: "freezeBullet", 
-              SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.flankGuard]),
+              SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.flankGuard, {reload: 4}]),
           }
         }, 
         {
@@ -5076,38 +5076,6 @@ Class.turbinate = {
             },
 }
     ]
-}
-Class.betterTempest = {
-    PARENT: "genericTank",
-    LABEL: "Tempest",
-    BODY: {
-        FOV: base.FOV * 1.1
-    },
-    GUNS: [
-        {
-            POSITION: {
-                LENGTH: 6,
-                WIDTH: 11,
-                ASPECT: 1.3,
-                X: 7
-         },
-            POSITION: [6, 11, 1.3, 7, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.lessDamage]),
-                TYPE: "whirlDrone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                STAT_CALCULATOR: "drone",
-                MAX_CHILDREN: 6,
-                WAIT_TO_CYCLE: true
-         }, }, 
-    ],
-    TURRETS: [
-    {
-            POSITION: [6, 12, 0, 0, 360, 1],
-            TYPE: "whirlwindDeco",
-        },
-],
 }
 
 
