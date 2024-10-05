@@ -5083,7 +5083,8 @@ Class.riposte = {
     BODY: {
         HEALTH: base.HEALTH * 0.4,
         SHIELD: base.SHIELD * 0.4,
-        DENSITY: base.DENSITY * 0.3
+        DENSITY: base.DENSITY * 0.3,
+        DAMAGE: base.DAMAGE * 3
     },
     DANGER: 7,
     GUNS: [
@@ -5136,6 +5137,12 @@ Class.riposte = {
                 ALT_FIRE: true,
             }
         }
+    ],
+    TURRETS: [
+      {
+        POSITION: [9, 0, 0, 0, 360, 15],
+        TYPE: "overdriveDeco"
+      }
     ]
 }
 
