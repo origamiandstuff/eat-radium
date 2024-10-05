@@ -5038,12 +5038,83 @@ Class.snowstorm = {
         }
     ], 6)
 }
+Class.turbinate = {
+    PARENT: "genericTank",
+    LABEL: "Turbinate",
+    DANGER: 4,
+  TURRETS: [
+   {
+            POSITION: [6, 12, 0, 0, 360, 1],
+            TYPE: "whirlwindDeco",
+        },
+],
+    GUNS: [
+        {
+            POSITION: {
+                LENGTH: 20,
+                WIDTH: 8,
+                ASPECT: 1,
+                X: 0,
+                Y: 0,
+                ANGLE: 0,
+                DELAY: 0
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "whirlet",
+            }
+        },
+      {
+            POSITION: {
+                LENGTH: 17,
+                WIDTH: 3,
+                ASPECT: 1.3,
+                X: 0,
+                Y: 0,
+                ANGLE: 0,
+                DELAY: 0
+            },
+}
+    ]
+}
+Class.betterTempest = {
+    PARENT: "genericTank",
+    LABEL: "Tempest",
+    BODY: {
+        FOV: base.FOV * 1.1
+    },
+    GUNS: [
+        {
+            POSITION: {
+                LENGTH: 6,
+                WIDTH: 11,
+                ASPECT: 1.3,
+                X: 7
+         },
+            POSITION: [6, 11, 1.3, 7, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.lessDamage]),
+                TYPE: "whirlDrone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                MAX_CHILDREN: 6,
+                WAIT_TO_CYCLE: true
+         }, }, 
+    ],
+    TURRETS: [
+    {
+            POSITION: [6, 12, 0, 0, 360, 1],
+            TYPE: "whirlwindDeco",
+        },
+],
+}
 
 
 
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
-    Class.basic.UPGRADES_TIER_2 = ["smasher"]
+    Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
