@@ -5149,7 +5149,7 @@ Class.armory = {
     PARENT: "genericTank",
     LABEL: "Armory",
     DANGER: 6,
-    STAT_NAMES: statnames.mixed,
+    STAT_NAMES: statnames.drone,
     BODY: {
         SPEED: base.SPEED * 0.8,
         FOV: 1.1,
@@ -5201,7 +5201,6 @@ Class.armory = {
         },
     ],
 }
-
 
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]

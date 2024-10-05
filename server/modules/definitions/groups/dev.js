@@ -2677,47 +2677,7 @@ Class.flace = {
 }
 
 
-// Amo elites
 
-Class.agitatorElit1 = {
-    PARENT: "genericTank",
-	  SHAPE: 3,
-  	COLOR: 'crasher',
-  	SIZE: 16,
-	  DANGER: 12,
-    LABEL: "Agitator",
-    BODY: {
-	      SPEED: base.SPEED * 0.75,
-	      HEALTH: base.HEALTH * 2,
-	      SHIELD: base.SHIELD * 1.75,
-	      REGEN: base.REGEN * 0.7,
-	      FOV: base.FOV,
-	      RESIST: base.RESIST,
-	      DENSITY: base.DENSITY * 3,
-	      ACCELERATION: base.ACCEL * 0.8,
-    },
-    GUNS: weaponArray([
-        {
-            POSITION: [14.5, 6.25, 1, 0, 5, 180, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {health: 1.3, range: 0.9}]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [14.5, 6.25, 1, 0, -5, 180, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {health: 1.3, range: 0.9}]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [16, 7, 1, 0, 0, 180, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {health: 1.3, range: 0.9}]),
-                TYPE: "bullet",
-            },
-        },
-    ], 3),
-}
 
 Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", /*"eggGenerator", */"testing", "addons"]
     Class.tanks.UPGRADES_TIER_0 = ["basic", "unavailable", "arenaCloser", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun"]
