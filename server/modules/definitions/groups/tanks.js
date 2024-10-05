@@ -5145,6 +5145,62 @@ Class.riposte = {
       }
     ]
 }
+Class.armory = {
+    PARENT: "genericTank",
+    LABEL: "Armory",
+    DANGER: 6,
+    STAT_NAMES: statnames.drone,
+    BODY: {
+        SPEED: base.SPEED * 0.8,
+        FOV: 1.1,
+    },
+    GUNS: [
+       {
+            POSITION: [6, 8, 1, 7, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone]),
+                TYPE: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                MAX_CHILDREN: 3,
+                WAIT_TO_CYCLE: true
+        }, },
+        {
+            POSITION: [15, 12, -1.1, 0, -8, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.lessReload]),
+                TYPE: "swarm",
+                SYNCS_SKILLS: true,
+            },
+        },
+        {
+            POSITION: [15, 12, -1.1, 0, 8, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.lessReload]),
+                TYPE: "swarm",
+                SYNCS_SKILLS: true,
+            },
+        },
+        {
+            POSITION: [4.5, 10, 1, 10.5, 0, 0, 0],
+        },
+        {
+            POSITION: [1, 12, 1, 15, 0, 0, 0],
+            PROPERTIES: {
+                MAX_CHILDREN: 2,
+                SHOOT_SETTINGS: combineStats([g.factory, g.babyfactory]),
+                TYPE: "minion",
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+            },
+        },
+        {
+            POSITION: [11.5, 12, 1, 0, 0, 0, 0],
+        },
+    ],
+}
 
 
 // Upgrade Paths
