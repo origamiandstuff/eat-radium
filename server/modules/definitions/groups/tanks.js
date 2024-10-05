@@ -5149,7 +5149,7 @@ Class.armory = {
     PARENT: "genericTank",
     LABEL: "Armory",
     DANGER: 6,
-    STAT_NAMES: statnames.drone,
+    STAT_NAMES: statnames.mixed,
     BODY: {
         SPEED: base.SPEED * 0.8,
         FOV: 1.1,
@@ -5167,7 +5167,7 @@ Class.armory = {
                 WAIT_TO_CYCLE: true
         }, },
         {
-            POSITION: [15, 12, -1.1, 0, -8, 0, 0],
+            POSITION: [15, 1.5, -1.2, 0, -8, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm, g.lessReload]),
                 TYPE: "swarm",
@@ -5175,7 +5175,7 @@ Class.armory = {
             },
         },
         {
-            POSITION: [15, 12, -1.1, 0, 8, 0, 0.5],
+            POSITION: [15, 1.5, -1.2, 0, 8, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm, g.lessReload]),
                 TYPE: "swarm",
