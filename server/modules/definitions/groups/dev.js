@@ -2704,19 +2704,59 @@ Class.agitatorElit1 = {
                 TYPE: "bullet",
             },
         }, {
-            POSITION: [14.5, 6.25, 1, 0, -5, 180, 0.5],
+            POSITION: [14.5, 6.25, 1, 0, -5, 180, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {health: 1.3, range: 0.9}]),
                 TYPE: "bullet",
             },
         }, {
-            POSITION: [16, 6.25, 1, 0, 0, 180, 0.5],
+            POSITION: [16, 7, 1, 0, 0, 180, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {health: 1.3, range: 0.9}]),
                 TYPE: "bullet",
             },
         },
     ], 3),
+}
+Class.breacherElit1 = {
+    PARENT: "genericTank",
+	  SHAPE: 3,
+  	COLOR: 'crasher',
+  	SIZE: 16,
+	  DANGER: 12,
+    LABEL: "Breacher",
+    BODY: {
+	      SPEED: base.SPEED * 0.75,
+	      HEALTH: base.HEALTH * 2,
+	      SHIELD: base.SHIELD * 1.75,
+	      REGEN: base.REGEN * 0.7,
+	      FOV: base.FOV,
+	      RESIST: base.RESIST,
+	      DENSITY: base.DENSITY * 3,
+	      ACCELERATION: base.ACCEL * 0.8,
+    },
+    GUNS: weaponArray({
+        POSITION: [6.75, 11, 1.15, 8, 0, 180, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.overseer, {reload: 1.1, health: 1.2, size: 1.1, maxSpeed: 0.9}]),
+            TYPE: "drone",
+            MAX_CHILDREN: 2,
+            AUTOFIRE: true,
+            SYNCS_SKILLS: true,
+            STAT_CALCULATOR: "drone",
+            WAIT_TO_CYCLE: true,
+        }, }, /*{
+        POSITION: [5, 11, 1.4, 8, 0, 180, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.overseer, {reload: 1.1, health: 1.2, size: 1.1, maxSpeed: 0.9}]),
+            TYPE: "drone",
+            MAX_CHILDREN: 2,
+            AUTOFIRE: true,
+            SYNCS_SKILLS: true,
+            STAT_CALCULATOR: "drone",
+            WAIT_TO_CYCLE: true,
+        },
+    }, 3),
 }
 
 Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", /*"eggGenerator", */"testing", "addons"]
