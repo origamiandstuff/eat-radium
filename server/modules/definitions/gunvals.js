@@ -114,7 +114,7 @@ module.exports = {
     lessReload: { reload: 2 },
     lessSpeed: { speed: 0.5 },
     lessDamage: { damage: 0.5 },
-    riposte: { range: 10e-9, recoil: 10, reload: 20 },
+    riposte: { range: 10e-9, recoil: 15, reload: 150 },
 // Splash
     coilBullet: { health: 1, damage: 0.5, reload: 4, pen: 4, speed: 1.5 },
     coilSplash: { health: 1, damage: 0.1, speed: 0, maxSpeed: 0 },
