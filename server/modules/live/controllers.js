@@ -1008,6 +1008,32 @@ class io_scaleWithMaster extends IO {
         }
     }
 }
+class io_orbit2 extends IO {
+    constructor(body, opts = {}) {
+        super(body);
+        this.realDist = 0;
+        this.invert = opts.invert ?? false;
+    }
+  
+    think(input) {
+        let invertFactor = this.invert ? -1 : 1,
+            master = this.body.source,
+            dist = this.invert ? master.inverseDist : master.dist,
+            angle = (this.body.angle * Math.PI / 180 + master.angle) * invertFactor;
+        
+        if(this.realDist > dist){
+            this.realDist -= Math.min(10, Math.abs(this.realDist - dist));
+        }
+        else if(this.realDist < dist){
+            this.realDist += Math.min(10, Math.abs(dist - this.realDist));
+        }
+        this.body.x = master.x + Math.cos(angle) * this.realDist;
+        this.body.y = master.y + Math.sin(angle) * this.realDist;
+        
+        this.body.facing = angle;
+    }
+}
+
 
 
 let ioTypes = {
@@ -1045,6 +1071,7 @@ let ioTypes = {
     hangOutNearMaster: io_hangOutNearMaster,
     fleeAtLowHealth: io_fleeAtLowHealth,
     wanderAroundMap: io_wanderAroundMap,
+    orbit2: io_orbit2,
 };
 
 module.exports = { ioTypes, IO };
