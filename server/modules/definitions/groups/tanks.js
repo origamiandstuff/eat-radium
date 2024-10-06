@@ -5234,6 +5234,39 @@ Class.daze = {
         }
     ]
 }
+Class.trance = {
+    PARENT: "genericTank",
+    DANGER: 7,
+    LABEL: "Daze",
+    STAT_NAMES: statnames.generic,
+    BODY: {
+        FOV: 1.05 * base.FOV
+    },
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 5, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [18, 8, 1, 0, -5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [13, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 5}]),
+                TYPE: "heatMissile",
+                COLOR: "#30d5c8"
+            }
+        }
+    ]
+}
 
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
