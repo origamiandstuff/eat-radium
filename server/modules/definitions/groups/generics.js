@@ -327,11 +327,6 @@ Class.heatMissile = {
     BODY: {
         RANGE: 200
     },
-    GUNS: [
-      {
-        POSITION: [0, 8, 0, 0, 0, 0, 0]
-      }
-    ]
 }
 Class.auraBase = {
     TYPE: "aura",

@@ -5205,6 +5205,7 @@ Class.daze = {
     PARENT: "genericTank",
     DANGER: 7,
     LABEL: "Daze",
+    STAT_NAMES: statnames.generic,
     BODY: {
         FOV: 1.05 * base.FOV
     },
@@ -5224,10 +5225,11 @@ Class.daze = {
             }
         },
         {
-            POSITION: [21, 10, 1, 0, 0, 0, 0],
+            POSITION: [13, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet"
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, { speed: 4 }]),
+                TYPE: "heatMissile",
+                COLOR: "#30d5c8"
             }
         }
     ]
