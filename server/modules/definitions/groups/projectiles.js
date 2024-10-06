@@ -784,7 +784,7 @@ Class.whirlet = {
 }
 Class.trail = {
     PARENT: "bullet",
-    FACING_TYPE: "trail",
+    MOTION_TYPE: "trail",
     //TYPE: "trail",
     BODY: {
         SPEED: 0

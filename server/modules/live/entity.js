@@ -1841,6 +1841,12 @@ class Entity extends EventEmitter {
                     y: g.y * this.scaledAcceleration,
                 };
                 break;
+            case "trail":
+                    this.SIZE--;
+            console.log("trail")
+                    if (this.SIZE <= 1) this.kill();
+                    this.maxSpeed = this.topSpeed;
+                    break;
             case "bound":
                 let bound = this.bound,
                     ref = this.bond;
@@ -1968,12 +1974,6 @@ class Entity extends EventEmitter {
                 }
                 this.facing = util.interpolateAngle(this.facing, angleToTarget, Math.min(1, 1 / (slowness * Math.min(1, angleDiff))));
                 break;
-            case "trail":
-                    this.SIZE--;
-            console.log("trail")
-                    if (this.SIZE <= 1) this.kill();
-                    this.maxSpeed = this.topSpeed;
-                    break;
             case "desmos":
                 this.damp = 0;
                 let save = {
