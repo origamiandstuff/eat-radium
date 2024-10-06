@@ -823,6 +823,7 @@ Class.stormTurret = makeTurret({
 Class.corrosionProp = makeDeco(0, "magenta")
 Class.toxicProp = makeDeco(0, "#00ff00")
 Class.freezeProp = makeDeco(0, "teal")
+Class.homingProp = makeDeco(0, "#30d5c8")
 //eheheheheehehueheheheheheheheheheheheheh
 Class.coilGunButTurret = makeTurret("coilgun", {canRepel: true, limitFov: true, fov: 15, independent: true, extraStats: []})
 Class.railGunButTurret = makeTurret("railgun", {canRepel: true, limitFov: true, fov: 20, independent: true, extraStats: []})

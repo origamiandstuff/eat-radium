@@ -798,7 +798,8 @@ Class.heatMissile = {
     INDEPENDENT: true,
     LABEL: "Heat Missile",
     BODY: {
-        RANGE: 200
+        RANGE: 500,
+        FOV: 5
     },
     GUNS: [
         {
@@ -806,8 +807,15 @@ Class.heatMissile = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, { damage: 10e-10, health: 10e100, maxSpeed: 0, speed: 0, recoil:  1.5, size: 2 }]),
                 TYPE: "trail",
-                ALPHA: 0
+                ALPHA: 0,
+                AUTOFIRE: true,
             }
         },
+    ],
+    TURRETS: [
+      {
+        POSITION: [9, 0, 0, 0, 360, 15],
+        TYPE: "homingProp"
+      }
     ]
 }

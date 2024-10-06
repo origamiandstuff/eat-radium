@@ -5227,7 +5227,7 @@ Class.daze = {
         {
             POSITION: [13, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 5}]),
                 TYPE: "heatMissile",
                 COLOR: "#30d5c8"
             }
