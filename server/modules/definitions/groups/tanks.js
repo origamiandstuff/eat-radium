@@ -5214,8 +5214,13 @@ Class.lancer = {
         POSITION: [0, 8, 1, 6, 0, 0, 0],
         PROPERTIES: {
             ALPHA: 0,
-            TYPE: ["bullet", {ALPHA: 0}]
+            TYPE: ["bullet", {ALPHA: 0, LABEL: "lance"}],
+            SHOOT_SETTINGS: combineStats([g.lance]),
+            AUTOFIRE: true
         }
+      },
+      {
+        POSITION: [25, 0.3, -55, 0, 0, 0, 0]
       }
     ]
 }
