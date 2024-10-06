@@ -782,3 +782,14 @@ Class.whirlet = {
         return output
     })()
 }
+
+
+Class.heatMissile = {
+    PARENT: "swarm",
+    COLOR: "#30d5c8",
+    INDEPENDENT: true,
+    LABEL: "Heat Missile",
+    BODY: {
+        RANGE: 200
+    },
+}
