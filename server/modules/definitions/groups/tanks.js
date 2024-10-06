@@ -5201,6 +5201,24 @@ Class.armory = {
         },
     ],
 }
+Class.lancer = {
+    PARENT: "genericTank",
+    LABEL: "Lancer",
+    STAT_NAMES: statnames.lance,
+    DANGER: 5,
+    BODY: {
+      SPEED: base.SPEED * 1.5
+    },
+    GUNS: [
+      {
+        POSITION: [0, 8, 1, 6, 0, 0, 0],
+        PROPERTIES: {
+            ALPHA: 0,
+            TYPE: ["bullet", {ALPHA: 0}]
+        }
+      }
+    ]
+}
 
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]

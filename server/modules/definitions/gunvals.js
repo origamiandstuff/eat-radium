@@ -120,4 +120,6 @@ module.exports = {
     coilSplash: { health: 1, damage: 0.1, speed: 0, maxSpeed: 0 },
 // Railguns
     railgun: { speed: 3, pen: 2.5, damage: 2.2, maxSpeed: 2.5, reload: 8, health: 1.5 },
+// Lancers
+    lance: { reload: 6, recoil: 0, shudder: 0.1, size: 1, health: .5, damage: 1.2, pen: 1.6, speed: .67, maxSpeed: 1, range: .08, density: 1, spray: 180, resist: 1},
 }
