@@ -1969,7 +1969,7 @@ class Entity extends EventEmitter {
                 this.facing = util.interpolateAngle(this.facing, angleToTarget, Math.min(1, 1 / (slowness * Math.min(1, angleDiff))));
                 break;
             case "trail":
-                    this.SIZE = this.SIZE - 1;
+                    this.SIZE--;
                     if (this.SIZE <= 1) this.kill();
                     this.maxSpeed = this.topSpeed;
                     break;
