@@ -5244,21 +5244,7 @@ Class.trance = {
     },
     GUNS: [
         {
-            POSITION: [21, 19, 1, 0, 0, 0, 0],
-        },
-        {
-            POSITION: [18, 8, 1, 0, 5.5, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet"
-            }
-        },
-        {
-            POSITION: [18, 8, 1, 0, -5.5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet"
-            }
+            POSITION: [18, 19, 1, 0, 0, 0, 0],
         },
         {
             POSITION: [13, 10, 1, 0, 0, 0, 0],
@@ -5275,7 +5261,16 @@ Class.trance = {
             }
         },
         {
-            POSITION: [15, 0.3, -35, 0.1, 4.3, 27, 0],
+            POSITION: [15, 0.3, -35, 0.1, 4.5, 25, 0],
+        },
+        {
+            POSITION: [20, 0.3, -48, 2.5, -2.7, -20, 0],
+            PROPERTIES: {
+                COLOR: "#30d5c8"
+            }
+        },
+        {
+            POSITION: [15, 0.3, -35, 0.1, -4.5, -25, 0],
         },
     ]
 }
