@@ -1968,6 +1968,12 @@ class Entity extends EventEmitter {
                 }
                 this.facing = util.interpolateAngle(this.facing, angleToTarget, Math.min(1, 1 / (slowness * Math.min(1, angleDiff))));
                 break;
+            case "trail":
+                    this.color = 0;
+                    this.SIZE -= 1;
+                    if (this.SIZE <= 1) this.kill();
+                    this.maxSpeed = this.topSpeed;
+                    break;
             case "desmos":
                 this.damp = 0;
                 let save = {

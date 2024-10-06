@@ -320,7 +320,19 @@ Class.squareSatellite = {
     PARENT: "satellite",
     SHAPE: 4
 }
-
+Class.heatMissile = {
+    PARENT: "swarm",
+    INDEPENDENT: true,
+    LABEL: "Heat Missile",
+    BODY: {
+        RANGE: 200
+    },
+    GUNS: [
+      {
+        POSITION: [0, 8, 0, 0, 0, 0, 0]
+      }
+    ]
+}
 Class.auraBase = {
     TYPE: "aura",
     ACCEPTS_SCORE: false,
