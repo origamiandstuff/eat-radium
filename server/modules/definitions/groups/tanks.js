@@ -5236,8 +5236,8 @@ Class.daze = {
 }
 Class.trance = {
     PARENT: "genericTank",
-    DANGER: 7,
-    LABEL: "Daze",
+    DANGER: 8,
+    LABEL: "Trance",
     STAT_NAMES: statnames.generic,
     BODY: {
         FOV: 1.05 * base.FOV
@@ -5264,7 +5264,13 @@ Class.trance = {
                 TYPE: "heatMissile",
                 COLOR: "#30d5c8"
             }
-        }
+        },
+        {
+            POSITION: [20, 0.3, -48, 0, 1, 20, 0],
+            PROPERTIES: {
+                COLOR: "#30d5c8"
+            }
+        },
     ]
 }
 
