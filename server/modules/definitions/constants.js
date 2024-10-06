@@ -75,12 +75,6 @@ module.exports = {
 			BULLET_DAMAGE: 'Ball Damage',
 			RELOAD: 'Ball Density',
 		},
-    lance: {
-      BULLET_SPEED: 'Lance Range',
-      BULLET_PEN: 'Lance Sharpness',
-      BULLET_HEALTH: 'Lance Longevity',
-      BULLET_DAMAGE: 'Lance Damage',
-    },
 	},
 	base: {
 	    ACCEL: 1.6,

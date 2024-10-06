@@ -5027,7 +5027,7 @@ Class.snowstorm = {
           POSITION: [20, 8, 1, 0, 0, 0, 0],
           PROPERTIES: {
               TYPE: "freezeBullet", 
-              SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.flankGuard, {reload: 4}]),
+              SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.flankGuard]),
           }
         }, 
         {
@@ -5038,173 +5038,12 @@ Class.snowstorm = {
         }
     ], 6)
 }
-Class.turbinate = {
-    PARENT: "genericTank",
-    LABEL: "Turbinate",
-    DANGER: 4,
-  TURRETS: [
-   {
-            POSITION: [6, 12, 0, 0, 360, 1],
-            TYPE: "whirlwindDeco",
-        },
-],
-    GUNS: [
-        {
-            POSITION: {
-                LENGTH: 20,
-                WIDTH: 8,
-                ASPECT: 1,
-                X: 0,
-                Y: 0,
-                ANGLE: 0,
-                DELAY: 0
-            },
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic]),
-                TYPE: "whirlet",
-            }
-        },
-      {
-            POSITION: {
-                LENGTH: 17,
-                WIDTH: 3,
-                ASPECT: 1.3,
-                X: 0,
-                Y: 0,
-                ANGLE: 0,
-                DELAY: 0
-            },
-}
-    ]
-}
-Class.riposte = {
-    PARENT: "genericTank",
-    LABEL: "Riposte",
-    BODY: {
-        HEALTH: base.HEALTH * 0.4,
-        SHIELD: base.SHIELD * 0.4,
-        DENSITY: base.DENSITY * 0.3,
-        DAMAGE: base.DAMAGE * 3
-    },
-    DANGER: 7,
-    GUNS: [
-        {
-            POSITION: [18, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.triAngleFront, { recoil: 4 }]),
-                TYPE: "bullet",
-                LABEL: "Front"
-            }
-        },
-        {
-            POSITION: [14, 8, 1, 0, -1, 140, 0.6],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
-                TYPE: "bullet",
-                LABEL: "thruster"
-            }
-        },
-        {
-            POSITION: [14, 8, 1, 0, 1, -140, 0.6],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
-                TYPE: "bullet",
-                LABEL: "thruster"
-            }
-        },
-        {
-            POSITION: [16, 8, 1, 0, 0, 150, 0.1],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
-                TYPE: "bullet",
-                LABEL: "thruster"
-            }
-        },
-        {
-            POSITION: [16, 8, 1, 0, 0, -150, 0.1],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
-                TYPE: "bullet",
-                LABEL: "thruster"
-            }
-        },
-        {
-            POSITION: [0, 0, 1, 0, 0, -180, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.riposte]),
-                TYPE: "bullet",
-                LABEL: "riposte",
-                ALT_FIRE: true,
-            }
-        }
-    ],
-    TURRETS: [
-      {
-        POSITION: [9, 0, 0, 0, 360, 15],
-        TYPE: "overdriveDeco"
-      }
-    ]
-}
-Class.armory = {
-    PARENT: "genericTank",
-    LABEL: "Armory",
-    DANGER: 6,
-    STAT_NAMES: statnames.drone,
-    BODY: {
-        SPEED: base.SPEED * 0.8,
-        FOV: 1.1,
-    },
-    GUNS: [
-       {
-            POSITION: [6, 8, 1, 7, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone]),
-                TYPE: "drone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                STAT_CALCULATOR: "drone",
-                MAX_CHILDREN: 3,
-                WAIT_TO_CYCLE: true
-        }, },
-        {
-            POSITION: [15, 1.5, -1.2, 0, -8, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.lessReload]),
-                TYPE: "swarm",
-                SYNCS_SKILLS: true,
-            },
-        },
-        {
-            POSITION: [15, 1.5, -1.2, 0, 8, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.lessReload]),
-                TYPE: "swarm",
-                SYNCS_SKILLS: true,
-            },
-        },
-        {
-            POSITION: [4.5, 10, 1, 10.5, 0, 0, 0],
-        },
-        {
-            POSITION: [1, 12, 1, 15, 0, 0, 0],
-            PROPERTIES: {
-                MAX_CHILDREN: 2,
-                SHOOT_SETTINGS: combineStats([g.factory, g.babyfactory]),
-                TYPE: "minion",
-                STAT_CALCULATOR: "drone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-            },
-        },
-        {
-            POSITION: [11.5, 12, 1, 0, 0, 0, 0],
-        },
-    ],
-}
+
+
 
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
-    Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]
+    Class.basic.UPGRADES_TIER_2 = ["smasher"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
