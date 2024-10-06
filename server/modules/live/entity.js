@@ -1970,6 +1970,7 @@ class Entity extends EventEmitter {
                 break;
             case "trail":
                     this.SIZE--;
+            console.log("trail")
                     if (this.SIZE <= 1) this.kill();
                     this.maxSpeed = this.topSpeed;
                     break;
