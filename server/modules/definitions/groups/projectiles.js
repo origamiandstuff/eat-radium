@@ -782,14 +782,29 @@ Class.whirlet = {
         return output
     })()
 }
-
-
+Class.trail = {
+    PARENT: "bullet",
+    MOTION_TYPE: "trail",
+    BODY: {
+        SPEED: 0
+    }
+}
 Class.heatMissile = {
     PARENT: "swarm",
     COLOR: "#30d5c8",
+    SHAPE: 0,
     INDEPENDENT: true,
     LABEL: "Heat Missile",
     BODY: {
         RANGE: 200
     },
+    GUNS: [
+        {
+            POSITION: [0, 12, 1, 0, 5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, { damage: 10e-10, health: 10e100, maxSpeed: 0, speed: 0, recoil:  3 }]),
+                TYPE: "trail"
+            }
+        },
+    ]
 }
