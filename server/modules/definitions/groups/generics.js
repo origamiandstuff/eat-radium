@@ -320,14 +320,6 @@ Class.squareSatellite = {
     PARENT: "satellite",
     SHAPE: 4
 }
-Class.heatMissile = {
-    PARENT: "swarm",
-    INDEPENDENT: true,
-    LABEL: "Heat Missile",
-    BODY: {
-        RANGE: 200
-    },
-}
 Class.auraBase = {
     TYPE: "aura",
     ACCEPTS_SCORE: false,
