@@ -5211,21 +5211,21 @@ Class.daze = {
     },
     GUNS: [
         {
-            POSITION: [18, 8, 1, 0, 5, 0, 0.5],
+            POSITION: [18, 10, 1, 0, 5, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
                 TYPE: "bullet"
             }
         },
         {
-            POSITION: [18, 8, 1, 0, -5, 0, 0.5],
+            POSITION: [18, 10, 1, 0, -5, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
                 TYPE: "bullet"
             }
         },
         {
-            POSITION: [13, 8, 1, 0, 0, 0, 0],
+            POSITION: [13, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload]),
                 TYPE: "heatMissile",
