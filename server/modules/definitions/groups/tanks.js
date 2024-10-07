@@ -5296,7 +5296,7 @@ Class.trance = {
             PARENT: 'drone',
             ON: [
             {
-             event: "drone",
+             event: "tick",
              handler: ({ body }) => {
                for (let instance of entities) {
                      let diffX = instance.x - body.x,
@@ -5353,9 +5353,9 @@ Class.magnetic = {
                 ASPECT: 1.3,
                 X: 7
             },
-            POSITION: [6, 13, 1.3, 7, 0, 0, 0],
+            POSITION: [8, 13, 1.5, 7, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone]),
+                SHOOT_SETTINGS: combineStats([g.drone, {damage: 0.3}]),
                 TYPE: "magneticDrone",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
@@ -5365,11 +5365,17 @@ Class.magnetic = {
             }
         },
         {
-          POSITION: [13, 6, 1, 0, -3.5, 0, 0],
+          POSITION: [13, 4, 1, 0, -3, 0, 0],
           PROPERTIES: {
-             COLOR: ""
+             COLOR: "#f50202"
           }
-        }
+        },
+        {
+          POSITION: [13, 4, 1, 0, 3, 0, 0],
+          PROPERTIES: {
+             COLOR: "#0223f5"
+          }
+        },
     ]
 }
 
