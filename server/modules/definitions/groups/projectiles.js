@@ -805,7 +805,7 @@ Class.heatMissile = {
         {
             POSITION: [0, 12, 1, 0, 5, 180, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { damage: 10e-10, health: 10e100, maxSpeed: 0, speed: 0, recoil:  1.5, size: 2 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, { damage: 10e-10, health: 10e100, maxSpeed: 0, speed: 0, recoil:  0, size: 2 }]),
                 TYPE: "trail",
                 ALPHA: 0,
                 AUTOFIRE: true,
