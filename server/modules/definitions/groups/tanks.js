@@ -696,7 +696,7 @@ Class.desmos = {
             }
         },
         {
-            POSITION: [3.75, 10, 2.125, 10, -6.25, 90, 0]
+            POSITION: [3.75, 10, 2.125, 1.5, -6.25, 90, 0]
         },
         {
             POSITION: [3.75, 10, 2.125, 1.5, 6.25, -90, 0]
@@ -5234,10 +5234,10 @@ Class.daze = {
         }
     ]
 }
-Class.trance = {
+Class.hypnosis = {
     PARENT: "genericTank",
     DANGER: 8,
-    LABEL: "Trance",
+    LABEL: "Hypnosis",
     STAT_NAMES: statnames.generic,
     BODY: {
         FOV: 1.05 * base.FOV
@@ -5260,14 +5260,14 @@ Class.trance = {
         {
             POSITION: [18, 19, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, {damage: 10, speed: 0.7, health: 1.5, reload: 8}]),
+                SHOOT_SETTINGS: combineStats([g.basic, {damage: 5, speed: 0.7, health: 1.3, reload: 8}]),
                 TYPE: "bullet",
             }
         },
         {
             POSITION: [13, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 7, speed: 1.5, health: 1.5}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 3, speed: 1.5, health: 1.5}]),
                 TYPE: "heatMissile",
                 COLOR: "#30d5c8"
             }
@@ -5378,6 +5378,26 @@ Class.magnetic = {
         },
     ]
 }
+Class.trance = {
+    PARENT: "genericTank",
+    LABEL: "Trance",
+    STAT_NAMES: statnames.desmos,
+    GUNS: [
+        {
+            POSITION: [20, 8, -4/3, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.desmos]),
+                TYPE: "bullet",
+            }
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 1.5, -6.25, 90, 0]
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 1.5, 6.25, -90, 0]
+        }
+    ]
+}
 
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
@@ -5389,8 +5409,8 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"]
         Class.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"]
         Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "triplex"]
-            Class.triplet.UPGRADES_TIER_3 = ["carnivore0", "trance"]
-            Class.daze.UPGRADES_TIER_3 = ["trance"]
+            Class.triplet.UPGRADES_TIER_3 = ["carnivore0", "hypnosis"]
+            Class.daze.UPGRADES_TIER_3 = ["hypnosis"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
