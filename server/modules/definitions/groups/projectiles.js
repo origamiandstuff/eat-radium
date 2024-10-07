@@ -797,6 +797,9 @@ Class.heatMissile = {
     SHAPE: 0,
     INDEPENDENT: true,
     LABEL: "Heat Missile",
+    AI: {
+        FARMER: true
+    },
     BODY: {
         RANGE: 500,
         FOV: 8

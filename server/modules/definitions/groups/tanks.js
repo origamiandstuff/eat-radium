@@ -5259,6 +5259,10 @@ Class.trance = {
         },
         {
             POSITION: [18, 19, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, {damage: 10, speed: 0.7, health: 1.5, reload: 8}]),
+                TYPE: "bullet",
+            }
         },
         {
             POSITION: [13, 10, 1, 0, 0, 0, 0],
