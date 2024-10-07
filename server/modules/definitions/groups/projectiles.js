@@ -799,7 +799,7 @@ Class.heatMissile = {
     LABEL: "Heat Missile",
     BODY: {
         RANGE: 500,
-        FOV: 5
+        FOV: 8
     },
     GUNS: [
         {

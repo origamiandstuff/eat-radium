@@ -5244,12 +5244,26 @@ Class.trance = {
     },
     GUNS: [
         {
+            POSITION: [8, 8, 1, 0, 5.5, 0, 1/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet",
+            }
+        },
+        {
+            POSITION: [8, 8, 1, 0, -5.5, 0, 2/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet",
+            }
+        },
+        {
             POSITION: [18, 19, 1, 0, 0, 0, 0],
         },
         {
             POSITION: [13, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 5, speed: 1.5}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 7, speed: 1.5, health: 1.5}]),
                 TYPE: "heatMissile",
                 COLOR: "#30d5c8"
             }
@@ -5271,14 +5285,6 @@ Class.trance = {
         },
         {
             POSITION: [15, 0.3, -35, 0.3, -4.5, -23, 0],
-        },
-        {
-            POSITION: [18, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 5, speed: 1.5}]),
-                TYPE: "heatMissile",
-                COLOR: "#30d5c8"
-            }
         },
     ]
 }
