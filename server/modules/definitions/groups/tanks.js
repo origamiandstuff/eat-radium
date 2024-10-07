@@ -5384,17 +5384,19 @@ Class.trance = {
     STAT_NAMES: statnames.desmos,
     GUNS: [
         {
-            POSITION: [20, 8, -4/3, 0, 0, 0, 0],
+            POSITION: [15, 16, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [5.5, 10, 2.125, 3, -7.25, 90, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.desmos]),
-                TYPE: "bullet",
+                COLOR: "#30d5c8"
             }
         },
         {
-            POSITION: [3.75, 10, 2.125, 1.5, -6.25, 90, 0]
-        },
-        {
-            POSITION: [3.75, 10, 2.125, 1.5, 6.25, -90, 0]
+            POSITION: [5.5, 10, 2.125, 3, 7.25, -90, 0],
+            PROPERTIES: {
+                COLOR: "#30d5c8"
+            }
         }
     ]
 }
