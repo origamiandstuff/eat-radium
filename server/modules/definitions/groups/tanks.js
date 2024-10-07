@@ -5413,7 +5413,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"]
 
     Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "lightning", "doper"]
-        Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese", "corrosion", "armory"]
+        Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese", "corrosion", "armory", "magnetic"]
         Class.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"]
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander", "armory"]
         Class.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor"]
@@ -5434,5 +5434,5 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.desmos.UPGRADES_TIER_2 = ["helix", "undertow", "repeater"]
         Class.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"]
-        Class.undertow.UPGRADES_TIER_3 = ["riptide"]
+        Class.undertow.UPGRADES_TIER_3 = ["riptide","magnetic"]
         Class.repeater.UPGRADES_TIER_3 = ["iterator", "duplicator"]
