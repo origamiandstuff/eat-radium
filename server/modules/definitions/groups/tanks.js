@@ -3609,7 +3609,7 @@ Class.undertowEffect = {
             }
          };
         Class.undertowBullet = {
-            PARENT: 'bullet',
+            PARENT: 'drone',
             ON: [
             {
              event: "tick",
