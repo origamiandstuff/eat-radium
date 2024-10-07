@@ -5303,7 +5303,8 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"]
         Class.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"]
         Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "triplex"]
-            Class.triplet.UPGRADES_TIER_3 = ["carnivore0"]
+            Class.triplet.UPGRADES_TIER_3 = ["carnivore0", "trance"]
+            Class.daze.UPGRADES_TIER_3 = ["trance"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
@@ -5334,7 +5335,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.lightning.UPGRADES_TIER_3 = ["thunderstorm"]
 
     Class.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher"]
-        Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle", "coilgun"]
+        Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle", "coilgun", "trance"]
         Class.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct"]
         Class.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun"]
         Class.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "fieldGun", "sidewinder"]
