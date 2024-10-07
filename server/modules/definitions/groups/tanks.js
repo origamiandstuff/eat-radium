@@ -3609,7 +3609,7 @@ Class.undertowEffect = {
             }
          };
         Class.undertowBullet = {
-            PARENT: 'drone',
+            PARENT: 'bullet',
             ON: [
             {
              event: "tick",
@@ -5290,6 +5290,86 @@ Class.trance = {
         {
             POSITION: [15, 0.3, -35, 0.3, -4.5, -23, 0],
         },
+    ]
+}
+        Class.magneticDrone = {
+            PARENT: 'drone',
+            ON: [
+            {
+             event: "drone",
+             handler: ({ body }) => {
+               for (let instance of entities) {
+                     let diffX = instance.x - body.x,
+                         diffY = instance.y - body.y,
+                         dist2 = diffX ** 2 + diffY ** 2;
+                     if (dist2 <= ((body.size / 12)*250) ** 1.9) {
+                     if ((instance.team != body.team || (instance.type == "undertowEffect" && instance.master.id == body.master.id)) && instance.type != "wall" && instance.isTurret != true) {
+                     if (instance.type == "undertowEffect") {
+                        forceMulti = 1
+                     }
+                     else if (instance.type == "food") {
+                        forceMulti = (6 / instance.size)
+                     }      
+                     else {
+                        forceMulti = (2 / instance.size)
+                     }           
+                        instance.velocity.x += util.clamp(body.x - instance.x, -90, 90) * instance.damp * forceMulti;//0.05
+                        instance.velocity.y += util.clamp(body.y - instance.y, -90, 90) * instance.damp * forceMulti;//0.05
+                        if (instance.type != "undertowEffect" && instance.type != "bullet" && instance.type != "swarm" && instance.type != "drone" && instance.type != "trap" && instance.type != "dominator") {
+                                let o = new Entity({x: instance.x, y: instance.y})
+                                o.define('undertowEffect')
+                                o.team = body.team;
+                                o.color = instance.color;
+                                o.alpha = 0.3;
+                                o.master = body.master;
+                        }
+                 }
+             }
+                  if (dist2 < body.size ** 3 + instance.size ** 3) {
+                     if (instance.master.id == body.master.id) {
+                         if (instance.type == "undertowEffect")
+                         {
+                            instance.kill();
+                         }
+                        }
+                    }
+                }
+            }
+        }
+          ],
+        }
+Class.magnetic = {
+    PARENT: "genericTank",
+    LABEL: "Magnetic",
+    STAT_NAMES: statnames.drone,
+    BODY: {
+        FOV: base.FOV * 1.1
+    },
+    GUNS: [
+        {
+            POSITION: {
+                LENGTH: 6,
+                WIDTH: 11,
+                ASPECT: 1.3,
+                X: 7
+            },
+            POSITION: [6, 13, 1.3, 7, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone]),
+                TYPE: "magneticDrone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                MAX_CHILDREN: 6,
+                WAIT_TO_CYCLE: true
+            }
+        },
+        {
+          POSITION: [13, 6, 1, 0, -3.5, 0, 0],
+          PROPERTIES: {
+             COLOR: ""
+          }
+        }
     ]
 }
 
