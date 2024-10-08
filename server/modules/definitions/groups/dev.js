@@ -2676,6 +2676,97 @@ Class.flace = {
     SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
 }
 
+// amo elites
+Class.provokerElit1 = {
+    PARENT: "genericElite",
+    LABEL: "Provoker",
+ // UPGRADE_TOOLTIP: "More Guns",
+    GUNS: weaponArray([
+        {
+            POSITION: [14.5, 6.25, 1, 0, 4.25, 180, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, {health: 1.3, range: 0.9}]),
+                TYPE: "bullet",
+            },
+        }, {
+            POSITION: [14.5, 6.25, 1, 0, -4.25, 180, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, {health: 1.3, range: 0.9}]),
+                TYPE: "bullet",
+            },
+        },
+    ], 3),
+}
+Class.conciliatorElit1 = {
+    PARENT: "genericElite",
+  LABEL: "Conciliator",
+ // UPGRADE_TOOLTIP: "Even more sniping!",
+    BODY: {
+        FOV: basicEliteBody.FOV * 1.34
+    },
+    GUNS: weaponArray([{
+        POSITION: [24.5*0.825, 8.75, 1, 0, 0, 180, 0],},{
+        POSITION: [24.5, 7, 1, 0, 0, 180, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, {reload: 1.1, health: 1.2, range: 0.9}]),
+            TYPE: "bullet",
+        },
+    }], 
+  3),
+}
+Class.gigaElit1 = {
+    PARENT: "genericElite",
+    LABEL: "Giga",
+ // UPGRADE_TOOLTIP: "Heavier guns",
+    GUNS: weaponArray({
+        POSITION: [17, 10.75, 1, 0, 0, 180, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.destroyer, {reload: 1.2, damage: 1.1, range: 0.9, speed: 0.9}]),
+            TYPE: "bullet",
+        },
+    }, 3),
+}
+Class.strikerElit1 = {
+    PARENT: "genericElite",
+    LABEL: "Striker",
+ // UPGRADE_TOOLTIP: "Bigger Drones!",
+    BODY: { 
+        FOV: basicEliteBody.FOV * 1.1,
+        SPEED: basicEliteBody.SPEED * 0.9,
+    },
+    GUNS: weaponArray({
+        POSITION: [6.5, 11, 1.2, 8, 0, 180, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.overseer, g.pounder, {reload: 1.1, health: 1.2, size: 1.1, maxSpeed: 0.9}]),
+            TYPE: "drone",
+            MAX_CHILDREN: 2,
+            AUTOFIRE: true,
+            SYNCS_SKILLS: true,
+            STAT_CALCULATOR: "drone",
+            WAIT_TO_CYCLE: true,
+        },
+    }, 3),
+}
+Class.wardenElit1 = {
+    PARENT: "genericElite",
+  //UPGRADE_TOOLTIP: "Stronger Traps",
+    LABEL: "Warden",
+  BODY: { 
+        SPEED: basicEliteBody.SPEED * 1.05,
+    },
+    GUNS: weaponArray([
+        {
+            POSITION: [13, 11, 1, 0, 0, 180, 0],
+        }, {
+            POSITION: [3, 11, 1.3, 13, 0, 180, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.pounder, {damage: 1.3, shudder: 0.5, speed: 0.75, range: 0.75}]),
+                TYPE: "unsetTrap",
+                STAT_CALCULATOR: "trap",
+            },
+        },
+    ], 3),
+}
 
 
 
