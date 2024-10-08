@@ -5258,7 +5258,7 @@ Class.hypnosis = {
             }
         },
         {
-            POSITION: [18, 19, 1, 0, 0, 0, 0],
+            POSITION: [18, 19, 1, 0, 0, 0, 0.7],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, {damage: 5, speed: 0.7, health: 1.3, reload: 8}]),
                 TYPE: "bullet",
@@ -5267,7 +5267,7 @@ Class.hypnosis = {
         {
             POSITION: [13, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 3, speed: 1.5, health: 1.5}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 3, speed: 1.5, health: 1.5, reload: 1.5}]),
                 TYPE: "heatMissile",
                 COLOR: "#30d5c8"
             }
@@ -5385,6 +5385,11 @@ Class.trance = {
     GUNS: [
         {
             POSITION: [15, 16, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 3.8, speed: 1.5, health: 1.5, reload: 1.5, size: 0.3}]),
+                TYPE: "heatMissile",
+            }
+        },
         },
         {
             POSITION: [5, 10, 2.4, -8, -7.25, 90, 0],
