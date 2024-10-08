@@ -104,7 +104,7 @@ module.exports = {
         return 0;
     },
     // Show the health bar text or not.
-    SHOW_HEALTHBAR_TEXT: false,
+    SHOW_HEALTHBAR_TEXT: true,
 
     // Default skill caps.
     MAX_SKILL: 9,
@@ -122,13 +122,13 @@ module.exports = {
     LEVEL_CHEAT_CAP: 45,
 
     // Amount of player-bots to spawn.
-    BOTS: 0,
+    BOTS: 4,
 
     // How much XP player-bots get per second until they reach LEVEL_CAP.
     BOT_XP: 1000,
 
     // How much XP player-bots will receive when first created.
-    BOT_START_XP: 5000,
+    BOT_START_XP: 20000,
 
     // The chances of a player-bot upgrading a specific skill when skill upgrades are available.
     BOT_SKILL_UPGRADE_CHANCES: [ 1, 1, 3, 4, 4, 4, 4, 2, 1, 1],
