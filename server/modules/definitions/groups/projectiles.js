@@ -801,7 +801,7 @@ Class.heatMissile = {
         FARMER: true
     },
     BODY: {
-        RANGE: 500,
+        RANGE: 400,
         FOV: 8
     },
     GUNS: [

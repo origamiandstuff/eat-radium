@@ -5227,7 +5227,7 @@ Class.daze = {
         {
             POSITION: [13, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 5}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 2}]),
                 TYPE: "heatMissile",
                 COLOR: "#30d5c8"
             }
@@ -5267,7 +5267,7 @@ Class.hypnosis = {
         {
             POSITION: [13, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 3, speed: 1.5, health: 1.5, reload: 1.5}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 2.5, speed: 1.5, health: 1.5, reload: 1.5}]),
                 TYPE: "heatMissile",
                 COLOR: "#30d5c8"
             }
@@ -5386,10 +5386,9 @@ Class.trance = {
         {
             POSITION: [15, 16, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 3.8, speed: 1.5, health: 1.5, reload: 1.5, size: 0.3}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2.5, speed: 1.5, health: 1.5, reload: 1.5, size: 0.3}]),
                 TYPE: "heatMissile",
             }
-        },
         },
         {
             POSITION: [5, 10, 2.4, -8, -7.25, 90, 0],
@@ -5408,6 +5407,22 @@ Class.trance = {
         },
         {
             POSITION: [5, 10, 2.1, -8, 3, -90, 0],
+        },
+        {
+            POSITION: [8, 5, 1, 0, -5.5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet",
+                ALPHA: 0,
+            }
+        },
+        {
+            POSITION: [8, 5, 1, 0, 5.5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet",
+                ALPHA: 0,
+            }
         },
     ]
 }
