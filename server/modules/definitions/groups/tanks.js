@@ -5437,8 +5437,8 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"]
         Class.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"]
         Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "triplex"]
-            Class.triplet.UPGRADES_TIER_3 = ["carnivore0", "hypnosis"]
-            Class.daze.UPGRADES_TIER_3 = ["hypnosis"]
+            Class.triplet.UPGRADES_TIER_3 = ["carnivore0", "hypnosis", "trance"]
+            Class.daze.UPGRADES_TIER_3 = ["hypnosis", "trance"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
