@@ -817,7 +817,7 @@ Class.heatMissile = {
     ],
     TURRETS: [
       {
-        POSITION: [9, 0, 0, 0, 360, 15],
+        POSITION: [16, 0, 0, 0, 360, 15],
         TYPE: "homingProp"
       }
     ]
