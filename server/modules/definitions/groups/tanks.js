@@ -5746,6 +5746,7 @@ Class.stupefaction = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2.5, speed: 1.5, health: 1.5, reload: 1.5, size: 0.3}]),
                 TYPE: "heatMissile",
+                COLOR: "#30d5c8"
             }
         },
         {
