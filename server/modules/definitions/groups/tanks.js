@@ -5736,6 +5736,54 @@ Class.nostalgia = {
         },
     ]
 }
+Class.stupefaction = {
+    PARENT: "genericTank",
+    LABEL: "Stupefaction",
+    STAT_NAMES: statnames.generic,
+    GUNS: [
+        {
+            POSITION: [15, 16, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2.5, speed: 1.5, health: 1.5, reload: 1.5, size: 0.3}]),
+                TYPE: "heatMissile",
+            }
+        },
+        {
+            POSITION: [5, 10, 2.4, -8, -7.25, 90, 0],
+        },
+        {
+            POSITION: [5, 10, 2.4, -8, 7.25, -90, 0],
+        },
+        {
+            POSITION: [5, 10, 2.1, -8, -3, 90, 0],
+            PROPERTIES: {
+                COLOR: "#30d5c8"
+            }
+        },
+        {
+            POSITION: [5, 10, 2.1, -8, 3, -90, 0],
+            PROPERTIES: {
+                COLOR: "#30d5c8"
+            }
+        },
+        {
+            POSITION: [8, 5, 1, 0, -5.5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3}]),
+                TYPE: "heatMissile",
+                ALPHA: 0,
+            }
+        },
+        {
+            POSITION: [8, 5, 1, 0, 5.5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3}]),
+                TYPE: "heatMissile",
+                ALPHA: 0,
+            }
+        },
+    ]
+}
 
 
 // Upgrade Paths
@@ -5750,6 +5798,10 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "triplex"]
             Class.triplet.UPGRADES_TIER_3 = ["carnivore0", "hypnosis", "trance"]
             Class.daze.UPGRADES_TIER_3 = ["hypnosis", "trance"]
+            Class.trance.UPGRADES_TIER_3 = ["reverie", "daydream", "stupefaction"]
+            Class.reverie.UPGRADES_TIER_3 = ["flashback"]
+            Class.daydream.UPGRADES_TIER_3 = ["flashback"]
+            Class.flashback.UPGRADES_TIER_3 = ["nostalgia"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
