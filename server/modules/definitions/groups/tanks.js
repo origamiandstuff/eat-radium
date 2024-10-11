@@ -5279,7 +5279,7 @@ Class.hypnosis = {
         {
             POSITION: [18, 19, 1, 0, 0, 0, 0.7],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, {damage: 5, speed: 0.7, health: 1.3, reload: 8}]),
+                SHOOT_SETTINGS: combineStats([g.basic, {damage: 3, speed: 0.7, health: 1.3, reload: 8}]),
                 TYPE: "bullet",
             }
         },
@@ -5448,7 +5448,7 @@ Class.trance = {
 Class.reverie = {
     PARENT: "genericTank",
     LABEL: "Reverie",
-    STAT_NAMES: statnames.desmos,
+    STAT_NAMES: statnames.generic,
     GUNS: [
         {
             POSITION: [3.5, 9, 2.4, -12.5, -4.8, 90, 0],
@@ -5586,7 +5586,7 @@ Class.daydream = {
 Class.flashback = {
     PARENT: "genericTank",
     LABEL: "Flashback",
-    STAT_NAMES: statnames.desmos,
+    STAT_NAMES: statnames.generic,
     GUNS: [
         {
             POSITION: [3.5, 9, 2.4, -12.5, -4.8, 90, 0],
@@ -5676,7 +5676,7 @@ Class.flashback = {
 Class.nostalgia = {
     PARENT: "genericTank",
     LABEL: "Nostalgia",
-    STAT_NAMES: statnames.desmos,
+    STAT_NAMES: statnames.generic,
     GUNS: [
         {
             POSITION: [3.5, 9, 2.4, -12.5, -4.8, 90, 0],
