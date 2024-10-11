@@ -5763,6 +5763,104 @@ Class.nostalgia = {
         },
     ]
 }
+Class.reminiscence = {
+    PARENT: "genericTank",
+    LABEL: "Reminiscence",
+    STAT_NAMES: statnames.generic,
+    GUNS: [
+        {
+            POSITION: [17, 4.75, 1, 0, 0, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2}]),
+                TYPE: "bullet",
+                COLOR: "#30d5c8",
+            }
+        },
+        {
+            POSITION: [3.5, 9, 2.4, -12.5, -4.8, 90, 0],
+            PROPERTIES: {
+                COLOR: "#30d5c8"
+            }
+        },
+        {
+            POSITION: [3.5, 9, 2.4, -12.5, 4.8, -90, 0],
+            PROPERTIES: {
+                COLOR: "#30d5c8"
+            }
+        },
+        {
+            POSITION: [5, 10, 2.1, -12.5, -0.55, 90, 0],
+        },
+        {
+            POSITION: [5, 10, 2.1, -12.5, 0.55, -90, 0],
+        },
+        {
+            POSITION: [15, 16, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2.5, speed: 1.5, health: 1.5, reload: 1.5, size: 0.3}]),
+                TYPE: "heatMissile",
+            }
+        },
+        {
+            POSITION: [5, 10, 2.4, -8, -7.25, 90, 0],
+            PROPERTIES: {
+                COLOR: "#30d5c8"
+            }
+        },
+        {
+            POSITION: [5, 10, 2.4, -8, 7.25, -90, 0],
+            PROPERTIES: {
+                COLOR: "#30d5c8"
+            }
+        },
+        {
+            POSITION: [5, 10, 2.1, -8, -3, 90, 0],
+        },
+        {
+            POSITION: [5, 10, 2.1, -8, 3, -90, 0],
+        },
+        {
+            POSITION: [8, 5, 1, 0, -5.5, 0, 1/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet",
+                ALPHA: 0,
+            }
+        },
+        {
+            POSITION: [8, 5, 1, 0, 5.5, 0, 1/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet",
+                ALPHA: 0,
+            }
+        },
+        {
+            POSITION: [8, 5, 1, 0, -10.75, 0, 2/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet",
+                ALPHA: 0,
+            }
+        },
+        {
+            POSITION: [8, 5, 1, 0, 10.75, 0, 2/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                TYPE: "bullet",
+                ALPHA: 0,
+            }
+        },
+        {
+            POSITION: [13, 4.75, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2}]),
+                TYPE: "bullet",
+                COLOR: "#30d5c8",
+            }
+        },
+    ]
+}
 Class.stupefaction = {
     PARENT: "genericTank",
     LABEL: "Stupefaction",
@@ -6005,6 +6103,6 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
             Class.trance.UPGRADES_TIER_3 = ["reverie", "daydream", "stupefaction"]
                 Class.reverie.UPGRADES_TIER_3 = ["flashback"]
                 Class.daydream.UPGRADES_TIER_3 = ["flashback"]
-                    Class.flashback.UPGRADES_TIER_3 = ["nostalgia"]
+                    Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence"]
                 Class.stupefaction.UPGRADES_TIER_3 = ["stupor"]
                     Class.stupor.UPGRADES_TIER_3 = ["narcosis"]
