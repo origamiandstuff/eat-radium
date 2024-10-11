@@ -5413,14 +5413,14 @@ Class.brainwash = {
             POSITION: [8, 8, 1, 0, 5.5, 0, 1/3],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {reload: 2}]),
-                TYPE: "chaseMissile",
+                TYPE: "heatMissile",
             }
         },
         {
             POSITION: [8, 8, 1, 0, -5.5, 0, 2/3],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {reload: 2}]),
-                TYPE: "chaseMissile",
+                TYPE: "heatMissile",
             }
         },
         {
@@ -5456,12 +5456,6 @@ Class.brainwash = {
         {
             POSITION: [15, 0.3, -35, 0.3, -4.5, -23, 0],
         },
-    ],
-    TURRETS: [
-      {
-        POSITION: [9, 0, 0, 0, 360, 1],
-        TYPE: "homingProp"
-      }
     ]
 }
 Class.trance = {
