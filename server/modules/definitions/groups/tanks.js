@@ -5038,7 +5038,7 @@ Class.snowstorm = {
         }
     ], 6)
 }
-/*Class.turbinate = {
+Class.turbinate = {
     PARENT: "genericTank",
     LABEL: "Turbinate",
     DANGER: 4,
@@ -5075,92 +5075,6 @@ Class.snowstorm = {
                 DELAY: 0
             },
 }
-    ]
-}*/
-        Class.magneticDrone = {
-            PARENT: 'drone',
-            ON: [
-            {
-             event: "tick",
-             handler: ({ body }) => {
-               for (let instance of entities) {
-                     let diffX = instance.x - body.x,
-                         diffY = instance.y - body.y,
-                         dist2 = diffX ** 2 + diffY ** 2;
-                     if (dist2 <= ((body.size / 12)*250) ** 1.9) {
-                     if ((instance.team != body.team || (instance.type == "undertowEffect" && instance.master.id == body.master.id)) && instance.type != "wall" && instance.isTurret != true) {
-                     if (instance.type == "undertowEffect") {
-                        forceMulti = 1
-                     }
-                     else if (instance.type == "food") {
-                        forceMulti = (6 / instance.size)
-                     }      
-                     else {
-                        forceMulti = (2 / instance.size)
-                     }           
-                        instance.velocity.x += util.clamp(body.x - instance.x, -90, 90) * instance.damp * forceMulti;//0.05
-                        instance.velocity.y += util.clamp(body.y - instance.y, -90, 90) * instance.damp * forceMulti;//0.05
-                        if (instance.type != "undertowEffect" && instance.type != "bullet" && instance.type != "swarm" && instance.type != "drone" && instance.type != "trap" && instance.type != "dominator") {
-                                let o = new Entity({x: instance.x, y: instance.y})
-                                o.define('undertowEffect')
-                                o.team = body.team;
-                                o.color = instance.color;
-                                o.alpha = 0.3;
-                                o.master = body.master;
-                        }
-                 }
-             }
-                  if (dist2 < body.size ** 3 + instance.size ** 3) {
-                     if (instance.master.id == body.master.id) {
-                         if (instance.type == "undertowEffect")
-                         {
-                            instance.kill();
-                         }
-                        }
-                    }
-                }
-            }
-        }
-          ],
-        }
-Class.magnetic = {
-    PARENT: "genericTank",
-    LABEL: "Magnetic",
-    STAT_NAMES: statnames.drone,
-    BODY: {
-        FOV: base.FOV * 1.1
-    },
-    GUNS: [
-        {
-            POSITION: {
-                LENGTH: 6,
-                WIDTH: 11,
-                ASPECT: 1.3,
-                X: 7
-            },
-            POSITION: [8, 13, 1.5, 7, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, {damage: 0.3}]),
-                TYPE: "magneticDrone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                STAT_CALCULATOR: "drone",
-                MAX_CHILDREN: 6,
-                WAIT_TO_CYCLE: true
-            }
-        },
-        {
-          POSITION: [13, 4, 1, 0, -3, 0, 0],
-          PROPERTIES: {
-             COLOR: "#f50202"
-          }
-        },
-        {
-          POSITION: [13, 4, 1, 0, 3, 0, 0],
-          PROPERTIES: {
-             COLOR: "#0223f5"
-          }
-        },
     ]
 }
 Class.riposte = {
@@ -5287,27 +5201,6 @@ Class.armory = {
         },
     ],
 }
-// Fog branch
-Class.fog = {
-    PARENT: "genericTank",
-    DANGER: 7,
-    LABEL: "Fog",
-    STAT_NAMES: statnames.generic,
-    BODY: {
-        FOV: 1.05 * base.FOV
-    },
-    GUNS: [
-        {
-            POSITION: [15, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 2, pen: 3, health: 1.8}]),
-                TYPE: "heatMissile",
-                COLOR: "#30d5c8"
-            }
-        }
-    ]
-}
-// Fog upgrades
 Class.daze = {
     PARENT: "genericTank",
     DANGER: 7,
@@ -5341,7 +5234,6 @@ Class.daze = {
         }
     ]
 }
-// Daze upgrades
 Class.hypnosis = {
     PARENT: "genericTank",
     DANGER: 8,
@@ -5368,7 +5260,7 @@ Class.hypnosis = {
         {
             POSITION: [18, 19, 1, 0, 0, 0, 0.7],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, {damage: 3, speed: 0.7, health: 1.3, reload: 8}]),
+                SHOOT_SETTINGS: combineStats([g.basic, {damage: 5, speed: 0.7, health: 1.3, reload: 8}]),
                 TYPE: "bullet",
             }
         },
@@ -5397,6 +5289,92 @@ Class.hypnosis = {
         },
         {
             POSITION: [15, 0.3, -35, 0.3, -4.5, -23, 0],
+        },
+    ]
+}
+        Class.magneticDrone = {
+            PARENT: 'drone',
+            ON: [
+            {
+             event: "tick",
+             handler: ({ body }) => {
+               for (let instance of entities) {
+                     let diffX = instance.x - body.x,
+                         diffY = instance.y - body.y,
+                         dist2 = diffX ** 2 + diffY ** 2;
+                     if (dist2 <= ((body.size / 12)*250) ** 1.9) {
+                     if ((instance.team != body.team || (instance.type == "undertowEffect" && instance.master.id == body.master.id)) && instance.type != "wall" && instance.isTurret != true) {
+                     if (instance.type == "undertowEffect") {
+                        forceMulti = 1
+                     }
+                     else if (instance.type == "food") {
+                        forceMulti = (6 / instance.size)
+                     }      
+                     else {
+                        forceMulti = (2 / instance.size)
+                     }           
+                        instance.velocity.x += util.clamp(body.x - instance.x, -90, 90) * instance.damp * forceMulti;//0.05
+                        instance.velocity.y += util.clamp(body.y - instance.y, -90, 90) * instance.damp * forceMulti;//0.05
+                        if (instance.type != "undertowEffect" && instance.type != "bullet" && instance.type != "swarm" && instance.type != "drone" && instance.type != "trap" && instance.type != "dominator") {
+                                let o = new Entity({x: instance.x, y: instance.y})
+                                o.define('undertowEffect')
+                                o.team = body.team;
+                                o.color = instance.color;
+                                o.alpha = 0.3;
+                                o.master = body.master;
+                        }
+                 }
+             }
+                  if (dist2 < body.size ** 3 + instance.size ** 3) {
+                     if (instance.master.id == body.master.id) {
+                         if (instance.type == "undertowEffect")
+                         {
+                            instance.kill();
+                         }
+                        }
+                    }
+                }
+            }
+        }
+          ],
+        }
+Class.magnetic = {
+    PARENT: "genericTank",
+    LABEL: "Magnetic",
+    STAT_NAMES: statnames.drone,
+    BODY: {
+        FOV: base.FOV * 1.1
+    },
+    GUNS: [
+        {
+            POSITION: {
+                LENGTH: 6,
+                WIDTH: 11,
+                ASPECT: 1.3,
+                X: 7
+            },
+            POSITION: [8, 13, 1.5, 7, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, {damage: 0.3}]),
+                TYPE: "magneticDrone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                MAX_CHILDREN: 6,
+                WAIT_TO_CYCLE: true
+            }
+        },
+        {
+          POSITION: [13, 4, 1, 0, -3, 0, 0],
+          PROPERTIES: {
+             COLOR: "#f50202"
+          }
+        },
+        {
+          POSITION: [13, 4, 1, 0, 3, 0, 0],
+          PROPERTIES: {
+             COLOR: "#0223f5"
+          }
         },
     ]
 }
@@ -5448,11 +5426,10 @@ Class.trance = {
         },
     ]
 }
-// Trance upgrades
 Class.reverie = {
     PARENT: "genericTank",
     LABEL: "Reverie",
-    STAT_NAMES: statnames.generic,
+    STAT_NAMES: statnames.desmos,
     GUNS: [
         {
             POSITION: [3.5, 9, 2.4, -12.5, -4.8, 90, 0],
@@ -5587,11 +5564,10 @@ Class.daydream = {
         },
     ]
 }
-// Reverie and Daydream upgrade
 Class.flashback = {
     PARENT: "genericTank",
     LABEL: "Flashback",
-    STAT_NAMES: statnames.generic,
+    STAT_NAMES: statnames.desmos,
     GUNS: [
         {
             POSITION: [3.5, 9, 2.4, -12.5, -4.8, 90, 0],
@@ -5678,11 +5654,10 @@ Class.flashback = {
         },
     ]
 }
-// Flashback upgrades
 Class.nostalgia = {
     PARENT: "genericTank",
     LABEL: "Nostalgia",
-    STAT_NAMES: statnames.generic,
+    STAT_NAMES: statnames.desmos,
     GUNS: [
         {
             POSITION: [3.5, 9, 2.4, -12.5, -4.8, 90, 0],
@@ -5746,7 +5721,7 @@ Class.nostalgia = {
         {
             POSITION: [8, 5, 1, 0, -10.75, 0, 2/3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3}]),
                 TYPE: "heatMissile",
                 ALPHA: 0,
             }
@@ -5754,115 +5729,9 @@ Class.nostalgia = {
         {
             POSITION: [8, 5, 1, 0, 10.75, 0, 2/3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3}]),
                 TYPE: "heatMissile",
                 ALPHA: 0,
-            }
-        },
-        {
-            POSITION: [13, 4.75, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2}]),
-                TYPE: "bullet",
-                COLOR: "#30d5c8",
-            }
-        },
-    ]
-}
-Class.reminiscence = {
-    PARENT: "genericTank",
-    LABEL: "Reminiscence",
-    STAT_NAMES: statnames.generic,
-    GUNS: [
-        {
-            POSITION: [17, 4.75, 1, 0, 0, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2}]),
-                TYPE: "bullet",
-                COLOR: "#30d5c8",
-            }
-        },
-        {
-            POSITION: [3.5, 9, 2.4, -12.5, -4.8, 90, 0],
-            PROPERTIES: {
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [3.5, 9, 2.4, -12.5, 4.8, -90, 0],
-            PROPERTIES: {
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [5, 10, 2.1, -12.5, -0.55, 90, 0],
-        },
-        {
-            POSITION: [5, 10, 2.1, -12.5, 0.55, -90, 0],
-        },
-        {
-            POSITION: [15, 16, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2.5, speed: 1.5, health: 1.5, reload: 1.5, size: 0.3}]),
-                TYPE: "heatMissile",
-            }
-        },
-        {
-            POSITION: [5, 10, 2.4, -8, -7.25, 90, 0],
-            PROPERTIES: {
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [5, 10, 2.4, -8, 7.25, -90, 0],
-            PROPERTIES: {
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [5, 10, 2.1, -8, -3, 90, 0],
-        },
-        {
-            POSITION: [5, 10, 2.1, -8, 3, -90, 0],
-        },
-        {
-            POSITION: [8, 5, 1, 0, -5.5, 0, 1/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet",
-                ALPHA: 0,
-            }
-        },
-        {
-            POSITION: [8, 5, 1, 0, 5.5, 0, 1/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet",
-                ALPHA: 0,
-            }
-        },
-        {
-            POSITION: [8, 5, 1, 0, -10.75, 0, 2/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet",
-                ALPHA: 0,
-            }
-        },
-        {
-            POSITION: [8, 5, 1, 0, 10.75, 0, 2/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet",
-                ALPHA: 0,
-            }
-        },
-        {
-            POSITION: [13, 4.75, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2}]),
-                TYPE: "bullet",
-                COLOR: "#30d5c8",
             }
         },
     ]
@@ -5901,7 +5770,7 @@ Class.stupefaction = {
         {
             POSITION: [8, 5, 1, 0, -5.5, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3}]),
                 TYPE: "heatMissile",
                 ALPHA: 0,
             }
@@ -5909,146 +5778,17 @@ Class.stupefaction = {
         {
             POSITION: [8, 5, 1, 0, 5.5, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3}]),
                 TYPE: "heatMissile",
                 ALPHA: 0,
             }
         },
     ]
 }
-Class.stupor = {
-    PARENT: "genericTank",
-    LABEL: "Stupor",
-    STAT_NAMES: statnames.generic,
-    GUNS: [
-        {
-            POSITION: [20, 0.3, -50, 0, 0, 0, 0],
-            PROPERTIES: {
-                COLOR: "#5a5a5a",
-            }
-        },
-        {
-            POSITION: [15, 16, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2.5, speed: 1.5, health: 1.5, reload: 1.5, size: 0.3}]),
-                TYPE: "heatMissile",
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [5, 10, 2.4, -8, -7.25, 90, 0],
-        },
-        {
-            POSITION: [5, 10, 2.4, -8, 7.25, -90, 0],
-        },
-        {
-            POSITION: [5, 10, 2.1, -8, -3, 90, 0],
-            PROPERTIES: {
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [5, 10, 2.1, -8, 3, -90, 0],
-            PROPERTIES: {
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [8, 5, 1, 0, -5.5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
-                TYPE: "heatMissile",
-                ALPHA: 0,
-            }
-        },
-        {
-            POSITION: [8, 5, 1, 0, 5.5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
-                TYPE: "heatMissile",
-                ALPHA: 0,
-            }
-        },
-        {
-            POSITION: [8, 10, 1, 0, 5.5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone]),
-                TYPE: "drone",
-                MAX_CHILDREN: 3,
-                ALPHA: 0,
-            }
-        },
-    ]
-}
-Class.narcosis = {
-    PARENT: "genericTank",
-    LABEL: "Narcosis",
-    STAT_NAMES: statnames.generic,
-    GUNS: [
-        {
-            POSITION: [20, 0.3, -50, 0, 0, 0, 0],
-            PROPERTIES: {
-                COLOR: "#00008b",
-            }
-        },
-        {
-            POSITION: [15, 16, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2.5, speed: 1.5, health: 1.5, reload: 1.5, size: 0.3}]),
-                TYPE: "heatMissile",
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [5, 10, 2.4, -8, -7.25, 90, 0],
-        },
-        {
-            POSITION: [5, 10, 2.4, -8, 7.25, -90, 0],
-        },
-        {
-            POSITION: [5, 10, 2.1, -8, -3, 90, 0],
-            PROPERTIES: {
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [5, 10, 2.1, -8, 3, -90, 0],
-            PROPERTIES: {
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [8, 5, 1, 0, -5.5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
-                TYPE: "heatMissile",
-                ALPHA: 0,
-            }
-        },
-        {
-            POSITION: [8, 5, 1, 0, 5.5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
-                TYPE: "heatMissile",
-                ALPHA: 0,
-            }
-        },
-        {
-            POSITION: [8, 10, 1, 0, 5.5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.factory, g.babyfactory]),
-                TYPE: "minion",
-                MAX_CHILDREN: 3,
-                ALPHA: 0,
-            }
-        },
-    ]
-}
-
 
 
 // Upgrade Paths
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
@@ -6058,6 +5798,11 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"]
         Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "triplex"]
             Class.triplet.UPGRADES_TIER_3 = ["carnivore0", "hypnosis", "trance"]
+            Class.daze.UPGRADES_TIER_3 = ["hypnosis", "trance"]
+            Class.trance.UPGRADES_TIER_3 = ["reverie", "daydream", "stupefaction"]
+            Class.reverie.UPGRADES_TIER_3 = ["flashback"]
+            Class.daydream.UPGRADES_TIER_3 = ["flashback"]
+            Class.flashback.UPGRADES_TIER_3 = ["nostalgia"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
@@ -6103,12 +5848,3 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"]
         Class.undertow.UPGRADES_TIER_3 = ["riptide","magnetic"]
         Class.repeater.UPGRADES_TIER_3 = ["iterator", "duplicator"]
-
-    Class.fog.UPGRADES_TIER_2 = ["daze"]
-        Class.daze.UPGRADES_TIER_3 = ["hypnosis", "trance"]
-            Class.trance.UPGRADES_TIER_3 = ["reverie", "daydream", "stupefaction"]
-                Class.reverie.UPGRADES_TIER_3 = ["flashback"]
-                Class.daydream.UPGRADES_TIER_3 = ["flashback"]
-                    Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence"]
-                Class.stupefaction.UPGRADES_TIER_3 = ["stupor"]
-                    Class.stupor.UPGRADES_TIER_3 = ["narcosis"]
