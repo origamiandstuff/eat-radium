@@ -5201,6 +5201,25 @@ Class.armory = {
         },
     ],
 }
+Class.fog = {
+    PARENT: "genericTank",
+    DANGER: 7,
+    LABEL: "Fog",
+    STAT_NAMES: statnames.generic,
+    BODY: {
+        FOV: 1.05 * base.FOV
+    },
+    GUNS: [
+        {
+            POSITION: [15, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 2, pen: 3, health: 1.8}]),
+                TYPE: "heatMissile",
+                COLOR: "#30d5c8"
+            }
+        }
+    ]
+}
 Class.daze = {
     PARENT: "genericTank",
     DANGER: 7,
@@ -5721,7 +5740,7 @@ Class.nostalgia = {
         {
             POSITION: [8, 5, 1, 0, -10.75, 0, 2/3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
                 TYPE: "heatMissile",
                 ALPHA: 0,
             }
@@ -5729,7 +5748,7 @@ Class.nostalgia = {
         {
             POSITION: [8, 5, 1, 0, 10.75, 0, 2/3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
                 TYPE: "heatMissile",
                 ALPHA: 0,
             }
@@ -5770,7 +5789,7 @@ Class.stupefaction = {
         {
             POSITION: [8, 5, 1, 0, -5.5, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
                 TYPE: "heatMissile",
                 ALPHA: 0,
             }
@@ -5778,7 +5797,7 @@ Class.stupefaction = {
         {
             POSITION: [8, 5, 1, 0, 5.5, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
                 TYPE: "heatMissile",
                 ALPHA: 0,
             }
