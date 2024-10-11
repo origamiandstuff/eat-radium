@@ -5400,64 +5400,6 @@ Class.hypnosis = {
         },
     ]
 }
-Class.brainwash = {
-    PARENT: "genericTank",
-    DANGER: 8,
-    LABEL: "Brainwash",
-    STAT_NAMES: statnames.generic,
-    BODY: {
-        FOV: 1.05 * base.FOV
-    },
-    GUNS: [
-        {
-            POSITION: [8, 8, 1, 0, 5.5, 0, 1/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {reload: 2}]),
-                TYPE: "heatMissile",
-            }
-        },
-        {
-            POSITION: [8, 8, 1, 0, -5.5, 0, 2/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {reload: 2}]),
-                TYPE: "heatMissile",
-            }
-        },
-        {
-            POSITION: [18, 19, 1, 0, 0, 0, 0.7],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, {damage: 3, speed: 0.7, health: 1.5, reload: 8}]),
-                TYPE: "bullet",
-            }
-        },
-        {
-            POSITION: [13, 10, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 1.8, speed: 1.5, health: 1.5, reload: 1.5}]),
-                TYPE: "homingBullet",
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [20, 0.3, -48, 2.5, 2.7, 20, 0],
-            PROPERTIES: {
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [15, 0.3, -35, 0.3, 4.5, 23, 0],
-        },
-        {
-            POSITION: [20, 0.3, -48, 2.5, -2.7, -20, 0],
-            PROPERTIES: {
-                COLOR: "#30d5c8"
-            }
-        },
-        {
-            POSITION: [15, 0.3, -35, 0.3, -4.5, -23, 0],
-        },
-    ]
-}
 Class.trance = {
     PARENT: "genericTank",
     LABEL: "Trance",

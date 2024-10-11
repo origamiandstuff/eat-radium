@@ -822,35 +822,3 @@ Class.heatMissile = {
       }
     ]
 }
-Class.homingBullet = {
-    PARENT: "swarm",
-    LABEL: "Homing Bullet",
-    SHAPE: 0,
-}
-Class.chaseMissile = {
-    PARENT: "swarm",
-    COLOR: "#30D5C8",
-    SHAPE: 0,
-    LABEL: "Chasing Missile",
-    BODY: {
-        RANGE: 300,
-        FOV: 8
-    },
-    GUNS: [
-        {
-            POSITION: [0, 12, 1, 0, 5, 180, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { damage: 10e-10, health: 10e100, maxSpeed: 0, speed: 0, recoil:  0, size: 2 }]),
-                TYPE: "trail",
-                ALPHA: 0,
-                AUTOFIRE: true,
-            }
-        },
-    ],
-    TURRETS: [
-      {
-        POSITION: [16, 0, 0, 0, 360, 15],
-        TYPE: "homingProp"
-      }
-    ]
-}
