@@ -5413,14 +5413,14 @@ Class.brainwash = {
             POSITION: [8, 8, 1, 0, 5.5, 0, 1/3],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {reload: 2}]),
-                TYPE: "heatMissile",
+                TYPE: "chaseMissile",
             }
         },
         {
             POSITION: [8, 8, 1, 0, -5.5, 0, 2/3],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {reload: 2}]),
-                TYPE: "heatMissile",
+                TYPE: "chaseMissile",
             }
         },
         {
