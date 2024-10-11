@@ -5753,6 +5753,14 @@ Class.nostalgia = {
                 ALPHA: 0,
             }
         },
+        {
+            POSITION: [13, 4.75, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2}]),
+                TYPE: "bullet",
+                COLOR: "#30d5c8",
+            }
+        },
     ]
 }
 Class.stupefaction = {
@@ -5876,7 +5884,7 @@ Class.narcosis = {
         {
             POSITION: [20, 0.3, -50, 0, 0, 0, 0],
             PROPERTIES: {
-                COLOR: "#013220",
+                COLOR: "#00008b",
             }
         },
         {
