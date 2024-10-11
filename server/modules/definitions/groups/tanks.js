@@ -5867,7 +5867,6 @@ Class.reminiscence = {
         },
     ]
 }
-// More trance upgrades
 Class.stupefaction = {
     PARENT: "genericTank",
     LABEL: "Stupefaction",
@@ -5917,7 +5916,6 @@ Class.stupefaction = {
         },
     ]
 }
-// Stupefaction upgrades
 Class.stupor = {
     PARENT: "genericTank",
     LABEL: "Stupor",
@@ -5982,7 +5980,6 @@ Class.stupor = {
         },
     ]
 }
-// Stupor upgrades
 Class.narcosis = {
     PARENT: "genericTank",
     LABEL: "Narcosis",
