@@ -5038,7 +5038,7 @@ Class.snowstorm = {
         }
     ], 6)
 }
-Class.turbinate = {
+/*Class.turbinate = {
     PARENT: "genericTank",
     LABEL: "Turbinate",
     DANGER: 4,
@@ -5076,7 +5076,7 @@ Class.turbinate = {
             },
 }
     ]
-}
+}*/
 Class.riposte = {
     PARENT: "genericTank",
     LABEL: "Riposte",
