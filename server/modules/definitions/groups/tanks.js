@@ -5456,6 +5456,12 @@ Class.brainwash = {
         {
             POSITION: [15, 0.3, -35, 0.3, -4.5, -23, 0],
         },
+    ],
+    TURRETS: [
+      {
+        POSITION: [9, 0, 0, 0, 360, 1],
+        TYPE: "homingProp"
+      }
     ]
 }
 Class.trance = {
