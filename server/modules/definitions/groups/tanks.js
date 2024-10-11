@@ -5807,7 +5807,7 @@ Class.stupefaction = {
 
 
 // Upgrade Paths
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
@@ -5817,11 +5817,6 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"]
         Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "triplex"]
             Class.triplet.UPGRADES_TIER_3 = ["carnivore0", "hypnosis", "trance"]
-            Class.daze.UPGRADES_TIER_3 = ["hypnosis", "trance"]
-            Class.trance.UPGRADES_TIER_3 = ["reverie", "daydream", "stupefaction"]
-            Class.reverie.UPGRADES_TIER_3 = ["flashback"]
-            Class.daydream.UPGRADES_TIER_3 = ["flashback"]
-            Class.flashback.UPGRADES_TIER_3 = ["nostalgia"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
@@ -5867,3 +5862,10 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"]
         Class.undertow.UPGRADES_TIER_3 = ["riptide","magnetic"]
         Class.repeater.UPGRADES_TIER_3 = ["iterator", "duplicator"]
+
+    Class.fog.UPGRADES_TIER_2 = ["daze"]
+        Class.daze.UPGRADES_TIER_3 = ["hypnosis", "trance"]
+            Class.trance.UPGRADES_TIER_3 = ["reverie", "daydream", "stupefaction"]
+                Class.reverie.UPGRADES_TIER_3 = ["flashback"]
+                Class.daydream.UPGRADES_TIER_3 = ["flashback"]
+                    Class.flashback.UPGRADES_TIER_3 = ["nostalgia"]
