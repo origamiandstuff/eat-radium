@@ -5810,7 +5810,10 @@ Class.stupor = {
     STAT_NAMES: statnames.generic,
     GUNS: [
         {
-            POSITION: [18, 0.3, -50, 0, 0, 0, 0]
+            POSITION: [20, 0.3, -50, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: "#5a5a5a",
+            }
         },
         {
             POSITION: [15, 16, 1, 0, 0, 0, 0],
@@ -5855,10 +5858,74 @@ Class.stupor = {
             }
         },
         {
-            POSITION: [8, 5, 1, 0, 5.5, 0, 0.5],
+            POSITION: [8, 10, 1, 0, 5.5, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone]),
                 TYPE: "drone",
+                MAX_CHILDREN: 3,
+                ALPHA: 0,
+            }
+        },
+    ]
+}
+Class.narcosis = {
+    PARENT: "genericTank",
+    LABEL: "Narcosis",
+    STAT_NAMES: statnames.generic,
+    GUNS: [
+        {
+            POSITION: [20, 0.3, -50, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: "#013220",
+            }
+        },
+        {
+            POSITION: [15, 16, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2.5, speed: 1.5, health: 1.5, reload: 1.5, size: 0.3}]),
+                TYPE: "heatMissile",
+                COLOR: "#30d5c8"
+            }
+        },
+        {
+            POSITION: [5, 10, 2.4, -8, -7.25, 90, 0],
+        },
+        {
+            POSITION: [5, 10, 2.4, -8, 7.25, -90, 0],
+        },
+        {
+            POSITION: [5, 10, 2.1, -8, -3, 90, 0],
+            PROPERTIES: {
+                COLOR: "#30d5c8"
+            }
+        },
+        {
+            POSITION: [5, 10, 2.1, -8, 3, -90, 0],
+            PROPERTIES: {
+                COLOR: "#30d5c8"
+            }
+        },
+        {
+            POSITION: [8, 5, 1, 0, -5.5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
+                TYPE: "heatMissile",
+                ALPHA: 0,
+            }
+        },
+        {
+            POSITION: [8, 5, 1, 0, 5.5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2, reload: 2, health: 1.3, pen: 3}]),
+                TYPE: "heatMissile",
+                ALPHA: 0,
+            }
+        },
+        {
+            POSITION: [8, 10, 1, 0, 5.5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.factory, g.babyfactory]),
+                TYPE: "minion",
                 MAX_CHILDREN: 3,
                 ALPHA: 0,
             }
@@ -5932,3 +5999,4 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
                 Class.daydream.UPGRADES_TIER_3 = ["flashback"]
                     Class.flashback.UPGRADES_TIER_3 = ["nostalgia"]
                 Class.stupefaction.UPGRADES_TIER_3 = ["stupor"]
+                    Class.stupor.UPGRADES_TIER_3 = ["narcosis"]
