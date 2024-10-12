@@ -5211,7 +5211,7 @@ Class.fog = {
     },
     GUNS: [
         {
-            POSITION: [20, 8, 1, 0, 0, 0, 0],
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 2}]),
                 TYPE: "heatMissile",
@@ -6277,6 +6277,6 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
                     Class.reverie.UPGRADES_TIER_3 = ["flashback"]
                     Class.daydream.UPGRADES_TIER_3 = ["flashback", "mirage"]
                         Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence"]
+                        Class.mirage.UPGRADES_TIER_3 = ["reminiscence"]
                     Class.stupefaction.UPGRADES_TIER_3 = ["stupor", "disorientation"]
                         Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
-                        Class.mirage.UPGRADES_TIER_3 = ["nostalgia"]
