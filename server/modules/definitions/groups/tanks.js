@@ -5793,7 +5793,7 @@ Class.illusion = {
             }
         },
         {
-            POSITION: [13, 4.75, -1.6, 0, 0, 0, 0],
+            POSITION: [13, 4.25, -1.8, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm, {damage: 2, health: 1.5, reload: 1.8}]),
                 TYPE: "swarm",
