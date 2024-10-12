@@ -6342,6 +6342,6 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
                     Class.reverie.UPGRADES_TIER_3 = ["flashback"]
                     Class.daydream.UPGRADES_TIER_3 = ["flashback", "mirage"]
                         Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence"]
-                        Class.mirage.UPGRADES_TIER_3 = ["reminiscence"]
+                        Class.mirage.UPGRADES_TIER_3 = ["reminiscence", "illusion"]
                     Class.stupefaction.UPGRADES_TIER_3 = ["stupor", "disorientation"]
                         Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
