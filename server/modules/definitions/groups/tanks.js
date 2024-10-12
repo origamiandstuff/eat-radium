@@ -6084,7 +6084,8 @@ Class.rapture = {
     ],
     TURRETS: [
       {
-        POSITION: [9, 0, 0, 0, 360, 1]
+          POSITION: [9, 0, 0, 0, 360, 1],
+          TYPE: "overdriveDeco"
       }
     ]
 }
@@ -6107,7 +6108,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
                     Class.daydream.UPGRADES_TIER_3 = ["flashback"]
                         Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence"]
                     Class.stupefaction.UPGRADES_TIER_3 = ["stupor"]
-                        Class.stupor.UPGRADES_TIER_3 = ["narcosis"]
+                        Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
