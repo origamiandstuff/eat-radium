@@ -5808,11 +5808,19 @@ Class.hallucination = {
     STAT_NAMES: statnames.generic,
     GUNS: [
         {
-            POSITION: [17, 4.75, 1, 0, 0, 0, 0.5],
+            POSITION: [18, 4.75, 1, 0, 0, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2}]),
-                TYPE: "bullet",
-                COLOR: "#30d5c8",
+                COLOR: "#26615c",
+            }
+        },
+        {
+            POSITION: [2, 4.75, 1.45, 18, 0, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, {damage: 2}]),
+                MAX_CHILDREN: 5,
+                DESTY
+                TYPE: "trap",
+                COLOR: "#26615c",
             }
         },
         {
@@ -5859,15 +5867,15 @@ Class.hallucination = {
         {
             POSITION: [13, 4.75, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                COLOR: "#30d5c8",
+                COLOR: "#26615c",
             }
         },
         {
-            POSITION: [2, 4.75, 1.35, 13, 0, 0, 0],
+            POSITION: [2, 4.75, 1.45, 13, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.trap, {damage: 2}]),
                 TYPE: "trap",
-                COLOR: "#30d5c8",
+                COLOR: "#26615c",
             }
         },
     ]
