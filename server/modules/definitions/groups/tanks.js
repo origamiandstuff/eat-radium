@@ -6089,6 +6089,39 @@ Class.rapture = {
       }
     ]
 }
+Class.disorientation = {
+    PARENT: "genericTank",
+    LABEL: "Disorientation",
+    STAT_NAMES: statnames.generic,
+    GUNS: [
+        {
+            POSITION: [15, 16, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 7, speed: 0.8, health: 4.3, reload: 5.5}]),
+                TYPE: "heatMissile",
+                COLOR: "#30d5c8"
+            }
+        },
+        {
+            POSITION: [5, 10, 2.4, -8, -7.25, 90, 0],
+        },
+        {
+            POSITION: [5, 10, 2.4, -8, 7.25, -90, 0],
+        },
+        {
+            POSITION: [5, 10, 2.1, -8, -3, 90, 0],
+            PROPERTIES: {
+                COLOR: "#003546"
+            }
+        },
+        {
+            POSITION: [5, 10, 2.1, -8, 3, -90, 0],
+            PROPERTIES: {
+                COLOR: "#003546"
+            }
+        },
+    ]
+}
 
 
 // Upgrade Paths
