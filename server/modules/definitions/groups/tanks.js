@@ -5201,6 +5201,25 @@ Class.armory = {
         },
     ],
 }
+Class.fog = {
+    PARENT: "genericTank",
+    DANGER: 7,
+    LABEL: "Fog",
+    STAT_NAMES: statnames.generic,
+    BODY: {
+        FOV: 1.05 * base.FOV
+    },
+    GUNS: [
+        {
+            POSITION: [20, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.lessReload, {damage: 2}]),
+                TYPE: "heatMissile",
+                COLOR: "#30d5c8"
+            }
+        }
+    ]
+}
 Class.daze = {
     PARENT: "genericTank",
     DANGER: 7,
@@ -6125,7 +6144,7 @@ Class.disorientation = {
 
 
 // Upgrade Paths
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
@@ -6140,7 +6159,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
                     Class.reverie.UPGRADES_TIER_3 = ["flashback"]
                     Class.daydream.UPGRADES_TIER_3 = ["flashback"]
                         Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence"]
-                    Class.stupefaction.UPGRADES_TIER_3 = ["stupor"]
+                    Class.stupefaction.UPGRADES_TIER_3 = ["stupor", "disorientation"]
                         Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
@@ -6187,3 +6206,12 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"]
         Class.undertow.UPGRADES_TIER_3 = ["riptide","magnetic"]
         Class.repeater.UPGRADES_TIER_3 = ["iterator", "duplicator"]
+
+    Class.fog.UPGRADES_TIER_2 = ["daze"]
+            Class.daze.UPGRADES_TIER_3 = ["hypnosis", "trance"]
+                Class.trance.UPGRADES_TIER_3 = ["reverie", "daydream", "stupefaction"]
+                    Class.reverie.UPGRADES_TIER_3 = ["flashback"]
+                    Class.daydream.UPGRADES_TIER_3 = ["flashback"]
+                        Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence"]
+                    Class.stupefaction.UPGRADES_TIER_3 = ["stupor", "disorientation"]
+                        Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
