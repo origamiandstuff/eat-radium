@@ -5590,7 +5590,13 @@ Class.asphyxia = {
     STAT_NAMES: statnames.desmos,
     GUNS: [
         {
-            POSITION: [21, 0.3, -50, 0, -2, -16, 0],
+            POSITION: [21, 0.3, -50, 0, 3.25, -19, 0],
+            PROPERTIES: {
+                COLOR: "#219167"
+            }
+        },
+        {
+            POSITION: [21, 0.3, -50, 0, -3.25, 19, 0],
             PROPERTIES: {
                 COLOR: "#219167"
             }
@@ -5642,7 +5648,7 @@ Class.asphyxia = {
             POSITION: [8, 5, 1, 0, -5.5, 0, 1/3],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet",
+                TYPE: ["bullet", {CONTROLLERS: ['snake']}],
                 ALPHA: 0,
             }
         },
@@ -5650,7 +5656,7 @@ Class.asphyxia = {
             POSITION: [8, 5, 1, 0, 5.5, 0, 1/3],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet",
+                TYPE: ["bullet", {CONTROLLERS: [['snake', {invert: true}]]}],
                 ALPHA: 0,
             }
         },
