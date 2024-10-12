@@ -5590,18 +5590,6 @@ Class.asphyxia = {
     STAT_NAMES: statnames.desmos,
     GUNS: [
         {
-            POSITION: [21, 0.3, -50, 0, 3.25, -19, 0],
-            PROPERTIES: {
-                COLOR: "#219167"
-            }
-        },
-        {
-            POSITION: [21, 0.3, -50, 0, -3.25, 19, 0],
-            PROPERTIES: {
-                COLOR: "#219167"
-            }
-        },
-        {
             POSITION: [3.5, 9, 2.4, -12.5, -4.8, 90, 0],
             PROPERTIES: {
                 COLOR: "#30d5c8"
@@ -5624,6 +5612,18 @@ Class.asphyxia = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2.5, speed: 1.5, health: 1.5, reload: 1.5, size: 0.3}]),
                 TYPE: "heatMissile",
+            }
+        },
+        {
+            POSITION: [21, 0.3, -50, 0, 3.25, -19, 0],
+            PROPERTIES: {
+                COLOR: "#219167"
+            }
+        },
+        {
+            POSITION: [21, 0.3, -50, 0, -3.25, 19, 0],
+            PROPERTIES: {
+                COLOR: "#219167"
             }
         },
         {
@@ -6513,7 +6513,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
     Class.fog.UPGRADES_TIER_2 = ["daze"]
             Class.daze.UPGRADES_TIER_3 = ["hypnosis", "trance"]
                 Class.trance.UPGRADES_TIER_3 = ["reverie", "daydream", "stupefaction"]
-                    Class.reverie.UPGRADES_TIER_3 = ["flashback"]
+                    Class.reverie.UPGRADES_TIER_3 = ["flashback", "asphyxia"]
                     Class.daydream.UPGRADES_TIER_3 = ["flashback", "mirage"]
                         Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence"]
                         Class.mirage.UPGRADES_TIER_3 = ["reminiscence", "illusion", "hallucination"]
