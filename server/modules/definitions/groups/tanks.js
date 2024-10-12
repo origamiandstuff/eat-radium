@@ -5817,8 +5817,8 @@ Class.hallucination = {
             POSITION: [2, 4.75, 1.45, 18, 0, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.trap, {damage: 2}]),
-                MAX_CHILDREN: 5,
-                DESTY
+                MAX_CHILDREN: 8,
+                DESTROY_OLDEST_CHILD: true,
                 TYPE: "trap",
                 COLOR: "#26615c",
             }
@@ -5874,6 +5874,8 @@ Class.hallucination = {
             POSITION: [2, 4.75, 1.45, 13, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.trap, {damage: 2}]),
+                MAX_CHILDREN: 8,
+                DESTROY_OLDEST_CHILD: true,
                 TYPE: "trap",
                 COLOR: "#26615c",
             }
@@ -6420,6 +6422,6 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
                     Class.reverie.UPGRADES_TIER_3 = ["flashback"]
                     Class.daydream.UPGRADES_TIER_3 = ["flashback", "mirage"]
                         Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence"]
-                        Class.mirage.UPGRADES_TIER_3 = ["reminiscence", "illusion"]
+                        Class.mirage.UPGRADES_TIER_3 = ["reminiscence", "illusion", "hallucination"]
                     Class.stupefaction.UPGRADES_TIER_3 = ["stupor", "disorientation"]
                         Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
