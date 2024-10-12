@@ -5744,9 +5744,9 @@ Class.illusion = {
     STAT_NAMES: statnames.generic,
     GUNS: [
         {
-            POSITION: [17, 4.75, -1.2, 0, 0, 0, 0.5],
+            POSITION: [17, 4.75, -1.4, 0, 0, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, {damage: 2, health: 1.5}]),
+                SHOOT_SETTINGS: combineStats([g.swarm, {damage: 2, health: 1.5, reload: 1.8}]),
                 TYPE: "swarm",
                 COLOR: "#30d5c8",
             }
@@ -5793,9 +5793,9 @@ Class.illusion = {
             }
         },
         {
-            POSITION: [13, 4.75, -1.2, 0, 0, 0, 0],
+            POSITION: [13, 4.75, -1.6, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, {damage: 2, health: 1.5}]),
+                SHOOT_SETTINGS: combineStats([g.swarm, {damage: 2, health: 1.5, reload: 1.8}]),
                 TYPE: "swarm",
                 COLOR: "#30d5c8",
             }
