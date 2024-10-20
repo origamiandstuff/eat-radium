@@ -5913,9 +5913,9 @@ Class.awe = {
             }
         },
         {
-            POSITION: [13, 4.75, 1, 0, 0, 0, 0],
+            POSITION: [15, 4, 1.8, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, {damage: 2}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.machineGun, {damage: 2, pen:1.5, health: 1.6, speed: 0.7, size: 1.6, reload: 0.85}]),
                 TYPE: "bullet",
                 COLOR: "#30d5c8",
             }
@@ -6605,7 +6605,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
                 Class.trance.UPGRADES_TIER_3 = ["reverie", "daydream", "stupefaction"]
                     Class.reverie.UPGRADES_TIER_3 = ["flashback", "asphyxia"]
                     Class.daydream.UPGRADES_TIER_3 = ["flashback", "mirage"]
-                        Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence"]
+                        Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence", "awe"]
                         Class.mirage.UPGRADES_TIER_3 = ["reminiscence", "illusion", "hallucination"]
                     Class.stupefaction.UPGRADES_TIER_3 = ["stupor", "disorientation"]
                         Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
