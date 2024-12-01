@@ -2278,34 +2278,7 @@ Class.overseer = {
         }
     }, 2)
 }
-Class.cruiser = {
-    PARENT: "genericTank",
-    LABEL: "Cruiser",
-    DANGER: 6,
-    FACING_TYPE: "locksFacing",
-    STAT_NAMES: statnames.swarm,
-    BODY: {
-        FOV: 1.2 * base.FOV,
-    },
-    GUNS: [
-        {
-            POSITION: [7, 7.5, 0.6, 7, 4, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: "swarm",
-            },
-        },
-        {
-            POSITION: [7, 7.5, 0.6, 7, -4, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: "swarm",
-            },
-        },
-    ],
-}
+
 Class.underseer = {
     PARENT: "genericTank",
     LABEL: "Underseer",
@@ -2488,6 +2461,33 @@ Class.commander = {
             },
         }, 3, 1/3),
     ]
+}Class.cruiser = {
+    PARENT: "genericTank",
+    LABEL: "Cruiser",
+    DANGER: 6,
+    FACING_TYPE: "locksFacing",
+    STAT_NAMES: statnames.swarm,
+    BODY: {
+        FOV: 1.2 * base.FOV,
+    },
+    GUNS: [
+        {
+            POSITION: [7, 7.5, 0.6, 7, 4, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm]),
+                TYPE: "swarm",
+                STAT_CALCULATOR: "swarm",
+            },
+        },
+        {
+            POSITION: [7, 7.5, 0.6, 7, -4, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm]),
+                TYPE: "swarm",
+                STAT_CALCULATOR: "swarm",
+            },
+        },
+    ],
 }
 
 // Cruiser upgrades
@@ -6552,6 +6552,34 @@ Class.flamethrower = {
             }
         }
     ]
+}
+Class.cruiser = {
+    PARENT: "genericTank",
+    LABEL: "Cruiser",
+    DANGER: 6,
+    FACING_TYPE: "locksFacing",
+    STAT_NAMES: statnames.generic,
+    BODY: {
+        FOV: 1.2 * base.FOV,
+    },
+    GUNS: [
+        {
+            POSITION: [7, 7.5, 0.6, 7, 0, 270, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm]),
+                TYPE: "heatMissile",
+                STAT_CALCULATOR: "swarm",
+            },
+        },
+        {
+            POSITION: [7, 7.5, 0.6, 7, 0, 90, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm]),
+                TYPE: "heatMissile",
+                STAT_CALCULATOR: "swarm",
+            },
+        },
+    ],
 }
 
 
