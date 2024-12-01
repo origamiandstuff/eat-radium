@@ -826,6 +826,7 @@ Class.flame = {
     PARENT: "bullet",
     SHAPE: 4, 
     LABEL: "flame",
+    COLOR: "red",
     ON: [{
         event: "tick",
         handler: ({ body }) => {
