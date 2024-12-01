@@ -830,6 +830,7 @@ Class.flame = {
         event: "tick",
         handler: ({ body }) => {
             body.SIZE = body.SIZE + 0.2
+            body.alpha = body.alpha - 0.01
             if (body.SIZE > 15) body.kill();          
         }
     }]
