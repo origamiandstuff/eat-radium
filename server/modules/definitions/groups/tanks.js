@@ -2461,7 +2461,8 @@ Class.commander = {
             },
         }, 3, 1/3),
     ]
-}Class.cruiser = {
+}
+Class.cruiser = {
     PARENT: "genericTank",
     LABEL: "Cruiser",
     DANGER: 6,
@@ -6553,9 +6554,9 @@ Class.flamethrower = {
         }
     ]
 }
-Class.cruiser = {
+Class.fogOfWar = {
     PARENT: "genericTank",
-    LABEL: "Cruiser",
+    LABEL: "Fog of war",
     DANGER: 6,
     FACING_TYPE: "locksFacing",
     STAT_NAMES: statnames.generic,
@@ -6569,6 +6570,7 @@ Class.cruiser = {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
                 TYPE: "heatMissile",
                 STAT_CALCULATOR: "swarm",
+                COLOR: "#003546",
             },
         },
         {
@@ -6577,7 +6579,41 @@ Class.cruiser = {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
                 TYPE: "heatMissile",
                 STAT_CALCULATOR: "swarm",
+                COLOR: "#003546",
             },
+        },
+        {
+            POSITION: {
+                LENGTH: 10,
+                WIDTH: 10,
+                ASPECT: 1.6,
+                X: 8,
+                ANGLE: 180
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, {reload: 0.5, speed: 0.35, size: 0.5, damage: 0.5, pen: 0.75}]),
+                TYPE: "flame", 
+            }
+        },
+        {
+            POSITION: [5, 11, 1, 10.5, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 14, 1, 15.5, 0, 0, 0],
+        },
+        {
+            POSITION: [2, 14, 1.3, 18, 0, 0, 0],
+            PROPERTIES: {
+                MAX_CHILDREN: 6,
+                SHOOT_SETTINGS: combineStats([g.trap, g.setTrap]),
+                TYPE: "pillbox",
+                SYNCS_SKILLS: true,
+                DESTROY_OLDEST_CHILD: true,
+                STAT_CALCULATOR: "block"
+            },
+        },
+        {
+            POSITION: [4, 14, 1, 8, 0, 0, 0],
         },
     ],
 }
