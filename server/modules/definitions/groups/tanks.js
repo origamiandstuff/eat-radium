@@ -6534,6 +6534,24 @@ Class.disorientation = {
         },
     ]
 }
+Class.flamethrower = {
+    PARENT: "genericTank",
+    LABEL: "Flameth",
+    GUNS: [
+        {
+            POSITION: {
+                LENGTH: 12,
+                WIDTH: 10,
+                ASPECT: 1.4,
+                X: 8
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
 
 
 // Upgrade Paths

@@ -822,3 +822,15 @@ Class.heatMissile = {
       }
     ]
 }
+Class.flame = {
+    PARENT: "bullet",
+    SHAPE: 4, 
+    LABEL: "flame",
+    ON: [{
+        event: "tick",
+        handler: ({ body }) => {
+            body.size = body.size * 1.1
+            if (body.SIZE > 20) body.kill();          
+        }
+    }]
+}
