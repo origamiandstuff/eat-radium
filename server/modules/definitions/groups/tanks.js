@@ -6570,7 +6570,7 @@ Class.fogOfWar = {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
                 TYPE: "heatMissile",
                 STAT_CALCULATOR: "swarm",
-                COLOR: "#003546",
+                COLOR: "#30d5c8"
             },
         },
         {
@@ -6579,7 +6579,7 @@ Class.fogOfWar = {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
                 TYPE: "heatMissile",
                 STAT_CALCULATOR: "swarm",
-                COLOR: "#003546",
+                COLOR: "#30d5c8"
             },
         },
         {
@@ -6606,7 +6606,7 @@ Class.fogOfWar = {
             PROPERTIES: {
                 MAX_CHILDREN: 6,
                 SHOOT_SETTINGS: combineStats([g.trap, g.setTrap]),
-                TYPE: "pillbox",
+                TYPE: "assembledPillbox",
                 SYNCS_SKILLS: true,
                 DESTROY_OLDEST_CHILD: true,
                 STAT_CALCULATOR: "block"

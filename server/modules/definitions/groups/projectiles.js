@@ -826,7 +826,6 @@ Class.flame = {
     PARENT: "bullet",
     SHAPE: 4, 
     LABEL: "flame",
-    COLOR: "red",
     ON: [{
         event: "tick",
         handler: ({ body }) => {
@@ -834,4 +833,21 @@ Class.flame = {
             if (body.SIZE > 15) body.kill();          
         }
     }]
+}
+Class.assembledPillbox = {
+    PARENT: "setTrap",
+    LABEL: "Pillbox",
+    INDEPENDENT: true,
+    DIE_AT_RANGE: true,
+    TURRETS: [
+        {
+            POSITION: [11, 0, 0, 0, 360, 1],
+            TYPE: "pillboxTurret",
+        },
+        {
+            POSITION: [4, 0, 0, 0, 360, 1],
+            TYPE: 'assemblerDot'
+        }
+    ],
+    HITS_OWN_TYPE: 'assembler'
 }
