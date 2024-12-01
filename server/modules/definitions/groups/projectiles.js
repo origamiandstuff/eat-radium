@@ -829,8 +829,8 @@ Class.flame = {
     ON: [{
         event: "tick",
         handler: ({ body }) => {
-            body.size = body.size * 1.1
-            if (body.SIZE > 20) body.kill();          
+            body.SIZE = body.SIZE + 0.2
+            if (body.SIZE > 15) body.kill();          
         }
     }]
 }

@@ -6536,7 +6536,7 @@ Class.disorientation = {
 }
 Class.flamethrower = {
     PARENT: "genericTank",
-    LABEL: "Flameth",
+    LABEL: "Flamethrower",
     GUNS: [
         {
             POSITION: {
@@ -6546,8 +6546,8 @@ Class.flamethrower = {
                 X: 8
             },
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun]),
-                TYPE: "bullet"
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, {reload: 0.5, speed: 0.35, size: 0.5, damage: 0.3, pen: 0.7}]),
+                TYPE: "flame"
             }
         }
     ]
