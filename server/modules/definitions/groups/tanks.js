@@ -6637,9 +6637,17 @@ Class.detonator = {
             },
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.trap]),
-                TYPE: "trap",
+                TYPE: "detonatorTrap",
                 STAT_CALCULATOR: "trap"
             }
+        }, 
+        {
+            POSITION: {
+                LENGTH: 3,
+                WIDTH: 7,
+                ASPECT: -1.7,
+                X: 18
+            },
         }
     ]
 }

@@ -654,7 +654,7 @@ Class.homingBullet = {
 // CUSTOM
 Class.coilgunSpashDamage = {
     PARENT: "bullet",
-    LABEL: "Coilgun Explosion",
+    LABEL: "AOE damage",
     SIZE: 55,
     BODY: {
         PENETRATION: 1,
@@ -851,4 +851,15 @@ Class.assembledPillbox = {
         }
     ],
     HITS_OWN_TYPE: 'assembler'
+}
+Class.detonatorTrap = {
+    PARENT: "trap",
+    LABEL: "Detonator Trap",
+    TURRETS: [
+        {
+            POSITION: [4, 0, 0, 0, 360, 1],
+            TYPE: 'assemblerDot'
+        }
+    ],
+    HITS_OWN_TYPE: 'detonate'
 }

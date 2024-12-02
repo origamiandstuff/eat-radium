@@ -198,9 +198,10 @@ function collide(collision) {
                         o.define('coilgunSpashDamage');
                         o.team = target1.team;
                         o.color = target1.color;
-                        o.SIZE = target1.SIZE * 2;
+                        o.SIZE = target1.SIZE * 4;
+                        o.DAMAGE = 2;
                         o.velocity = 0;
-                        0.
+                        o.master = target1.master;
                         o.refreshBodyAttributes();
                         o.life();
                     }
