@@ -6617,6 +6617,32 @@ Class.fogOfWar = {
         },
     ],
 }
+Class.detonator = {
+    PARENT: "genericTank",
+    LABEL: "Detonator",
+    STAT_NAMES: statnames.trap,
+    GUNS: [
+        {
+            POSITION: {
+                LENGTH: 15,
+                WIDTH: 7
+            }
+        },
+        {
+            POSITION: {
+                LENGTH: 3,
+                WIDTH: 7,
+                ASPECT: 1.7,
+                X: 15
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap]),
+                TYPE: "trap",
+                STAT_CALCULATOR: "trap"
+            }
+        }
+    ]
+}
 
 
 // Upgrade Paths

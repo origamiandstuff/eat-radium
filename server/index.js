@@ -171,6 +171,41 @@ function collide(collision) {
                         o.life();
                     }
                 } // don't break
+                case 'detonate': {
+                    if (instance.assemblerLevel == null) instance.assemblerLevel = 1;
+                    if (other.assemblerLevel == null) other.assemblerLevel = 1;
+
+                    const [target1, target2] = (instance.id > other.id) ? [instance, other] : [other, instance];
+
+                    if (
+                        target1.isDead() || target2.isDead() ||
+                        target1.parent.id != target2.parent.id &&
+                        target1.parent.id != null &&
+                        target2.parent.id != null // idk why
+                    ) {
+                        advancedcollide(instance, other, false, false); // continue push
+                        break;
+                    }
+
+                    const better = (state) => {
+                        return target1[state] > target2[state] ? target1[state] : target2[state];
+                    }
+
+                    target2.kill();
+
+                    for (let i = 0; i < 10; ++i) {
+                        const o = new Entity(target1, target1);
+                        o.define('coilgunSpashDamage');
+                        o.team = target1.team;
+                        o.color = target1.color;
+                        o.SIZE = target1.SIZE * 2;
+                        o.velocity = 0;
+                        0.
+                        o.refreshBodyAttributes();
+                        o.life();
+                    }
+                    target1.kill();
+                } // don't break
                 case "push":
                     advancedcollide(instance, other, false, false);
                     break;
