@@ -573,7 +573,7 @@ Class.assemblerTrap = {
             TYPE: 'assemblerDot'
         }
     ],
-    HITS_OWN_TYPE: 'assembler'
+    HITS_OWN_TYPE: 'detonate'
 }
 Class.shotTrapBox = {
     PARENT: 'unsetTrap',

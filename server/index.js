@@ -190,18 +190,15 @@ function collide(collision) {
 
                     target2.kill();
 
-                    for (let i = 0; i < 10; ++i) {
                         const o = new Entity(target1, target1);
-                        o.define('coilgunSpashDamage');
+                        o.define('detonateExplosion');
                         o.team = target1.team;
                         o.color = target1.color;
                         o.SIZE = target1.SIZE * 4;
-                        o.DAMAGE = 2;
                         o.velocity = 0;
-                        o.master = target1.master;
                         o.refreshBodyAttributes();
                         o.life();
-                    }
+                    
                     target1.kill();
                 } // don't break
                 case "push":

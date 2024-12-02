@@ -6617,6 +6617,20 @@ Class.fogOfWar = {
         },
     ],
 }
+Class.detonateExplosion = {
+    PARENT: "bullet",
+    LABEL: "Explosion",
+    SIZE: 55,
+    BODY: {
+        PENETRATION: 1,
+        SPEED: 0,
+        RANGE: 5,
+        DENSITY: 1.25,
+        HEALTH: 100,
+        DAMAGE: 500,
+        PUSHABILITY: 0,
+    },
+}
 
 
 // Upgrade Paths
