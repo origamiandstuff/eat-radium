@@ -853,13 +853,27 @@ Class.assembledPillbox = {
     HITS_OWN_TYPE: 'assembler'
 }
 Class.detonatorTrap = {
-    PARENT: "trap",
     LABEL: "Detonator Trap",
+    TYPE: "DetonatorTrap",
+    ACCEPTS_SCORE: false,
+    SHAPE: -3,
+    MOTION_TYPE: "glide",
+    FACING_TYPE: "turnWithSpeed",
+    HITS_OWN_TYPE: "assembler",
+    DIE_AT_RANGE: true,
+    BODY: {
+        HEALTH: 0.5,
+        DAMAGE: 3,
+        RANGE: 450,
+        DENSITY: 2.5,
+        RESIST: 2.5,
+        SPEED: 0,
+    },
+    COLOR: 'mirror',
     TURRETS: [
         {
             POSITION: [4, 0, 0, 0, 360, 1],
             TYPE: 'assemblerDot'
         }
     ],
-    HITS_OWN_TYPE: 'detonate'
-}
+};

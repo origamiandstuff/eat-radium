@@ -6643,10 +6643,10 @@ Class.detonator = {
         }, 
         {
             POSITION: {
-                LENGTH: 3,
+                LENGTH: 1.5,
                 WIDTH: 7,
                 ASPECT: -1.7,
-                X: 18
+                X: 20
             },
         }
     ]

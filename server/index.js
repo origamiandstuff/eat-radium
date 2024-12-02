@@ -172,9 +172,6 @@ function collide(collision) {
                     }
                 } // don't break
                 case 'detonate': {
-                    if (instance.assemblerLevel == null) instance.assemblerLevel = 1;
-                    if (other.assemblerLevel == null) other.assemblerLevel = 1;
-
                     const [target1, target2] = (instance.id > other.id) ? [instance, other] : [other, instance];
 
                     if (
