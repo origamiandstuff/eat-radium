@@ -6591,7 +6591,7 @@ Class.fogOfWar = {
                 ANGLE: 180
             },
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, {reload: 0.5, speed: 0.35, size: 0.5, damage: 0.5, pen: 0.75}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, {reload: 0.5, speed: 0.35, size: 0.5, damage: 0.5, pen: 0.75, recoil: 2.5}]),
                 TYPE: "flame", 
             }
         },
