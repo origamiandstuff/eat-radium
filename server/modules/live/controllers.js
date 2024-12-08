@@ -1033,7 +1033,34 @@ class io_orbit2 extends IO {
         this.body.facing = angle;
     }
 }
+    ioTypes.circleTarget = class extends IO {
+        constructor(body) {
+            super(body);
+        }
 
+        think(input) {
+            if (input.target != null && (input.alt || input.main)) {
+                let orbit = 280;
+                let goal;
+                let power = 5;
+                let target = new Vector(input.target.x, input.target.y);
+                let dir = target.direction + power;
+                if (input.alt) {
+                    orbit /= 2
+                    this.body.range -= 0.5
+                }
+                // Orbit point
+                goal = {
+                    x: this.body.x + target.x - orbit * Math.cos(dir),
+                    y: this.body.y + target.y - orbit * Math.sin(dir),
+                };
+                return {
+                    goal: goal,
+                    power: power,
+                };
+            }
+        }
+    }
 
 
 let ioTypes = {

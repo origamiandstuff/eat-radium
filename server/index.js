@@ -198,6 +198,48 @@ function collide(collision) {
             break;
     }
 }
+    class Vector {
+        constructor(x, y) {
+            this.X = x;
+            this.Y = y;
+        }
+        get x() {
+            if (isNaN(this.X)) this.X = c.MIN_SPEED;
+            return this.X;
+        }
+        get y() {
+            if (isNaN(this.Y)) this.Y = c.MIN_SPEED;
+            return this.Y;
+        }
+        set x(value) {
+            this.X = value;
+        }
+        set y(value) {
+            this.Y = value;
+        }
+        null() {
+            this.X = 0;
+            this.Y = 0;
+        }
+        update() {
+            this.len = this.length;
+            this.dir = this.direction;
+        }
+        isShorterThan(d) {
+            return this.x * this.x + this.y * this.y <= d * d;
+        }
+        unit() {
+            let length = this.length;
+            if (length === 0) return new Vector(1, 0);
+            return new Vector(this.x / length, this.y / length);
+        }
+        get length() {
+            return Math.sqrt(this.x * this.x + this.y * this.y);
+        }
+        get direction() {
+            return Math.atan2(this.y, this.x);
+        }
+    }
 
 // The most important loop. Lots of looping.
 let ticks = 0;
