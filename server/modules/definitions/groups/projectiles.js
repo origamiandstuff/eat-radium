@@ -855,14 +855,14 @@ Class.assembledPillbox = {
 // Ethereal stuf
 Class.SpamSplitterBullet = {
     PARENT: "bullet",
-    GUNS: [
-        weaponArray({
+    GUNS: weaponArray([
+        {
             POSITION: [8, 8, 1, 0, 0, 90, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic]),
+                SHOOT_SETTINGS: combineStats([g.basic, { range: 0.3, damage: 0.5, pen: 0.7, health: 0.7 }]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
                 SHOOT_ON_DEATH: true,
              }
-         }, 5),
-      ],
+         },
+      ], 5),
 }

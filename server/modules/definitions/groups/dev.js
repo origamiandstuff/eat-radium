@@ -2877,57 +2877,52 @@ Class.centaur = {
     )
 }
 Class.materialist = {
-    PARENT: "genericSmolEthereal",
-    LABEL: "Philistine",
+    PARENT: "genericBigEthereal",
+    LABEL: "Materialist",
     UPGRADE_TOOLTIP: "Bullet Spam Bullets",
     GUNS: weaponArray(
         [
             {
                 POSITION: {
-                    LENGTH: 13.5,
+                    LENGTH: 12.5,
                     WIDTH: 8,
-                    Y: 6.5
+                    X: 1,
+                    Y: 5.5
                 },
                 PROPERTIES: {
                     SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, range: 0.9, health: 1.1, range: 0.1 }]),
-                    TYPE: "bullet"
+                    TYPE: "SpamSplitterBullet"
                 }
             },
             {
                 POSITION: {
-                    LENGTH: 13.5,
+                    LENGTH: 12.5,
                     WIDTH: 8,
-                    Y: -6.5,
+                    X: 1,
+                    Y: -5.5,
                     DELAY: 0.5
                 },
                 PROPERTIES: {
                     SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, range: 0.9, health: 1.1, range: 0.1 }]),
-                    TYPE: "bullet"
+                    TYPE: "SpamSplitterBullet"
                 }
             },
             {
                 POSITION: {
-                    LENGTH: 9,
+                    LENGTH: 12,
                     WIDTH: 8,
                     ASPECT: 0.6,
-                    Y: 6.5
-                },
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, range: 0.9, health: 1.1, range: 0.1 }]),
-                    TYPE: "bullet"
+                    Y: 5.5
                 }
             },
             {
                 POSITION: {
-                    LENGTH: 13.5,
+                    LENGTH: 12,
                     WIDTH: 8,
-                    Y: -6.5,
+                    ASPECT: 0.6,
+                    Y: -5.5,
                     DELAY: 0.5
                 },
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, range: 0.9, health: 1.1, range: 0.1 }]),
-                    TYPE: "bullet"
-                }
             }
         ], 3
     )
