@@ -2719,7 +2719,7 @@ const bigEtherealBody = {
 Class.genericBigEthereal = {
     ...etherealDeco,
     BODY: bigEtherealBody
-}/*
+}
 Class.etherealAutoGun = makeTurret({
     GUNS: [
         {
@@ -2886,7 +2886,7 @@ Class.mechanism = {
             TYPE: ["etherealAutoGun", { INDEPENDENT: true }]
         }
     ]
-}*/
+}
 
 
 
