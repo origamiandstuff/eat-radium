@@ -2675,6 +2675,218 @@ Class.flace = {
     }],
     SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
 }
+// Turretopia Ethereals :3
+
+const etherealDeco = {
+    PARENT: "genericTank",
+    SHAPE: 3.5,
+    COLOR: "teal",
+    SIZE: 20,
+    IS_ETHEREAL: true
+}
+const smolEtherealBody = {
+    SPEED: base.SPEED * 0.65,
+    HEALTH: base.HEALTH * 12,
+    SHIELD: base.SHIELD * 2.5,
+    REGEN: base.REGEN * 1.25,
+    DENSITY: base.DENSITY * 2.5,
+    ACCELERATION: base.ACCEL * 0.8,
+}
+Class.genericSmolEthereal = {
+    ...etherealDeco,
+    BODY: smolEtherealBody
+}
+const normEtherealBody = {
+    SPEED: base.SPEED * 0.575,
+    HEALTH: base.HEALTH * 25,
+    SHIELD: base.SHIELD * 3,
+    REGEN: base.REGEN * 1.5,
+    DENSITY: base.DENSITY * 3,
+    ACCELERATION: base.ACCEL * 0.55,
+}
+Class.genericNormEthereal = {
+    ...etherealDeco,
+    BODY: normEtherealBody
+}
+const bigEtherealBody = {
+    SPEED: base.SPEED * 0.52,
+    HEALTH: base.HEALTH * 40,
+    SHIELD: base.SHIELD * 3.6,
+    REGEN: base.REGEN * 1.6,
+    DENSITY: base.DENSITY * 3.6,
+    ACCELERATION: base.ACCEL * 0.4,
+}
+Class.genericBigEthereal = {
+    ...etherealDeco,
+    BODY: bigEtherealBody
+}/*
+Class.etherealAutoGun = makeTurret({
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.heavier, { reload: 1.25, range: 1.1 }]),
+                TYPE: "bullet"
+            },
+        },
+    ],
+}, {canRepel: true, limitFov: true, fov: 2})
+Class.ethereal = {
+    PARENT: "genericSmolEthereal",
+    UPGRADE_LABEL: "ASCEND",
+    LABEL: "Ethereal",
+}
+Class.etherealBody = {
+    PARENT: "genericSmolEthereal",
+    UPGRADE_LABEL: "ASCEND",
+    LABEL: "Node",
+}
+Class.etherealHull = {
+    PARENT: "genericSmolEthereal",
+    UPGRADE_LABEL: "ASCEND",
+    LABEL: "Hull"
+}
+Class.philistine = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Philistine",
+    UPGRADE_TOOLTIP: "Bullet Spam",
+    GUNS: weaponArray(
+        [
+            {
+                POSITION: {
+                    LENGTH: 13.5,
+                    WIDTH: 6,
+                    Y: 5.5
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 1.05, range: 0.9, health: 1.1 }]),
+                    TYPE: "bullet"
+                }
+            },
+            {
+                POSITION: {
+                    LENGTH: 13.5,
+                    WIDTH: 6,
+                    Y: -5.5,
+                    DELAY: 0.5
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 1.05, range: 0.9, health: 1.1 }]),
+                    TYPE: "bullet"
+                }
+            }
+        ], 3
+    )
+}
+Class.spear = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Spear",
+    UPGRADE_TOOLTIP: "Sniper Branch (higher range, stronger, faster bullets)",
+    GUNS: weaponArray(
+        {
+            POSITION: {
+                LENGTH: 23,
+                WIDTH: 7
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, {reload: 1.25, health: 1.35, speed: 1.1, maxSpeed: 1.1, density: 1.2, range: 0.65}]),
+                TYPE: "bullet",
+            },
+        }, 3
+    )
+}
+Class.sundowner = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Sundowner",
+    UPGRADE_TOOLTIP: "Necromancer, Drones, Minions",
+    GUNS: weaponArray(
+        [
+            {
+                POSITION: {
+                    LENGTH: 14,
+                    WIDTH: 5.5,
+                    ASPECT: 1.7,
+                    Y: 6.5
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, { reload: 1.05, maxSpeed: 0.9, health: 1.1, size: 1.75 }]),
+                    TYPE: "drone",
+                    MAX_CHILDREN: 2,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: "drone",
+                    WAIT_TO_CYCLE: true,
+                }
+            },
+            {
+                POSITION: {
+                    LENGTH: 14,
+                    WIDTH: 5.5,
+                    ASPECT: 1.7,
+                    Y: -6.5,
+                    DELAY: 0.5
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, { reload: 1.05, maxSpeed: 0.9, health: 1.1, size: 1.75 }]),
+                    TYPE: "drone",
+                    MAX_CHILDREN: 2,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: "drone",
+                    WAIT_TO_CYCLE: true,
+                }
+            }
+        ], 3
+    )
+}
+Class.despoiler = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Despoiler",
+    UPGRADE_TOOLTIP: "Heavy Barrels (Super strong bullets)",
+    GUNS: weaponArray(
+            {
+                POSITION: {
+                    LENGTH: 17,
+                    WIDTH: 9
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.pounder, {reload: 0.9, range: 0.9}]),
+                    TYPE: "bullet"
+                }
+            }, 3
+    )
+}
+Class.centaur = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Centaur",
+    UPGRADE_TOOLTIP: "Static, defensive.",
+    GUNS: weaponArray(
+        [
+            {
+                POSITION: [13, 7, 1, 0, 0, 0, 0],
+            },
+            {
+            POSITION: [3, 7, 1.5, 13, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.pounder, {health: 1.15, shudder: 0.4, speed: 0.85, range: 0.85}]),
+                TYPE: "trap",
+                STAT_CALCULATOR: "trap",
+            },
+        },
+        ], 3
+    )
+}
+Class.mechanism = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Mechanism",
+    UPGRADE_TOOLTIP: "Mainly focuses on auto-turrets.",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: ["etherealAutoGun", { INDEPENDENT: true }]
+        }
+    ]
+}*/
 
 
 
