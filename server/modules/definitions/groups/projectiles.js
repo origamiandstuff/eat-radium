@@ -852,3 +852,17 @@ Class.assembledPillbox = {
     ],
     HITS_OWN_TYPE: 'assembler'
 }
+// Ethereal stuf
+Class.SpamSplitterBullet = {
+    PARENT: "bullet",
+    GUNS: [
+        weaponArray({
+            POSITION: [8, 8, 1, 0, 0, 90, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
+                SHOOT_ON_DEATH: true,
+             }
+         }, 5),
+      ],
+}

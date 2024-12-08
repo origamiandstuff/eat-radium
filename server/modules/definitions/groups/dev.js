@@ -2876,6 +2876,62 @@ Class.centaur = {
         ], 3
     )
 }
+Class.materialist = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Philistine",
+    UPGRADE_TOOLTIP: "Bullet Spam Bullets",
+    GUNS: weaponArray(
+        [
+            {
+                POSITION: {
+                    LENGTH: 13.5,
+                    WIDTH: 8,
+                    Y: 6.5
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, range: 0.9, health: 1.1, range: 0.1 }]),
+                    TYPE: "bullet"
+                }
+            },
+            {
+                POSITION: {
+                    LENGTH: 13.5,
+                    WIDTH: 8,
+                    Y: -6.5,
+                    DELAY: 0.5
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, range: 0.9, health: 1.1, range: 0.1 }]),
+                    TYPE: "bullet"
+                }
+            },
+            {
+                POSITION: {
+                    LENGTH: 9,
+                    WIDTH: 8,
+                    ASPECT: 0.6,
+                    Y: 6.5
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, range: 0.9, health: 1.1, range: 0.1 }]),
+                    TYPE: "bullet"
+                }
+            },
+            {
+                POSITION: {
+                    LENGTH: 13.5,
+                    WIDTH: 8,
+                    Y: -6.5,
+                    DELAY: 0.5
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, range: 0.9, health: 1.1, range: 0.1 }]),
+                    TYPE: "bullet"
+                }
+            }
+        ], 3
+    )
+}
 Class.mechanism = {
     PARENT: "genericSmolEthereal",
     LABEL: "Mechanism",
