@@ -2890,7 +2890,7 @@ Class.materialist = {
                     Y: 5.5
                 },
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, range: 0.9, health: 1.1, range: 0.1 }]),
+                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, health: 1.1, range: 0.1 }]),
                     TYPE: "SpamSplitterBullet"
                 }
             },
@@ -2903,7 +2903,7 @@ Class.materialist = {
                     DELAY: 0.5
                 },
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, range: 0.9, health: 1.1, range: 0.1 }]),
+                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, { reload: 2.2, health: 1.1, range: 0.1 }]),
                     TYPE: "SpamSplitterBullet"
                 }
             },
