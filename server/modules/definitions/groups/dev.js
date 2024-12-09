@@ -2928,33 +2928,36 @@ Class.materialist = {
     )
 }
 Class.javelin = {
-    PARENT: "genericSmolEthereal",
+    PARENT: "genericBigEthereal",
     LABEL: "Javelin",
+    BODY: {
+        FOV: 2.3
+    },
     UPGRADE_TOOLTIP: "Snipy snipe :3",
-    GUNS: weaponArray(
+    GUNS: weaponArray([
         {
-            POSITION: {
-                LENGTH: 23,
-                WIDTH: 7,
-                Y: 5.5,
-            },
+            POSITION: [23, 7, 1, 2, 5, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.assassin, g.assassin, {reload: 1.6, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.assassin, {reload: 1.4, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2, damage: 1.6, pen: 1.5}]),
                 TYPE: "bullet",
             },
-            POSITION: {
-                LENGTH: 23,
-                WIDTH: 7,
-                Y: -5.5,
-                DELAY: 0.5,
-            },
+        },
+        {
+            POSITION: [23, 7, 1, 2, -5, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.assassin, g.assassin, {reload: 1.6, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.assassin, {reload: 1.4, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2, damage: 1.6, pen: 1.5}]),
                 TYPE: "bullet",
             },
-        }, 3
-    )
+        },
+        {
+            POSITION: [15, 7, -1.3, 2, 5, 0, 0],
+        },
+        {
+            POSITION: [15, 7, -1.3, 2, -5, 0, 0.5],
+        },
+    ], 3)
 }
+// Bodies
 Class.mechanism = {
     PARENT: "genericSmolEthereal",
     LABEL: "Mechanism",
