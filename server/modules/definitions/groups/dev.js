@@ -2954,6 +2954,33 @@ Class.javelin = {
         },
     ], 3)
 }
+Class.vagrant = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Vagrant",
+    BODY: {
+        FOV: 1.9
+    },
+    UPGRADE_TOOLTIP: "Snipy snipe :3",
+    GUNS: weaponArray([
+        {
+            POSITION: [5, 11, 1, 10.5, 0, 0, 0],
+        },
+        {
+            POSITION: [2, 14, 1, 15.5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.factory, g.factory]),
+                TYPE: "pentaMinion",
+                MAX_CHILDREN: 1,
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+            },
+        },
+        {
+            POSITION: [12, 14, 1, 0, 0, 0, 0],
+        },
+    ], 3)
+}
 // Bodies
 Class.mechanism = {
     PARENT: "genericSmolEthereal",
