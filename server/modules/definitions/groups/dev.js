@@ -2927,6 +2927,34 @@ Class.materialist = {
         ], 3
     )
 }
+Class.javelin = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Javelin",
+    UPGRADE_TOOLTIP: "Snipy snipe :3",
+    GUNS: weaponArray(
+        {
+            POSITION: {
+                LENGTH: 23,
+                WIDTH: 7,
+                Y: 5.5,
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.assassin, g.assassin, {reload: 1.6, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2}]),
+                TYPE: "bullet",
+            },
+            POSITION: {
+                LENGTH: 23,
+                WIDTH: 7,
+                Y: -5.5,
+                DELAY: 0.5,
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.assassin, g.assassin, {reload: 1.6, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2}]),
+                TYPE: "bullet",
+            },
+        }, 3
+    )
+}
 Class.mechanism = {
     PARENT: "genericSmolEthereal",
     LABEL: "Mechanism",
