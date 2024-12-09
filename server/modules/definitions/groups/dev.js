@@ -3235,4 +3235,4 @@ Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "te
 
     Class.testing.UPGRADES_TIER_0 = ["diamondShape", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "propTest", "weaponArrayTest", "radialAutoTest", "makeAutoTest", "imageShapeTest", "turretStatScaleTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "gunBenchmark", "switcheroo", "developer", "armyOfOne", "vanquisher", "mummifier"]
 
-    Class.ethereal.UPGRADES_TIER_0 = ["minotaur"]
+    Class.ethereal.UPGRADES_TIER_0 = ["phisistine", "spear", "minotaur"]
