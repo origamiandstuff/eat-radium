@@ -2879,7 +2879,7 @@ Class.centaur = {
 Class.materialist = {
     PARENT: "genericBigEthereal",
     LABEL: "Materialist",
-    UPGRADE_TOOLTIP: "Bullet Spam Bullets",
+    UPGRADE_TOOLTIP: "Bullets spam more bullets :3",
     GUNS: weaponArray(
         [
             {
@@ -2931,29 +2931,26 @@ Class.javelin = {
     PARENT: "genericBigEthereal",
     LABEL: "Javelin",
     BODY: {
-        FOV: 2.3
+        FOV: 1.9
     },
     UPGRADE_TOOLTIP: "Snipy snipe :3",
     GUNS: weaponArray([
         {
-            POSITION: [23, 7, 1, 2, 5, 0, 0],
+            POSITION: [23, 7, 1, 2, 4, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.assassin, {reload: 1.4, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2, damage: 1.6, pen: 1.5}]),
                 TYPE: "bullet",
             },
         },
         {
-            POSITION: [23, 7, 1, 2, -5, 0, 0.5],
+            POSITION: [23, 7, 1, 2, -4, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.assassin, {reload: 1.4, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2, damage: 1.6, pen: 1.5}]),
                 TYPE: "bullet",
             },
         },
         {
-            POSITION: [15, 7, -1.3, 2, 5, 0, 0],
-        },
-        {
-            POSITION: [15, 7, -1.3, 2, -5, 0, 0.5],
+            POSITION: [5, 15, -1.3, 8, 0, 0, 0],
         },
     ], 3)
 }
