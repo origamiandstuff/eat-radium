@@ -3000,21 +3000,21 @@ Class.freebooter = {
     ], 3)
 }
 Class.minotaur = {
-    PARENT: "genericSmolEthereal",
+    PARENT: "genericbigEthereal",
     LABEL: "Minotaur",
-    UPGRADE_TOOLTIP: "Static, defensive.",
+    UPGRADE_TOOLTIP: "Maek stronk wall :3",
     GUNS: weaponArray([
             {
-            POSITION: [13, 7, 1, 0, 0, 0, 0],
+                POSITION: [13, 15, 1, 0, 0, 0, 0],
             },
             {
-            POSITION: [3, 7, 1.5, 13, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.pounder, {health: 1.15, shudder: 0.4, speed: 0.85, range: 0.85}]),
-                TYPE: "trap",
-                STAT_CALCULATOR: "trap",
-            },
-        },
+                POSITION: [3, 15, 1.1, 13, 0, 0, 0],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.pounder, {health: 1.15, shudder: 0.4, speed: 0.85, range: 0.85}]),
+                    TYPE: "unsetTrap",
+                    STAT_CALCULATOR: "trap",
+                },
+             },
     ], 3)
 }
 // Bodies
