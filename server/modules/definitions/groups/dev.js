@@ -2982,7 +2982,7 @@ Class.wanderer = {
     PARENT: "genericBigEthereal",
     LABEL: "Wanderer",
     UPGRADE_TOOLTIP: "Stronk minions with swarms :3",
-    MAX_CHILDREN: 4,
+    MAX_CHILDREN: 6,
     GUNS: weaponArray([
         {
             POSITION: [5, 11, 1, 10.5, 0, 0, 0],
@@ -3287,6 +3287,6 @@ Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "te
     Class.ethereal.UPGRADES_TIER_0 = ["philistine", "spear", "sundowner", "despoiler", "centaur"]
         Class.philistine.UPGRADES_TIER_0 = ["materialist"]
         Class.spear.UPGRADES_TIER_0 = ["javelin"]
-        Class.sundowner.UPGRADES_TIER_0 = ["vagrant", "nightfall", "twilight", "dusk"]
+        Class.sundowner.UPGRADES_TIER_0 = ["vagrant", "nightfall", "twilight", "dusk", "wanderer"]
         Class.despoiler.UPGRADES_TIER_0 = ["freebooter"]
         Class.centaur.UPGRADES_TIER_0 = ["minotaur", "demigod", "titan", "cyclops"]
