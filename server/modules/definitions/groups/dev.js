@@ -3073,7 +3073,7 @@ Class.dusk = {
             },
         },
         {
-            POSITION: [12.5, 20, 1, 0, 0, 0, 0],
+            POSITION: [8.5, 20, 1, 4, 0, 0, 0],
         },
     ], 3)
 }
@@ -3263,6 +3263,6 @@ Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "te
     Class.ethereal.UPGRADES_TIER_0 = ["philistine", "spear", "sundowner", "despoiler", "centaur"]
         Class.philistine.UPGRADES_TIER_0 = ["materialist"]
         Class.spear.UPGRADES_TIER_0 = ["javelin"]
-        Class.sundowner.UPGRADES_TIER_0 = ["vagrant", "nightfall", "twilight"]
+        Class.sundowner.UPGRADES_TIER_0 = ["vagrant", "nightfall", "twilight", "dusk"]
         Class.despoiler.UPGRADES_TIER_0 = ["freebooter"]
         Class.centaur.UPGRADES_TIER_0 = ["minotaur", "demigod", "titan", "cyclops"]
