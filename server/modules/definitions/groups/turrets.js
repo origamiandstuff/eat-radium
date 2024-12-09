@@ -914,7 +914,7 @@ Class.swarmTypeMinionTurret = makeTurret({
             POSITION: [1, 12, 1, 15, 0, 0, 0],
             PROPERTIES: {
                 MAX_CHILDREN: 4,
-                SHOOT_SETTINGS: combineStats([g.swarm, { reload: 1.6 }]),
+                SHOOT_SETTINGS: combineStats([g.swarm, { reload: 1.6, range: 0.4 }]),
                 TYPE: "swarmTypeMinion",
                 STAT_CALCULATOR: "drone",
                 AUTOFIRE: true,
