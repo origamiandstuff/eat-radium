@@ -957,4 +957,23 @@ Class.triSwarmTurret = makeTurret({
 	independent: true,
 	extraStats: []
 });
+Class.triSwarmTurretStronk = makeTurret({
+	PARENT: "genericTank",
+	GUNS: weaponArray([{
+			POSITION: [7, 7.5, 0.6, 7, 0, 90, 0],
+			PROPERTIES: {
+				SHOOT_SETTINGS: combineStats([g.swarm, g.carrier, { range: 0.4, }]),
+				TYPE: "swarm",
+				STAT_CALCULATOR: "swarm",
+				LABEL: "Guided",
+			},
+		},
+	], 3)
+}, {
+	canRepel: true,
+	limitFov: true,
+	fov: 4,
+	independent: true,
+	extraStats: []
+});
 
