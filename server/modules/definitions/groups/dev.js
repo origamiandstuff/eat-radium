@@ -3269,15 +3269,31 @@ Class.atmosphere = {
 }
 Class.chakramProjectile = {
     PARENT: "trap",
-    LABEL: "Boomerang",
+    LABEL: "Chakram",
     CONTROLLERS: ["boomerang"],
-    MOTION_TYPE: "smoothToTarget",
+    MOTION_TYPE: "glide",
     HITS_OWN_TYPE: "never",
     SHAPE: 0,
     BODY: {
         SPEED: 1.25,
         RANGE: 120,
     },
+    PROPS: [{
+        POSITION: [11, 0, 0, 0, 1],
+        TYPE: ["genericEntity", {COLOR: 9}]
+    }]
+}
+Class.chakramTurret = {
+    PARENT: "genericTank",
+    GUNS: [
+        {
+            POSITION: [0, 25, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                TYPE: "chakramProjectile",
+                SHOOT_SETTINGS: 
+            }
+        }
+    ]
 }
 
 Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", /*"eggGenerator", */"testing", "addons", ["etherealBodyUpgrades", "ethereal"]]
