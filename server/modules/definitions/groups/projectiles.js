@@ -948,3 +948,15 @@ Class.tripletPillbox = {
         },
     ],
 }
+Class.swarmPillbox = {
+    PARENT: "unsetTrap",
+    LABEL: "Triplet Pillbox",
+    INDEPENDENT: true,
+    DIE_AT_RANGE: true,
+    TURRETS: [
+        {
+            POSITION: [11, 0, 0, 0, 360, 1],
+            TYPE: "swarmTurret",
+        },
+    ],
+}

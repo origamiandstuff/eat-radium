@@ -3017,6 +3017,45 @@ Class.minotaur = {
             },
     ], 3)
 }
+Class.demigod = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Demigod",
+    UPGRADE_TOOLTIP: "Triplet pilboxes :3",
+    GUNS: weaponArray([
+        {
+            POSITION: [5, 11, 1, 10.5, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 14, 1, 15.5, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 2, 1, 15.5, 6, 0, 0],
+        },//deco
+        {
+            POSITION: [3, 2, 1, 15.5, -6, 0, 0],
+        },//deco
+        {
+            POSITION: [2, 14, 1.3, 18, 0, 0, 0],
+            PROPERTIES: {
+                MAX_CHILDREN: 4,
+                SHOOT_SETTINGS: combineStats([g.trap, g.setTrap]),
+                TYPE: "tripletPillbox",
+                SYNCS_SKILLS: true,
+                DESTROY_OLDEST_CHILD: true,
+                STAT_CALCULATOR: "block"
+            },
+        },
+        {
+            POSITION: [4, 14, 1, 8, 0, 0, 0],
+        },
+        {
+            POSITION: [4, 2, 1, 8, 6, 0, 0],
+        },//deco
+        {
+            POSITION: [4, 2, 1, 8, -6, 0, 0],
+        },//deco
+    ], 3)
+}
 // Bodies
 Class.mechanism = {
     PARENT: "genericSmolEthereal",

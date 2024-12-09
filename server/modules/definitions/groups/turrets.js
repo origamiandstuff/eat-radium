@@ -875,3 +875,31 @@ Class.tripletPillboxTurret = makeTurret({
         }
     ],
 }, {independent: true, extraStats: []})
+Class.swarmTurret = makeTurret({
+	PARENT: "genericTank",
+	GUNS: [{
+			POSITION: [7, 7.5, 0.6, 7, 0, 90, 0],
+			PROPERTIES: {
+				SHOOT_SETTINGS: combineStats([g.swarm, g.carrier]),
+				TYPE: "swarm",
+				STAT_CALCULATOR: "swarm",
+				LABEL: "Guided",
+			},
+		},
+		{
+			POSITION: [7, 7.5, 0.6, 7, 0, 270, 0],
+			PROPERTIES: {
+				SHOOT_SETTINGS: combineStats([g.swarm, g.carrier]),
+				TYPE: "swarm",
+				STAT_CALCULATOR: "swarm",
+				LABEL: "Guided",
+			},
+		},
+	],
+}, {
+	canRepel: true,
+	limitFov: true,
+	fov: 4,
+	independent: true,
+	extraStats: []
+});
