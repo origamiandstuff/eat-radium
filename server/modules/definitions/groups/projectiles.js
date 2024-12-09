@@ -999,15 +999,11 @@ Class.auraDrone = {
 }
 Class.explosiveDrone = {
     PARENT: "drone",
-    GUNS: weaponArray([
-        {
-            POSITION: [0, 120, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.coilSplash]),
-                TYPE: ["coilgunSpashDamage", { PERSISTS_AFTER_DEATH: true }],
-                SHOOT_ON_DEATH: true,
-                ALPHA: 0
-            }
+    ON: [{
+        event: "death",
+        handler: ({ body }) => {
+            let o = new Entity({x: body.x, y: body.y}, this.master.master)
+            o.define("coilgunSplashDamage")
         }
-    ], 1)
+    }],
 }
