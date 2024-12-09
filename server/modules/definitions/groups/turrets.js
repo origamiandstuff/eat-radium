@@ -903,3 +903,32 @@ Class.swarmTurret = makeTurret({
 	independent: true,
 	extraStats: []
 });
+
+Class.swarmTypeMinionTurret = makeTurret({
+	PARENT: "genericTank",
+	GUNS: [
+        {
+            POSITION: [4.5, 10, 1, 10.5, 0, 0, 0],
+        },
+        {
+            POSITION: [1, 12, 1, 15, 0, 0, 0],
+            PROPERTIES: {
+                MAX_CHILDREN: 4,
+                SHOOT_SETTINGS: combineStats([g.swarm, { reload: 1.6 }]),
+                TYPE: "swarmTypeMinion",
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+            },
+        },
+        {
+            POSITION: [11.5, 12, 1, 0, 0, 0, 0],
+        },
+	],
+}, {
+	canRepel: true,
+	limitFov: true,
+	fov: 4,
+	independent: true,
+	extraStats: []
+});

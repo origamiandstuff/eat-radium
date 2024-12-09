@@ -960,3 +960,29 @@ Class.swarmPillbox = {
         },
     ],
 }
+Class.swarmTypeMinionPillbox = {
+    PARENT: "unsetTrap",
+    LABEL: "Swarm Minion Pillbox",
+    INDEPENDENT: true,
+    DIE_AT_RANGE: true,
+    TURRETS: [
+        {
+            POSITION: [11, 0, 0, 0, 360, 1],
+            TYPE: "swarmTypeMinionTurret",
+        },
+    ],
+}
+Class.swarmTypeMinion = {
+    PARENT: "swarm",
+    SHAPE: 0,
+    GUNS: [
+        {
+            POSITION: [17, 9, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minionGun]),
+                WAIT_TO_CYCLE: true,
+                TYPE: "bullet",
+            },
+        },
+    ],
+}

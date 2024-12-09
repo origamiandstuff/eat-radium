@@ -3056,6 +3056,66 @@ Class.demigod = {
         },//deco
     ], 3)
 }
+Class.titan = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Titan",
+    UPGRADE_TOOLTIP: "Swarm pilboxes :3",
+    GUNS: weaponArray([
+        {
+            POSITION: [5, 11, 1, 10.5, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 14, 1, 15.5, 0, 0, 0],
+        },
+        {
+            POSITION: [2, 14, 1.3, 18, 0, 0, 0],
+            PROPERTIES: {
+                MAX_CHILDREN: 4,
+                SHOOT_SETTINGS: combineStats([g.trap, g.setTrap]),
+                TYPE: "swarmPillbox",
+                SYNCS_SKILLS: true,
+                DESTROY_OLDEST_CHILD: true,
+                STAT_CALCULATOR: "block"
+            },
+        },
+        {
+            POSITION: [7, 7.5, 0.6, 9.7, 0, 0, 0],
+        },
+        {
+            POSITION: [4, 14, 1, 8, 0, 0, 0],
+        },
+    ], 3)
+}
+Class.cyclops = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Cyclops",
+    UPGRADE_TOOLTIP: "Swarm minion pilboxes :3",
+    GUNS: weaponArray([
+        {
+            POSITION: [5, 11, 1, 10.5, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 14, 1, 15.5, 0, 0, 0],
+        },
+        {
+            POSITION: [2, 14, 1.3, 18, 0, 0, 0],
+            PROPERTIES: {
+                MAX_CHILDREN: 4,
+                SHOOT_SETTINGS: combineStats([g.trap, g.setTrap]),
+                TYPE: "swarmTypeMinionPillbox",
+                SYNCS_SKILLS: true,
+                DESTROY_OLDEST_CHILD: true,
+                STAT_CALCULATOR: "block"
+            },
+        },
+        {
+            POSITION: [7, 7.5, 0.6, 9.7, 0, 0, 0],
+        },
+        {
+            POSITION: [4, 14, 1, 8, 0, 0, 0],
+        },
+    ], 3)
+}
 // Bodies
 Class.mechanism = {
     PARENT: "genericSmolEthereal",
