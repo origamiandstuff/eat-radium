@@ -848,3 +848,30 @@ Class.snowstormButTurret = makeTurret({
 }, {canRepel: true, limitFov: true, fov: 15, independent: true, extraStats: []})
 Class.anniButTurret = makeTurret("annihilator", {canRepel: true, limitFov: true, fov: 10, independent: true, extraStats: []})
 
+// Ethereals
+Class.tripletPillboxTurret = makeTurret({
+    HAS_NO_RECOIL: true,
+    GUNS: [
+        {
+            POSITION: [18, 10, 1, 0, 5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.minionGun, g.turret, g.power, g.autoTurret, { density: 0.1 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [18, 10, 1, 0, -5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.minionGun, g.turret, g.power, g.autoTurret, { density: 0.1 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [21, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.minionGun, g.turret, g.power, g.autoTurret, { density: 0.1 }]),
+                TYPE: "bullet"
+            }
+        }
+    ],
+}, {independent: true, extraStats: []})
