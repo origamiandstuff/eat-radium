@@ -2954,23 +2954,6 @@ Class.javelin = {
         },
     ], 3)
 }
-Class.freebooter = {
-    PARENT: "genericSmolEthereal",
-    LABEL: "Freebooter",
-    UPGRADE_TOOLTIP: "Beeg bullets :3",
-    GUNS: weaponArray(
-            {
-                POSITION: {
-                    LENGTH: 17,
-                    WIDTH: 9
-                },
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.pounder, {reload: 0.9, range: 0.9}]),
-                    TYPE: "bullet"
-                }
-            }, 3
-    )
-}
 Class.vagrant = {
     PARENT: "genericBigEthereal",
     LABEL: "Vagrant",
@@ -2992,6 +2975,45 @@ Class.vagrant = {
         },
         {
             POSITION: [12, 14, 1, 0, 0, 0, 0],
+        },
+    ], 3)
+}
+Class.freebooter = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Freebooter",
+    UPGRADE_TOOLTIP: "Beeg bullets :3",
+    GUNS: weaponArray([
+        {
+            POSITION: [20, 13, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.destroyer, { reload: 1.3, range: 0.9}]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [17, 9, 1, 0, 0, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, { reload: 1.3, range: 0.9}]),
+                TYPE: "bullet"
+            }
+        },
+    ], 3)
+}
+Class.minotaur = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Minotaur",
+    UPGRADE_TOOLTIP: "Static, defensive.",
+    GUNS: weaponArray([
+            {
+            POSITION: [13, 7, 1, 0, 0, 0, 0],
+            },
+            {
+            POSITION: [3, 7, 1.5, 13, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.pounder, {health: 1.15, shudder: 0.4, speed: 0.85, range: 0.85}]),
+                TYPE: "trap",
+                STAT_CALCULATOR: "trap",
+            },
         },
     ], 3)
 }
