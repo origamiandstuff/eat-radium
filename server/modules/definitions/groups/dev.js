@@ -2954,13 +2954,28 @@ Class.javelin = {
         },
     ], 3)
 }
+Class.freebooter = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Freebooter",
+    UPGRADE_TOOLTIP: "Beeg bullets :3",
+    GUNS: weaponArray(
+            {
+                POSITION: {
+                    LENGTH: 17,
+                    WIDTH: 9
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.pounder, {reload: 0.9, range: 0.9}]),
+                    TYPE: "bullet"
+                }
+            }, 3
+    )
+}
 Class.vagrant = {
     PARENT: "genericBigEthereal",
     LABEL: "Vagrant",
-    BODY: {
-        FOV: 1.9
-    },
-    UPGRADE_TOOLTIP: "Snipy snipe :3",
+    UPGRADE_TOOLTIP: "Smol pentas :3",
+    MAX_CHILDREN: 4,
     GUNS: weaponArray([
         {
             POSITION: [5, 11, 1, 10.5, 0, 0, 0],
@@ -2968,9 +2983,8 @@ Class.vagrant = {
         {
             POSITION: [2, 14, 1, 15.5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.factory, g.factory]),
+                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
                 TYPE: "pentaMinion",
-                MAX_CHILDREN: 1,
                 STAT_CALCULATOR: "drone",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
