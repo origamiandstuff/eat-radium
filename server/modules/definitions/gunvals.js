@@ -118,7 +118,7 @@ module.exports = {
     heavier: { reload: 1.6, damage: 1.4, density: 1.25, resist: 1.25, recoil: 1.5 },
 // Splash
     coilBullet: { health: 1, damage: 0.5, reload: 4, pen: 4, speed: 1.5 },
-    coilSplash: { health: 1, damage: 0.1, speed: 0, maxSpeed: 0 },
+    coilSplash: { health: 1, damage: 0.1, speed: 0, maxSpeed: 0, reload: 10e500 },
 // Railguns
     railgun: { speed: 3, pen: 2.5, damage: 2.2, maxSpeed: 2.5, reload: 8, health: 1.5 },
 }

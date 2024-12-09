@@ -2997,13 +2997,7 @@ Class.twilight = {
                 }
             },
             {
-                POSITION: {
-                    LENGTH: 14,
-                    WIDTH: 5.5,
-                    ASPECT: 1.7,
-                    Y: -6.5,
-                    DELAY: 0.5
-                },
+                POSITION: [14, 5.5, 1.7, 0, -6.5, 0, 0.5],
                 PROPERTIES: {
                     SHOOT_SETTINGS: combineStats([g.drone, g.overseer, { reload: 1.05, maxSpeed: 0.9, health: 1.1, size: 1.75 }]),
                     TYPE: "auraDrone",
@@ -3012,6 +3006,47 @@ Class.twilight = {
                     SYNCS_SKILLS: true,
                     STAT_CALCULATOR: "drone",
                     WAIT_TO_CYCLE: true,
+                }
+            },
+            {
+                POSITION: [9, 0.2, -15, 7, 6.5, 0, 0],
+            },
+            {
+                POSITION: [9, 0.2, -15, 7, -6.5, 0, 0],
+            },
+        ], 3
+    )
+}
+Class.nightfall = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Nightfall",
+    UPGRADE_TOOLTIP: "Explosive drones :3",
+    GUNS: weaponArray(
+        [
+            {
+                POSITION: [14, 5.5, 1.7, 0, 6.5, 0, 0],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, { reload: 1.05, maxSpeed: 0.9, health: 1.1, size: 1.75 }]),
+                    TYPE: "explosiveDrone",
+                    MAX_CHILDREN: 2,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: "drone",
+                    WAIT_TO_CYCLE: true,
+                    COLOR: 9,
+                }
+            },
+            {
+                POSITION: [14, 5.5, 1.7, 0, -6.5, 0, 0.5],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, { reload: 1.05, maxSpeed: 0.9, health: 1.1, size: 1.75 }]),
+                    TYPE: "explosiveDrone",
+                    MAX_CHILDREN: 2,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: "drone",
+                    WAIT_TO_CYCLE: true,
+                    COLOR: 9,
                 }
             },
         ], 3
