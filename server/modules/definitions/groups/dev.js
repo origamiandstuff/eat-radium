@@ -3267,7 +3267,18 @@ Class.atmosphere = {
         }
     ]
 }
-
+Class.chakramProjectile = {
+    PARENT: "trap",
+    LABEL: "Boomerang",
+    CONTROLLERS: ["boomerang"],
+    MOTION_TYPE: "smoothToTarget",
+    HITS_OWN_TYPE: "never",
+    SHAPE: 0,
+    BODY: {
+        SPEED: 1.25,
+        RANGE: 120,
+    },
+}
 
 Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", /*"eggGenerator", */"testing", "addons", ["etherealBodyUpgrades", "ethereal"]]
     Class.tanks.UPGRADES_TIER_0 = ["basic", "unavailable", "arenaCloser", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun"]
