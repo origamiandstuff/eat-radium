@@ -1004,7 +1004,9 @@ Class.explosiveDrone = {
         handler: ({ body }) => {
             let eee = new Entity(body);
             eee.define(Class.coilgunSpashDamage);
-            eee.master = body.master;
+            eee.team = body.team;
+            eee.color = body.color;
+            eee.DAMAGE = 0.25;
             
         }
     }],
