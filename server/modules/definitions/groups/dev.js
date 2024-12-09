@@ -3271,7 +3271,7 @@ Class.chakramProjectile = {
     PARENT: "trap",
     LABEL: "Chakram",
     CONTROLLERS: ["boomerang"],
-    MOTION_TYPE: "glide",
+    MOTION_TYPE: "motor",
     HITS_OWN_TYPE: "never",
     SHAPE: 0,
     BODY: {
@@ -3283,18 +3283,40 @@ Class.chakramProjectile = {
         TYPE: ["genericEntity", {COLOR: 9}]
     }]
 }
-Class.chakramTurret = {
+Class.chakramTurretA = {
     PARENT: "genericTank",
+    ON: [{
+        event: "fire",
+        handler: ({ body }) => {
+            
+        }
+    }],
     GUNS: [
         {
             POSITION: [0, 25, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 TYPE: "chakramProjectile",
-                SHOOT_SETTINGS: 
+                SHOOT_SETTINGS: combineStats([g.basic, {pen: 5, damage:1.2 }])
             }
+        }
+    ],
+    PROPS: [{
+        POSITION: [11, 0, 0, 0, 1],
+        TYPE: ["genericEntity", {COLOR: 9}]
+    }]
+}
+Class.chakram = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Chakram",
+    UPGRADE_TOOLTIP: "Active body upgrade!?!? :3333 ",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "chakramTurretA"
         }
     ]
 }
+
 
 Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", /*"eggGenerator", */"testing", "addons", ["etherealBodyUpgrades", "ethereal"]]
     Class.tanks.UPGRADES_TIER_0 = ["basic", "unavailable", "arenaCloser", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun"]
@@ -3332,4 +3354,4 @@ Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "te
         Class.despoiler.UPGRADES_TIER_0 = ["freebooter"]
         Class.centaur.UPGRADES_TIER_0 = ["minotaur", "demigod", "titan", "cyclops"]
 
-    Class.etherealBodyUpgrades.UPGRADES_TIER_0 = ["mechanism", "atmosphere"]
+    Class.etherealBodyUpgrades.UPGRADES_TIER_0 = ["mechanism", "atmosphere", "chakram"]
