@@ -1002,8 +1002,8 @@ Class.explosiveDrone = {
     ON: [{
         event: "death",
         handler: ({ body }) => {
-            const o = new Entity({x: body.x, y: body.y}, this.master)
-            o.define(Class.coilgunSplashDamage)
+            const eee = new Entity()
+            eee.define(this.coilgunSplashDamage)
         }
     }],
 }
