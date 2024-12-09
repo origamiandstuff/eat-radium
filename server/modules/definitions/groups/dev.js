@@ -3052,6 +3052,31 @@ Class.nightfall = {
         ], 3
     )
 }
+Class.dusk = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Dusk",
+    UPGRADE_TOOLTIP: "Triple top banananananana :3",
+    MAX_CHILDREN: 4,
+    GUNS: weaponArray([
+        {
+            POSITION: [4.5, 18, 1, 11.5, 0, 0, 0],
+        },
+        {
+            POSITION: [1, 20, 1, 16, 0, 0, 0],
+            PROPERTIES: {
+                MAX_CHILDREN: 1,
+                SHOOT_SETTINGS: combineStats([g.factory, g.babyfactory, g.destroyer, { size: 1.25, speed: 2, reload: 5 }]),
+                TYPE: "megaMinion",
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+            },
+        },
+        {
+            POSITION: [12.5, 20, 1, 0, 0, 0, 0],
+        },
+    ], 3)
+}
 Class.freebooter = {
     PARENT: "genericBigEthereal",
     LABEL: "Freebooter",
@@ -3206,7 +3231,7 @@ Class.mechanism = {
 
 
 
-Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", /*"eggGenerator", */"testing", "addons"]
+Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", /*"eggGenerator", */"testing", "addons", "ethereal"]
     Class.tanks.UPGRADES_TIER_0 = ["basic", "unavailable", "arenaCloser", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun"]
         Class.unavailable.UPGRADES_TIER_0 = ["flail", "jumpSmasher", "healer", "literallyAMachineGun", "literallyATank", "master", "volute", "whirlwind"]
             Class.flail.UPGRADES_TIER_2 = ["doubleFlail", "mace", "flangle"]
@@ -3235,4 +3260,9 @@ Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "te
 
     Class.testing.UPGRADES_TIER_0 = ["diamondShape", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "propTest", "weaponArrayTest", "radialAutoTest", "makeAutoTest", "imageShapeTest", "turretStatScaleTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "gunBenchmark", "switcheroo", "developer", "armyOfOne", "vanquisher", "mummifier"]
 
-    Class.ethereal.UPGRADES_TIER_0 = ["phisistine", "spear", "minotaur"]
+    Class.ethereal.UPGRADES_TIER_0 = ["philistine", "spear", "sundowner", "despoiler", "centaur"]
+        Class.philistine.UPGRADES_TIER_0 = ["materialist"]
+        Class.spear.UPGRADES_TIER_0 = ["javelin"]
+        Class.sundowner.UPGRADES_TIER_0 = ["vagrant", "nightfall", "twilight"]
+        Class.despoiler.UPGRADES_TIER_0 = ["freebooter"]
+        Class.centaur.UPGRADES_TIER_0 = ["minotaur", "demigod", "titan", "cyclops"]
