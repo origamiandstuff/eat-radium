@@ -3255,11 +3255,21 @@ Class.mechanism = {
         }
     ]
 }
+Class.atmosphereAura = addAura(1, 1.6)
+Class.atmosphere = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Atmosphere",
+    UPGRADE_TOOLTIP: "Yippie auras!!! :3333 ",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "atmosphereAura"
+        }
+    ]
+}
 
 
-
-
-Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", /*"eggGenerator", */"testing", "addons", ["ethereal", "etherealBodyUpgrades"]]
+Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", /*"eggGenerator", */"testing", "addons", ["etherealBodyUpgrades", "ethereal"]]
     Class.tanks.UPGRADES_TIER_0 = ["basic", "unavailable", "arenaCloser", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun"]
         Class.unavailable.UPGRADES_TIER_0 = ["flail", "jumpSmasher", "healer", "literallyAMachineGun", "literallyATank", "master", "volute", "whirlwind"]
             Class.flail.UPGRADES_TIER_2 = ["doubleFlail", "mace", "flangle"]
@@ -3295,4 +3305,4 @@ Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "te
         Class.despoiler.UPGRADES_TIER_0 = ["freebooter"]
         Class.centaur.UPGRADES_TIER_0 = ["minotaur", "demigod", "titan", "cyclops"]
 
-    Class.etherealBodyUpgrades.UPGRADES_TIER_0 = ["philistine", "spear", "sundowner", "despoiler", "centaur"]
+    Class.etherealBodyUpgrades.UPGRADES_TIER_0 = ["mechanism", "atmosphere"]
