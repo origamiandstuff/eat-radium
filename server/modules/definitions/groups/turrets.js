@@ -769,6 +769,12 @@ Class.smasherBody = {
     SHAPE: 6,
     INDEPENDENT: true
 }
+Class.smasherBodyDeco = {
+    LABEL: "",
+    COLOR: "black",
+    SHAPE: 6,
+    INDEPENDENT: true
+}
 Class.landmineBody = {
     LABEL: "",
     FACING_TYPE: ["spin", { speed: 0.1 }],
@@ -932,47 +938,23 @@ Class.swarmTypeMinionTurret = makeTurret({
 	independent: true,
 	extraStats: []
 });
+Class.triSwarmTurret = makeTurret({
+	PARENT: "genericTank",
+	GUNS: weaponArray([{
+			POSITION: [7, 7.5, 0.6, 7, 0, 90, 0],
+			PROPERTIES: {
+				SHOOT_SETTINGS: combineStats([g.swarm, g.carrier]),
+				TYPE: "swarm",
+				STAT_CALCULATOR: "swarm",
+				LABEL: "Guided",
+			},
+		},
+	], 3)
+}, {
+	canRepel: true,
+	limitFov: true,
+	fov: 4,
+	independent: true,
+	extraStats: []
+});
 
-
-Class.phs_topBananaMinion = {
-    PARENT: "genericTank",
-    LABEL: "Top Banana Minion",
-    TYPE: "minion",
-    DAMAGE_CLASS: 0,
-    HITS_OWN_TYPE: "hard",
-    FACING_TYPE: "smoothToTarget",
-    BODY: {
-        FOV: 0.5,
-        SPEED: 4,
-        ACCELERATION: 1.6,
-        HEALTH: 16,
-        SHIELD: 0,
-        DAMAGE: 0.9,
-        RESIST: 1,
-        PENETRATION: 23,
-        DENSITY: 0.4,
-    },
-    AI: {
-        BLIND: true,
-    },
-    DRAW_HEALTH: false,
-    CLEAR_ON_MASTER_UPGRADE: true,
-    GIVE_KILL_MESSAGE: false,
-    CONTROLLERS: [
-        "nearestDifferentMaster",
-        "mapAltToFire",
-        "minion",
-        "canRepel",
-        "hangOutNearMaster",
-    ],
-    GUNS: [
-        {
-            POSITION: [17, 9, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minionGun, g.single, { damage: 5, reload: 3 }]),
-                WAIT_TO_CYCLE: true,
-                TYPE: "bullet",
-            },
-        },
-    ],
-};

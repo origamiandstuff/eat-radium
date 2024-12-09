@@ -461,75 +461,6 @@ Class.minion = {
     ],
 }
 
-Class.pentaMinion = {
-    PARENT: "genericTank",
-    LABEL: "Penta Shot Minion",
-    TYPE: "minion",
-    DAMAGE_CLASS: 0,
-    HITS_OWN_TYPE: "hard",
-    FACING_TYPE: "smoothToTarget",
-    BODY: {
-        FOV: 0.5,
-        SPEED: 3,
-        ACCELERATION: 1,
-        HEALTH: 5,
-        SHIELD: 0,
-        DAMAGE: 1.2,
-        RESIST: 1,
-        PENETRATION: 1,
-        DENSITY: 0.4,
-    },
-    AI: {
-        BLIND: true,
-    },
-    DRAW_HEALTH: false,
-    CLEAR_ON_MASTER_UPGRADE: true,
-    GIVE_KILL_MESSAGE: false,
-    CONTROLLERS: [
-        "nearestDifferentMaster",
-        "mapAltToFire",
-        "minion",
-        "canRepel",
-        "hangOutNearMaster",
-    ],
-    GUNS: [
-        {
-            POSITION: [16, 8, 1, 0, -3, -30, 2/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
-                TYPE: "bullet"
-            }
-        },
-        {
-            POSITION: [16, 8, 1, 0, 3, 30, 2/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
-                TYPE: "bullet"
-            }
-        },
-        {
-            POSITION: [19, 8, 1, 0, -2, -15, 1/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
-                TYPE: "bullet"
-            }
-        },
-        {
-            POSITION: [19, 8, 1, 0, 2, 15, 1/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
-                TYPE: "bullet"
-            }
-        },
-        {
-            POSITION: [22, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
-                TYPE: "bullet"
-            }
-        }
-    ],
-}
 Class.tinyMinion = {
     PARENT: "minion",
     LABEL: "Swarm Minion",
@@ -1067,3 +998,87 @@ Class.megaMinion = {
         }
     ],
 };
+
+Class.pentaMinion = {
+    PARENT: "genericTank",
+    LABEL: "Penta Shot Minion",
+    TYPE: "minion",
+    DAMAGE_CLASS: 0,
+    HITS_OWN_TYPE: "hard",
+    FACING_TYPE: "smoothToTarget",
+    BODY: {
+        FOV: 0.5,
+        SPEED: 3,
+        ACCELERATION: 1,
+        HEALTH: 5,
+        SHIELD: 0,
+        DAMAGE: 1.2,
+        RESIST: 1,
+        PENETRATION: 1,
+        DENSITY: 0.4,
+    },
+    AI: {
+        BLIND: true,
+    },
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    GIVE_KILL_MESSAGE: false,
+    CONTROLLERS: [
+        "nearestDifferentMaster",
+        "mapAltToFire",
+        "minion",
+        "canRepel",
+        "hangOutNearMaster",
+    ],
+    GUNS: [
+        {
+            POSITION: [16, 8, 1, 0, -3, -30, 2/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [16, 8, 1, 0, 3, 30, 2/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [19, 8, 1, 0, -2, -15, 1/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [19, 8, 1, 0, 2, 15, 1/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [22, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
+                TYPE: "bullet"
+            }
+        }
+    ],
+}
+Class.swarmTurretedMinion = {
+    PARENT: "minion",
+    LABEL: "Swarm Turreted Minion",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "triSwarmTurret"
+        },
+        {
+            POSITION: [21.5, 0, 0, 0, 360, 0],
+            TYPE: "smasherBodyDeco"
+        }
+    ]
+}
