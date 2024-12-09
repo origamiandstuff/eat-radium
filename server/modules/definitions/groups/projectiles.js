@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, weaponArray } = require('../facilitators.js');
+const { combineStats, makeAuto, weaponArray, addAura } = require('../facilitators.js');
 const { base } = require('../constants.js');
 const g = require('../gunvals.js');
 
@@ -985,4 +985,15 @@ Class.swarmTypeMinion = {
             },
         },
     ],
+}
+Class.droneAura = addAura(1, 1.6)
+Class.auraDrone = {
+    PARENT: "drone",
+    LABEL: "Aura drone",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "droneAura"
+        }
+    ]
 }
