@@ -3283,20 +3283,22 @@ Class.chakramProjectile = {
         TYPE: ["genericEntity", {COLOR: 9}]
     }]
 }
-Class.chakramTurretA = {
+Class.chakramTurret = {
     PARENT: "genericTank",
     ON: [{
         event: "fire",
         handler: ({ body }) => {
-            
+            body.ALPHA = 0
+            setTimeout(() => body.ALPHA = 1, 5000);
         }
     }],
     GUNS: [
         {
-            POSITION: [0, 25, 1, 0, 0, 0, 0],
+            POSITION: [0, 22, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 TYPE: "chakramProjectile",
-                SHOOT_SETTINGS: combineStats([g.basic, {pen: 5, damage:1.2 }])
+                SHOOT_SETTINGS: combineStats([g.basic, {pen: 5, damage:1.2,  }]),
+                ALPHA: 0,
             }
         }
     ],
