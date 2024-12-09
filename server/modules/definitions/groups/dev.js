@@ -3000,7 +3000,7 @@ Class.freebooter = {
     ], 3)
 }
 Class.minotaur = {
-    PARENT: "genericbigEthereal",
+    PARENT: "genericBigEthereal",
     LABEL: "Minotaur",
     UPGRADE_TOOLTIP: "Maek stronk wall :3",
     GUNS: weaponArray([
@@ -3014,7 +3014,7 @@ Class.minotaur = {
                     TYPE: "unsetTrap",
                     STAT_CALCULATOR: "trap",
                 },
-             },
+            },
     ], 3)
 }
 // Bodies
@@ -3061,3 +3061,5 @@ Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "te
         Class.eternals.UPGRADES_TIER_0 = ["odin", "kronos"]
 
     Class.testing.UPGRADES_TIER_0 = ["diamondShape", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "propTest", "weaponArrayTest", "radialAutoTest", "makeAutoTest", "imageShapeTest", "turretStatScaleTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "gunBenchmark", "switcheroo", "developer", "armyOfOne", "vanquisher", "mummifier"]
+
+    Class.ethereal.UPGRADES_TIER_0 = ["minotaur"]
