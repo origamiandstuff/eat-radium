@@ -2978,13 +2978,13 @@ Class.vagrant = {
         },
     ], 3)
 }
-Class.gladilator = {
+Class.gladiator = {
     PARENT: "genericBigEthereal",
-    LABEL: "Gladilator",
-    UPGRADE_TOOLTIP: "Smol pentas :3",
+    LABEL: "Gladiator",
+    UPGRADE_TOOLTIP: "Alotta minions :3",
     GUNS: [
-        {//start
-            POSITION: [23.5, 11, 1, 10.5, 0, 0, 0],
+        {//start1
+            POSITION: [18.5, 11, 1, 10.5, 0, 0, 0],
         },
         {
             POSITION: [2, 14, 1, 15.5, 0, 0, 0],
@@ -2999,9 +2999,9 @@ Class.gladilator = {
         },
         {
             POSITION: [12, 14, 1, 0, 0, 0, 0],
-        },
+        },//end1
         {//start2
-            POSITION: [2, 14, 1, 34, 0, 0, 0],
+            POSITION: [2, 14, 1, 29, 0, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
                 TYPE: "machineGunMinion",
@@ -3012,8 +3012,39 @@ Class.gladilator = {
             },
         },
         {
-            POSITION: [12, 14, 1, 18.5, 0, 0, 0],
+            POSITION: [4, 14, 1, 21.5, 0, 0, 0],
+        },//end2
+        {//start3
+            POSITION: [18.5, 11, 1, 10.5, 0, 120, 0],
         },
+        {
+            POSITION: [2, 14, 1, 15.5, 0, 120, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
+                TYPE: "flankMinion",
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                MAX_CHILDREN: 1,
+            },
+        },
+        {
+            POSITION: [12, 14, 1, 0, 0, 120, 0],
+        },//end3
+        {//start4
+            POSITION: [2, 14, 1, 29, 0, 120, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
+                TYPE: "directorMinion",
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                MAX_CHILDREN: 1,
+            },
+        },
+        {
+            POSITION: [4, 14, 1, 21.5, 0, 120, 0],
+        },//end4
     ]
 }
 Class.wanderer = {
