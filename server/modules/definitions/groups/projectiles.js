@@ -1166,7 +1166,7 @@ Class.machineGunMinion = {
         },
     ],
 }
-Class.flankMifnion = {
+Class.flankMinion = {
     PARENT: "genericTank",
     LABEL: "Flank Guard Minion",
     TYPE: "minion",
