@@ -1084,7 +1084,7 @@ Class.swarmTurretedMinion = {
 }
 Class.sniperMinion = {
     PARENT: "genericTank",
-    LABEL: "Minion",
+    LABEL: "Sniper Minion",
     TYPE: "minion",
     DAMAGE_CLASS: 0,
     HITS_OWN_TYPE: "hard",
@@ -1126,7 +1126,7 @@ Class.sniperMinion = {
 }
 Class.machineGunMinion = {
     PARENT: "genericTank",
-    LABEL: "Minion",
+    LABEL: "Machine Gun Minion",
     TYPE: "minion",
     DAMAGE_CLASS: 0,
     HITS_OWN_TYPE: "hard",
@@ -1168,7 +1168,7 @@ Class.machineGunMinion = {
 }
 Class.flankMifnion = {
     PARENT: "genericTank",
-    LABEL: "Minion",
+    LABEL: "Flank Guard Minion",
     TYPE: "minion",
     DAMAGE_CLASS: 0,
     HITS_OWN_TYPE: "hard",
@@ -1207,4 +1207,137 @@ Class.flankMifnion = {
             },
         },
     ], 3)
+}
+Class.directorMinion = {
+    PARENT: "genericTank",
+    LABEL: "Director Minion",
+    TYPE: "minion",
+    DAMAGE_CLASS: 0,
+    HITS_OWN_TYPE: "hard",
+    FACING_TYPE: "smoothToTarget",
+    BODY: {
+        FOV: 0.5,
+        SPEED: 3,
+        ACCELERATION: 1,
+        HEALTH: 5,
+        SHIELD: 0,
+        DAMAGE: 1.2,
+        RESIST: 1,
+        PENETRATION: 1,
+        DENSITY: 0.4,
+    },
+    AI: {
+        BLIND: true,
+    },
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    GIVE_KILL_MESSAGE: false,
+    CONTROLLERS: [
+        "nearestDifferentMaster",
+        "mapAltToFire",
+        "minion",
+        "canRepel",
+        "hangOutNearMaster",
+    ],
+    GUNS: [
+        {
+            POSITION: [6, 11, 1.3, 7, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.minionGun]),
+                TYPE: "bullet",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                MAX_CHILDREN: 6,
+                WAIT_TO_CYCLE: true
+            },
+        },
+    ],
+}
+Class.pounderMinion = {
+    PARENT: "genericTank",
+    LABEL: "Pounder Minion",
+    TYPE: "minion",
+    DAMAGE_CLASS: 0,
+    HITS_OWN_TYPE: "hard",
+    FACING_TYPE: "smoothToTarget",
+    BODY: {
+        FOV: 0.5,
+        SPEED: 3,
+        ACCELERATION: 1,
+        HEALTH: 5,
+        SHIELD: 0,
+        DAMAGE: 1.2,
+        RESIST: 1,
+        PENETRATION: 1,
+        DENSITY: 0.4,
+    },
+    AI: {
+        BLIND: true,
+    },
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    GIVE_KILL_MESSAGE: false,
+    CONTROLLERS: [
+        "nearestDifferentMaster",
+        "mapAltToFire",
+        "minion",
+        "canRepel",
+        "hangOutNearMaster",
+    ],
+    GUNS: [
+        {
+            POSITION: [20.5, 12, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.minionGun]),
+                WAIT_TO_CYCLE: true,
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
+Class.trapperMinion = {
+    PARENT: "genericTank",
+    LABEL: "Trapper Minion",
+    TYPE: "minion",
+    DAMAGE_CLASS: 0,
+    HITS_OWN_TYPE: "hard",
+    FACING_TYPE: "smoothToTarget",
+    BODY: {
+        FOV: 0.5,
+        SPEED: 3,
+        ACCELERATION: 1,
+        HEALTH: 5,
+        SHIELD: 0,
+        DAMAGE: 1.2,
+        RESIST: 1,
+        PENETRATION: 1,
+        DENSITY: 0.4,
+    },
+    AI: {
+        BLIND: true,
+    },
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    GIVE_KILL_MESSAGE: false,
+    CONTROLLERS: [
+        "nearestDifferentMaster",
+        "mapAltToFire",
+        "minion",
+        "canRepel",
+        "hangOutNearMaster",
+    ],
+    GUNS: [
+        {
+            POSITION: [15, 7, 1, 0, 0, 0, 0]
+        },
+        {
+            POSITION: [3, 7, 1.7, 15, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.minionGun]),
+                WAIT_TO_CYCLE: true,
+                TYPE: "bullet",
+            },
+        },
+    ],
 }

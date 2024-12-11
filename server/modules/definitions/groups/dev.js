@@ -2985,20 +2985,62 @@ Class.gladilator = {
     MAX_CHILDREN: 4,
     GUNS: [
         {
-            POSITION: [5, 11, 1, 10.5, 0, 0, 0],
+            POSITION: [5, 29.5, 1, 10.5, 0, 0, 0],
         },
         {
             POSITION: [2, 14, 1, 15.5, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
-                TYPE: "minion",
+                TYPE: "sniperMinion",
                 STAT_CALCULATOR: "drone",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
             },
         },
         {
-            POSITION: [12, 14, 1, 0, 0, 0, 0],
+            POSITION: [12, 14, 1, 18.5, 0, 0, 0],
+        },
+        {
+            POSITION: [2, 14, 1, 34, 0, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
+                TYPE: "machineGunMinion",
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+            },
+        },
+        {
+            POSITION: [12, 14, 1, 18.5, 0, 0, 0],
+        },
+        {
+            POSITION: [5, 29.5, 1, 10.5, 0, 0, 0],
+        },
+        {
+            POSITION: [2, 14, 1, 15.5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
+                TYPE: "sniperMinion",
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+            },
+        },
+        {
+            POSITION: [12, 14, 1, 18.5, 0, 0, 0],
+        },
+        {
+            POSITION: [2, 14, 1, 34, 0, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
+                TYPE: "machineGunMinion",
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+            },
+        },
+        {
+            POSITION: [12, 14, 1, 18.5, 0, 0, 0],
         },
     ]
 }
