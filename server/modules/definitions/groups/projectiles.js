@@ -928,17 +928,28 @@ Class.auraDrone = {
         }
     ]
 }
+Class.aoeExplosion = {
+    PARENT: "bullet",
+    LABEL: "AOE damage",
+    SIZE: 55,
+    BODY: {
+        PENETRATION: 1,
+        SPEED: 0,
+        RANGE: 5,
+        DENSITY: 1.25,
+        HEALTH: 100,
+        DAMAGE: 20,
+        PUSHABILITY: 0,
+    },
+}
 Class.explosiveDrone = {
     PARENT: "drone",
     ON: [{
         event: "death",
         handler: ({ body }) => {
-            let eee = new Entity(body);
-            eee.define(Class.coilgunSpashDamage);
-            /*eee.team = body.team;
-            eee.color = body.color;*/
-            eee.DAMAGE = 0.25;
-            eee.master = body
+            let eee = new Entity(body, body.master);
+            eee.define(Class.aoeExplosion);
+            eee.color = body.color;
             
         }
     }],
