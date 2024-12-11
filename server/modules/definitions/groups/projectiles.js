@@ -933,13 +933,12 @@ Class.explosiveDrone = {
     ON: [{
         event: "death",
         handler: ({ body }) => {
-            /*let eee = new Entity(body);
+            let eee = new Entity(body);
             eee.define(Class.coilgunSpashDamage);
-            eee.team = body.team;
-            eee.color = body.color;
-            eee.DAMAGE = 0.25;*/
-            new Entity({x: body.x, y: body.y},
-            this.master.master);
+            /*eee.team = body.team;
+            eee.color = body.color;*/
+            eee.DAMAGE = 0.25;
+            eee.master = body
             
         }
     }],
