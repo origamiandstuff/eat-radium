@@ -3045,6 +3045,37 @@ Class.gladiator = {
         {
             POSITION: [4, 14, 1, 21.5, 0, 120, 0],
         },//end4
+        {//start5
+            POSITION: [18.5, 11, 1, 10.5, 0, 240, 0],
+        },
+        {
+            POSITION: [2, 14, 1, 15.5, 0, 240, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
+                TYPE: "pounderMinion",
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                MAX_CHILDREN: 1,
+            },
+        },
+        {
+            POSITION: [12, 14, 1, 0, 0, 240, 0],
+        },//end5
+        {//start6
+            POSITION: [2, 14, 1, 29, 0, 240, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
+                TYPE: "trapperMinion",
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                MAX_CHILDREN: 1,
+            },
+        },
+        {
+            POSITION: [4, 14, 1, 21.5, 0, 240, 0],
+        },//end6
     ]
 }
 Class.wanderer = {
@@ -3178,14 +3209,14 @@ Class.freebooter = {
         {
             POSITION: [20, 13, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.destroyer, { reload: 1.3, range: 0.9}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.destroyer, { reload: 1.3, range: 0.9, damage: 0.65}]),
                 TYPE: "bullet"
             }
         },
         {
             POSITION: [17, 9, 1, 0, 0, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, { reload: 1.3, range: 0.9}]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, { reload: 1.3, range: 0.9, damage: 0.65}]),
                 TYPE: "bullet"
             }
         },
@@ -3370,7 +3401,7 @@ Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "te
     Class.ethereal.UPGRADES_TIER_0 = ["philistine", "spear", "sundowner", "despoiler", "centaur"]
         Class.philistine.UPGRADES_TIER_0 = ["materialist"]
         Class.spear.UPGRADES_TIER_0 = ["javelin"]
-        Class.sundowner.UPGRADES_TIER_0 = ["vagrant", "nightfall", "twilight", "dusk", "wanderer"]
+        Class.sundowner.UPGRADES_TIER_0 = ["nightfall", "twilight", "vagrant", "dusk", "wanderer", "gladiator"]
         Class.despoiler.UPGRADES_TIER_0 = ["freebooter"]
         Class.centaur.UPGRADES_TIER_0 = ["minotaur", "demigod", "titan", "cyclops"]
 

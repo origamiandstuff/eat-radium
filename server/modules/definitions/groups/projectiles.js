@@ -1336,7 +1336,7 @@ Class.trapperMinion = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.trap, g.minionGun]),
                 WAIT_TO_CYCLE: true,
-                TYPE: "bullet",
+                TYPE: "trap",
             },
         },
     ],
