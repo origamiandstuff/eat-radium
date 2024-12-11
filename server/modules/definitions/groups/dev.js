@@ -2978,6 +2978,30 @@ Class.vagrant = {
         },
     ], 3)
 }
+Class.gladilator = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Gladilator",
+    UPGRADE_TOOLTIP: "Smol pentas :3",
+    MAX_CHILDREN: 4,
+    GUNS: [
+        {
+            POSITION: [5, 11, 1, 10.5, 0, 0, 0],
+        },
+        {
+            POSITION: [2, 14, 1, 15.5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
+                TYPE: "minion",
+                STAT_CALCULATOR: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+            },
+        },
+        {
+            POSITION: [12, 14, 1, 0, 0, 0, 0],
+        },
+    ]
+}
 Class.wanderer = {
     PARENT: "genericBigEthereal",
     LABEL: "Wanderer",

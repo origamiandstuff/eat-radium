@@ -1082,3 +1082,129 @@ Class.swarmTurretedMinion = {
         }
     ]
 }
+Class.sniperMinion = {
+    PARENT: "genericTank",
+    LABEL: "Minion",
+    TYPE: "minion",
+    DAMAGE_CLASS: 0,
+    HITS_OWN_TYPE: "hard",
+    FACING_TYPE: "smoothToTarget",
+    BODY: {
+        FOV: 0.5,
+        SPEED: 3,
+        ACCELERATION: 1,
+        HEALTH: 5,
+        SHIELD: 0,
+        DAMAGE: 1.2,
+        RESIST: 1,
+        PENETRATION: 1,
+        DENSITY: 0.4,
+    },
+    AI: {
+        BLIND: true,
+    },
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    GIVE_KILL_MESSAGE: false,
+    CONTROLLERS: [
+        "nearestDifferentMaster",
+        "mapAltToFire",
+        "minion",
+        "canRepel",
+        "hangOutNearMaster",
+    ],
+    GUNS: [
+        {
+            POSITION: [24, 8.5, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.minionGun]),
+                WAIT_TO_CYCLE: true,
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
+Class.machineGunMinion = {
+    PARENT: "genericTank",
+    LABEL: "Minion",
+    TYPE: "minion",
+    DAMAGE_CLASS: 0,
+    HITS_OWN_TYPE: "hard",
+    FACING_TYPE: "smoothToTarget",
+    BODY: {
+        FOV: 0.5,
+        SPEED: 3,
+        ACCELERATION: 1,
+        HEALTH: 5,
+        SHIELD: 0,
+        DAMAGE: 1.2,
+        RESIST: 1,
+        PENETRATION: 1,
+        DENSITY: 0.4,
+    },
+    AI: {
+        BLIND: true,
+    },
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    GIVE_KILL_MESSAGE: false,
+    CONTROLLERS: [
+        "nearestDifferentMaster",
+        "mapAltToFire",
+        "minion",
+        "canRepel",
+        "hangOutNearMaster",
+    ],
+    GUNS: [
+        {
+            POSITION: [12, 10, 1.4, 8, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, g.minionGun]),
+                WAIT_TO_CYCLE: true,
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
+Class.flankMifnion = {
+    PARENT: "genericTank",
+    LABEL: "Minion",
+    TYPE: "minion",
+    DAMAGE_CLASS: 0,
+    HITS_OWN_TYPE: "hard",
+    FACING_TYPE: "smoothToTarget",
+    BODY: {
+        FOV: 0.5,
+        SPEED: 3,
+        ACCELERATION: 1,
+        HEALTH: 5,
+        SHIELD: 0,
+        DAMAGE: 1.2,
+        RESIST: 1,
+        PENETRATION: 1,
+        DENSITY: 0.4,
+    },
+    AI: {
+        BLIND: true,
+    },
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    GIVE_KILL_MESSAGE: false,
+    CONTROLLERS: [
+        "nearestDifferentMaster",
+        "mapAltToFire",
+        "minion",
+        "canRepel",
+        "hangOutNearMaster",
+    ],
+    GUNS: weaponArray([
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.minionGun]),
+                WAIT_TO_CYCLE: true,
+                TYPE: "bullet",
+            },
+        },
+    ], 3)
+}
