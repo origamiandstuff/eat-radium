@@ -1244,7 +1244,7 @@ Class.directorMinion = {
             POSITION: [6, 11, 1.3, 7, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone, g.minionGun]),
-                TYPE: "bullet",
+                TYPE: "drone",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
                 STAT_CALCULATOR: "drone",

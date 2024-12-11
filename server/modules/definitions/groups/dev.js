@@ -2983,7 +2983,7 @@ Class.gladilator = {
     LABEL: "Gladilator",
     UPGRADE_TOOLTIP: "Smol pentas :3",
     GUNS: [
-        {
+        {//start
             POSITION: [23.5, 11, 1, 10.5, 0, 0, 0],
         },
         {
@@ -2998,10 +2998,10 @@ Class.gladilator = {
             },
         },
         {
-            POSITION: [12, 14, 1, 18.5, 0, 0, 0],
+            POSITION: [12, 14, 1, 0, 0, 0, 0],
         },
-        {
-            POSITION: [2, 14, 1, 34, 0, 0, 0.5],
+        {//start2
+            POSITION: [2, 14, 1, 34, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
                 TYPE: "machineGunMinion",
@@ -3013,68 +3013,6 @@ Class.gladilator = {
         },
         {
             POSITION: [12, 14, 1, 18.5, 0, 0, 0],
-        },
-        {
-            POSITION: [23.5, 11, 1, 10.5, 0, 120, 0],
-        },
-        {
-            POSITION: [2, 14, 1, 15.5, 0, 120, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
-                TYPE: "flankMinion",
-                STAT_CALCULATOR: "drone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                MAX_CHILDREN: 1,
-            },
-        },
-        {
-            POSITION: [12, 14, 1, 18.5, 0, 120, 0],
-        },
-        {
-            POSITION: [2, 14, 1, 34, 0, 120, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
-                TYPE: "directorMinion",
-                STAT_CALCULATOR: "drone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                MAX_CHILDREN: 1,
-            },
-        },
-        {
-            POSITION: [12, 14, 1, 18.5, 0, 120, 0],
-        },
-        {
-            POSITION: [23.5, 11, 1, 10.5, 0, 240, 0],
-        },
-        {
-            POSITION: [2, 14, 1, 15.5, 0, 240, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
-                TYPE: "pounderMinion",
-                STAT_CALCULATOR: "drone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                MAX_CHILDREN: 1,
-            },
-        },
-        {
-            POSITION: [12, 14, 1, 18.5, 0, 240, 0],
-        },
-        {
-            POSITION: [2, 14, 1, 34, 0, 240, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
-                TYPE: "trapperMinion",
-                STAT_CALCULATOR: "drone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                MAX_CHILDREN: 1,
-            },
-        },
-        {
-            POSITION: [12, 14, 1, 18.5, 0, 240, 0],
         },
     ]
 }
