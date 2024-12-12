@@ -2958,22 +2958,22 @@ Class.rapier = {
     PARENT: "genericBigEthereal",
     LABEL: "Rapier",
     BODY: {
-        FOV: base.fov * 1.35
+        FOV: 1.115
     },
     UPGRADE_TOOLTIP: "Snipy snipe :3",
     GUNS: weaponArray([
         {
-            POSITION: [16, 19, 1, 0, 0, 0, 0],
+            POSITION: [19, 19, 1, 0, 0, 0, 0],
         },
         {
-            POSITION: [18, 7, 1, 0, 4, 0, 0],
+            POSITION: [21, 7, 1, 0, 4, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.twin, {reload: 1.4, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2, damage: 1.6, pen: 1.5 }]),
                 TYPE: "bullet"
             }
         },
         {
-            POSITION: [18, 7, 1, 0, -4, 0, 0.5],
+            POSITION: [21, 7, 1, 0, -4, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.twin, {reload: 1.4, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2, damage: 1.6, pen: 1.5 }]),
                 TYPE: "bullet"
@@ -3578,10 +3578,10 @@ Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "te
 
     Class.ethereal.UPGRADES_TIER_0 = ["philistine", "spear", "sundowner", "despoiler", "centaur"]
         Class.philistine.UPGRADES_TIER_0 = ["materialist"]
-        Class.spear.UPGRADES_TIER_0 = ["javelin"]
+        Class.spear.UPGRADES_TIER_0 = ["javelin", "rapier"]
         Class.sundowner.UPGRADES_TIER_0 = ["nightfall", "twilight", "vagrant", "dusk", "wanderer", "gladiator"]
         Class.despoiler.UPGRADES_TIER_0 = ["freebooter"]
         Class.centaur.UPGRADES_TIER_0 = ["minotaur", "hydra", "demigod", "titan", "cyclops"]
 
     Class.etherealBodyUpgrades.UPGRADES_TIER_0 = ["mechanism", "atmosphere"]
-  Class.developer.UPGRADES_TIER_1 = [["philistine", "spear", "despoiler", "centaur", "sundowner", "mechanism", "atmosphere"]]
+  Class.testing.UPGRADES_TIER_1 = [["philistine", "spear", "despoiler", "centaur", "sundowner", "mechanism", "atmosphere"]]
