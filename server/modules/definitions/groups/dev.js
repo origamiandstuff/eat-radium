@@ -3248,12 +3248,23 @@ Class.hydra = {
                 },
             },
         {
-            POSITION: [15, 7, 1, 0, 0, 0, 0]
+            POSITION: [13, 7, 1, 0, 8, 0, 0]
         },
         {
-            POSITION: [3, 7, 1.7, 15, 0, 0, 0],
+            POSITION: [3, 7, 1.7, 13, 8, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap]),
+                SHOOT_SETTINGS: combineStats([g.trap, {shudder: 0.4, speed: 0.85, range: 0.85}]),
+                WAIT_TO_CYCLE: true,
+                TYPE: "trap",
+            },
+        },
+        {
+            POSITION: [13, 7, 1, 0, -8, 0, 0]
+        },
+        {
+            POSITION: [3, 7, 1.7, 13, -8, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, {shudder: 0.4, speed: 0.85, range: 0.85}]),
                 WAIT_TO_CYCLE: true,
                 TYPE: "trap",
             },
@@ -3423,6 +3434,7 @@ Class.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "te
         Class.spear.UPGRADES_TIER_0 = ["javelin"]
         Class.sundowner.UPGRADES_TIER_0 = ["nightfall", "twilight", "vagrant", "dusk", "wanderer", "gladiator"]
         Class.despoiler.UPGRADES_TIER_0 = ["freebooter"]
-        Class.centaur.UPGRADES_TIER_0 = ["minotaur", "demigod", "titan", "cyclops"]
+        Class.centaur.UPGRADES_TIER_0 = ["minotaur", "hydra", "demigod", "titan", "cyclops"]
 
     Class.etherealBodyUpgrades.UPGRADES_TIER_0 = ["mechanism", "atmosphere"]
+  Class.developer.UPGRADES_TIER_1 = [["philistine", "spear", "despoiler", "centaur", "sundowner", "mechanism", "atmosphere"]]
