@@ -2984,7 +2984,7 @@ Class.gladiator = {
     UPGRADE_TOOLTIP: "Alotta minions :3",
     GUNS: [
         {//start1
-            POSITION: [18.5, 11, 1, 10.5, 0, 0, 0],
+            POSITION: [10.5, 11, 1, 10.5, 0, 0, 0],
         },
         {
             POSITION: [2, 14, 1, 15.5, 0, 0, 0],
@@ -3001,7 +3001,7 @@ Class.gladiator = {
             POSITION: [12, 14, 1, 0, 0, 0, 0],
         },//end1
         {//start2
-            POSITION: [2, 14, 1, 29, 0, 0, 0.5],
+            POSITION: [2, 14, 1, 21, 0, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
                 TYPE: "machineGunMinion",
@@ -3010,9 +3010,6 @@ Class.gladiator = {
                 SYNCS_SKILLS: true,
                 MAX_CHILDREN: 1,
             },
-        },
-        {
-            POSITION: [4, 14, 1, 21.5, 0, 0, 0],
         },//end2
         {//start3
             POSITION: [18.5, 11, 1, 10.5, 0, 120, 0],
