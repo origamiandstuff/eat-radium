@@ -3012,7 +3012,7 @@ Class.gladiator = {
             },
         },//end2
         {//start3
-            POSITION: [18.5, 11, 1, 10.5, 0, 120, 0],
+            POSITION: [10.5, 11, 1, 10.5, 0, 120, 0],
         },
         {
             POSITION: [2, 14, 1, 15.5, 0, 120, 0],
@@ -3029,7 +3029,7 @@ Class.gladiator = {
             POSITION: [12, 14, 1, 0, 0, 120, 0],
         },//end3
         {//start4
-            POSITION: [2, 14, 1, 29, 0, 120, 0.5],
+            POSITION: [2, 14, 1, 21, 0, 120, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
                 TYPE: "directorMinion",
@@ -3038,12 +3038,9 @@ Class.gladiator = {
                 SYNCS_SKILLS: true,
                 MAX_CHILDREN: 1,
             },
-        },
-        {
-            POSITION: [4, 14, 1, 21.5, 0, 120, 0],
         },//end4
         {//start5
-            POSITION: [18.5, 11, 1, 10.5, 0, 240, 0],
+            POSITION: [10.5, 11, 1, 10.5, 0, 240, 0],
         },
         {
             POSITION: [2, 14, 1, 15.5, 0, 240, 0],
@@ -3060,7 +3057,7 @@ Class.gladiator = {
             POSITION: [12, 14, 1, 0, 0, 240, 0],
         },//end5
         {//start6
-            POSITION: [2, 14, 1, 29, 0, 240, 0.5],
+            POSITION: [2, 14, 1, 21, 0, 240, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.factory, { damage: 1.2, health: 1.1, pen: 1.2 }]),
                 TYPE: "trapperMinion",
@@ -3069,9 +3066,6 @@ Class.gladiator = {
                 SYNCS_SKILLS: true,
                 MAX_CHILDREN: 1,
             },
-        },
-        {
-            POSITION: [4, 14, 1, 21.5, 0, 240, 0],
         },//end6
     ]
 }
