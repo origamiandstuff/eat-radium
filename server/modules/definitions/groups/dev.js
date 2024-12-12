@@ -3174,9 +3174,9 @@ Class.raider = {
     GUNS: weaponArray(
         [
             {
-                POSITION: [14, 5.5, 1.7, 0, -6.5, 0, 0.5],
+                POSITION: [14, 5.5, 1.7, 0, 6.5, 0, 0.5],
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, g.overseer, g.pounder, { damage: 0.85, reload: 1.05, maxSpeed: 0.9, health: 1.1, size: 1.75 }]),
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, g.overseer, g.pounder, { damage: 0.85, maxSpeed: 1.2, health: 1.1, size: 2.5 }]),
                     TYPE: "betadrone",
                     MAX_CHILDREN: 2,
                     AUTOFIRE: true,
@@ -3188,7 +3188,7 @@ Class.raider = {
             {
                 POSITION: [14, 5.5, 1.7, 0, -6.5, 0, 0.5],
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, g.overseer, g.pounder, { damage: 0.85, reload: 1.05, maxSpeed: 0.9, health: 1.1, size: 1.75 }]),
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, g.overseer, g.pounder, { damage: 0.85, maxSpeed: 1.2, health: 1.1, size: 2.5 }]),
                     TYPE: "betadrone",
                     MAX_CHILDREN: 2,
                     AUTOFIRE: true,
@@ -3197,6 +3197,62 @@ Class.raider = {
                     WAIT_TO_CYCLE: true,
                 }
             },
+            {
+                POSITION: [14, 5.5, 1.7, 3, 0, 0, 0],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, g.overseer, g.pounder, { damage: 0.85, maxSpeed: 1.2, health: 1.1, size: 2.5 }]),
+                    TYPE: "betadrone",
+                    MAX_CHILDREN: 2,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: "drone",
+                    WAIT_TO_CYCLE: true,
+                }
+            },
+        ], 3
+    )
+}
+Class.infiltrator = {
+    PARENT: "genericSmolEthereal",
+    LABEL: "Infiltrator",
+    UPGRADE_TOOLTIP: "Drone mix",
+    GUNS: weaponArray(
+        [
+            {
+                POSITION: {
+                    LENGTH: 14,
+                    WIDTH: 5.5,
+                    ASPECT: 1.7,
+                    Y: 6.5
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, { reload: 1.05, maxSpeed: 0.9, health: 1.1, size: 1.75 }]),
+                    TYPE: "drone",
+                    MAX_CHILDREN: 2,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: "drone",
+                    WAIT_TO_CYCLE: true,
+                }
+            },
+            {
+                POSITION: {
+                    LENGTH: 14,
+                    WIDTH: 5.5,
+                    ASPECT: 1.7,
+                    Y: -6.5,
+                    DELAY: 0.5
+                },
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, { reload: 1.05, maxSpeed: 0.9, health: 1.1, size: 1.75 }]),
+                    TYPE: "drone",
+                    MAX_CHILDREN: 2,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: "drone",
+                    WAIT_TO_CYCLE: true,
+                }
+            }
         ], 3
     )
 }
