@@ -3231,6 +3231,35 @@ Class.minotaur = {
             },
     ], 3)
 }
+Class.hydra = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Hydra",
+    UPGRADE_TOOLTIP: "Very many wall! :3",
+    GUNS: weaponArray([
+            {
+                POSITION: [13, 12, 1, 0, 0, 0, 0],
+            },
+            {
+                POSITION: [3, 12, 1.1, 13, 0, 0, 0],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, {shudder: 0.4, speed: 0.85, range: 0.85}]),
+                    TYPE: "unsetTrap",
+                    STAT_CALCULATOR: "trap",
+                },
+            },
+        {
+            POSITION: [15, 7, 1, 0, 0, 0, 0]
+        },
+        {
+            POSITION: [3, 7, 1.7, 15, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap]),
+                WAIT_TO_CYCLE: true,
+                TYPE: "trap",
+            },
+        },
+    ], 3)
+}
 Class.demigod = {
     PARENT: "genericBigEthereal",
     LABEL: "Demigod",
