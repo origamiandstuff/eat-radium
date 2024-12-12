@@ -2954,6 +2954,33 @@ Class.javelin = {
         },
     ], 3)
 }
+Class.rapier = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Rapier",
+    BODY: {
+        FOV: base.fov * 1.35
+    },
+    UPGRADE_TOOLTIP: "Snipy snipe :3",
+    GUNS: weaponArray([
+        {
+            POSITION: [16, 19, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [18, 7, 1, 0, 4, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.twin, {reload: 1.4, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2, damage: 1.6, pen: 1.5 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [18, 7, 1, 0, -4, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.twin, {reload: 1.4, health: 1.8, speed: 1.6, maxSpeed: 1.6, density: 1.5, range: 1.2, damage: 1.6, pen: 1.5 }]),
+                TYPE: "bullet"
+            }
+        }
+    ], 3)
+}
 Class.vagrant = {
     PARENT: "genericBigEthereal",
     LABEL: "Vagrant",
