@@ -3167,6 +3167,39 @@ Class.nightfall = {
         ], 3
     )
 }
+Class.raider = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Raider",
+    UPGRADE_TOOLTIP: "Beta drones :3",
+    GUNS: weaponArray(
+        [
+            {
+                POSITION: [14, 5.5, 1.7, 0, -6.5, 0, 0.5],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, g.overseer, g.pounder, { damage: 0.85, reload: 1.05, maxSpeed: 0.9, health: 1.1, size: 1.75 }]),
+                    TYPE: "betadrone",
+                    MAX_CHILDREN: 2,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: "drone",
+                    WAIT_TO_CYCLE: true,
+                }
+            },
+            {
+                POSITION: [14, 5.5, 1.7, 0, -6.5, 0, 0.5],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer, g.overseer, g.pounder, { damage: 0.85, reload: 1.05, maxSpeed: 0.9, health: 1.1, size: 1.75 }]),
+                    TYPE: "betadrone",
+                    MAX_CHILDREN: 2,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: "drone",
+                    WAIT_TO_CYCLE: true,
+                }
+            },
+        ], 3
+    )
+}
 Class.dusk = {
     PARENT: "genericBigEthereal",
     LABEL: "Dusk",

@@ -1353,3 +1353,12 @@ Class.trapperMinion = {
         },
     ],
 }
+Class.betadrone = {
+	PARENT: "drone",
+	PROPS: [
+		{
+			POSITION: [10, 0, 0, 180, 1],
+			TYPE: ["triangle", {COLOR: -1}],
+		},
+	]
+}
