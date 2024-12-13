@@ -417,11 +417,10 @@ const addMorphAnimation = (baseName, frames, reverse, delay) => {
     ON: [{
         event: "altFire",
         handler: ({ body }) => {
-            for ( let i = 1; i < (frames + 1); i++ ) {
-                let tonkName = `Class.${baseName}${i}`
+            for ( let i = 1; i < frames; i++ ) {
                 setTimeout(() => {
-                    body.define(tonkName) 
-                }, i * delay)
+                    body.define(Class[baseName + i]);
+                }, 500);
             }
         }
     }]
@@ -6663,7 +6662,7 @@ Class.eee0 = {
 for ( let ii = 1; ii < 4; ii++ ) {
   Class["eee" + ii] = {
     PARENT: "genericTank",
-    ...addMorphAnimation("eee", 3, 0, 500),
+    LABEL: `eee${ii}`,
     GUNS: [
         {
             POSITION: [20, 10, 1, 0, 0, 0, 0]
