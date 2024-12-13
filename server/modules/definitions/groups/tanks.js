@@ -419,8 +419,8 @@ const addMorphAnimation = (baseName, frames, reverse, delay) => {
         handler: ({ body }) => {
             for ( let i = 1; i < frames; i++ ) {
                 setTimeout(() => {
-                    body.define(Class[baseName + i]);
-                }, 500);
+                    body.define(Class[`${baseName}${i}`]);
+                }, 
             }
         }
     }]
