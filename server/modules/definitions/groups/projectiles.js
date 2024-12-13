@@ -1362,3 +1362,16 @@ Class.betadrone = {
 		},
 	]
 }
+Class.rotatedSquare = {
+    SHAPE: 4.5,
+    COLOR: -1
+};
+Class.betasunchip = {
+    PARENT: "drone",
+    SHAPE: 4,
+    NECRO: [4],
+    PROPS: [{
+        POSITION: [20 * Math.SQRT1_2, 0, 0, 180, 1],
+        TYPE: ["rotatedSquare"]
+    }]
+};
