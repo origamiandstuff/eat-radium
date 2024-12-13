@@ -412,6 +412,19 @@ const stackingDOT = (them, stacks) => {
         }, 6);
     }
 };
+
+const addMorphAnimation = (baseName, frames, reverse) => {
+    ON: [{
+        event: "altFire",
+        handler: ({ body }) => {
+            for ( let i = 0; i < (frames + 1); i++ ) {
+                setTimeout(() => {
+                    body.define(Class.) 
+                })
+            }
+        }
+    }]
+}
 Class.executorBullet = {
     PARENT: 'bullet',
     ON: [
