@@ -6651,12 +6651,17 @@ Class.eee0 = {
     ...addMorphAnimation("eee", 3, 0, 500),
     GUNS: [
         {
-            POSITION: [20, 10, 1, 0, 0, 0, 0]
+            POSITION: [20, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.basic, { range: 10e-10 }]),
+                ALT_FIRE: true,
+            }
         }
     ]
 }
-for ( let i = 1; i < 4; i++ ) {
-  Class.eee0 = {
+for ( let ii = 1; ii < 4; ii++ ) {
+  Class["eee" + ii] = {
     PARENT: "genericTank",
     ...addMorphAnimation("eee", 3, 0, 500),
     GUNS: [
