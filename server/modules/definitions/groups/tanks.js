@@ -414,13 +414,13 @@ const stackingDOT = (them, stacks) => {//broken as fuck
 };
 
 const addMorphAnimation = (baseName, frames, reverse, delay) => {
-    return[{
+    return [{
         event: "altFire",
         handler: ({ body }) => {
-            for ( let i = 1; i < frames; i++ ) {
+            for ( let i = 0; i < frames + 1; i++ ) {
                 setTimeout(() => {
                     body.define(Class[`${baseName}${i}`]);
-                }, 500);
+                }, i * delay);
             }
         }
     }]
@@ -6647,18 +6647,7 @@ Class.detonateExplosion = {
 Class.eee0 = {
     PARENT: "genericTank",
     LABEL: "eee0",
-    ON: addMorphAnimation("eee", 3, 0, 500),
-    [{
-        event: "altFire",
-        handler: ({ body }) => {
-            /*for ( let i = 1; i < frames; i++ ) {
-                setTimeout(() => {
-                    body.define(Class[`${baseName}${i}`]);
-                }, 500);
-            }*/
-            body.define(Class.eee1)
-        }
-    }],
+    ON: addMorphAnimation("eee", 3, 0, 250),
     GUNS: [
         {
             POSITION: [20, 10, 1, 0, 0, 0, 0],
