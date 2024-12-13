@@ -397,7 +397,7 @@ const toxic = (them, damage, duration) => {
         }, 4 * duration);
     }
 };
-const stackingDOT = (them, stacks) => {
+const stackingDOT = (them, stacks) => {//broken as fuck
     if (!them) return
     if (!them.invuln && !them.passive && !them.godmode) {
         them.DOT_stacks = them.DOT_stacks + 1
@@ -414,15 +414,14 @@ const stackingDOT = (them, stacks) => {
 };
 
 const addMorphAnimation = (baseName, frames, reverse, delay) => {
-    [{
+    return[{
         event: "altFire",
         handler: ({ body }) => {
-            /*for ( let i = 1; i < frames; i++ ) {
+            for ( let i = 1; i < frames; i++ ) {
                 setTimeout(() => {
                     body.define(Class[`${baseName}${i}`]);
                 }, 500);
-            }*/
-            body.define(Class.eee1)
+            }
         }
     }]
 }
@@ -6648,7 +6647,7 @@ Class.detonateExplosion = {
 Class.eee0 = {
     PARENT: "genericTank",
     LABEL: "eee0",
-    ON: //addMorphAnimation("eee", 3, 0, 500),
+    ON: addMorphAnimation("eee", 3, 0, 500),
     [{
         event: "altFire",
         handler: ({ body }) => {
