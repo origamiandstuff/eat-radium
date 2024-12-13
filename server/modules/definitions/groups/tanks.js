@@ -413,14 +413,15 @@ const stackingDOT = (them, stacks) => {
     }
 };
 
-const addMorphAnimation = (baseName, frames, reverse) => {
+const addMorphAnimation = (baseName, frames, reverse, delay) => {
     ON: [{
         event: "altFire",
         handler: ({ body }) => {
-            for ( let i = 0; i < (frames + 1); i++ ) {
+            for ( let i = 1; i < (frames + 1); i++ ) {
+                let tonkName = `Class.${baseName}${i}`
                 setTimeout(() => {
-                    body.define(Class.) 
-                })
+                    body.define(tonkName) 
+                }, i * delay)
             }
         }
     }]
@@ -6644,7 +6645,27 @@ Class.detonateExplosion = {
         PUSHABILITY: 0,
     },
 }
-
+Class.eee0 = {
+    PARENT: "genericTank",
+    LABEL: "eee0",
+    ...addMorphAnimation("eee", 3, 0, 500),
+    GUNS: [
+        {
+            POSITION: [20, 10, 1, 0, 0, 0, 0]
+        }
+    ]
+}
+for ( let i = 1; i < 4; i++ ) {
+  Class.eee0 = {
+    PARENT: "genericTank",
+    ...addMorphAnimation("eee", 3, 0, 500),
+    GUNS: [
+        {
+            POSITION: [20, 10, 1, 0, 0, 0, 0]
+        }
+    ]
+}
+        }
 
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
