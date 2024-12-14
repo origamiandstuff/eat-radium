@@ -6730,9 +6730,9 @@ Class.speedPenta0 = {
         {
             POSITION: [14, 4, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                COLOR: `#`
+                COLOR: `#0000FF`
             }
-        }
+        },
         ...addMorphBarrel
     ]
 }
@@ -6818,6 +6818,12 @@ Class.speedPenta10 = {
                 SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
                 TYPE: "bullet",
                 LABEL: "thruster"
+            }
+        },
+        {
+            POSITION: [14, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: `#FF0000`
             }
         },
         ...addMorphBarrel,
