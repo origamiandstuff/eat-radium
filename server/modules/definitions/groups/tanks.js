@@ -6667,21 +6667,6 @@ Class.detonateExplosion = {
         PUSHABILITY: 0,
     },
 }
-Class.eee0 = {
-    PARENT: "genericTank",
-    LABEL: "eee0",
-    ON: addMorphAnimation("eee", 3, 0, 250),
-    GUNS: [
-        {
-            POSITION: [20, 10, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                TYPE: "bullet",
-                SHOOT_SETTINGS: combineStats([g.basic, { range: 10e-10 }]),
-                ALT_FIRE: true,
-            }
-        }
-    ]
-}
 Class.speedPenta0 = {
     PARENT: "genericTank",
     LABEL: "Speed Penta",
