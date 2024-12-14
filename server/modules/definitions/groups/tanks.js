@@ -6690,7 +6690,7 @@ Class.speedPenta0 = {
     BODY: {
         SPEED: 0.85 * base.SPEED
     },
-    ON: addMorphAnimation("speedPenta", 5, false, 50),
+    ON: addMorphAnimation("speedPenta", 10, false, 50),
     GUNS: [
         {
             POSITION: [16, 8, 1, 0, -3, -30, 2/3],
@@ -6730,33 +6730,33 @@ Class.speedPenta0 = {
         ...addMorphBarrel
     ]
 }
-for ( let ii = 1; ii < 5; ii++ ) {
+for ( let ii = 1; ii < 10; ii++ ) {
     Class["speedPenta" + ii] = {
         PARENT: "genericTank",
         LABEL: "Speed Penta",
         GUNS: [
         {
-            POSITION: [16, 8, 1, 0, -3 + (ii * 0.6), -30 - (ii * 24), 0],
+            POSITION: [16, 8, 1, 0, -3 + (ii * 0.3), -30 - (ii * 12), 0],
         },
         {
-            POSITION: [16, 8, 1, 0, 3 - (ii * 0.6), 30 + (ii * 24), 0],
+            POSITION: [16, 8, 1, 0, 3 - (ii * 0.3), 30 + (ii * 12), 0],
         },
         {
-            POSITION: [19 - ii, 8, 1, 0, -2 + (ii * 0.6), -15 - (ii * 25), 0],
+            POSITION: [19 - (ii * 0.5), 8, 1, 0, -2 + (ii * 0.3), -15 - (ii * 12.5), 0],
         },
         {
-            POSITION: [19 - ii, 8, 1, 0, 2 - (ii * 0.6), 15 + (ii * 25), 0],
+            POSITION: [19 - (ii * 0.5), 8, 1, 0, 2 - (ii * 0.3), 15 + (ii * 12.5), 0],
         },
         {
-            POSITION: [22 - (ii * 0.8), 8, 1, 0, 0, 0, 0],
+            POSITION: [22 - (ii * 0.4), 8, 1, 0, 0, 0, 0],
         }
         ]
     }
 }
-Class.speedPenta5 = {
+Class.speedPenta10 = {
     PARENT: "genericTank",
     LABEL: "Speed Penta", 
-    ON: addMorphAnimation("speedPenta", 5, true, 50),
+    ON: addMorphAnimation("speedPenta", 10, true, 50),
     BODY: {
         HEALTH: base.HEALTH * 0.4,
         SHIELD: base.SHIELD * 0.4,
@@ -6844,7 +6844,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"]
         Class.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "snowstorm"]
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
-            Class.booster.UPGRADES_TIER_3 = ["massacre", "speedPenta5"]
+            Class.booster.UPGRADES_TIER_3 = ["massacre", "speedPenta10"]
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"]
 
     Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "lightning", "doper"]
