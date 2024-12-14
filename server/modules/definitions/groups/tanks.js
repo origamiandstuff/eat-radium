@@ -6685,7 +6685,7 @@ Class.eee0 = {
 }
 Class.speedPenta0 = {
     PARENT: "genericTank",
-    LABEL: "Penta Shot",
+    LABEL: "Speed Penta",
     DANGER: 7,
     BODY: {
         SPEED: 0.85 * base.SPEED
@@ -6748,7 +6748,7 @@ for ( let ii = 1; ii < 5; ii++ ) {
             POSITION: [19 - ii, 8, 1, 0, 2 - (ii * 0.6), 15 + (ii * 25), 0],
         },
         {
-            POSITION: [18 + (ii * 0.8), 8, 1, 0, 0, 0, 0],
+            POSITION: [22 - (ii * 0.8), 8, 1, 0, 0, 0, 0],
         }
         ]
     }
@@ -6844,7 +6844,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"]
         Class.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "snowstorm"]
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
-            Class.booster.UPGRADES_TIER_3 = ["massacre"]
+            Class.booster.UPGRADES_TIER_3 = ["massacre", "speedPenta5"]
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"]
 
     Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "lightning", "doper"]
