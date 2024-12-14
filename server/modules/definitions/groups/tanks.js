@@ -6815,9 +6815,8 @@ Class.speedPenta10 = {
 }
 Class.battery0 = {
     PARENT: "genericTank",
-    LABEL: "battery",
+    LABEL: "Battery",
     DANGER: 6,
-    MAX_CHILDREN: 3,
     ON: addMorphAnimation("battery", 10, false, 50),
     GUNS: [
         {
@@ -6855,10 +6854,18 @@ Class.battery0 = {
                 TYPE: "drone",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
+                MAX_CHILDREN: 3,
                 STAT_CALCULATOR: "drone",
                 WAIT_TO_CYCLE: true
             }
-        }
+        },
+        {
+            POSITION: [14, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: `#0000FF`
+            }
+        },
+        ...addMorphBarrel,
     ]
 }
 for ( let ii = 1; ii < 10; ii++ ) {
@@ -6883,7 +6890,7 @@ for ( let ii = 1; ii < 10; ii++ ) {
             POSITION: [16, 3.5, 1, 0, -3.75, 0, 0.25],
         },
         {
-            POSITION: [6 - (ii * 0.3), 11, 1.3, 7, 0, 0, 0],//drone > trap
+            POSITION: [6 - (ii * 0.3), 11 - (ii * 0.4), 1.3 - (ii * 0.03), 7 + (ii * 0.8), 0, 0, 0],//drone > trap
         },
         {
             POSITION: [ii * 1.5, 7, 1, 0, 0, 0, 0],//new trap barrrel
@@ -6896,6 +6903,60 @@ for ( let ii = 1; ii < 10; ii++ ) {
         }
         ]
     }
+}
+Class.battery10 = {
+    PARENT: "genericTank",
+    LABEL: "Battery",
+    DANGER: 6,
+    ON: addMorphAnimation("battery", 10, true, 50),
+    GUNS: [
+        {
+            POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [12, 3.5, 1, 0, -7.25, 0, 0.75],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [16, 3.5, 1, 0, 3.75, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [16, 3.5, 1, 0, -3.75, 0, 0.25],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [15, 7, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 7, 1.7, 15, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap]),
+                TYPE: "trap",
+                STAT_CALCULATOR: "trap"
+            }
+        },
+        {
+            POSITION: [14, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: `#FF0000`
+            }
+        },
+        ...addMorphBarrel,
+    ]
 }
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
