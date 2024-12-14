@@ -433,10 +433,18 @@ const addMorphAnimation = (baseName, frames, reverse, delay) => {
                 let multiplier = frames - i;
                 setTimeout(() => {
                     body.define(Class[`${baseName}${i}`]);
-                }, multiplier - 1 * delay);
+                }, (multiplier - 1) * delay);
             }
         }
     }]
+    }
+}
+const addMorphBarrel = {
+    POSITION: [0, 0, 1, 0, 0, 0, 0],
+    PROPERTIES: {
+        TYPE: "bullet",
+        SHOOT_SETTINGS: combineStats([g.basic, { range: 10e-8, reload: 2.5 }]),
+        ALT_FIRE: true,
     }
 }
 Class.executorBullet = {
@@ -6678,28 +6686,34 @@ Class.speedPenta0 = {
     LABEL: "Speed Penta", 
     ON: addMorphAnimation("speedPenta", 5, false, 500),
 }
+CLASS.speedPenta0.GUNS.push({})
 for ( let ii = 1; ii < 5; ii++ ) {
     Class["speedPenta" + ii] = {
         PARENT: "genericTank",
         LABEL: "Speed Penta",
         GUNS: [
         {
-            POSITION: [16, 8, 1, 0, -3, -30, 2/3],
+            POSITION: [16, 8, 1, 0, -3 + (ii * 0.6), -30 - (ii * 24), 0],
         },
         {
-            POSITION: [16, 8, 1, 0, 3, 30, 2/3],
+            POSITION: [16, 8, 1, 0, 3 - (ii * 0.6), 30 + (ii * 24), 0],
         },
         {
-            POSITION: [19 - ii, 8, 1, 0, -2 + (ii * 0.6), -15 + (ii *, 1/3],
+            POSITION: [19 - ii, 8, 1, 0, -2 + (ii * 0.6), -15 - (ii * 25), 0],
         },
         {
-            POSITION: [19 - ii, 8, 1, 0, 2 - (ii * 0.6), 15 + (ii * 25), 1/3],
+            POSITION: [19 - ii, 8, 1, 0, 2 - (ii * 0.6), 15 + (ii * 25), 0],
         },
         {
             POSITION: [18 + (ii * 0.8), 8, 1, 0, 0, 0, 0],
         }
         ]
     }
+}
+Class.speedPenta5 = {
+    PARENT: "booster",
+    LABEL: "Speed Penta", 
+    ON: addMorphAnimation("speedPenta", 5, true, 500),
 }
 
 // Upgrade Paths
