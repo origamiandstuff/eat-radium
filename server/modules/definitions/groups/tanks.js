@@ -6813,10 +6813,12 @@ Class.speedPenta10 = {
         ...addMorphBarrel,
     ]
 }
-Class.battery = {
+Class.battery0 = {
     PARENT: "genericTank",
     LABEL: "battery",
     DANGER: 6,
+    MAX_CHILDREN: 3,
+    ON: addMorphAnimation("battery", 10, false, 50),
     GUNS: [
         {
             POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
@@ -6847,12 +6849,6 @@ Class.battery = {
             }
         },
         {
-            POSITION: [6, 11, 1.3, 7, 0, 0, 0],{
-                LENGTH: 6,
-                WIDTH: 11,
-                ASPECT: 1.3,
-                X: 7
-            },
             POSITION: [6, 11, 1.3, 7, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone]),
@@ -6860,11 +6856,46 @@ Class.battery = {
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
                 STAT_CALCULATOR: "drone",
-                MAX_CHILDREN: 6,
                 WAIT_TO_CYCLE: true
             }
         }
     ]
+}
+for ( let ii = 1; ii < 10; ii++ ) {
+    let R1 = Math.floor((255 / 10) * ii)
+    let R = R1.toString(16)
+    let B1 = Math.floor((255 / 10) * (10 - ii))
+    let B = B1.toString(16)
+    Class["battery" + ii] = {
+        PARENT: "genericTank",
+        LABEL: "Battery",
+        GUNS: [
+        {
+            POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
+        },
+        {
+            POSITION: [12, 3.5, 1, 0, -7.25, 0, 0.75],
+        },
+        {
+            POSITION: [16, 3.5, 1, 0, 3.75, 0, 0],
+        },
+        {
+            POSITION: [16, 3.5, 1, 0, -3.75, 0, 0.25],
+        },
+        {
+            POSITION: [6 - (ii * 0.3), 11, 1.3, 7, 0, 0, 0],//drone > trap
+        },
+        {
+            POSITION: [ii * 1.5, 7, 1, 0, 0, 0, 0],//new trap barrrel
+        },
+        {
+            POSITION: [14, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: `#${R}00${B}`
+            }
+        }
+        ]
+    }
 }
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
