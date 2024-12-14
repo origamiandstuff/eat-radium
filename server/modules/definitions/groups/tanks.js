@@ -414,7 +414,8 @@ const stackingDOT = (them, stacks) => {//broken as fuck
 };
 
 const addMorphAnimation = (baseName, frames, reverse, delay) => {
-    return [{
+    if (reverse) {
+      return [{
         event: "altFire",
         handler: ({ body }) => {
             for ( let i = 0; i < frames + 1; i++ ) {
@@ -424,6 +425,19 @@ const addMorphAnimation = (baseName, frames, reverse, delay) => {
             }
         }
     }]
+    } else {
+    return [{
+        event: "altFire",
+        handler: ({ body }) => {
+            for ( let i = frames - 1; i > -1; i-- ) {
+                let multiplier = frames - i;
+                setTimeout(() => {
+                    body.define(Class[`${baseName}${i}`]);
+                }, multiplier - 1 * delay);
+            }
+        }
+    }]
+    }
 }
 Class.executorBullet = {
     PARENT: 'bullet',
@@ -6659,18 +6673,17 @@ Class.eee0 = {
         }
     ]
 }
-for ( let ii = 1; ii < 4; ii++ ) {
-  Class["eee" + ii] = {
-    PARENT: "genericTank",
-    LABEL: `eee${ii}`,
-    GUNS: [
-        {
-            POSITION: [20, 10, 1, 0, 0, 0, 0]
-        }
-    ]
+for ( let ii = 1; ii < 5; ii++ ) {
+    Class["speedPenta" + ii] = {
+        PARENT: "genericTank",
+        LABEL: "Speed Penta",
+    }
 }
-        }
 
+Class.speedPenta0 = {
+    PARENT: "pentaShot",
+    ON: addMorphAnimation("speedPenta", 5, false, 500),
+}
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]
