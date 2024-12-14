@@ -6813,6 +6813,59 @@ Class.speedPenta10 = {
         ...addMorphBarrel,
     ]
 }
+Class.battery = {
+    PARENT: "genericTank",
+    LABEL: "battery",
+    DANGER: 6,
+    GUNS: [
+        {
+            POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [12, 3.5, 1, 0, -7.25, 0, 0.75],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [16, 3.5, 1, 0, 3.75, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [16, 3.5, 1, 0, -3.75, 0, 0.25],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [6, 11, 1.3, 7, 0, 0, 0],{
+                LENGTH: 6,
+                WIDTH: 11,
+                ASPECT: 1.3,
+                X: 7
+            },
+            POSITION: [6, 11, 1.3, 7, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone]),
+                TYPE: "drone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                MAX_CHILDREN: 6,
+                WAIT_TO_CYCLE: true
+            }
+        }
+    ]
+}
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]
