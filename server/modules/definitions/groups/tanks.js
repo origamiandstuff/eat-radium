@@ -6727,11 +6727,20 @@ Class.speedPenta0 = {
                 TYPE: "bullet"
             }
         },
+        {
+            POSITION: [14, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: `#`
+            }
+        }
         ...addMorphBarrel
     ]
 }
 for ( let ii = 1; ii < 10; ii++ ) {
-    let 
+    let R1 = Math.floor((255 / 10) * ii)
+    let R = R1.toString(16)
+    let B1 = Math.floor((255 / 10) * (10 - ii))
+    let B = B1.toString(16)
     Class["speedPenta" + ii] = {
         PARENT: "genericTank",
         LABEL: "Speed Penta",
@@ -6754,7 +6763,7 @@ for ( let ii = 1; ii < 10; ii++ ) {
         {
             POSITION: [14, 4, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                COLOR: `#00`
+                COLOR: `#${R}00${B}`
             }
         }
         ]
