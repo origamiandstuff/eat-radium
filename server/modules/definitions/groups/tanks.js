@@ -6731,8 +6731,7 @@ Class.speedPenta0 = {
     ]
 }
 for ( let ii = 1; ii < 10; ii++ ) {
-    let R1 = Math.floor((255 / 160) * ii);
-    let R2 = (R1);
+    let 
     Class["speedPenta" + ii] = {
         PARENT: "genericTank",
         LABEL: "Speed Penta",
@@ -6755,7 +6754,7 @@ for ( let ii = 1; ii < 10; ii++ ) {
         {
             POSITION: [14, 4, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                COLOR: "#"
+                COLOR: `#00`
             }
         }
         ]
