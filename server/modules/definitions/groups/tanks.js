@@ -6813,35 +6813,6 @@ Class.speedPenta10 = {
         ...addMorphBarrel,
     ]
 }
-
-Class.spinnyCruiser = {
-    PARENT: "genericTank",
-    LABEL: "Cruiser",
-    DANGER: 6,
-    FACING_TYPE: "locksFacing",
-    STAT_NAMES: statnames.swarm,
-    BODY: {
-        FOV: 1.2 * base.FOV,
-    },
-    GUNS: [
-        {
-            POSITION: [7, 7.5, 0.6, 7, 4, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "spinnySwarm",
-                STAT_CALCULATOR: "swarm",
-            },
-        },
-        {
-            POSITION: [7, 7.5, 0.6, 7, -4, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "spinnySwarm",
-                STAT_CALCULATOR: "swarm",
-            },
-        },
-    ],
-}
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]

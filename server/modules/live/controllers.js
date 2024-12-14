@@ -256,25 +256,6 @@ class io_mapTargetToGoal extends IO {
         }
     }
 }
-class io_spinAroundTarget extends IO {
-    constructor(b) {
-        super(b)
-        this.body.spinny = 0;
-    }
-    think(input) {
-        this.body.spinny += (this.body.skill.spd * 2 + this.body.aiSettings.SPEED) * Math.PI / 180;
-        let spinny = (this.body.spinny * Math.PI / 180 + this.body.spinny);
-        if (input.main || input.alt) {
-            return {
-                goal: {
-                    x: input.target.x + this.body.x + Math.cos(spinny) * 2,
-                    y: input.target.y + this.body.y + Math.sin(spinny) * 2,
-                },
-                power: 1,
-            }
-        }
-    }
-}
 class io_boomerang extends IO {
     constructor(b) {
         super(b)
@@ -1091,7 +1072,6 @@ let ioTypes = {
     fleeAtLowHealth: io_fleeAtLowHealth,
     wanderAroundMap: io_wanderAroundMap,
     orbit2: io_orbit2,
-    spinAroundTarget: io_spinAroundTarget,
 };
 
 module.exports = { ioTypes, IO };
