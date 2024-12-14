@@ -417,6 +417,7 @@ const addMorphAnimation = (baseName, frames, reverse, delay) => {
     return [{
         event: "altFire",
         handler: ({ body }) => {
+            body.destroyAllChildren();
             for ( let i = frames - 1; i > -1; i-- ) {
                 let multiplier = frames - i;
                 setTimeout(() => {
@@ -429,6 +430,7 @@ const addMorphAnimation = (baseName, frames, reverse, delay) => {
       return [{
         event: "altFire",
         handler: ({ body }) => {
+            body.destroyAllChildren();
             for ( let i = 1; i < frames + 1; i++ ) {
                 setTimeout(() => {
                     body.define(Class[`${baseName}${i}`]);
@@ -6876,7 +6878,6 @@ for ( let ii = 1; ii < 10; ii++ ) {
     Class["battery" + ii] = {
         PARENT: "genericTank",
         LABEL: "Battery",
-        MAX_CHILDREN: 0,
         GUNS: [
         {
             POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
