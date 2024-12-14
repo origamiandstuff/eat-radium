@@ -6876,6 +6876,7 @@ for ( let ii = 1; ii < 10; ii++ ) {
     Class["battery" + ii] = {
         PARENT: "genericTank",
         LABEL: "Battery",
+        MAX_CHILDREN: 0,
         GUNS: [
         {
             POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
@@ -6890,7 +6891,7 @@ for ( let ii = 1; ii < 10; ii++ ) {
             POSITION: [16, 3.5, 1, 0, -3.75, 0, 0.25],
         },
         {
-            POSITION: [6 - (ii * 0.3), 11 - (ii * 0.4), 1.3 - (ii * 0.03), 7 + (ii * 0.8), 0, 0, 0],//drone > trap
+            POSITION: [6 - (ii * 0.3), 11 - (ii * 0.4), 1.3 + (ii * 0.04), 7 + (ii * 0.8), 0, 0, 0],//drone > trap
         },
         {
             POSITION: [ii * 1.5, 7, 1, 0, 0, 0, 0],//new trap barrrel
