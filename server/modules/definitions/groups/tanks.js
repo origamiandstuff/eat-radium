@@ -6673,17 +6673,35 @@ Class.eee0 = {
         }
     ]
 }
+Class.speedPenta0 = {
+    PARENT: "pentaShot",
+    LABEL: "Speed Penta", 
+    ON: addMorphAnimation("speedPenta", 5, false, 500),
+}
 for ( let ii = 1; ii < 5; ii++ ) {
     Class["speedPenta" + ii] = {
         PARENT: "genericTank",
         LABEL: "Speed Penta",
+        GUNS: [
+        {
+            POSITION: [16, 8, 1, 0, -3, -30, 2/3],
+        },
+        {
+            POSITION: [16, 8, 1, 0, 3, 30, 2/3],
+        },
+        {
+            POSITION: [19 - ii, 8, 1, 0, -2 + (ii * 0.6), -15 + (ii *, 1/3],
+        },
+        {
+            POSITION: [19 - ii, 8, 1, 0, 2 - (ii * 0.6), 15 + (ii * 25), 1/3],
+        },
+        {
+            POSITION: [18 + (ii * 0.8), 8, 1, 0, 0, 0, 0],
+        }
+        ]
     }
 }
 
-Class.speedPenta0 = {
-    PARENT: "pentaShot",
-    ON: addMorphAnimation("speedPenta", 5, false, 500),
-}
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]
