@@ -439,14 +439,16 @@ const addMorphAnimation = (baseName, frames, reverse, delay) => {
     }]
     }
 }
-const addMorphBarrel = {
+const addMorphBarrel = [{
     POSITION: [0, 0, 1, 0, 0, 0, 0],
     PROPERTIES: {
         TYPE: "bullet",
         SHOOT_SETTINGS: combineStats([g.basic, { range: 10e-8, reload: 2.5 }]),
         ALT_FIRE: true,
     }
-}
+  }
+]
+
 Class.executorBullet = {
     PARENT: 'bullet',
     ON: [
@@ -6682,11 +6684,52 @@ Class.eee0 = {
     ]
 }
 Class.speedPenta0 = {
-    PARENT: "pentaShot",
-    LABEL: "Speed Penta", 
+    PARENT: "genericTank",
+    LABEL: "Penta Shot",
+    DANGER: 7,
+    BODY: {
+        SPEED: 0.85 * base.SPEED
+    },
     ON: addMorphAnimation("speedPenta", 5, false, 500),
+    GUNS: [
+        {
+            POSITION: [16, 8, 1, 0, -3, -30, 2/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [16, 8, 1, 0, 3, 30, 2/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [19, 8, 1, 0, -2, -15, 1/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [19, 8, 1, 0, 2, 15, 1/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [22, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot]),
+                TYPE: "bullet"
+            }
+        },
+        ...addMorphBarrel
+    ]
 }
-CLASS.speedPenta0.GUNS.push({})
 for ( let ii = 1; ii < 5; ii++ ) {
     Class["speedPenta" + ii] = {
         PARENT: "genericTank",
