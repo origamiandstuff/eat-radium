@@ -412,7 +412,6 @@ const stackingDOT = (them, stacks) => {//broken as fuck
         }, 6);
     }
 };
-
 const addMorphAnimation = (baseName, frames, reverse, delay) => {
     if (reverse) {
     return [{
