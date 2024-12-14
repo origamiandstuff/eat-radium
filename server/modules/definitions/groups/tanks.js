@@ -6749,6 +6749,12 @@ for ( let ii = 1; ii < 10; ii++ ) {
         },
         {
             POSITION: [22 - (ii * 0.4), 8, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [14, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: 245 + ii
+            }
         }
         ]
     }
