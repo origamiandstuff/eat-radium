@@ -415,17 +415,6 @@ const stackingDOT = (them, stacks) => {//broken as fuck
 
 const addMorphAnimation = (baseName, frames, reverse, delay) => {
     if (reverse) {
-      return [{
-        event: "altFire",
-        handler: ({ body }) => {
-            for ( let i = 0; i < frames + 1; i++ ) {
-                setTimeout(() => {
-                    body.define(Class[`${baseName}${i}`]);
-                }, i * delay);
-            }
-        }
-    }]
-    } else {
     return [{
         event: "altFire",
         handler: ({ body }) => {
@@ -434,6 +423,17 @@ const addMorphAnimation = (baseName, frames, reverse, delay) => {
                 setTimeout(() => {
                     body.define(Class[`${baseName}${i}`]);
                 }, (multiplier - 1) * delay);
+            }
+        }
+    }]
+    } else {
+      return [{
+        event: "altFire",
+        handler: ({ body }) => {
+            for ( let i = 1; i < frames + 1; i++ ) {
+                setTimeout(() => {
+                    body.define(Class[`${baseName}${i}`]);
+                }, i * delay);
             }
         }
     }]
@@ -6690,7 +6690,7 @@ Class.speedPenta0 = {
     BODY: {
         SPEED: 0.85 * base.SPEED
     },
-    ON: addMorphAnimation("speedPenta", 5, false, 500),
+    ON: addMorphAnimation("speedPenta", 5, false, 50),
     GUNS: [
         {
             POSITION: [16, 8, 1, 0, -3, -30, 2/3],
@@ -6754,9 +6754,58 @@ for ( let ii = 1; ii < 5; ii++ ) {
     }
 }
 Class.speedPenta5 = {
-    PARENT: "booster",
+    PARENT: "genericTank",
     LABEL: "Speed Penta", 
-    ON: addMorphAnimation("speedPenta", 5, true, 500),
+    ON: addMorphAnimation("speedPenta", 5, true, 50),
+    BODY: {
+        HEALTH: base.HEALTH * 0.4,
+        SHIELD: base.SHIELD * 0.4,
+        DENSITY: base.DENSITY * 0.3
+    },
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.triAngleFront, { recoil: 4 }]),
+                TYPE: "bullet",
+                LABEL: "Front"
+            }
+        },
+        {
+            POSITION: [14, 8, 1, 0, -1, 140, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "thruster"
+            }
+        },
+        {
+            POSITION: [14, 8, 1, 0, 1, -140, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "thruster"
+            }
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, 150, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "thruster"
+            }
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, -150, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "thruster"
+            }
+        },
+        ...addMorphBarrel,
+    ]
 }
 
 // Upgrade Paths
