@@ -6931,15 +6931,27 @@ Class.bipod0 = {
     },
     GUNS: [
        {
-           POSITION: [15, 2, 1, -20, -9, 170, 0],
+           POSITION: [15, 1.5, 1, -20, -9, 170, 0],
            PROPERTIES: {
                COLOR: "#656565",
            }
        },
        {
-           POSITION: [15, 2, 1, -20, 9, -170, 0],
+           POSITION: [15, 1.5, 1, -20, 9, -170, 0],
            PROPERTIES: {
                COLOR: "#656565",
+           }
+       },
+       {
+           POSITION: [1, 3, 1, -5, -9, 170, 0],
+           PROPERTIES: {
+               COLOR: "grey",
+           }
+       },
+       {
+           POSITION: [1, 3, 1, -5, 9, -170, 0],
+           PROPERTIES: {
+               COLOR: "grey",
            }
        },
        {
@@ -6975,15 +6987,27 @@ Class.bipod30 = {
     },
     GUNS: [
        {
-           POSITION: [15, 2, 1, -17, -18, 80, 0],
+           POSITION: [15, 1.5, 1, -17, -18, 80, 0],
            PROPERTIES: {
                COLOR: "#656565",
            }
        },
        {
-           POSITION: [15, 2, 1, -17, 18, -80, 0],
+           POSITION: [15, 1.5, 1, -17, 18, -80, 0],
            PROPERTIES: {
                COLOR: "#656565",
+           }
+       },
+       {
+           POSITION: [1, 3, 1, -19, -18, 80, 0],
+           PROPERTIES: {
+               COLOR: "grey",
+           }
+       },
+       {
+           POSITION: [1, 3, 1, -19, 18, -80, 0],
+           PROPERTIES: {
+               COLOR: "grey",
            }
        },
        {
