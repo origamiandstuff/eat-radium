@@ -6989,7 +6989,7 @@ for ( let ii = 1; ii < 30; ii++ ) {
         PARENT: "genericTank",
         LABEL: "Bipod",
         BODY: {
-            FOV: base.FOV * (1.225 + (ii * 0.01)),
+            FOV: base.FOV * (1.225 + (ii * 0.015)),
             ACCELERATION: base.ACCEL * ((30 - ii) * 0.03333333),
             SPEED: base.SPEED * ((30 - ii) * 0.03333333),
         },
@@ -7044,7 +7044,7 @@ Class.bipod30 = {
     PARENT: "genericTank", 
     LABEL: "Bipod",
     BODY: {
-        FOV: base.FOV * 1.525,
+        FOV: base.FOV * 1.675,
         ACCELERATION: 0,
         SPEED: 0,
     },
@@ -7078,7 +7078,7 @@ Class.bipod30 = {
            POSITION: [25, 10, 1.3, 0, 0, 0, 0],
            PROPERTIES: {
                TYPE: "bullet",
-               SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.sniper, { reload: 0.6, speed: 1.3, size: 0.7, recoil: 0 }]),
+               SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.sniper, { reload: 0.6, speed: 1.3, size: 0.7, recoil: 0, pen: 1.4 }]),
            }
        },
        {
@@ -7113,7 +7113,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
             Class.pentaShot.UPGRADES_TIER_3 = ["speedPenta0"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
-        Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
+        Class.sniper.UPGRADES_TIER_3 = ["bushwhacker", "bipod0"]
         Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single", "deadeye", "railgun", "multitool0"]
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "dual", "nimrod"]
             Class.predator.UPGRADES_TIER_0 = ["carnivore0"]
