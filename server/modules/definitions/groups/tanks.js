@@ -412,43 +412,6 @@ const stackingDOT = (them, stacks) => {//broken as fuck
         }, 6);
     }
 };
-const addMorphAnimation = (baseName, frames, reverse, delay) => {
-    if (reverse) {
-    return [{
-        event: "altFire",
-        handler: ({ body }) => {
-            body.destroyAllChildren();
-            for ( let i = frames - 1; i > -1; i-- ) {
-                let multiplier = frames - i;
-                setTimeout(() => {
-                    body.define(Class[`${baseName}${i}`]);
-                }, (multiplier - 1) * delay);
-            }
-        }
-    }]
-    } else {
-      return [{
-        event: "altFire",
-        handler: ({ body }) => {
-            body.destroyAllChildren();
-            for ( let i = 1; i < frames + 1; i++ ) {
-                setTimeout(() => {
-                    body.define(Class[`${baseName}${i}`]);
-                }, i * delay);
-            }
-        }
-    }]
-    }
-}
-const addMorphBarrel = [{
-    POSITION: [0, 0, 1, 0, 0, 0, 0],
-    PROPERTIES: {
-        TYPE: "bullet",
-        SHOOT_SETTINGS: combineStats([g.basic, { range: 10e-8, reload: 2.5 }]),
-        ALT_FIRE: true,
-    }
-  }
-]
 const animate = (me, baseName, frames, reverse, delay) => {
     if (reverse) {
             me.destroyAllChildren();
@@ -6673,20 +6636,6 @@ Class.fogOfWar = {
         },
     ],
 }
-Class.detonateExplosion = {
-    PARENT: "bullet",
-    LABEL: "Explosion",
-    SIZE: 55,
-    BODY: {
-        PENETRATION: 1,
-        SPEED: 0,
-        RANGE: 5,
-        DENSITY: 1.25,
-        HEALTH: 100,
-        DAMAGE: 500,
-        PUSHABILITY: 0,
-    },
-}
 Class.speedPenta0 = {
     PARENT: "genericTank",
     LABEL: "Speed Penta",
@@ -6694,7 +6643,7 @@ Class.speedPenta0 = {
     BODY: {
         SPEED: 0.85 * base.SPEED
     },
-    ON: addMorphAnimation("speedPenta", 10, false, 50),
+    ON_ALT: (body) => animate(body, "speedPenta", 10, false, 50),
     GUNS: [
         {
             POSITION: [16, 8, 1, 0, -3, -30, 2/3],
@@ -6737,7 +6686,6 @@ Class.speedPenta0 = {
                 COLOR: `#0000FF`
             }
         },
-        ...addMorphBarrel
     ]
 }
 for ( let ii = 1; ii < 10; ii++ ) {
@@ -6776,7 +6724,7 @@ for ( let ii = 1; ii < 10; ii++ ) {
 Class.speedPenta10 = {
     PARENT: "genericTank",
     LABEL: "Speed Penta", 
-    ON: addMorphAnimation("speedPenta", 10, true, 50),
+    ON_ALT: (body) => animate(body, "speedPenta", 10, true, 50),
     BODY: {
         HEALTH: base.HEALTH * 0.4,
         SHIELD: base.SHIELD * 0.4,
@@ -6830,7 +6778,6 @@ Class.speedPenta10 = {
                 COLOR: `#FF0000`
             }
         },
-        ...addMorphBarrel,
     ]
 }
 Class.battery0 = {
