@@ -6927,8 +6927,17 @@ Class.bipod0 = {
     PARENT: "genericTank", 
     LABEL: "Bipod",
     BODY: {
-        
-    }
+        FOV: base.FOV * 1.225
+    },
+    GUNS: [
+       {
+           POSITION: [25, 10, 1.3, 0, 0, 0, 0],
+           PROPERTIES: {
+               TYPE: "bullet",
+               SHOOT_SETTINGS: combineStats([g.basic, g.machineGun])
+           }
+       }
+    ],
 }
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
