@@ -52,6 +52,7 @@ class Gun extends EventEmitter {
             this.shootSettings = info.PROPERTIES.SHOOT_SETTINGS == null ? [] : JSON.parse(JSON.stringify(info.PROPERTIES.SHOOT_SETTINGS));
             this.maxChildren = info.PROPERTIES.MAX_CHILDREN ?? false;
             this.syncsSkills = info.PROPERTIES.SYNCS_SKILLS ?? false;
+            this.skin = info.PROPERTIES.SKIN ?? 0;
             this.negativeRecoil = info.PROPERTIES.NEGATIVE_RECOIL ? -1 : 1;
             this.independentChildren = info.PROPERTIES.INDEPENDENT_CHILDREN ?? false;
             this.codeControlOnly = info.PROPERTIES.CODE_CONTROLLED ?? false;
