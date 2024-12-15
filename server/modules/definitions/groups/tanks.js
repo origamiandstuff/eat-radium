@@ -6959,7 +6959,7 @@ Class.bipod0 = {
            POSITION: [25, 10, 1.3, 0, 0, 0, 0],
            PROPERTIES: {
                TYPE: "bullet",
-               SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.sniper]),
+               SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.sniper, { size: 0.7 }]),
            }
        },
        {
@@ -6989,7 +6989,9 @@ for ( let ii = 1; ii < 30; ii++ ) {
         PARENT: "genericTank",
         LABEL: "Bipod",
         BODY: {
-            FOV: base.FOV * 1.225
+            FOV: base.FOV * (1.225 + (ii * 0.01)),
+            ACCELERATION: base.ACCEL * ((30 - ii) * 0.03333333),
+            SPEED: base.SPEED * ((30 - ii) * 0.03333333),
         },
         GUNS: [
             {
@@ -7005,13 +7007,13 @@ for ( let ii = 1; ii < 30; ii++ ) {
                 }
             },
             {
-                POSITION: [1, 3, 1, -5 - (ii * (-14 / 30)), -9 - (ii * 0.3), 170 - (ii * 3), 0],
+                POSITION: [1, 3, 1, -5 - (ii * (14 / 30)), -9 - (ii * 0.3), 170 - (ii * 3), 0],
                 PROPERTIES: {
                     COLOR: "grey",
                 }
             },
             {
-                POSITION: [1, 3, 1, -5 - (ii * (-14 / 30)), 9 + (ii * 0.3), -170 + (ii * 3), 0],
+                POSITION: [1, 3, 1, -5 - (ii * (14 / 30)), 9 + (ii * 0.3), -170 + (ii * 3), 0],
                 PROPERTIES: {
                     COLOR: "grey",
                 }
@@ -7042,7 +7044,9 @@ Class.bipod30 = {
     PARENT: "genericTank", 
     LABEL: "Bipod",
     BODY: {
-        FOV: base.FOV * 1.225
+        FOV: base.FOV * 1.525,
+        ACCELERATION: 0,
+        SPEED: 0,
     },
     ON_ALT: (body) => animate(body, "bipod", 30, true, 17),
     GUNS: [
@@ -7074,7 +7078,7 @@ Class.bipod30 = {
            POSITION: [25, 10, 1.3, 0, 0, 0, 0],
            PROPERTIES: {
                TYPE: "bullet",
-               SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.sniper]),
+               SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.sniper, { reload: 0.6, speed: 1.3, size: 0.7, recoil: 0 }]),
            }
        },
        {
