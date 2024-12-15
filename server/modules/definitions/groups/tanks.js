@@ -451,30 +451,21 @@ const addMorphBarrel = [{
 ]
 const animate = (me, baseName, frames, reverse, delay) => {
     if (reverse) {
-    return [{
-        handler: ({ body }) => {
             me.destroyAllChildren();
             for ( let i = frames - 1; i > -1; i-- ) {
                 let multiplier = frames - i;
                 setTimeout(() => {
-                    body.define(Class[`${baseName}${i}`]);
+                    me.define(Class[`${baseName}${i}`]);
                 }, (multiplier - 1) * delay);
             }
-        }
-    }]
     } else {
-      return [{
-        event: "altFire",
-        handler: ({ body }) => {
-            body.destroyAllChildren();
+            me.destroyAllChildren();
             for ( let i = 1; i < frames + 1; i++ ) {
                 setTimeout(() => {
-                    body.define(Class[`${baseName}${i}`]);
+                    me.define(Class[`${baseName}${i}`]);
                 }, i * delay);
             }
         }
-    }]
-    }
 }
 
 Class.executorBullet = {
@@ -6846,7 +6837,7 @@ Class.battery0 = {
     PARENT: "genericTank",
     LABEL: "Battery",
     DANGER: 6,
-    ON: addMorphAnimation("battery", 10, false, 50),
+    ON_ALT: (body) => animate(body, "battery", 10, false, 50),
     GUNS: [
         {
             POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
@@ -6894,7 +6885,6 @@ Class.battery0 = {
                 COLOR: `#0000FF`
             }
         },
-        ...addMorphBarrel,
     ]
 }
 for ( let ii = 1; ii < 10; ii++ ) {
@@ -6938,7 +6928,6 @@ Class.battery10 = {
     LABEL: "Battery",
     DANGER: 6,
     ON_ALT: (body) => animate(body, "battery", 10, true, 50),
-    //ON: addMorphAnimation("battery", 10, true, 50),
     GUNS: [
         {
             POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
@@ -6985,7 +6974,6 @@ Class.battery10 = {
                 COLOR: `#FF0000`
             }
         },
-        ...addMorphBarrel,
     ]
 }
 // Upgrade Paths
