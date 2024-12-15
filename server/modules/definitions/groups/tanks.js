@@ -6923,6 +6923,13 @@ Class.battery10 = {
         },
     ]
 }
+Class.bipod0 = {
+    PARENT: "genericTank", 
+    LABEL: "Bipod",
+    BODY: {
+        
+    }
+}
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]
