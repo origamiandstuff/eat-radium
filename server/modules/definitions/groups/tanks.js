@@ -6934,7 +6934,6 @@ Class.bipod0 = {
            POSITION: [15, 2, 1, -20, -9, 170, 0],
            PROPERTIES: {
                COLOR: "#656565",
-               SKIN: 1,
            }
        },
        {
@@ -6947,8 +6946,51 @@ Class.bipod0 = {
            POSITION: [25, 10, 1.3, 0, 0, 0, 0],
            PROPERTIES: {
                TYPE: "bullet",
-               SHOOT_SETTINGS: combineStats([g.basic, g.sniper]),
-               ALPHA: 0.5
+               SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.sniper]),
+           }
+       },
+       {
+           POSITION: [7, 12.5, 1.05, 14, 0, 0, 0],
+           PROPERTIES: {
+               COLOR: "#656565",
+           }
+       },
+    ],
+    TURRETS: [
+        {
+            POSITION: [7, 17.5, 6, 0, 0, 0],
+            TYPE: ["genericEntity", {COLOR: "#656565"}]
+        },
+        {
+            POSITION: [7, 17.5, -6, 0, 0, 0],
+            TYPE: ["genericEntity", {COLOR: "#656565"}]
+        },
+    ]
+}
+Class.bipod30 = {
+    PARENT: "genericTank", 
+    LABEL: "Bipod",
+    BODY: {
+        FOV: base.FOV * 1.225
+    },
+    GUNS: [
+       {
+           POSITION: [15, 2, 1, -17, -18, 80, 0],
+           PROPERTIES: {
+               COLOR: "#656565",
+           }
+       },
+       {
+           POSITION: [15, 2, 1, -17, 18, -80, 0],
+           PROPERTIES: {
+               COLOR: "#656565",
+           }
+       },
+       {
+           POSITION: [25, 10, 1.3, 0, 0, 0, 0],
+           PROPERTIES: {
+               TYPE: "bullet",
+               SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.sniper]),
            }
        },
        {

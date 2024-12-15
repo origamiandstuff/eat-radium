@@ -38,7 +38,6 @@ class Gun extends EventEmitter {
         this.canShoot = false;
         this.codeControlOnly = false;
         this.borderless = false;
-        this.skin = 0;
         this.drawFill = true;
         this.drawAbove = false;
         if (info.PROPERTIES != null) {
@@ -52,7 +51,6 @@ class Gun extends EventEmitter {
             this.shootSettings = info.PROPERTIES.SHOOT_SETTINGS == null ? [] : JSON.parse(JSON.stringify(info.PROPERTIES.SHOOT_SETTINGS));
             this.maxChildren = info.PROPERTIES.MAX_CHILDREN ?? false;
             this.syncsSkills = info.PROPERTIES.SYNCS_SKILLS ?? false;
-            this.skin = info.PROPERTIES.SKIN ?? 0;
             this.negativeRecoil = info.PROPERTIES.NEGATIVE_RECOIL ? -1 : 1;
             this.independentChildren = info.PROPERTIES.INDEPENDENT_CHILDREN ?? false;
             this.codeControlOnly = info.PROPERTIES.CODE_CONTROLLED ?? false;
@@ -63,7 +61,6 @@ class Gun extends EventEmitter {
             if (info.PROPERTIES.STROKE_WIDTH != null) this.strokeWidth = info.PROPERTIES.STROKE_WIDTH;
             if (info.PROPERTIES.BORDERLESS != null) this.borderless = info.PROPERTIES.BORDERLESS;
             if (info.PROPERTIES.DRAW_FILL != null) this.drawFill = info.PROPERTIES.DRAW_FILL;
-            if (info.PROPERTIES.SKIN != null) this.skin = info.PROPERTIES.SKIN;
             if (info.PROPERTIES.DRAW_ABOVE) this.drawAbove = info.PROPERTIES.DRAW_ABOVE;
             this.destroyOldestChild = info.PROPERTIES.DESTROY_OLDEST_CHILD ?? false;
             if (this.destroyOldestChild) this.maxChildren++;
@@ -484,7 +481,6 @@ class Gun extends EventEmitter {
             strokeWidth: this.strokeWidth,
             borderless: this.borderless, 
             drawFill: this.drawFill,
-            skin: this.skin,
             drawAbove: this.drawAbove,
             length: this.length,
             width: this.width,
