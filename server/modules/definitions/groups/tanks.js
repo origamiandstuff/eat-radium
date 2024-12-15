@@ -449,6 +449,31 @@ const addMorphBarrel = [{
     }
   }
 ]
+const animate = (baseName, frames, reverse, delay) => {
+    if (reverse) {
+    return [{
+            body.destroyAllChildren();
+            for ( let i = frames - 1; i > -1; i-- ) {
+                let multiplier = frames - i;
+                setTimeout(() => {
+                    body.define(Class[`${baseName}${i}`]);
+                }, (multiplier - 1) * delay);
+            }
+    }]
+    } else {
+      return [{
+        event: "altFire",
+        handler: ({ body }) => {
+            body.destroyAllChildren();
+            for ( let i = 1; i < frames + 1; i++ ) {
+                setTimeout(() => {
+                    body.define(Class[`${baseName}${i}`]);
+                }, i * delay);
+            }
+        }
+    }]
+    }
+}
 
 Class.executorBullet = {
     PARENT: 'bullet',
@@ -567,8 +592,6 @@ Class.basic = {
             }
         }
     ],
-    constructor(body);
-    ON_ALT: (body)
 }
 Class.twin = {
     PARENT: "genericTank",
@@ -6912,6 +6935,7 @@ Class.battery10 = {
     PARENT: "genericTank",
     LABEL: "Battery",
     DANGER: 6,
+    ON_ALT: (body) => 
     ON: addMorphAnimation("battery", 10, true, 50),
     GUNS: [
         {

@@ -917,6 +917,9 @@ class Entity extends EventEmitter {
         this.control.main = b.main ?? false;
         this.control.alt = b.alt ?? false;
         this.control.power = b.power == null ? 1 : b.power;
+            if (this.control.alt && this.onAlt) {
+                this.onAlt(this, entities);
+            }
 
         if (this.invuln && (this.control.goal.x !== this.x || this.control.goal.y !== this.y)) {
             this.invuln = false;
