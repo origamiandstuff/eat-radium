@@ -6959,11 +6959,11 @@ Class.bipod0 = {
     ],
     TURRETS: [
         {
-            POSITION: [7, 17.5, 6, 0, 0, 1],
+            POSITION: [7, 17.5, 6, 0, 0, 0],
             TYPE: ["genericEntity", {COLOR: "#656565"}]
         },
         {
-            POSITION: [7, 17.5, -6, 0, 0, 1],
+            POSITION: [7, 17.5, -6, 0, 0, 0],
             TYPE: ["genericEntity", {COLOR: "#656565"}]
         },
     ]

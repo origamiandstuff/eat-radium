@@ -38,6 +38,7 @@ class Gun extends EventEmitter {
         this.canShoot = false;
         this.codeControlOnly = false;
         this.borderless = false;
+        this.skin = 0;
         this.drawFill = true;
         this.drawAbove = false;
         if (info.PROPERTIES != null) {
