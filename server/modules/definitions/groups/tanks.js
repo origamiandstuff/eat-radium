@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, makeOver, makeDeco, makeGuard, makeBird, makeRadialAuto, weaponArray, makeMorpher } = require('../facilitators.js');
+const { combineStats, makeAuto, makeOver, makeDeco, makeGuard, makeBird, makeRadialAuto, weaponArray, dereference } = require('../facilitators.js');
 const { base, statnames, dfltskl, smshskl } = require('../constants.js');
 require('./generics.js');
 const g = require('../gunvals.js');
@@ -449,6 +449,26 @@ const addMorphBarrel = [{
     }
   }
 ]
+const makeAnimationFrames = (type, name = -1, tank1, tank2) => {
+    type = ensureIsClass(type);
+    tank1 = ensureIsClass(tank1);
+    tank2 = ensureIsClass(tank2);
+    let output = dereference(type);
+
+    let cannons = tank1.GUNS.map(gun => {
+        let guns = { 
+            ...gun, 
+            POSITION: [...gun.POSITION] 
+        };
+        guns.POSITION[5] = (guns.POSITION[5] + 180) % 360;
+
+        guns.PROPERTIES = { 
+            ...gun.PROPERTIES, 
+            TYPE: [gun.PROPERTIES.TYPE || gun.PROPERTIES.TYPE[0] || "drone", { INDEPENDENT: independent }]
+        };
+    });
+};
+
 
 Class.executorBullet = {
     PARENT: 'bullet',
