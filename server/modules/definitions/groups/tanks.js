@@ -449,16 +449,18 @@ const addMorphBarrel = [{
     }
   }
 ]
-const animate = (baseName, frames, reverse, delay) => {
+const animate = (me, baseName, frames, reverse, delay) => {
     if (reverse) {
     return [{
-            body.destroyAllChildren();
+        handler: ({ body }) => {
+            me.destroyAllChildren();
             for ( let i = frames - 1; i > -1; i-- ) {
                 let multiplier = frames - i;
                 setTimeout(() => {
                     body.define(Class[`${baseName}${i}`]);
                 }, (multiplier - 1) * delay);
             }
+        }
     }]
     } else {
       return [{
@@ -6935,8 +6937,8 @@ Class.battery10 = {
     PARENT: "genericTank",
     LABEL: "Battery",
     DANGER: 6,
-    ON_ALT: (body) => 
-    ON: addMorphAnimation("battery", 10, true, 50),
+    ON_ALT: (body) => animate(body, "battery", 10, true, 50),
+    //ON: addMorphAnimation("battery", 10, true, 50),
     GUNS: [
         {
             POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
