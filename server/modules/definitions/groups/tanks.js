@@ -6931,19 +6931,35 @@ Class.bipod0 = {
     },
     GUNS: [
        {
-           POSITION: [25, 10, 1.3, 0, 0, 0, 0],
+           POSITION: [2, 10, 1, 0, 0, 0, 0],
+           PROPERTIES: {
+               COLOR: "#a7a7a7",
+           }
+       },
+       {
+           POSITION: [2, 10, 1.3, 0, 0, 0, 0],
            PROPERTIES: {
                TYPE: "bullet",
                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun])
            }
        },
        {
-           POSITION: [5, 11.5, 1.05, 15, 0, 0, 0],
+           POSITION: [7, 12.5, 1.05, 14, 0, 0, 0],
            PROPERTIES: {
-               COLOR: "a7a7a7",
+               COLOR: "#a7a7a7",
            }
        },
     ],
+    TURRETS: [
+        {
+            POSITION: [7, 17.5, 6, 0, 0, 0],
+            TYPE: ["genericEntity", {COLOR: "#a7a7a7"}]
+        },
+        {
+            POSITION: [7, 17.5, -6, 0, 0, 0],
+            TYPE: ["genericEntity", {COLOR: "#a7a7a7"}]
+        },
+    ]
 }
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
