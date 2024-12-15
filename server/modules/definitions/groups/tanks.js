@@ -6959,7 +6959,7 @@ Class.bipod0 = {
            POSITION: [25, 10, 1.3, 0, 0, 0, 0],
            PROPERTIES: {
                TYPE: "bullet",
-               SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.sniper, { size: 0.7 }]),
+               SHOOT_SETTINGS: combineStats([g.sniper, g.single, g.basic, { size: 0.7 }]),
            }
        },
        {
@@ -7078,7 +7078,7 @@ Class.bipod30 = {
            POSITION: [25, 10, 1.3, 0, 0, 0, 0],
            PROPERTIES: {
                TYPE: "bullet",
-               SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.sniper, { reload: 0.6, speed: 1.3, size: 0.7, recoil: 0, pen: 1.4 }]),
+               SHOOT_SETTINGS: combineStats([g.sniper, g.single, g.basic, { reload: 0.6, speed: 1.3, size: 0.7, recoil: 0, pen: 1.4 }]),
            }
        },
        {
