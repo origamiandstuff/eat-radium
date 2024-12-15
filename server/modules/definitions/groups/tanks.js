@@ -6934,6 +6934,7 @@ Class.bipod0 = {
            POSITION: [15, 2, 1, -20, -9, 170, 0],
            PROPERTIES: {
                COLOR: "#656565",
+               SKIN: 1,
            }
        },
        {
