@@ -63,6 +63,7 @@ class Gun extends EventEmitter {
             if (info.PROPERTIES.STROKE_WIDTH != null) this.strokeWidth = info.PROPERTIES.STROKE_WIDTH;
             if (info.PROPERTIES.BORDERLESS != null) this.borderless = info.PROPERTIES.BORDERLESS;
             if (info.PROPERTIES.DRAW_FILL != null) this.drawFill = info.PROPERTIES.DRAW_FILL;
+            if (info.PROPERTIES.SKIN != null) this.skin = info.PROPERTIES.SKIN;
             if (info.PROPERTIES.DRAW_ABOVE) this.drawAbove = info.PROPERTIES.DRAW_ABOVE;
             this.destroyOldestChild = info.PROPERTIES.DESTROY_OLDEST_CHILD ?? false;
             if (this.destroyOldestChild) this.maxChildren++;
@@ -482,7 +483,8 @@ class Gun extends EventEmitter {
             alpha: this.alpha,
             strokeWidth: this.strokeWidth,
             borderless: this.borderless, 
-            drawFill: this.drawFill, 
+            drawFill: this.drawFill,
+            skin: this.skin,
             drawAbove: this.drawAbove,
             length: this.length,
             width: this.width,
