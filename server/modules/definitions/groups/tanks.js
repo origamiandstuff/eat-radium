@@ -449,31 +449,6 @@ const addMorphBarrel = [{
     }
   }
 ]
-const makeAnimationFrames = (className, name = -1, tank1, tank2, frames) => {
-    tank1 = ensureIsClass(tank1);
-    tank2 = ensureIsClass(tank2);
-    for ( let i = 1; i < frames - 1; i++ ) {
-    let cannons = tank1.GUNS.map(gun => {
-        let guns = { 
-            ...gun, 
-            POSITION: [...gun.POSITION] 
-        };
-        guns.POSITION[5] = (guns.POSITION[5] + 180) % 360;
-
-        guns.PROPERTIES = { 
-            ...gun.PROPERTIES, 
-            TYPE: [gun.PROPERTIES.TYPE || gun.PROPERTIES.TYPE[0] || "bullet"],
-            SHOOT_SETTINGS: combineStats([g.basic, { range: 10e-8 }])
-        };
-    });
-    Class[className + i] = {
-        PARENT: "genericTank",
-        LABEL: `${name}`,
-        GUNS: cannons,
-    }
-  }
-};
-
 
 Class.executorBullet = {
     PARENT: 'bullet',
