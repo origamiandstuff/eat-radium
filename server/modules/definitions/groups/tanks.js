@@ -462,7 +462,8 @@ const makeAnimationFrames = (className, name = -1, tank1, tank2, frames) => {
 
         guns.PROPERTIES = { 
             ...gun.PROPERTIES, 
-            TYPE: [gun.PROPERTIES.TYPE || gun.PROPERTIES.TYPE[0] || "drone", { INDEPENDENT: independent }]
+            TYPE: [gun.PROPERTIES.TYPE || gun.PROPERTIES.TYPE[0] || "bullet"],
+            SHOOT_SETTINGS: combineStats([g.basic, { range: 10e-8 }])
         };
     });
     Class[className + i] = {
