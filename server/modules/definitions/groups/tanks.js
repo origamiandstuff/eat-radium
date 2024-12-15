@@ -6934,13 +6934,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"]
         Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "triplex"]
             Class.triplet.UPGRADES_TIER_3 = ["carnivore0", "hypnosis", "trance"]
-            Class.daze.UPGRADES_TIER_3 = ["hypnosis", "trance"]
-                Class.trance.UPGRADES_TIER_3 = ["reverie", "daydream", "stupefaction"]
-                    Class.reverie.UPGRADES_TIER_3 = ["flashback"]
-                    Class.daydream.UPGRADES_TIER_3 = ["flashback"]
-                        Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence"]
-                    Class.stupefaction.UPGRADES_TIER_3 = ["stupor", "disorientation"]
-                        Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
+            Class.pentaShot.UPGRADES_TIER_3 = ["speedPenta0"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
@@ -6952,7 +6946,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "flamethrower"]
         Class.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture"]
-        Class.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner", "pgunner"]
+        Class.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner", "pgunner", "battery0"]
         Class.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal"]
 
     Class.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper"]
@@ -6963,7 +6957,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"]
 
     Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "lightning", "doper"]
-        Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese", "corrosion", "armory", "magnetic"]
+        Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese", "corrosion", "armory", "magnetic", "battery0"]
         Class.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"]
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander", "armory"]
         Class.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor"]
@@ -6977,7 +6971,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "fieldGun", "sidewinder"]
 
     Class.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard"]
-        Class.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper"]
+        Class.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper", "battery10"]
         Class.builder.UPGRADES_TIER_3 = ["construct", "autoBuilder", "engineer", "boomer", "assembler", "architect", "conqueror", "beehive"]
         Class.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect"]
         Class.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark"]
