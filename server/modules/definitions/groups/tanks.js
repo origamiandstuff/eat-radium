@@ -6936,7 +6936,13 @@ Class.bipod0 = {
                TYPE: "bullet",
                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun])
            }
-       }
+       },
+       {
+           POSITION: [5, 11.5, 1.05, 15, 0, 0, 0],
+           PROPERTIES: {
+               COLOR: "a7a7a7",
+           }
+       },
     ],
 }
 // Upgrade Paths
