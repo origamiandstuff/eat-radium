@@ -566,7 +566,9 @@ Class.basic = {
                 NEGATIVE_RECOIL: false*/
             }
         }
-    ]
+    ],
+    constructor(body);
+    ON_ALT: (body)
 }
 Class.twin = {
     PARENT: "genericTank",
