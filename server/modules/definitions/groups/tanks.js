@@ -449,12 +449,10 @@ const addMorphBarrel = [{
     }
   }
 ]
-const makeAnimationFrames = (type, name = -1, tank1, tank2) => {
-    type = ensureIsClass(type);
+const makeAnimationFrames = (className, name = -1, tank1, tank2, frames) => {
     tank1 = ensureIsClass(tank1);
     tank2 = ensureIsClass(tank2);
-    let output = dereference(type);
-
+    for ( let i = 1; i < frames - 1; i++ ) {
     let cannons = tank1.GUNS.map(gun => {
         let guns = { 
             ...gun, 
@@ -467,6 +465,12 @@ const makeAnimationFrames = (type, name = -1, tank1, tank2) => {
             TYPE: [gun.PROPERTIES.TYPE || gun.PROPERTIES.TYPE[0] || "drone", { INDEPENDENT: independent }]
         };
     });
+    Class[className + i] = {
+        PARENT: "genericTank",
+        LABEL: `${name}`,
+        GUNS: cannons,
+    }
+  }
 };
 
 
