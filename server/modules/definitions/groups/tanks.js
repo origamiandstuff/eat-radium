@@ -6929,6 +6929,7 @@ Class.bipod0 = {
     BODY: {
         FOV: base.FOV * 1.225
     },
+    ON_ALT: (body) => animate(body, "bipod", 30, false, 17),
     GUNS: [
        {
            POSITION: [15, 1.5, 1, -20, -9, 170, 0],
@@ -6979,12 +6980,71 @@ Class.bipod0 = {
         },
     ]
 }
+for ( let ii = 1; ii < 30; ii++ ) {
+    let R1 = Math.floor((255 / 10) * ii)
+    let R = R1.toString(16)
+    let B1 = Math.floor((255 / 10) * (10 - ii))
+    let B = B1.toString(16)
+    Class["bipod" + ii] = {
+        PARENT: "genericTank",
+        LABEL: "Bipod",
+        BODY: {
+            FOV: base.FOV * 1.225
+        },
+        GUNS: [
+            {
+                POSITION: [15, 1.5, 1, -20 + (ii * 0.1), -9 - (ii * 0.3), 170 - (ii * 3), 0],
+                PROPERTIES: {
+                    COLOR: "#656565",
+                }
+            },
+            {
+                POSITION: [15, 1.5, 1, -20 + (ii * 0.1), 9 + (ii * 0.3), -170 + (ii * 3), 0],
+                PROPERTIES: {
+                    COLOR: "#656565",
+                }
+            },
+            {
+                POSITION: [1, 3, 1, -5 - (ii * (-14 / 30)), -9 - (ii * 0.3), 170 - (ii * 3), 0],
+                PROPERTIES: {
+                    COLOR: "grey",
+                }
+            },
+            {
+                POSITION: [1, 3, 1, -5 - (ii * (-14 / 30)), 9 + (ii * 0.3), -170 + (ii * 3), 0],
+                PROPERTIES: {
+                    COLOR: "grey",
+                }
+            },
+            {
+                POSITION: [25, 10, 1.3, 0, 0, 0, 0],
+            },
+            {
+                POSITION: [7, 12.5, 1.05, 14, 0, 0, 0],
+                PROPERTIES: {
+                    COLOR: "#656565",
+                }
+            },
+        ],
+        TURRETS: [
+            {
+                POSITION: [7, 17.5, 6, 0, 0, 0],
+                TYPE: ["genericEntity", {COLOR: "#656565"}]
+            },
+            {
+                POSITION: [7, 17.5, -6, 0, 0, 0],
+                TYPE: ["genericEntity", {COLOR: "#656565"}]
+            },
+        ]
+    }
+}
 Class.bipod30 = {
     PARENT: "genericTank", 
     LABEL: "Bipod",
     BODY: {
         FOV: base.FOV * 1.225
     },
+    ON_ALT: (body) => animate(body, "bipod", 30, true, 17),
     GUNS: [
        {
            POSITION: [15, 1.5, 1, -17, -18, 80, 0],
