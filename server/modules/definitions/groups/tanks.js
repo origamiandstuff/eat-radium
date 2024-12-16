@@ -7136,32 +7136,26 @@ Class.radius0 = {
         },
     ],
 }
-for ( let ii = 1; ii < 10; ii++ ) {
-    let R1 = Math.floor((255 / 10) * ii)
+for ( let ii = 1; ii < 30; ii++ ) {
+    let R1 = Math.floor((255 / 30) * ii)
     let R = R1.toString(16)
-    let B1 = Math.floor((255 / 10) * (10 - ii))
+    let B1 = Math.floor((255 / 30) * (30 - ii))
     let B = B1.toString(16)
-    Class["battery" + ii] = {
+    Class["radius" + ii] = {
         PARENT: "genericTank",
-        LABEL: "Battery",
+        LABEL: "Radius",
         GUNS: [
         {
-            POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
+            POSITION: [18 - (ii * 0.2), 8, 1, 0, 0, 0, 0],
         },
         {
-            POSITION: [12, 3.5, 1, 0, -7.25, 0, 0.75],
+            POSITION: [18 - (ii * 0.2), 8, 1, 0, 0, 90, 0.5],
         },
         {
-            POSITION: [16, 3.5, 1, 0, 3.75, 0, 0],
+            POSITION: [18 - (ii * 0.2), 8, 1, 0, 0, 180, 0],
         },
         {
-            POSITION: [16, 3.5, 1, 0, -3.75, 0, 0.25],
-        },
-        {
-            POSITION: [6 - (ii * 0.3), 11 - (ii * 0.4), 1.3 + (ii * 0.04), 7 + (ii * 0.8), 0, 0, 0],//drone > trap
-        },
-        {
-            POSITION: [ii * 1.5, 7, 1, 0, 0, 0, 0],//new trap barrrel
+            POSITION: [18 - (ii * 0.2), 8, 1, 0, 0, -90, 0.5],
         },
         {
             POSITION: [14, 4, 1, 0, 0, 0, 0],
