@@ -7274,11 +7274,12 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "flamethrower"]
         Class.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture"]
-        Class.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner", "pgunner", "battery0"]
+        Class.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner", "pgunner", "battery0", "radius30"]
         Class.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal"]
+            Class.nailgun.UPGRADES_TIER_3 = ["staplegun"]
 
     Class.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper"]
-        Class.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"]
+        Class.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex", "radius0"]
         Class.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "snowstorm"]
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
             Class.booster.UPGRADES_TIER_3 = ["massacre", "speedPenta10"]
@@ -7299,7 +7300,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "fieldGun", "sidewinder"]
 
     Class.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard"]
-        Class.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper", "battery10"]
+        Class.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper", "battery10", "staplegun"]
         Class.builder.UPGRADES_TIER_3 = ["construct", "autoBuilder", "engineer", "boomer", "assembler", "architect", "conqueror", "beehive"]
         Class.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect"]
         Class.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark"]
