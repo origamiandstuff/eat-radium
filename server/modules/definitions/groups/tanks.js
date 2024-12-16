@@ -7330,13 +7330,18 @@ Class.ritual10 = {
         },
     ]
 }
-Class.tankAura = addAura(1, 1)
+Class.tankBodyUpgrades = {
+    PARENT: "genericTank",
+    LABEL: "Basic"
+}
+Class.tankAura = addAura(1, 2)
 Class.auraTank = {
     PARENT: "genericTank",
+    LABEL: "Aura",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
-            TYPE: "basic"
+            TYPE: "tankAura"
         }
     ]
 }
@@ -7408,3 +7413,5 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
                         Class.mirage.UPGRADES_TIER_3 = ["reminiscence", "illusion", "hallucination"]
                     Class.stupefaction.UPGRADES_TIER_3 = ["stupor", "disorientation"]
                         Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
+
+    Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank"]
