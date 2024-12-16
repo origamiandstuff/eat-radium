@@ -7257,6 +7257,7 @@ Class.ritual0 = {
     BODY: {
         FOV: base.FOV * 1.225
     },
+    ON_ALT: (body) => {animate(body, "ritual", 10, false, 21), body.health.amount = body.health.amount - 70 },
     GUNS: [
         {
             POSITION: [20, 12, 1, 0, 0, 0, 0]
@@ -7276,35 +7277,58 @@ Class.ritual0 = {
         },
     ]
 }
-for ( let ii = 1; ii < 30; ii++ ) {
-    let R1 = Math.floor((255 / 30) * ii)
+for ( let ii = 1; ii < 10; ii++ ) {
+    let R1 = Math.floor((255 / 10) * ii)
     let R = R1.toString(16)
-    let B1 = Math.floor((255 / 30) * (30 - ii))
+    let B1 = Math.floor((255 / 10) * (10 - ii))
     let B = B1.toString(16)
-    Class["radius" + ii] = {
+    Class["ritual" + ii] = {
         PARENT: "genericTank",
-        LABEL: "Radius",
+        LABEL: "Ritual",
+        BODY: {
+            FOV: base.FOV * 1.225
+        },
         GUNS: [
+            {
+                POSITION: [20 + (ii * 0.2), 12, 1, 0, 0, 0, 0]
+            },
+            {
+                POSITION: [24 + (ii * 0.2), 7, 1, 0, 0, 0, 0],
+            },
+            {
+                POSITION: [14, 4, 1, 0, 0, 0, 0],
+                PROPERTIES: {
+                    COLOR: `#${R}00${B}`
+                }
+            }
+        ]
+    }
+}
+Class.ritual10 = {
+    PARENT: "genericTank",
+    LABEL: "Ritual",
+    BODY: {
+        FOV: base.FOV * 1.225
+    },
+    ON_MAIN: (body) => animate(body, "ritual", 10, true, 21),
+    GUNS: [
         {
-            POSITION: [18 - (ii * 0.2), 8 - (ii * (0.15)), 1, 0, 0 + (ii * 0.24166666666), 0, 0],
+            POSITION: [20, 12, 1, 0, 0, 0, 0]
         },
         {
-            POSITION: [18 - (ii * 0.2), 8 - (ii * (0.15)), 1, 0, 0 - (ii * 0.24166666666), 90 - (ii * 3), 0.5],
-        },
-        {
-            POSITION: [18 - (ii * (0.2/3)), 8 - (ii * (0.15)), 1, 0, 0 + (ii * (0.025 / 3)), 180 - (ii * 6), 0.5, 0],
-        },
-        {
-            POSITION: [18 - (ii * (0.2/3)), 8 - (ii * (0.15)), 1, 0, 0 - (ii * (0.025 / 3)), -90 + (ii * 3), 0.5],
+            POSITION: [24, 7, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, { damage: 2.5, pen: 2, health: 1.6, speed: 1.8 }]),
+                TYPE: "bullet"
+            }
         },
         {
             POSITION: [14, 4, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                COLOR: `#${R}00${B}`
+                COLOR: `#FF0000`
             }
-        }
-        ]
-    }
+        },
+    ]
 }
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
