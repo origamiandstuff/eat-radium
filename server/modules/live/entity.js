@@ -40,7 +40,6 @@ class Gun extends EventEmitter {
         this.borderless = false;
         this.drawFill = true;
         this.drawAbove = false;
-        this.skin = 0;
         if (info.PROPERTIES != null) {
             this.autofire = info.PROPERTIES.AUTOFIRE ?? false;
             this.altFire = info.PROPERTIES.ALT_FIRE ?? false;
@@ -63,7 +62,6 @@ class Gun extends EventEmitter {
             if (info.PROPERTIES.BORDERLESS != null) this.borderless = info.PROPERTIES.BORDERLESS;
             if (info.PROPERTIES.DRAW_FILL != null) this.drawFill = info.PROPERTIES.DRAW_FILL;
             if (info.PROPERTIES.DRAW_ABOVE) this.drawAbove = info.PROPERTIES.DRAW_ABOVE;
-            if (info.PROPERTIES.SKIN) this.skin = info.PROPERTIES.SKIN;
             this.destroyOldestChild = info.PROPERTIES.DESTROY_OLDEST_CHILD ?? false;
             if (this.destroyOldestChild) this.maxChildren++;
             this.shootOnDeath = info.PROPERTIES.SHOOT_ON_DEATH ?? false;
