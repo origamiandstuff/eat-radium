@@ -7209,6 +7209,48 @@ Class.radius30 = {
         },
     ]
 }
+Class.staplegun = {
+    PARENT: "genericTank",
+    LABEL: "Staplegun",
+    DANGER: 7,
+    BODY: {
+        FOV: base.FOV * 1.1,
+        SPEED: base.SPEED * 0.9,
+    },
+    GUNS: [
+        {
+            POSITION: [19, 2, 1, 0, -2.5, 0, 0.25],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, { shudder: 0 }]),
+                TYPE: "trap",
+            },
+        },
+        {
+            POSITION: [19, 2, 1, 0, 2.5, 0, 0.75],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, { shudder: 0 }]),
+                TYPE: "trap",
+            },
+        },
+        {
+            POSITION: [20, 2, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, { shudder: 0 }]),
+                TYPE: "trap",
+            },
+        },
+        {
+            POSITION: [3, 7, 1.7, 18.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, g.trap, { reload: 1/3, range: 10e-8, speed: 0 }]),
+                TYPE: "bullet",
+            }
+        },
+        {
+            POSITION: [5.5, 7, -1.8, 6.5, 0, 0, 0],
+        },
+    ],
+}
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]
