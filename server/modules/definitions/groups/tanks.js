@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, makeOver, makeDeco, makeGuard, makeBird, makeRadialAuto, weaponArray, dereference } = require('../facilitators.js');
+const { combineStats, makeAuto, makeOver, makeDeco, makeGuard, makeBird, makeRadialAuto, weaponArray, dereference, addAura } = require('../facilitators.js');
 const { base, statnames, dfltskl, smshskl } = require('../constants.js');
 require('./generics.js');
 const g = require('../gunvals.js');
@@ -7257,7 +7257,7 @@ Class.ritual0 = {
     BODY: {
         FOV: base.FOV * 1.225
     },
-    ON_ALT: (body) => {animate(body, "ritual", 10, false, 21), body.health.amount = body.health.amount - 70 },
+    ON_ALT: (body) => {animate(body, "ritual", 10, false, 21), body.health.amount = body.health.amount - 40 },
     GUNS: [
         {
             POSITION: [20, 12, 1, 0, 0, 0, 0]
@@ -7313,10 +7313,10 @@ Class.ritual10 = {
     ON_MAIN: (body) => animate(body, "ritual", 10, true, 21),
     GUNS: [
         {
-            POSITION: [20, 12, 1, 0, 0, 0, 0]
+            POSITION: [22, 12, 1, 0, 0, 0, 0]
         },
         {
-            POSITION: [24, 7, 1, 0, 0, 0, 0],
+            POSITION: [26, 7, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, { damage: 2.5, pen: 2, health: 1.6, speed: 1.8 }]),
                 TYPE: "bullet"
@@ -7328,6 +7328,16 @@ Class.ritual10 = {
                 COLOR: `#FF0000`
             }
         },
+    ]
+}
+Class.tankAura = addAura(1, 1)
+Class.auraTank = {
+    PARENT: "genericTank",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "basic"
+        }
     ]
 }
 // Upgrade Paths
@@ -7348,7 +7358,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single", "deadeye", "railgun", "multitool0"]
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "dual", "nimrod"]
             Class.predator.UPGRADES_TIER_0 = ["carnivore0"]
-        Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "revolver", "railgun"]
+        Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "revolver", "railgun", "ritual0"]
         Class.marksman.UPGRADES_TIER_3 = ["deadeye", "nimrod", "revolver", "fork", "railgun"]
 
     Class.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "flamethrower"]
