@@ -6932,13 +6932,13 @@ Class.bipod0 = {
     ON_ALT: (body) => animate(body, "bipod", 30, false, 17),
     GUNS: [
        {
-           POSITION: [15, 1.5, 1, -20, -9, 170, 0],
+           POSITION: [15, 1.5, 1, -20, -9, 170, 0, 0],
            PROPERTIES: {
                COLOR: "#656565",
            }
        },
        {
-           POSITION: [15, 1.5, 1, -20, 9, -170, 0],
+           POSITION: [15, 1.5, 1, -20, 9, -170, 0, 0],
            PROPERTIES: {
                COLOR: "#656565",
            }
@@ -7099,6 +7099,7 @@ Class.radius0 = {
     PARENT: "genericTank",
     LABEL: "Radius",
     DANGER: 7,
+    ON_ALT: (body) => animate(body, "radius", 30, false, 17),
     GUNS: [
         {
             POSITION: [18, 8, 1, 0, 0, 0, 0],
@@ -7146,16 +7147,16 @@ for ( let ii = 1; ii < 30; ii++ ) {
         LABEL: "Radius",
         GUNS: [
         {
-            POSITION: [18 - (ii * 0.2), 8, 1, 0, 0, 0, 0],
+            POSITION: [18 - (ii * 0.2), 8 - (ii * (0.15)), 1, 0, 0 + (ii * 0.24166666666), 0, 0],
         },
         {
-            POSITION: [18 - (ii * 0.2), 8, 1, 0, 0, 90, 0.5],
+            POSITION: [18 - (ii * 0.2), 8 - (ii * (0.15)), 1, 0, 0 - (ii * 0.24166666666), 90 - (ii * 3), 0.5],
         },
         {
-            POSITION: [18 - (ii * 0.2), 8, 1, 0, 0, 180, 0],
+            POSITION: [18 - (ii * 0.2), 8 - (ii * (0.15)), 1, 0, 0 + (ii * (0.025 / 3)), 180 - (ii * 6), 0.5, 0],
         },
         {
-            POSITION: [18 - (ii * 0.2), 8, 1, 0, 0, -90, 0.5],
+            POSITION: [18 - (ii * 0.2), 8 - (ii * (0.15)), 1, 0, 0 - (ii * (0.025 / 3)), -90 + (ii * 3), 0.5],
         },
         {
             POSITION: [14, 4, 1, 0, 0, 0, 0],
@@ -7170,6 +7171,7 @@ Class.radius30 = {
     PARENT: "genericTank",
     LABEL: "Radius",
     DANGER: 6,
+    ON_ALT: (body) => animate(body, "radius", 30, true, 17),
     GUNS: [
         {
             POSITION: [12, 3.5, 1, 0, 7.25, 0, 0.5],
