@@ -7221,28 +7221,28 @@ Class.staplegun = {
         {
             POSITION: [19, 2, 1, 0, -2.5, 0, 0.25],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, { shudder: 0 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, { shudder: 0, size: 0.1, range: 0.4 }]),
                 TYPE: "trap",
             },
         },
         {
             POSITION: [19, 2, 1, 0, 2.5, 0, 0.75],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, { shudder: 0 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, { shudder: 0, size: 0.1, range: 0.4 }]),
                 TYPE: "trap",
             },
         },
         {
-            POSITION: [20, 2, 1, 0, 0, 0, 0],
+            POSITION: [19, 2, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, { shudder: 0 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, { shudder: 0, size: 0.1, range: 0.4 }]),
                 TYPE: "trap",
             },
         },
         {
             POSITION: [3, 7, 1.7, 18.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, g.trap, { reload: 1/3, range: 10e-8, speed: 0 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun, { reload: 1/3, range: 10e-8, speed: 0 }]),
                 TYPE: "bullet",
             }
         },
