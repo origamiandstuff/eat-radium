@@ -7251,6 +7251,61 @@ Class.staplegun = {
         },
     ],
 }
+Class.ritual0 = {
+    PARENT: "genericTank",
+    LABEL: "Ritual",
+    BODY: {
+        FOV: base.FOV * 1.225
+    },
+    GUNS: [
+        {
+            POSITION: [20, 12, 1, 0, 0, 0, 0]
+        },
+        {
+            POSITION: [24, 7, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [14, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: `#0000FF`
+            }
+        },
+    ]
+}
+for ( let ii = 1; ii < 30; ii++ ) {
+    let R1 = Math.floor((255 / 30) * ii)
+    let R = R1.toString(16)
+    let B1 = Math.floor((255 / 30) * (30 - ii))
+    let B = B1.toString(16)
+    Class["radius" + ii] = {
+        PARENT: "genericTank",
+        LABEL: "Radius",
+        GUNS: [
+        {
+            POSITION: [18 - (ii * 0.2), 8 - (ii * (0.15)), 1, 0, 0 + (ii * 0.24166666666), 0, 0],
+        },
+        {
+            POSITION: [18 - (ii * 0.2), 8 - (ii * (0.15)), 1, 0, 0 - (ii * 0.24166666666), 90 - (ii * 3), 0.5],
+        },
+        {
+            POSITION: [18 - (ii * (0.2/3)), 8 - (ii * (0.15)), 1, 0, 0 + (ii * (0.025 / 3)), 180 - (ii * 6), 0.5, 0],
+        },
+        {
+            POSITION: [18 - (ii * (0.2/3)), 8 - (ii * (0.15)), 1, 0, 0 - (ii * (0.025 / 3)), -90 + (ii * 3), 0.5],
+        },
+        {
+            POSITION: [14, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: `#${R}00${B}`
+            }
+        }
+        ]
+    }
+}
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]

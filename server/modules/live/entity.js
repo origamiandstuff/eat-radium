@@ -920,6 +920,9 @@ class Entity extends EventEmitter {
             if (this.control.alt && this.onAlt) {
                 this.onAlt(this, entities);
             }
+            if (this.control.main && this.onMain) {
+                this.onMain(this, entities);
+            }
 
         if (this.invuln && (this.control.goal.x !== this.x || this.control.goal.y !== this.y)) {
             this.invuln = false;
@@ -1053,6 +1056,7 @@ class Entity extends EventEmitter {
             this.addController(toAdd);
         }
         this.onAlt = set.ON_ALT || null;
+        this.onMain = set.ON_MAIN || null;
         if (set.ALWAYS_ACTIVE != null) this.alwaysActive = set.ALWAYS_ACTIVE;
         if (set.MIRROR_MASTER_ANGLE != null) this.settings.mirrorMasterAngle = set.MIRROR_MASTER_ANGLE
         if (set.DRAW_HEALTH != null) this.settings.drawHealth = set.DRAW_HEALTH;
