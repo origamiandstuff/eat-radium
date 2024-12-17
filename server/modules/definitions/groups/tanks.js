@@ -7323,6 +7323,7 @@ Class.extender0 = {
         SPEED: 0.85 * base.SPEED,
         FOV: 1.4 * base.FOV
     },
+    ON_ALT: (body) => animate(body, "extender", 10, false, 21),
     GUNS: [
         {
             POSITION: [27, 8, 1, 0, 0, 0, 0],
@@ -7333,7 +7334,13 @@ Class.extender0 = {
         },
         {
             POSITION: [5, 8, -1.4, 8, 0, 0, 0]
-        }
+        },
+        {
+            POSITION: [14, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: `#0000FF`
+            }
+        },
     ]
 }
 for ( let ii = 1; ii < 10; ii++ ) {
@@ -7345,7 +7352,8 @@ for ( let ii = 1; ii < 10; ii++ ) {
         PARENT: "genericTank",
         LABEL: "Extender",
         BODY: {
-            FOV: base.FOV * 1.225
+            SPEED: (0.85 + (ii * 0.015)) * base.SPEED,
+            FOV: (1.4 - (ii * 0.04)) * base.FOV
         },
         GUNS: [
             {
@@ -7363,10 +7371,11 @@ for ( let ii = 1; ii < 10; ii++ ) {
         ]
     }
 }
-Class.extender30 = {
+Class.extender10 = {
     PARENT: "genericTank",
     LABEL: "Extender",
     DANGER: 4,
+    ON_ALT: (body) => animate(body, "extender", 10, true, 21),
     GUNS: [
         {
             POSITION: [18, 8, 1, 0, 0, 0, 0],
@@ -7385,7 +7394,7 @@ Class.extender30 = {
 }
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
-    Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate"]
+    Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate", "extender10"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
@@ -7398,7 +7407,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman", "multitool0"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker", "bipod0"]
-        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single", "deadeye", "railgun", "multitool0"]
+        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single", "deadeye", "railgun", "multitool0", "extender10"]
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "dual", "nimrod"]
             Class.predator.UPGRADES_TIER_0 = ["carnivore0"]
         Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "revolver", "railgun", "ritual0"]
