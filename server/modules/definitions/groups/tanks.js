@@ -5017,7 +5017,7 @@ Class.snowstorm = {
           POSITION: [20, 8, 1, 0, 0, 0, 0],
           PROPERTIES: {
               TYPE: "freezeBullet", 
-              SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.flankGuard, {reload: 4}]),
+              SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.flankGuard, {reload: 1.5}]),
           }
         }, 
         {
