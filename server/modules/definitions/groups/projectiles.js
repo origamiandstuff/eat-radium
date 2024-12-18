@@ -1367,27 +1367,27 @@ Class.forkBullet = {
     INDEPENDENT: true,
     GUNS: [
         {
-            POSITION: [0, 120, 1, 0, 0, 0, 0],
+            POSITION: [0, 16, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { range: 0.1}]),
+                SHOOT_SETTINGS: combineStats([g.basic, { range: 0.15 }]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
                 SHOOT_ON_DEATH: true,
                 ALPHA: 0
             }
         },
         {
-            POSITION: [0, 120, 1, 0, 0, 0, 40],
+            POSITION: [0, 16, 1, 0, 0, 0, 45],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { range: 0.1}]),
+                SHOOT_SETTINGS: combineStats([g.basic, { range: 0.15 }]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
                 SHOOT_ON_DEATH: true,
                 ALPHA: 0
             }
         },
         {
-            POSITION: [0, 120, 1, 0, 0, 0, -40],
+            POSITION: [0, 16, 1, 0, 0, 0, -45],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { range: 0.1}]),
+                SHOOT_SETTINGS: combineStats([g.basic, { range: 0.15 }]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
                 SHOOT_ON_DEATH: true,
                 ALPHA: 0

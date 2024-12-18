@@ -3002,7 +3002,7 @@ Class.pitchfork = {
             POSITION: [5, 8.5, 1.3, 23, 0, 0, 0]
         },
         {
-            POSITION: [29, 8.5, 0, 0, 0, 0, 0],
+            POSITION: [29, 8.5, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.sniper, { pen: 2 }]),
                 TYPE: "forkBullet"
