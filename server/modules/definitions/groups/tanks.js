@@ -1055,21 +1055,21 @@ Class.triplet = {
         {
             POSITION: [18, 10, 1, 0, 5, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, { range: 0.5 }]),
                 TYPE: "bullet"
             }
         },
         {
             POSITION: [18, 10, 1, 0, -5, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, { range: 0.5 }]),
                 TYPE: "bullet"
             }
         },
         {
             POSITION: [21, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, { range: 0.5 }]),
                 TYPE: "bullet"
             }
         }

@@ -1016,6 +1016,7 @@ Class.pentaMinion = {
     LABEL: "Penta Shot Minion",
     TYPE: "minion",
     DAMAGE_CLASS: 0,
+    SHAPE: 3.5,
     HITS_OWN_TYPE: "hard",
     FACING_TYPE: "smoothToTarget",
     BODY: {
@@ -1042,43 +1043,29 @@ Class.pentaMinion = {
         "canRepel",
         "hangOutNearMaster",
     ],
-    GUNS: [
+    GUNS: weaponArray([
         {
-            POSITION: [16, 8, 1, 0, -3, -30, 2/3],
+            POSITION: [18, 10, 1, 0, 5, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
                 TYPE: "bullet"
             }
         },
         {
-            POSITION: [16, 8, 1, 0, 3, 30, 2/3],
+            POSITION: [18, 10, 1, 0, -5, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
                 TYPE: "bullet"
             }
         },
         {
-            POSITION: [19, 8, 1, 0, -2, -15, 1/3],
+            POSITION: [21, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
-                TYPE: "bullet"
-            }
-        },
-        {
-            POSITION: [19, 8, 1, 0, 2, 15, 1/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
-                TYPE: "bullet"
-            }
-        },
-        {
-            POSITION: [22, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.tripleShot, g.minionGun]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
                 TYPE: "bullet"
             }
         }
-    ],
+    ], 3),
 }
 Class.swarmTurretedMinion = {
     PARENT: "minion",
