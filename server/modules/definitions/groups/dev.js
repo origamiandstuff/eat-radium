@@ -2981,6 +2981,38 @@ Class.rapier = {
         }
     ], 3)
 }
+Class.pitchfork = {
+    PARENT: "genericBigEthereal",
+    LABEL: "Pitchfork",
+    BODY: {
+        FOV: 1.115
+    },
+    UPGRADE_TOOLTIP: "Snipy snipe :3",
+    GUNS: weaponArray([
+        {
+            POSITION: [5, 8.5, 1.3, 8, 0, 0, 0]
+        },
+        {
+            POSITION: [5, 8.5, 1.3, 13, 0, 0, 0]
+        },
+        {
+            POSITION: [5, 8.5, 1.3, 18, 0, 0, 0]
+        },
+        {
+            POSITION: [5, 8.5, 1.3, 23, 0, 0, 0]
+        },
+        {
+            POSITION: {
+                LENGTH: 29,
+                WIDTH: 8.5
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, { pen: 2 }]),
+                TYPE: "bullet"
+            }
+        }
+    ], 3)
+}
 Class.vagrant = {
     PARENT: "genericBigEthereal",
     LABEL: "Vagrant",
