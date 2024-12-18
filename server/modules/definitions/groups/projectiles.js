@@ -1376,7 +1376,7 @@ Class.forkBullet = {
             }
         },
         {
-            POSITION: [0, 16, 1, 0, 0, 0, 45],
+            POSITION: [0, 16, 1, 0, 0, 40, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, { range: 0.15 }]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
@@ -1385,7 +1385,7 @@ Class.forkBullet = {
             }
         },
         {
-            POSITION: [0, 16, 1, 0, 0, 0, -45],
+            POSITION: [0, 16, 1, 0, 0, -40, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, { range: 0.15 }]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
