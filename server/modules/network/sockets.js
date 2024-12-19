@@ -1026,6 +1026,7 @@ function flatten(data) {
             /* 12 */ data.direction,
             /* 13 */ data.offset,
             /* 14 */ data.mirrorMasterAngle,
+            /* 15 */ data.toxic_active,
         );
     } else {
         output.push(
