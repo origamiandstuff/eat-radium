@@ -1658,6 +1658,7 @@ class Entity extends EventEmitter {
             shield: this.shield.display(),
             healthN: this.health.amount,
             toxic_active: this.toxic_active,
+            freeze: this.freeze,
             collectibles: this.collectibles,
             maxHealthN: this.health.max,
             alpha: this.alpha,
