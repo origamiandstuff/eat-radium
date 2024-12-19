@@ -1075,10 +1075,10 @@ function flatten(data) {
     for (let i = 0; i < data.collectibles.length; i++) {
             output.push(data.collectibles[i]);
     }
+console.log(data.collectibles.length)
     // Return it
     return output;
 }
-
 function perspective(e, player, data) {
     if (player.body != null) {
         if (player.body.id === e.master.id) {
