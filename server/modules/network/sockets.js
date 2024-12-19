@@ -1051,11 +1051,12 @@ function flatten(data) {
             /* 19 */ Math.round(65535 * data.shield),
             /* 20 */ Math.round(255 * data.alpha),
             /* 21 */ data.toxic_active,
+            /* 22 */ data.COLLECTIBLES,
         );
         if (data.type & 0x04) {
             output.push(
-                /* 22 */ data.name,
-                /* 23 */ data.score
+                /* 23 */ data.name,
+                /* 24 */ data.score
             );
         }
     }

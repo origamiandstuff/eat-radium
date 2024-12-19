@@ -210,7 +210,7 @@ Class.collectible = {
     ON: [{
         event: "collide",
         handler: ({ instance, other, body }) => {
-          if (other.master == other && other.type != 'wall' && other.CONSUMABLE) {
+          if (other.master == other && other.type != 'wall' && other.CONSUMABLE.length < 5) {
               other.CONSUMABLES.push(["SPD"])
               body.kill();
           }
