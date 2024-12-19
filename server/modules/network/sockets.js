@@ -1071,11 +1071,12 @@ function flatten(data) {
     // Push all that to the array
   
     // Throw the collectibles into oblivion
-    output.push(data.collectibles.length);
-    for (let i = 0; i < data.collectibles.length; i++) {
-            output.push(data.collectibles[i]);
+    let e = data.collectibles;
+    output.push(e.length);
+    for (let i = 0; i < e.length; i++) {
+            output.push(e.collectibles[i]);
     }
-console.log(data.collectibles.length)
+    console.log(e);
     // Return it
     return output;
 }
