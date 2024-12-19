@@ -180,7 +180,7 @@ Class.food = {
     ON: [{
         event: "death",
         handler: ({ body }) => {
-          if (Math.random < 0.01) {
+          if (Math.random < 2) {
             let o = new Entity(body, body);
             o.define(Class.collectible);
           }
@@ -203,12 +203,17 @@ Class.collectible = {
     MOTION_TYPE: "drift",
     FACING_TYPE: "turnWithSpeed",
     VARIES_IN_SIZE: true,
-    IS_IMMUNE_TO_TILES: false,
+    IS_IMMUNE_TO_TILES: true,
     LEVEL_CAP: 1,
+    SHAPE: 0, 
+    SIZE: 5,
     ON: [{
         event: "collide",
-        handler: ({ instance, other }) => {
-            other.CONSUMABLES.push([])
+        handler: ({ instance, other, body }) => {
+          if (other.master == other && other.type != 'wall' && other.CONSUMABLE) {
+              other.CONSUMABLES.push(["SPD"])
+              body.kill();
+          }
         }
     }],
     BODY: {
