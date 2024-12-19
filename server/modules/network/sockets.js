@@ -756,9 +756,8 @@ function update(gui) {
     gui.fps.update(Math.min(1, (global.fps / Config.runSpeed / 1000) * 30));
     gui.color.update(gui.master.teamColor);
     gui.label.update(b.index);
-    gui.score.update(b.skill.score);
+    gui.score.update(b.skill.score);//lemme tesy ijust tried smth
     gui.points.update(b.skill.points);
-    gui.toxic_active.update(b.skill.points);
     // Update the upgrades
     let upgrades = [];
     let skippedUpgrades = [0];
@@ -786,6 +785,7 @@ function update(gui) {
     gui.root.update(b.rerootUpgradeTree);
     gui.class.update(b.label);
     gui.showhealthtext.update(Config.SHOW_HEALTHBAR_TEXT ? 1 : 0);
+    gui.toxic_active.update(b.toxic_active);
 }
 
 function publish(gui) {
@@ -803,6 +803,7 @@ function publish(gui) {
         root: gui.root.publish(),
         class: gui.class.publish(),
         showhealthtext: gui.showhealthtext.publish(),
+        toxic_active: gui.toxic_active.publish()
     };
     // Encode which we'll be updating and capture those values only
     let oo = [0];
@@ -856,6 +857,10 @@ function publish(gui) {
         oo[0] += 0x0800;
         oo.push(o.showhealthtext);
     }
+    if (o.toxic_active != null) {
+        oo[0] += 0x1600;
+        oo.push(o.toxic_active);
+    }
     // Output it
     return oo;
 }
@@ -879,6 +884,7 @@ let newgui = (player) => {
         root: floppy(),
         class: floppy(),
         showhealthtext: floppy(),
+        toxic_active: floppy()
     };
     // This is the gui itself
     return {
