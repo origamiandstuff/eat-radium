@@ -1051,10 +1051,11 @@ function flatten(data) {
             /* 19 */ data.maxHealthN,
             /* 19 */ Math.round(65535 * data.shield),
             /* 20 */ Math.round(255 * data.alpha),
+            /* 21 */ data.toxic_active,
         );
         if (data.type & 0x04) {
             output.push(
-                /* 21 */ data.name,
+                /* 22 */ data.name,
                 /* 22 */ data.score
             );
         }
