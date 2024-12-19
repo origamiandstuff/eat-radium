@@ -705,7 +705,7 @@ class Entity extends EventEmitter {
         super();
         if (!master) master = this;
         this.toxic_active = false;
-        this.CONSUMABLES = [];
+        this.collectibles = [];
         this.isGhost = false;
         this.killCount = {
             solo: 0,
