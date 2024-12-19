@@ -771,7 +771,7 @@ Class.whirlet = {
             output.push({ 
                 POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    SHOOT_SETTINGS: combineStats([g.satellite, "damage: 0.1"]), 
                     TYPE: ["subSatellite", {ANGLE: i * 60},], 
                     MAX_CHILDREN: 1,   
                     AUTOFIRE: true,  
