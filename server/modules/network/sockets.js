@@ -758,6 +758,7 @@ function update(gui) {
     gui.label.update(b.index);
     gui.score.update(b.skill.score);
     gui.points.update(b.skill.points);
+    gui.toxic_active.update(b.skill.points);
     // Update the upgrades
     let upgrades = [];
     let skippedUpgrades = [0];
