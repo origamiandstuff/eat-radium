@@ -1051,7 +1051,6 @@ function flatten(data) {
             /* 19 */ Math.round(65535 * data.shield),
             /* 20 */ Math.round(255 * data.alpha),
             /* 21 */ data.toxic_active,
-            /* 22 */ data.COLLECTIBLES,
         );
         if (data.type & 0x04) {
             output.push(
@@ -1070,6 +1069,12 @@ function flatten(data) {
     output.push(data.turrets.length);
     for (let i = 0; i < data.turrets.length; i++) output.push(...flatten(data.turrets[i]));
     // Push all that to the array
+  
+    // Throw the collectibles into oblivion
+    output.push(data.COLLECTIBLES.length);
+    for (let i = 0; i < data.COLLECTIBLES.length; i++) {
+            output.push(data.COLLECTIBLES[i]);
+    }
     // Return it
     return output;
 }
