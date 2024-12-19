@@ -802,7 +802,6 @@ function publish(gui) {
         root: gui.root.publish(),
         class: gui.class.publish(),
         showhealthtext: gui.showhealthtext.publish(),
-        toxic_active: gui.toxic_active.publish()
     };
     // Encode which we'll be updating and capture those values only
     let oo = [0];
@@ -855,10 +854,6 @@ function publish(gui) {
     if (o.showhealthtext != null) {
         oo[0] += 0x0800;
         oo.push(o.showhealthtext);
-    }
-    if (o.toxic_active != null) {
-        oo[0] += 0x1600;
-        oo.push(o.toxic_active);
     }
     // Output it
     return oo;
