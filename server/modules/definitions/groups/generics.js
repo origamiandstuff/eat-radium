@@ -177,45 +177,6 @@ Class.food = {
     VARIES_IN_SIZE: true,
     IS_IMMUNE_TO_TILES: false,
     LEVEL_CAP: 1,
-    ON: [{
-        event: "death",
-        handler: ({ body }) => {
-          if (Math.random < 2) {
-            let o = new Entity(body, body);
-            o.define(Class.collectible);
-          }
-        }
-    }],
-    BODY: {
-        STEALTH: 30,
-        PUSHABILITY: 1,
-        REGEN: 0
-    },
-    DAMAGE_EFFECTS: false,
-    RATEFFECTS: false,
-    HEALTH_WITH_LEVEL: false,
-};
-Class.collectible = {
-    TYPE: "food",
-    DAMAGE_CLASS: 1,
-    CONTROLLERS: ["moveInCircles"],
-    HITS_OWN_TYPE: "repel",
-    MOTION_TYPE: "drift",
-    FACING_TYPE: "turnWithSpeed",
-    VARIES_IN_SIZE: true,
-    IS_IMMUNE_TO_TILES: true,
-    LEVEL_CAP: 1,
-    SHAPE: 0, 
-    SIZE: 5,
-    ON: [{
-        event: "collide",
-        handler: ({ instance, other, body }) => {
-          if (other.master == other && other.type != 'wall' && other.collectibles.length < 5) {
-              other.collectibles.push([1])
-              body.kill();
-          }
-        }
-    }],
     BODY: {
         STEALTH: 30,
         PUSHABILITY: 1,
