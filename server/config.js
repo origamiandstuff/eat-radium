@@ -122,7 +122,7 @@ module.exports = {
     LEVEL_CHEAT_CAP: 45,
 
     // Amount of player-bots to spawn.
-    BOTS: 0,
+    BOTS: 5,
 
     // How much XP player-bots get per second until they reach LEVEL_CAP.
     BOT_XP: 1000,
@@ -170,7 +170,7 @@ module.exports = {
     ENEMY_SPAWN_COOLDOWN_NEST: 1800, // Cooldown (in game ticks) of nest enemies spawn attempts being made.
 
     // Cooldown (in seconds) of boss spawns being announced.
-    BOSS_SPAWN_COOLDOWN: 180,
+    BOSS_SPAWN_COOLDOWN: 900,
     // The delay (in seconds) between the boss spawns being announced and the bosses actually spawning.
     // NOTE: The spawn message (ex. "A strange trembling...") takes half as long to appear than the boss.
     BOSS_SPAWN_DURATION: 10,
