@@ -785,7 +785,6 @@ function update(gui) {
     gui.root.update(b.rerootUpgradeTree);
     gui.class.update(b.label);
     gui.showhealthtext.update(Config.SHOW_HEALTHBAR_TEXT ? 1 : 0);
-    gui.toxic_active.update(b.toxic_active);
 }
 
 function publish(gui) {
@@ -884,7 +883,6 @@ let newgui = (player) => {
         root: floppy(),
         class: floppy(),
         showhealthtext: floppy(),
-        toxic_active: floppy()
     };
     // This is the gui itself
     return {
