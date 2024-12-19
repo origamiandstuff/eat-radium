@@ -1026,7 +1026,6 @@ function flatten(data) {
             /* 12 */ data.direction,
             /* 13 */ data.offset,
             /* 14 */ data.mirrorMasterAngle,
-            /* 15 */ data.toxic_active,
         );
     } else {
         output.push(
@@ -1056,7 +1055,7 @@ function flatten(data) {
         if (data.type & 0x04) {
             output.push(
                 /* 22 */ data.name,
-                /* 22 */ data.score
+                /* 23 */ data.score
             );
         }
     }
