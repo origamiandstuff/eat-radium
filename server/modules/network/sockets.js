@@ -1052,11 +1052,12 @@ function flatten(data) {
             /* 20 */ Math.round(255 * data.alpha),
             /* 21 */ data.toxic_active,
             /* 22 */ data.freeze,
+            /* 23 */ data.vulnerable,
         );
         if (data.type & 0x04) {
             output.push(
-                /* 23 */ data.name,
-                /* 24 */ data.score
+                /* 24 */ data.name,
+                /* 25 */ data.score
             );
         }
     }

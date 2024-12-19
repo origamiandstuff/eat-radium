@@ -706,6 +706,7 @@ class Entity extends EventEmitter {
         if (!master) master = this;
         this.toxic_active = false;
         this.freeze = false;
+        this.vulnerable = false;
         this.collectibles = [];
         this.isGhost = false;
         this.killCount = {
@@ -1659,6 +1660,7 @@ class Entity extends EventEmitter {
             healthN: this.health.amount,
             toxic_active: this.toxic_active,
             freeze: this.freeze,
+            vulnerable: this.vulnerable,
             collectibles: this.collectibles,
             maxHealthN: this.health.max,
             alpha: this.alpha,
