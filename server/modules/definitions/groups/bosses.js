@@ -236,7 +236,7 @@ Class.eliteFortifier = {
             {
                 POSITION: [3, 12, 1.1, 18, 0, 60, 0],
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, {shudder: 0.4, speed: 0.85, range: 0.85}]),
+                    SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, {shudder: 0.4, speed: 1.1, maxSpeed: 1.1, reload: 1.5, damage: 1.6}]),
                     TYPE: "unsetTrap",
                     STAT_CALCULATOR: "trap",
                     MAX_CHILDREN: 8,
@@ -249,7 +249,7 @@ Class.eliteFortifier = {
             {
                 POSITION: [3, 7, 1.7, 13, 8, 60, 0.5],
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.trap, {shudder: 0.4, speed: 0.85, range: 0.85}]),
+                    SHOOT_SETTINGS: combineStats([g.trap, {shudder: 0.4, speed: 1.1, maxSpeed: 1.1, reload: 1.5, damage: 1.6}]),
                     WAIT_TO_CYCLE: true,
                     TYPE: "trap",
                     MAX_CHILDREN: 8,
@@ -262,7 +262,7 @@ Class.eliteFortifier = {
             {
                 POSITION: [3, 7, 1.7, 13, -8, 60, 0.5],
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.trap, {shudder: 0.4, speed: 0.85, range: 0.85}]),
+                    SHOOT_SETTINGS: combineStats([g.trap, {shudder: 0.4, speed: 1.1, maxSpeed: 1.1, reload: 1.5, damage: 1.6}]),
                     WAIT_TO_CYCLE: true,
                     TYPE: "trap",
                     MAX_CHILDREN: 8,
@@ -273,7 +273,7 @@ Class.eliteFortifier = {
     TURRETS: [
         {
             POSITION: [9.5, 0, 0, 0, 360, 1],
-            TYPE: ["eliteSpinnerCyclone", {COLOR: -1}],
+            TYPE: ["eliteFortifierHexaTrapper", {COLOR: -1}],
         },
     ],
 }
