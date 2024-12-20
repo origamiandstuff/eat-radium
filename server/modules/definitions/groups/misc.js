@@ -143,6 +143,22 @@ Class.gunnerDominator = {
         }
     ]
 }
+Class.destroyerDominator = {
+    PARENT: "dominator",
+    UPGRADE_LABEL: 'Destroyer',
+    GUNS: [
+        {
+            POSITION: [15.25, 6.75, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.destroyerDominator]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [5, 6.75, -1.6, 6.75, 0, 0, 0]
+        }
+    ]
+}
 Class.trapperDominator = {
     PARENT: "dominator",
     UPGRADE_LABEL: 'Trapper',
@@ -162,7 +178,6 @@ Class.trapperDominator = {
         }
     ], 8)
 }
-
 // SANCTUARIES
 let sancTiers =       [3, 6, 8, 9, 10, 12]
 let sancHealerTiers = [2, 3, 4]
