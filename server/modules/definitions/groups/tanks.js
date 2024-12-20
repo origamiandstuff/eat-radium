@@ -7462,3 +7462,55 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
                         Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
 
     Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Status effect stuff
+Class.freezeDrone = {
+    PARENT: 'drone',
+    ON: [
+        {
+            event: "collide",
+            handler: ({ instance, other }) => {
+                if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
+                    freeze(other, 0.5,3) // DOT effect eheheheheheheheheheheheehehehehe
+                }
+            }
+        },
+     ],
+     TURRETS: [{
+         POSITION: [9, 0, 0, 0, 360, 1],
+         TYPE: "toxicProp"
+     }]
+}

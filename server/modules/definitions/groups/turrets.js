@@ -319,6 +319,26 @@ Class.eliteFortifierHexaTrapper = makeAuto({
         },
     ], 6, 0.5),
 })
+Class.eliteChillerSnowstorm = {
+    PARENT: "genericTank",
+    COLOR: -1,
+    FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
+    GUNS: weaponArray([
+        {
+          POSITION: [20, 8, 1, 0, 0, 0, 0],
+          PROPERTIES: {
+              TYPE: "freezeBullet", 
+              SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.flankGuard, {reload: 1.5}]),
+          }
+        }, 
+        {
+          POSITION: [15, 6, 1, 0, 0, 0, 0],
+          PROPERTIES: {
+                COLOR: "teal",
+          }
+        }
+    ], 6)
+}
 Class.barricadeTurret = makeTurret('barricade', {aiSettings: {SKYNET: true, FULL_VIEW: true, independent: true, extraStats: []}})
 Class.artilleryTurret = makeTurret('artillery', {canRepel: true, limitFov: true, extraStats: []})
 Class.nailgunTurret = makeTurret('nailgun', {canRepel: true, limitFov: true, extraStats: []})
