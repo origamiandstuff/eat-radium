@@ -7504,13 +7504,13 @@ Class.freezeDrone = {
             event: "collide",
             handler: ({ instance, other }) => {
                 if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
-                    freeze(other, 0.5,3) // DOT effect eheheheheheheheheheheheehehehehe
+                    freeze(other, 2, 3) // DOT effect eheheheheheheheheheheheehehehehe
                 }
             }
         },
      ],
      TURRETS: [{
          POSITION: [9, 0, 0, 0, 360, 1],
-         TYPE: "toxicProp"
+         TYPE: "freezeProp"
      }]
 }

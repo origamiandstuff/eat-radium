@@ -77,6 +77,7 @@ class BossRush {
             [  2, "eliteTrapGuard"],
             [  2, "eliteSpinner"],
             [  2, "eliteFortifier"],
+            [  3, "eliteChiller"],
             [  2, "eliteSkimmer"],
 
             //nesters

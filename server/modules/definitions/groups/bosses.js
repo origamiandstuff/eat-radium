@@ -277,6 +277,38 @@ Class.eliteFortifier = {
         },
     ],
 }
+Class.eliteChiller = {
+    PARENT: "elite",
+    UPGRADE_LABEL: "Elite Chiller",
+    UPGRADE_COLOR: "pink",
+    MAX_CHILDREN: 15,
+    AI: { STRAFE: false },
+    GUNS: weaponArray([
+        {
+            POSITION: [6, 12, 1.2, 8, 0, 60, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.overseer, {speed: 1.1, maxSpeed: 1.1, reload: 1.5, damage: 1.6}]),
+                TYPE: "freezeDrone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: "drone",
+                WAIT_TO_CYCLE: true,
+          }
+        },
+        {
+            POSITION: [14, 8, 1, 0, 0, 60, 0],
+            PROPERTIES: {
+                COLOR: "teal",
+            }
+        }
+    ], 3),
+    TURRETS: [
+        {
+            POSITION: [11, 0, 0, 0, 360, 1],
+            TYPE: ["eliteChillerSnowstorm", {COLOR: -1}],
+        },
+    ],
+}
 Class.eliteSpinner = {
     PARENT: "elite",
     UPGRADE_LABEL: "Elite Spinner",
