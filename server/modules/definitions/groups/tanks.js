@@ -4917,7 +4917,7 @@ Class.freezeBullet = {
             event: "collide",
             handler: ({ instance, other }) => {
                 if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
-                    freeze(other, 2, 3)
+                    freeze(other, 2.5, 3)
             }
         },
         }
@@ -7504,7 +7504,7 @@ Class.freezeDrone = {
             event: "collide",
             handler: ({ instance, other }) => {
                 if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
-                    freeze(other, 2, 3) // DOT effect eheheheheheheheheheheheehehehehe
+                    freeze(other, 3.5, 3) // DOT effect eheheheheheheheheheheheehehehehe
                 }
             }
         },

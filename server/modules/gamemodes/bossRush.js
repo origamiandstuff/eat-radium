@@ -14,7 +14,7 @@ let calculatePoints = wave => 5 + wave * 3;
 // Then it picks a boss at random, with all choices being equally likely.
 
 let oldGroups = {
-    elites: [ "eliteDestroyer", "eliteGunner", "eliteSprayer", "eliteBattleship", "eliteSpawner" ],
+    elites: [ "eliteDestroyer", "eliteGunner", "eliteSprayer", "eliteBattleship", "eliteSpawner", "eliteSpinner", "eliteChiller", "eliteFortifier" ],
     strange: [ "summoner", "eliteSkimmer", "nestKeeper", "roguePalisade" ],
     celestials: [ "paladin", "freyja", "zaphkiel", "nyx", "theia" ],
     eternals: [ "legionaryCrasher", "kronos", "odin" ],
