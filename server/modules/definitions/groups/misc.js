@@ -178,6 +178,25 @@ Class.trapperDominator = {
         }
     ], 8)
 }
+Class.core = {
+    PARENT: "dominator",
+    UPGRADE_LABEL: 'Core',
+    FACING_TYPE: ["spin", {speed: 0.02}],
+    GUNS: weaponArray([
+        {
+            POSITION: [4, 3.75, 1, 8, 0, 0, 0]
+        },
+        {
+            POSITION: [1.25, 3.75, 1.7, 12, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.trapperDominator]),
+                TYPE: "trap",
+                STAT_CALCULATOR: "trap",
+                AUTOFIRE: true
+            }
+        }
+    ], 8),
+}
 // SANCTUARIES
 let sancTiers =       [3, 6, 8, 9, 10, 12]
 let sancHealerTiers = [2, 3, 4]
