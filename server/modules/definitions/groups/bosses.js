@@ -287,7 +287,7 @@ Class.eliteChiller = {
         {
             POSITION: [6, 12, 1.2, 8, 0, 60, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.overseer, {speed: 1.1, maxSpeed: 1.1, reload: 1.5, damage: 1.6}]),
+                SHOOT_SETTINGS: combineStats([g.drone, g.overseer, {speed: 1.1, maxSpeed: 1.1, reload: 1.5, damage: 2, health: 1.8, pen: 1.6}]),
                 TYPE: "freezeDrone",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
