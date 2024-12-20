@@ -309,21 +309,6 @@ Class.eliteChiller = {
         },
     ],
 }
-Class.eliteIntoxicator = {
-    PARENT: "elite",
-    UPGRADE_LABEL: "Elite Intoxicator",
-    UPGRADE_COLOR: "pink",
-    MAX_CHILDREN: 15,
-    AI: { STRAFE: false },
-    GUNS: weaponArray([
-    ], 3),
-    TURRETS: [
-        {
-            POSITION: [11, 0, 0, 0, 360, 1],
-            TYPE: ["eliteChillerSnowstorm", {COLOR: -1}],
-        },
-    ],
-}
 Class.eliteSpinner = {
     PARENT: "elite",
     UPGRADE_LABEL: "Elite Spinner",
