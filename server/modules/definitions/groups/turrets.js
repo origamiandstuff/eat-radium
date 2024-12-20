@@ -301,6 +301,24 @@ Class.eliteSpinnerCyclone = {
         }
     ], 3)
 }
+Class.eliteFortifierHexaTrapper = {
+    PARENT: "genericTank",
+    COLOR: -1,
+    FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
+    GUNS: weaponArray([
+        {
+            POSITION: [15, 7, 1, 0, 0, 0, 0],
+        },
+        {
+            POSITION: [3, 7, 1.7, 15, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.hexaTrapper]),
+                TYPE: "trap",
+                STAT_CALCULATOR: "trap",
+            },
+        },
+    ], 6, 0.5),
+}
 Class.barricadeTurret = makeTurret('barricade', {aiSettings: {SKYNET: true, FULL_VIEW: true, independent: true, extraStats: []}})
 Class.artilleryTurret = makeTurret('artillery', {canRepel: true, limitFov: true, extraStats: []})
 Class.nailgunTurret = makeTurret('nailgun', {canRepel: true, limitFov: true, extraStats: []})

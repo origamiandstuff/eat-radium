@@ -224,6 +224,59 @@ Class.eliteTrapGuard = {
         ], 3)
     ],
 }
+Class.eliteFortifier = {
+    PARENT: "elite",
+    UPGRADE_LABEL: "Elite Fortifier",
+    UPGRADE_COLOR: "pink",
+    AI: { STRAFE: false },
+    GUNS: weaponArray([
+            {
+                POSITION: [18, 12, 1, 0, 0, 60, 0],
+            },
+            {
+                POSITION: [3, 12, 1.1, 18, 0, 60, 0],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, {shudder: 0.4, speed: 0.85, range: 0.85}]),
+                    TYPE: "unsetTrap",
+                    STAT_CALCULATOR: "trap",
+                    MAX_CHILDREN: 8,
+                    DESTROY_OLDEST_CHILD: true,
+                },
+            },
+            {
+                POSITION: [7, 7, 1, 6, 8, 60, 0]
+            },
+            {
+                POSITION: [3, 7, 1.7, 13, 8, 60, 0.5],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.trap, {shudder: 0.4, speed: 0.85, range: 0.85}]),
+                    WAIT_TO_CYCLE: true,
+                    TYPE: "trap",
+                    MAX_CHILDREN: 8,
+                    DESTROY_OLDEST_CHILD: true,
+            },
+            },
+            {
+                POSITION: [7, 7, 1, 6, -8, 60, 0]
+            },
+            {
+                POSITION: [3, 7, 1.7, 13, -8, 60, 0.5],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.trap, {shudder: 0.4, speed: 0.85, range: 0.85}]),
+                    WAIT_TO_CYCLE: true,
+                    TYPE: "trap",
+                    MAX_CHILDREN: 8,
+                    DESTROY_OLDEST_CHILD: true,
+            },
+        },
+    ], 3),
+    TURRETS: [
+        {
+            POSITION: [9.5, 0, 0, 0, 360, 1],
+            TYPE: ["eliteSpinnerCyclone", {COLOR: -1}],
+        },
+    ],
+}
 Class.eliteSpinner = {
     PARENT: "elite",
     UPGRADE_LABEL: "Elite Spinner",
