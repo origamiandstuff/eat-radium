@@ -1,4 +1,4 @@
-const { combineStats, makeDeco, weaponArray, makeTurret } = require('../facilitators.js');
+const { combineStats, makeDeco, weaponArray, makeTurret, makeAuto } = require('../facilitators.js');
 const { base } = require('../constants.js');
 const g = require('../gunvals.js');
 
@@ -301,7 +301,7 @@ Class.eliteSpinnerCyclone = {
         }
     ], 3)
 }
-Class.eliteFortifierHexaTrapper = {
+Class.eliteFortifierHexaTrapper = makeAuto({
     PARENT: "genericTank",
     COLOR: -1,
     FACING_TYPE: ["spin", { speed: -0.1, independent: true }],
@@ -318,7 +318,7 @@ Class.eliteFortifierHexaTrapper = {
             },
         },
     ], 6, 0.5),
-}
+})
 Class.barricadeTurret = makeTurret('barricade', {aiSettings: {SKYNET: true, FULL_VIEW: true, independent: true, extraStats: []}})
 Class.artilleryTurret = makeTurret('artillery', {canRepel: true, limitFov: true, extraStats: []})
 Class.nailgunTurret = makeTurret('nailgun', {canRepel: true, limitFov: true, extraStats: []})
