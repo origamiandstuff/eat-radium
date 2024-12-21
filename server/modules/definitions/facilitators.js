@@ -518,9 +518,9 @@ exports.makeTurret = (type, options = {}) => {
         TURRETS: type.TURRETS,
     }
 }
-exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor) => {
+exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor, auraType) => {
     let isHeal = damageFactor < 0;
-    let auraType = isHeal ? "healAura" : "aura";
+    auraType = isHeal ? "healAura" : "aura";
     let symbolType = isHeal ? "healerSymbol" : "auraSymbol";
     auraColor = auraColor ?? (isHeal ? 12 : 0);
     return {
