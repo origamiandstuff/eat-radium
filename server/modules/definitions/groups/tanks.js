@@ -507,7 +507,7 @@ Class.unnamedTank0022 = {
 // Basic & starting upgrades
 Class.basic = {
     PARENT: "genericTank",
-    LABEL: "Basic",
+    LABEL: "Single",
     DANGER: 4,
     GUNS: [
         {
@@ -733,6 +733,27 @@ Class.healer = {
             }
         }
     ]
+}
+Class.advanced = {
+    PARENT: "genericTank",
+    LABEL: "Single",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "bullet",
+            }
+        },
+        {
+            POSITION: [14, 8, 0.6, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "bullet",
+            }
+        }
+    ],
 }
 
 // Twin upgrades
@@ -7385,7 +7406,8 @@ Class.tank = {
 }
 Class.morphers = {
     PARENT: "genericTank",
-    LABEL: "Morphers"
+    LABEL: "Morphers",
+    UPGRADE_COLOR: "red",
 }
 Class.tankWpnUpgrades = {
     PARENT: "genericTank",
@@ -7422,18 +7444,17 @@ Class.freezeAuraTank = {
 // Upgrade Paths
 Class.tank.UPGRADES_TIER_0 = [["tankBodyUpgrades", "tankWpnUpgrades"], "morphers"]
 
-Class.tankWpnUpgrades.UPGRADES_TIER_1 = ["basic", "director", "trapper", "smasher"]
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "pounder", "desmos", "fog"]
-    Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate", "extender10"]
-        Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
+Class.tankWpnUpgrades.UPGRADES_TIER_1 = ["basic", "director", "trapper"]
+
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "pounder", "desmos"]
+    Class.basic.UPGRADES_TIER_4 = ["advanced"]
+        Class.advanced.UPGRADES_TIER_4 = ["fog", "turbinate"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
     Class.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "helix", "daze"]
         Class.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"]
         Class.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"]
         Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "triplex"]
-            Class.triplet.UPGRADES_TIER_3 = ["carnivore0", "hypnosis", "trance"]
-            Class.pentaShot.UPGRADES_TIER_3 = ["speedPenta0"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "marksman"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
@@ -7464,7 +7485,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "po
         Class.lightning.UPGRADES_TIER_3 = ["thunderstorm"]
 
     Class.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher"]
-        Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle", "coilgun", "hypnosis"]
+        Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle", "coilgun"]
         Class.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct"]
         Class.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun"]
         Class.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "fieldGun", "sidewinder"]
@@ -7480,20 +7501,21 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "po
         Class.undertow.UPGRADES_TIER_3 = ["riptide","magnetic"]
         Class.repeater.UPGRADES_TIER_3 = ["iterator", "duplicator"]
 
-    Class.fog.UPGRADES_TIER_2 = ["daze"]
-            Class.daze.UPGRADES_TIER_3 = ["hypnosis", "trance"]
-                Class.trance.UPGRADES_TIER_3 = ["reverie", "daydream", "stupefaction"]
-                    Class.reverie.UPGRADES_TIER_3 = ["flashback", "asphyxia"]
-                    Class.daydream.UPGRADES_TIER_3 = ["flashback", "mirage"]
-                        Class.flashback.UPGRADES_TIER_3 = ["nostalgia", "reminiscence", "awe"]
-                        Class.mirage.UPGRADES_TIER_3 = ["reminiscence", "illusion", "hallucination"]
-                    Class.stupefaction.UPGRADES_TIER_3 = ["stupor", "disorientation"]
-                        Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
+    Class.fog.UPGRADES_TIER_4 = ["daze"]
+            Class.daze.UPGRADES_TIER_4 = ["hypnosis", "trance"]
+                Class.trance.UPGRADES_TIER_4 = ["reverie", "daydream", "stupefaction"]
+                    Class.reverie.UPGRADES_TIER_4 = ["flashback", "asphyxia"]
+                    Class.daydream.UPGRADES_TIER_4 = ["flashback", "mirage"]
+                        Class.flashback.UPGRADES_TIER_5 = ["nostalgia", "reminiscence", "awe"]
+                        Class.mirage.UPGRADES_TIER_5 = ["reminiscence", "illusion", "hallucination"]
+                    Class.stupefaction.UPGRADES_TIER_4 = ["stupor", "disorientation"]
+                        Class.stupor.UPGRADES_TIER_5 = ["narcosis", "rapture"]
 
-Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank"]
+Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank", "smasher"]
     Class.auraTank.UPGRADES_TIER_2 = ["freezeAuraTank"]
+    Class.smasher.UPGRADES_TIER_2 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
 
-Class.morphers.UPGRADES_TIER_3 = ["bipod0", "battery0", "radius0", "speedPenta0", "ritual0"]
+Class.morphers.UPGRADES_TIER_3 = ["bipod0", "battery0", "radius0", "speedPenta0", "ritual0", "extender0"]
 
 
 
