@@ -398,7 +398,7 @@ Class.healAura = {
 Class.freezeAura = {
     PARENT: "auraBase",
     LABEL: "Freezing Aura",
-    COLOR: "#b4e8ed",
+    COLOR: "#d9f7fa",
     ON: [
       {
         event: "collide", 
@@ -408,21 +408,6 @@ Class.freezeAura = {
             }
         }
       },
-      {
-        event: "tick",
-        handler: ({ body }) => {
-          if (Math.random() < 0.05) {
-            let angle = Math.random() * 360;
-            let dis = Math.random() * body.SIZE;
-            let particle = new Entity({x: body.x + (Math.cos(angle) * dis), y: body.y + (Math.sin(angle) * dis)}, body.master);
-            particle.define(Class.particle);
-            particle.SIZE = body.SIZE / 20;
-            particle.ALPHA = 50;
-            particle.color = "#B4E8ED";
-            setTimeout(() => { particle.kill() }, 20);
-          }
-        }
-      }
     ],
     BODY: {
         DAMAGE: 0.2,
