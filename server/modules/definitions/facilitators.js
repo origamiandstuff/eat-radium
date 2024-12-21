@@ -529,6 +529,7 @@ exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor, a
     }
     auraColor = auraColor ?? (isHeal ? 12 : 0);
     let auraSize = 20 - 7.5 * isHeal
+    if (auraType == "freezeAura") { auraSize = 12.5 }
     return {
         PARENT: "genericTank",
         INDEPENDENT: true,
