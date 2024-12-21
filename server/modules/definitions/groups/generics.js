@@ -1,6 +1,33 @@
 const { skillSet } = require('../facilitators.js');
 const { base, statnames, dfltskl, smshskl } = require('../constants.js');
 
+
+const wTimer = (execute, duration) => {
+    let timer = setInterval(() => execute(), 31.25);
+    setTimeout(() => {
+        clearInterval(wTimer);
+    }, duration * 1000);
+};
+
+const freeze = (them, multiplier, duration) => {
+    if (!them) return
+    if (!them.invuln && !them.passive && !them.godmode && !them.freeze) {
+        them.freeze = true
+        them.store.$savedSpeed = them.SPEED;
+        setTimeout(() => {
+            them.freeze = false;
+            them.SPEED = them.store.$savedSpeed;
+            them.store.$savedSpeed = null
+        }, 2 * duration * 1000);
+        wTimer(() => {
+            if (them.freeze) {
+                them.SPEED = them.store.$savedSpeed / multiplier
+            }
+        }, 2 * duration);
+    }
+};
+
+
 Class.genericEntity = {
     NAME: "",
     LABEL: "Unknown Entity",
@@ -357,6 +384,22 @@ Class.healAura = {
     COLOR: "red",
     BODY: {
         DAMAGE: 0.4 / 3,
+    },
+};
+Class.freezeAura = {
+    PARENT: "auraBase",
+    LABEL: "Aura",
+    COLOR: "#90dde4",
+    ON: [{
+        event: "collide", 
+        handler: ({ instance, other }) => {
+            if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
+                freeze(other, 2.5, 0.1)
+            }
+        }
+    }],
+    BODY: {
+        DAMAGE: 0.2,
     },
 };
 Class.auraSymbol = {
