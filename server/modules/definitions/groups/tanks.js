@@ -7399,7 +7399,7 @@ Class.tankBodyUpgrades = {
 Class.tankAura = addAura(1, 2)
 Class.auraTank = {
     PARENT: "genericTank",
-    LABEL: "Aura",
+    LABEL: "Atmosphere",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -7411,7 +7411,7 @@ Class.auraTank = {
 Class.tankFreezeAura = addAura(1, 2, 0.3, "#b4e8ed", "freezeAura")
 Class.freezeAuraTank = {
     PARENT: "genericTank",
-    LABEL: "Freeze Aura",
+    LABEL: "Chiller",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -7422,7 +7422,8 @@ Class.freezeAuraTank = {
 // Upgrade Paths
 Class.tank.UPGRADES_TIER_0 = [["tankBodyUpgrades", "tankWpnUpgrades"], "morphers"]
 
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]
+Class.tankWpnUpgrades.UPGRADES_TIER_1 = ["basic", "director", "trapper", "smasher"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "pounder", "desmos", "fog"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "turbinate", "extender10"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
@@ -7489,9 +7490,10 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
                     Class.stupefaction.UPGRADES_TIER_3 = ["stupor", "disorientation"]
                         Class.stupor.UPGRADES_TIER_3 = ["narcosis", "rapture"]
 
-    Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank"]
+Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank"]
+    Class.auraTank.UPGRADES_TIER_2 = ["freezeAuraTank"]
 
-Class.morphers.UPGRADES_TIER_3 = ["bipod0", "battery0", "radius0", "speedPenta0", "ritual"]
+Class.morphers.UPGRADES_TIER_3 = ["bipod0", "battery0", "radius0", "speedPenta0", "ritual0"]
 
 
 
