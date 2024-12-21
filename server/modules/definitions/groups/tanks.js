@@ -7471,7 +7471,7 @@ Class.triAuraTank = {
         }
     ], 3)
 }
-Class.tankTriHealAura = addAura(-1, 4.3, 0.3, "red", "aura", "healerSymbol")
+Class.tankTriHealAura = addAura(-1, 4.3, 0.1, "red", "aura", "healerSymbol")
 Class.triHealAuraTank = {
     PARENT: "genericTank",
     LABEL: "Exosphere",
