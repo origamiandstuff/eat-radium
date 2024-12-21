@@ -163,7 +163,7 @@ Class.genericSmasher = {
     PARENT: "genericTank",
     DANGER: 7,
     IS_SMASHER: true,
-    SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl],
+    SKILL_CAP: [smshskl, 9, 9, 9, 9, smshskl, smshskl, smshskl, smshskl, smshskl],
     STAT_NAMES: statnames.smasher,
     BODY: {
         FOV: 1.05 * base.FOV,

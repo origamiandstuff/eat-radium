@@ -7446,7 +7446,7 @@ Class.tank.UPGRADES_TIER_0 = [["tankBodyUpgrades", "tankWpnUpgrades"], "morphers
 
 Class.tankWpnUpgrades.UPGRADES_TIER_1 = ["basic", "director", "trapper"]
 
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "pounder", "desmos"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "pounder", "desmos", "healer"]
     Class.basic.UPGRADES_TIER_4 = ["advanced"]
         Class.advanced.UPGRADES_TIER_4 = ["fog", "turbinate"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
@@ -7513,7 +7513,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "po
 
 Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank", "smasher"]
     Class.auraTank.UPGRADES_TIER_2 = ["freezeAuraTank"]
-    Class.smasher.UPGRADES_TIER_2 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
+    Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
 
 Class.morphers.UPGRADES_TIER_3 = ["bipod0", "battery0", "radius0", "speedPenta0", "ritual0", "extender0"]
 
