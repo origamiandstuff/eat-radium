@@ -7300,32 +7300,6 @@ Class.ritual10 = {
         },
     ]
 }
-Class.tankBodyUpgrades = {
-    PARENT: "genericTank",
-    LABEL: "Basic"
-}
-Class.tankAura = addAura(1, 2)
-Class.auraTank = {
-    PARENT: "genericTank",
-    LABEL: "Aura",
-    TURRETS: [
-        {
-            POSITION: [9, 0, 0, 0, 360, 1],
-            TYPE: "tankAura"
-        }
-    ]
-}
-Class.tankFreezeAura = addAura(1, 2, 0.3, "#90dde4", "freezeAura")
-Class.freezeAuraTank = {
-    PARENT: "genericTank",
-    LABEL: "Freeze Aura",
-    TURRETS: [
-        {
-            POSITION: [9, 0, 0, 0, 360, 1],
-            TYPE: "tankFreezeAura"
-        }
-    ]
-}
 Class.extender0 = {
     PARENT: "genericTank",
     DANGER: 6,
@@ -7402,6 +7376,34 @@ Class.extender10 = {
             }
         },
     ],
+}
+
+//TANK BODIES I GOTTA FIND HOW TO MAKE THEM WORK WITH ANIMS
+Class.tankBodyUpgrades = {
+    PARENT: "genericTank",
+    LABEL: "Basic"
+}
+Class.tankAura = addAura(1, 2)
+Class.auraTank = {
+    PARENT: "genericTank",
+    LABEL: "Aura",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "tankAura"
+        }
+    ]
+}
+Class.tankFreezeAura = addAura(1, 2, 0.3, "#b4e8ed", "freezeAura")
+Class.freezeAuraTank = {
+    PARENT: "genericTank",
+    LABEL: "Freeze Aura",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "tankFreezeAura"
+        }
+    ]
 }
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos", "fog"]

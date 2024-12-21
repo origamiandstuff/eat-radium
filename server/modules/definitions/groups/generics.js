@@ -390,14 +390,26 @@ Class.freezeAura = {
     PARENT: "auraBase",
     LABEL: "Freezing Aura",
     COLOR: "#b4e8ed",
-    ON: [{
+    ON: [
+      {
         event: "collide", 
         handler: ({ instance, other }) => {
             if (other.team != instance.master.master.master.team && other.master == other && other.type != 'wall') {
                 freeze(other, 2.5, 0.1)
             }
         }
-    }],
+      },
+      {
+        event: "tick",
+        handler: ({ body }) => {
+          if (Math.random < 0.05) {
+            let angle = Math.random * 360;
+            let dis = Math.random * body.SIZE;
+            let particle = new Entity({x: body.x + (Math.cos(angle) * dis)})
+          }
+        }
+      }
+    ],
     BODY: {
         DAMAGE: 0.2,
     },
