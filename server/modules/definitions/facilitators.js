@@ -518,14 +518,15 @@ exports.makeTurret = (type, options = {}) => {
         TURRETS: type.TURRETS,
     }
 }
-exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor, auraType) => {
+exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor, auraType, symbolType = null) => {
     let isHeal = damageFactor < 0;
     if (auraType !== "freezeAura") auraType = isHeal ? "healAura" : "aura";
-    let symbolType = ""
-    if (auraType == "freezeAura") {
-        symbolType = "freezeSymbol"
-    } else {
-        symbolType = isHeal ? "healerSymbol" : "auraSymbol";
+    if (symbolType !== null) {
+      if (auraType == "freezeAura") {
+          symbolType = "freezeSymbol"
+      } else {
+          symbolType = isHeal ? "healerSymbol" : "auraSymbol";
+      }
     }
     auraColor = auraColor ?? (isHeal ? 12 : 0);
     let auraSize = 20 - 7.5 * isHeal
