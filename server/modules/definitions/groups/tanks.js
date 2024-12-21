@@ -7461,7 +7461,7 @@ Class.healAuraTank = {
 }
 //T3 Bodies
 Class.bigTankFreezeAura = addAura(1, 3, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
-Class.freezeAuraTank = {
+Class.bigFreezeAuraTank = {
     PARENT: "genericTank",
     LABEL: "Refridgerator",
     TURRETS: [
@@ -7469,6 +7469,22 @@ Class.freezeAuraTank = {
             POSITION: [9, 0, 0, 0, 360, 1],
             TYPE: "bigTankFreezeAura"
         }
+    ]
+}
+Class.dualTankFreezeAura1 = addAura(1, 2.5, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
+Class.dualTankFreezeAura2 = addAura(1, 2, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
+Class.dualFreezeAuraTank = {
+    PARENT: "genericTank",
+    LABEL: "Freezer",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "dualTankFreezeAura1"
+        },
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "dualTankFreezeAura2"
+        },
     ]
 }
 // Upgrade Paths
@@ -7543,6 +7559,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "po
 
 Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank", "smasher"]
     Class.auraTank.UPGRADES_TIER_2 = ["tankBigAura", "freezeAuraTank", "tankHealAura"]
+        Class.auraTank.UPGRADES_TIER_2 = ["tankBigAura", "freezeAuraTank", "tankHealAura"]
     Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
 
 Class.morphers.UPGRADES_TIER_3 = ["bipod0", "battery0", "radius0", "speedPenta0", "ritual0", "extender0"]
