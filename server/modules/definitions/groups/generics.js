@@ -416,10 +416,10 @@ Class.freezeAura = {
             let dis = Math.random() * body.SIZE;
             let particle = new Entity({x: body.x + (Math.cos(angle) * dis), y: body.y + (Math.sin(angle) * dis)}, body.master);
             particle.define(Class.particle);
-            particle.COLOR = "#b4e8ed";
             particle.SIZE = body.SIZE / 20;
-            particle.ALPHA = 
-            particle.kill;
+            particle.ALPHA = 50;
+            particle.color = "#B4E8ED";
+            setTimeout(() => { particle.kill() }, 20);
           }
         }
       }
