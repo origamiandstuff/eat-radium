@@ -388,8 +388,8 @@ Class.healAura = {
 };
 Class.freezeAura = {
     PARENT: "auraBase",
-    LABEL: "Aura",
-    COLOR: "#90dde4",
+    LABEL: "Freezing Aura",
+    COLOR: "#b4e8ed",
     ON: [{
         event: "collide", 
         handler: ({ instance, other }) => {
