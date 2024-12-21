@@ -347,6 +347,15 @@ Class.squareSatellite = {
     PARENT: "satellite",
     SHAPE: 4
 }
+Class.particle = {
+    PARENT: "bullet",
+    LABEL: "",
+    BODY: {
+        HEALTH: 10e8,
+        DAMAGE: 10e-8,
+        SPEED: 10e-8
+    }
+}
 Class.auraBase = {
     TYPE: "aura",
     ACCEPTS_SCORE: false,
@@ -402,10 +411,15 @@ Class.freezeAura = {
       {
         event: "tick",
         handler: ({ body }) => {
-          if (Math.random < 0.05) {
-            let angle = Math.random * 360;
-            let dis = Math.random * body.SIZE;
-            let particle = new Entity({x: body.x + (Math.cos(angle) * dis)})
+          if (Math.random() < 0.05) {
+            let angle = Math.random() * 360;
+            let dis = Math.random() * body.SIZE;
+            let particle = new Entity({x: body.x + (Math.cos(angle) * dis), y: body.y + (Math.sin(angle) * dis)}, body.master);
+            particle.define(Class.particle);
+            particle.COLOR = "#b4e8ed";
+            particle.SIZE = body.SIZE / 20;
+            particle.ALPHA = 
+            particle.kill;
           }
         }
       }
