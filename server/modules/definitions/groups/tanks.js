@@ -7459,6 +7459,18 @@ Class.healAuraTank = {
         }
     ]
 }
+//T3 Bodies
+Class.bigTankFreezeAura = addAura(1, 3, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
+Class.freezeAuraTank = {
+    PARENT: "genericTank",
+    LABEL: "Refridgerator",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "bigTankFreezeAura"
+        }
+    ]
+}
 // Upgrade Paths
 Class.tank.UPGRADES_TIER_0 = [["tankBodyUpgrades", "tankWpnUpgrades"], "morphers"]
 
