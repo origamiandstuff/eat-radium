@@ -521,8 +521,14 @@ exports.makeTurret = (type, options = {}) => {
 exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor, auraType) => {
     let isHeal = damageFactor < 0;
     if (auraType !== "freezeAura") auraType = isHeal ? "healAura" : "aura";
-    let symbolType = isHeal ? "healerSymbol" : "auraSymbol";
+    let symbolType = ""
+    if (auraType == "freezeAura") {
+        symbolType = "freezeSymbol"
+    } else {
+        symbolType = isHeal ? "healerSymbol" : "auraSymbol";
+    }
     auraColor = auraColor ?? (isHeal ? 12 : 0);
+    let auraSize = 20 - 7.5 * isHeal
     return {
         PARENT: "genericTank",
         INDEPENDENT: true,
@@ -542,7 +548,7 @@ exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor, a
         ],
         TURRETS: [
             {
-                POSITION: [20 - 7.5 * isHeal, 0, 0, 0, 360, 1],
+                POSITION: [auraSize, 0, 0, 0, 360, 1],
                 TYPE: [symbolType, {COLOR: auraColor, INDEPENDENT: true}],
             },
         ]
