@@ -7460,6 +7460,17 @@ Class.healAuraTank = {
     ]
 }
 //T3 Bodies
+Class.tankTriAura = addAura(1, 3.3, 0.3, "teal", "aura", "auraSymbol")
+Class.triAuraTank = {
+    PARENT: "genericTank",
+    LABEL: "Stratosphere",
+    TURRETS: weaponArray([
+        {
+            POSITION: [9, 9, 0, 0, 360, 1],
+            TYPE: "tankTriAura"
+        }
+    ], 3)
+}
 Class.bigTankFreezeAura = addAura(1, 2.5, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
 Class.bigFreezeAuraTank = {
     PARENT: "genericTank",
@@ -7471,8 +7482,8 @@ Class.bigFreezeAuraTank = {
         }
     ]
 }
-Class.dualTankFreezeAura1 = addAura(1, 2, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
-Class.dualTankFreezeAura2 = addAura(1, 1.5, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
+Class.dualTankFreezeAura1 = addAura(1, 2, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol3")
+Class.dualTankFreezeAura2 = addAura(1, 1.5, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol3")
 Class.dualFreezeAuraTank = {
     PARENT: "genericTank",
     LABEL: "Freezer",
@@ -7559,7 +7570,8 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "po
 
 Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank", "smasher"]
     Class.auraTank.UPGRADES_TIER_2 = ["bigAuraTank", "freezeAuraTank", "healAuraTank"]
-        Class.freezeAuraTank.UPGRADES_TIER_2 = ["bigFreezeAuraTank", "dualFreezeAuraTank"]
+        Class.freezeAuraTank.UPGRADES_TIER_3 = ["bigFreezeAuraTank", "dualFreezeAuraTank"]
+        Class.bigAuraTank.UPGRADES_TIER_3 = ["triAuraTank"]
     Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
 
 Class.morphers.UPGRADES_TIER_3 = ["bipod0", "battery0", "radius0", "speedPenta0", "ritual0", "extender0"]

@@ -434,4 +434,11 @@ Class.freezeSymbol2 = {
     COLOR: "#d9f7fa",
     SHAPE: 5,
 };
+Class.freezeSymbol3 = {
+    PARENT: "genericTank",
+    CONTROLLERS: [["spin", {speed: -0.04}]],
+    INDEPENDENT: true,
+    COLOR: "#d9f7fa",
+    SHAPE: 4,
+};
 
