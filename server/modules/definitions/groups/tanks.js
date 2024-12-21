@@ -417,7 +417,7 @@ const animate = (me, baseName, frames, reverse, delay) => {
             me.destroyAllChildren();
             for ( let i = frames - 1; i > -1; i-- ) {
                 let multiplier = frames - i;
-                console.log(me)
+                console.log(me.index)
                 setTimeout(() => {
                     me.define(Class[`${baseName}${i}`]);
                 }, (multiplier - 1) * delay);
