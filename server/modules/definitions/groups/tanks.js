@@ -736,7 +736,7 @@ Class.healer = {
 }
 Class.advanced = {
     PARENT: "genericTank",
-    LABEL: "Single",
+    LABEL: "Advanced",
     DANGER: 4,
     GUNS: [
         {
@@ -748,10 +748,6 @@ Class.advanced = {
         },
         {
             POSITION: [14, 8, 0.6, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic]),
-                TYPE: "bullet",
-            }
         }
     ],
 }
@@ -7430,6 +7426,17 @@ Class.auraTank = {
     ]
 }
 // T2 Bodies
+Class.tankBigAura = addAura(1, 3)
+Class.bigAuraTank = {
+    PARENT: "genericTank",
+    LABEL: "Corona",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "tankBigAura"
+        }
+    ]
+}
 Class.tankFreezeAura = addAura(1, 2, 0.3, "#b4e8ed", "freezeAura")
 Class.freezeAuraTank = {
     PARENT: "genericTank",
@@ -7438,6 +7445,17 @@ Class.freezeAuraTank = {
         {
             POSITION: [9, 0, 0, 0, 360, 1],
             TYPE: "tankFreezeAura"
+        }
+    ]
+}
+Class.tankHealAura = addAura(-1, 4)
+Class.healAuraTank = {
+    PARENT: "genericTank",
+    LABEL: "Corona",
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "tankHealAura"
         }
     ]
 }
@@ -7512,7 +7530,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "po
                         Class.stupor.UPGRADES_TIER_5 = ["narcosis", "rapture"]
 
 Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank", "smasher"]
-    Class.auraTank.UPGRADES_TIER_2 = ["freezeAuraTank"]
+    Class.auraTank.UPGRADES_TIER_2 = ["tankBigAura", "freezeAuraTank", "tankHealAura"]
     Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
 
 Class.morphers.UPGRADES_TIER_3 = ["bipod0", "battery0", "radius0", "speedPenta0", "ritual0", "extender0"]
