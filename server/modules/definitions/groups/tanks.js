@@ -7426,7 +7426,7 @@ Class.auraTank = {
     ]
 }
 // T2 Bodies
-Class.tankBigAura = addAura(1, 3)
+Class.tankBigAura = addAura(1, 2.5, 0.3, "teal", "aura", "auraSymbol")
 Class.bigAuraTank = {
     PARENT: "genericTank",
     LABEL: "Corona",
@@ -7451,7 +7451,7 @@ Class.freezeAuraTank = {
 Class.tankHealAura = addAura(-1, 4)
 Class.healAuraTank = {
     PARENT: "genericTank",
-    LABEL: "Corona",
+    LABEL: "Thermosphere",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -7460,7 +7460,7 @@ Class.healAuraTank = {
     ]
 }
 //T3 Bodies
-Class.bigTankFreezeAura = addAura(1, 3, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
+Class.bigTankFreezeAura = addAura(1, 2.5, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
 Class.bigFreezeAuraTank = {
     PARENT: "genericTank",
     LABEL: "Refridgerator",
@@ -7471,8 +7471,8 @@ Class.bigFreezeAuraTank = {
         }
     ]
 }
-Class.dualTankFreezeAura1 = addAura(1, 2.5, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
-Class.dualTankFreezeAura2 = addAura(1, 2, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
+Class.dualTankFreezeAura1 = addAura(1, 2, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
+Class.dualTankFreezeAura2 = addAura(1, 1.5, 0.3, "#b4e8ed", "freezeAura", "freezeSymbol2")
 Class.dualFreezeAuraTank = {
     PARENT: "genericTank",
     LABEL: "Freezer",
@@ -7558,8 +7558,8 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "po
                         Class.stupor.UPGRADES_TIER_5 = ["narcosis", "rapture"]
 
 Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank", "smasher"]
-    Class.auraTank.UPGRADES_TIER_2 = ["tankBigAura", "freezeAuraTank", "tankHealAura"]
-        Class.auraTank.UPGRADES_TIER_2 = ["tankBigAura", "freezeAuraTank", "tankHealAura"]
+    Class.auraTank.UPGRADES_TIER_2 = ["bigAuraTank", "freezeAuraTank", "healAuraTank"]
+        Class.freezeAuraTank.UPGRADES_TIER_2 = ["bigFreezeAuraTank", "dualFreezeAuraTank"]
     Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"]
 
 Class.morphers.UPGRADES_TIER_3 = ["bipod0", "battery0", "radius0", "speedPenta0", "ritual0", "extender0"]

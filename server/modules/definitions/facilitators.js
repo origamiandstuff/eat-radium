@@ -521,13 +521,11 @@ exports.makeTurret = (type, options = {}) => {
 exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor, auraType, symbolType = null) => {
     let isHeal = damageFactor < 0;
     if (auraType !== "freezeAura") auraType = isHeal ? "healAura" : "aura";
-    if (symbolType !== null) {
       if (auraType == "freezeAura") {
           symbolType = "freezeSymbol"
       } else {
           symbolType = isHeal ? "healerSymbol" : "auraSymbol";
       }
-    }
     auraColor = auraColor ?? (isHeal ? 12 : 0);
     let auraSize = 20 - 7.5 * isHeal
     if (auraType == "freezeAura") { auraSize = 12.5 }
