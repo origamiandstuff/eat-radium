@@ -6,6 +6,15 @@ require('./tanks.js');
 require('./turrets.js');
 
 Class.miniboss = {
+    ON: [{
+        event: "death",
+        handler: ({ body, killers, killTools }) => {
+            const killedOrDied = killers.length == 0 ? 'died.' : 'got killed.'
+            for (let i = 0; i < killers.length + 1; i++) {
+                
+            }
+        }
+    }],
     PARENT: "genericBoss",
     CONTROLLERS: ["nearestDifferentMaster", "minion", "canRepel"],
     AI: { NO_LEAD: true },
