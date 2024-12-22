@@ -1054,11 +1054,12 @@ function flatten(data) {
             /* 22 */ data.freeze,
             /* 23 */ data.vulnerable,
             /* 24 */ data.phosphate,
+            /* 25 */ data.usablePhosphate,
         );
         if (data.type & 0x04) {
             output.push(
-                /* 25 */ data.name,
-                /* 26 */ data.score
+                /* 26 */ data.name,
+                /* 27 */ data.score
             );
         }
     }

@@ -709,6 +709,7 @@ class Entity extends EventEmitter {
         this.vulnerable = false;
         this.collectibles = [];
         this.phosphate = 0;
+        this.usablePhosphate = 0;
         this.isGhost = false;
         this.killCount = {
             solo: 0,
@@ -1663,6 +1664,8 @@ class Entity extends EventEmitter {
             freeze: this.freeze,
             vulnerable: this.vulnerable,
             collectibles: this.collectibles,
+            phosphate: this.phosphate || 0,//what why
+            usablePhosphate: this.usablePhosphate,
             maxHealthN: this.health.max,
             alpha: this.alpha,
             facing: this.facing,
