@@ -708,6 +708,7 @@ class Entity extends EventEmitter {
         this.freeze = false;
         this.vulnerable = false;
         this.collectibles = [];
+        this.phosphate = 0;
         this.isGhost = false;
         this.killCount = {
             solo: 0,
