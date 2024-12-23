@@ -134,9 +134,8 @@ global.ensureIsClass = str => {
     if (str in Class) {
         return Class[str];
     }
-    console.log('Definitions:');
-    console.log(Class);
-    throw Error(`Definition ${str} is attempted to be gotten but does not exist!`);
+    console.log(`definition: ${str} doesnt exist, defaulting to basic`);
+    return Class.basic
 }
 global.makeHitbox = wall => {
     const _size = wall.size + 4;

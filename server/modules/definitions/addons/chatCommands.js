@@ -639,9 +639,8 @@ module.exports = ({ Config, Events }) => {
 
 	commands.add('buy', [1, 2], { doc: 'Buy a shop item\nDoc: /buy ITEM AMOUNT' }, ({ args, body, command }) => {
     let item = args.getString(0);
-    let amount = args.getNumber(1, 1);
-    console.log("a")
-    if (item = "skill") {
+    if (item == "skill") {
+        let amount = args.getNumber(1, 1);
         if (body.usablePhosphate > amount - 1) {
           body.usablePhosphate = body.usablePhosphate - amount;
 		      body.skill.points += amount;
@@ -649,8 +648,12 @@ module.exports = ({ Config, Events }) => {
         } else {
 	        command.send(`Insufficient phosphate`);
         }
-    } else {
-	        command.send(`what`);
+    } else if (item == "egg") {
+        let boss = args.getString(1);
+        boss = ensureIsClass(boss);
+        if (body.usablePhosphate > 4) {
+          if (boss == Class.)
+        }
     }
 	});
 
