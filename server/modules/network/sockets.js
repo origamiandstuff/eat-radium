@@ -1055,6 +1055,7 @@ function flatten(data) {
             /* 23 */ data.vulnerable,
             /* 24 */ data.phosphate,
             /* 25 */ data.usablePhosphate,
+            /* 26 */ data.openedMenu,
         );
         if (data.type & 0x04) {
             output.push(
