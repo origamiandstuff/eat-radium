@@ -638,18 +638,19 @@ module.exports = ({ Config, Events }) => {
 	});
 
 	commands.add('buy', [1, 2], { doc: 'Buy a shop item\nDoc: /buy ITEM AMOUNT' }, ({ args, body, command }) => {
-    const item = args.getString(0);
-    const amount = args.getString(1, 1);
+    let item = args.getString(0);
+    let amount = args.getNumber(1, 1);
+    console.log("a")
     if (item = "skill") {
-        if (body.phosphate > amount - 1) {
-          body.phosphate = body.phosphate - amount;
+        if (body.usablePhosphate > amount - 1) {
+          body.usablePhosphate = body.usablePhosphate - amount;
 		      body.skill.points += amount;
 	        command.send(`Bought ${amount} skill points`);
         } else {
 	        command.send(`Insufficient phosphate`);
         }
-    } else if (item = "skill") {
-        
+    } else {
+	        command.send(`what`);
     }
 	});
 
