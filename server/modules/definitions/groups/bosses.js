@@ -5,7 +5,7 @@ require('./generics.js');
 require('./tanks.js');
 require('./turrets.js');
 
-const spawnPhosphate = (amount) => {
+const spawnPhosphate = (amount, type = "collectiblePhosphate") => {
   return [{
         event: "death",
         handler: ({ body, killers, killTools }) => {
@@ -14,7 +14,7 @@ const spawnPhosphate = (amount) => {
                     let angle = Math.random() * 360;
                     let distance = Math.random() * 12;
                     let token = new Entity ({x: body.x + (Math.cos(angle) * distance), y: body.y + (Math.sin(angle) * distance)});
-                    token.define(Class.collectiblePhosphate);
+                    token.define(Class[type]);
                 }
             }
         }
@@ -608,6 +608,7 @@ Class.legionaryCrasher = {
     HAS_NO_RECOIL: true,
     VALUE: 5e6,
     SIZE: 75,
+    ON: spawnPhosphate(25, "collectiblePhosphateBigger"),
     BODY: {
         FOV: 1.5,
         SPEED: 0.1 * base.SPEED,
@@ -664,16 +665,7 @@ Class.sorcerer = {
         HEALTH: 6 * base.HEALTH,
         DAMAGE: 2 * base.DAMAGE,
     },
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 100
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(2),
     GUNS: weaponArray({
         POSITION: [3.5, 8.65, 1.2, 8, 0, 0, 0],
         PROPERTIES: {
@@ -702,16 +694,7 @@ Class.summoner = {
         HEALTH: 7 * base.HEALTH,
         DAMAGE: 2.6 * base.DAMAGE,
     },
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 150
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(3),
     GUNS: weaponArray({
         POSITION: [3.5, 8.65, 1.2, 8, 0, 0, 0],
         PROPERTIES: {
@@ -740,16 +723,7 @@ Class.enchantress = {
         HEALTH: 10 * base.HEALTH,
         DAMAGE: 3 * base.DAMAGE,
     },
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 200
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(3),
     GUNS: weaponArray({
         POSITION: [3.5, 8.65, 1.2, 8, 0, 0, 0],
         PROPERTIES: {
@@ -778,16 +752,7 @@ Class.exorcistor = {
         HEALTH: 15 * base.HEALTH,
         DAMAGE: 4 * base.DAMAGE,
     },
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 220
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(6),
     GUNS: weaponArray({
         POSITION: [3.5, 8.65, 1.2, 8, 0, 0, 0],
         PROPERTIES: {
@@ -816,16 +781,7 @@ Class.shaman = {
         HEALTH: 20 * base.HEALTH,
         DAMAGE: 5 * base.DAMAGE,
     },
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 250
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(6),
     GUNS: weaponArray({
         POSITION: [3.5, 8.65, 1.2, 8, 0, 0, 0],
         PROPERTIES: {
@@ -843,16 +799,7 @@ Class.eliteSkimmer = {
     LABEL: "Elite Skimmer",
     COLOR: "orange",
     UPGRADE_COLOR: "orange",
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 150
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(4),
     TURRETS: weaponArray({
             POSITION: [15, 5, 0, 60, 170, 0],
             TYPE: "skimmerTurret",
@@ -875,16 +822,7 @@ Class.nestKeeper = {
         REGEN: base.REGEN,
         DAMAGE: base.DAMAGE * 2.5,
     },
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 250
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(8),
     MAX_CHILDREN: 15,
     VALUE: 3e5,
     GUNS: weaponArray({
@@ -923,16 +861,7 @@ Class.nestWarden = {
         REGEN: base.REGEN,
         DAMAGE: base.DAMAGE * 2.5,
     },
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 250
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(8),
     VALUE: 3e5,
     GUNS: weaponArray([
         {
@@ -972,16 +901,7 @@ Class.nestGuardian = {
         REGEN: base.REGEN,
         DAMAGE: base.DAMAGE * 2.5,
     },
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 250
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(8),
     VALUE: 3e5,
     GUNS: weaponArray({
         POSITION: [5.5, 7, 1, 6, 0, 36, 0],
@@ -1170,16 +1090,7 @@ Class.guardian = {
     UPGRADE_LABEL: "Guardian",
     UPGRADE_COLOR: "pink",
     FACING_TYPE: "toTarget",
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 50
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(1),
     GUNS: [
         {
             POSITION: [4, 12, 1.4, 8, 0, 180, 0],
@@ -1209,16 +1120,7 @@ Class.defender = {
     LABEL: "Defender",
     COLOR: "orange",
     UPGRADE_COLOR: "orange",
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 50
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(1),
     GUNS: weaponArray([
         {
             POSITION: [15, 7, 1, -3, 0, 60, 0],
@@ -1255,16 +1157,7 @@ Class.terrestrial = {
         SPEED: base.SPEED * 0.3,
         DAMAGE: 9,
     },
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 500
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(5, "collectiblePhosphateBigger"),
 };
 Class.celestial = {
     PARENT: "miniboss",
@@ -1282,16 +1175,7 @@ Class.celestial = {
         SPEED: base.SPEED * 0.2,
         DAMAGE: 12,
     },
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 1000
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(15, "collectiblePhosphateBigger"),
 };
 Class.rogueCelestial = {
     PARENT: "celestial",
@@ -1314,16 +1198,7 @@ Class.eternal = {
         SPEED: base.SPEED * 0.15,
         DAMAGE: 18,
     },
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 1500
-                }
-            }
-        }
-    }],
+    ON: spawnPhosphate(25, "collectiblePhosphateBigger"),
 };
 
 // Terrestrials

@@ -250,6 +250,80 @@ Class.collectiblePhosphate = {
     RATEFFECTS: false,
     HEALTH_WITH_LEVEL: false,
 };
+Class.collectiblePhosphateBig = {
+    TYPE: "food",
+    DAMAGE_CLASS: 1,
+    CONTROLLERS: ["moveInCircles"],
+    HITS_OWN_TYPE: "repel",
+    MOTION_TYPE: "drift",
+    FACING_TYPE: "turnWithSpeed",
+    VARIES_IN_SIZE: true,
+    IS_IMMUNE_TO_TILES: false,
+    COLOR: "gold",
+    SHAPE: 0,
+    SIZE: 4.5,
+    LEVEL_CAP: 1,
+    BODY: {
+        STEALTH: 30,
+        PUSHABILITY: 1,
+        REGEN: 0,
+        HEALTH: 10e100,
+        DAMAGE: 0,
+    },
+    ON: [
+          {
+             event: "collide",
+             handler: ({ body, instance, other }) => {
+                 if (other.type == "tank") {
+                     other.phosphate = other.phosphate + 100;
+                     console.log(other.phosphate);
+                     body.kill();
+                     
+                 }
+             }
+          },
+        ],
+    DAMAGE_EFFECTS: false,
+    RATEFFECTS: false,
+    HEALTH_WITH_LEVEL: false,
+};
+Class.collectiblePhosphateBigger = {
+    TYPE: "food",
+    DAMAGE_CLASS: 1,
+    CONTROLLERS: ["moveInCircles"],
+    HITS_OWN_TYPE: "repel",
+    MOTION_TYPE: "drift",
+    FACING_TYPE: "turnWithSpeed",
+    VARIES_IN_SIZE: true,
+    IS_IMMUNE_TO_TILES: false,
+    COLOR: "gold",
+    SHAPE: 0,
+    SIZE: 6,
+    LEVEL_CAP: 1,
+    BODY: {
+        STEALTH: 30,
+        PUSHABILITY: 1,
+        REGEN: 0,
+        HEALTH: 10e100,
+        DAMAGE: 0,
+    },
+    ON: [
+          {
+             event: "collide",
+             handler: ({ body, instance, other }) => {
+                 if (other.type == "tank") {
+                     other.phosphate = other.phosphate + 200;
+                     console.log(other.phosphate);
+                     body.kill();
+                     
+                 }
+             }
+          },
+        ],
+    DAMAGE_EFFECTS: false,
+    RATEFFECTS: false,
+    HEALTH_WITH_LEVEL: false,
+};
 
 Class.bullet = {
     LABEL: "Bullet",
