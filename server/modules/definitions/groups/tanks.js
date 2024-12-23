@@ -7684,6 +7684,25 @@ Class.snipersniper = {
             }
         },
         {
+            POSITION: [25, 1, 1, 0, 0, 0, 0]
+        },
+        {
+            POSITION: [5.5, 8.5, -1.8, 6.5, 0, 0, 0]
+        }
+    ]
+}
+Class.pounderpounder = {
+    PARENT: "genericTank",
+    LABEL: "Pounder",
+    GUNS: [
+        {
+            POSITION: [20.5, 12, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.pounder, g.pounder, g.pounder, g.pounder, { damage: 2.5, pen: 2.5, health: 2.5 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
             POSITION: [5.5, 8.5, -1.8, 6.5, 0, 0, 0]
         }
     ]
