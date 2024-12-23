@@ -652,15 +652,17 @@ module.exports = ({ Config, Events }) => {
         }
     } else if (item == "egg") {
         const rougeBosses = ["roguePalisade", "rogueArmada"]
+        const rougeBossNames = ["Rouge Palisade", "Rouge Armada"]
         if (body.usablePhosphate > 7) {
           body.usablePhosphate = body.usablePhosphate - 5
-          let bossNo = Math.floor(Math.random * 2);
+          let bossNo = Math.floor(Math.random() * 2);
           if (bossNo > 1) bossNo = 1
+          console.log(bossNo)
           let boss = rougeBosses[bossNo];
           let egg = new Entity(body);
           egg.team = body.team;
           egg.define(Class[boss]);
-	        sockets.broadcast(`Player ${body.name} bought ${boss}`);
+	        sockets.broadcast(`Player ${body.name} bought a ${rougeBossNames[bossNo]}`);
         } else {
 	        command.send(`Insufficient phosphate`);
         }
@@ -672,7 +674,7 @@ module.exports = ({ Config, Events }) => {
             body.usablePhosphate = body.usablePhosphate - 15
 	    	    body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
             body.define(Class["role_" + role])
-            command.send(`Bought ${role} role`)
+	        sockets.broadcast(`Player ${body.name} bought ${role} role`);
           } else {
             command.send("Insufficient phosphate")
           }

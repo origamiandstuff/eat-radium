@@ -239,7 +239,6 @@ Class.collectiblePhosphate = {
              handler: ({ body, instance, other }) => {
                  if (other.type == "tank") {
                      other.phosphate = other.phosphate + 50;
-                     console.log(other.phosphate);
                      body.kill();
                      
                  }
@@ -276,7 +275,6 @@ Class.collectiblePhosphateBig = {
              handler: ({ body, instance, other }) => {
                  if (other.type == "tank") {
                      other.phosphate = other.phosphate + 100;
-                     console.log(other.phosphate);
                      body.kill();
                      
                  }
@@ -313,7 +311,6 @@ Class.collectiblePhosphateBigger = {
              handler: ({ body, instance, other }) => {
                  if (other.type == "tank") {
                      other.phosphate = other.phosphate + 200;
-                     console.log(other.phosphate);
                      body.kill();
                      
                  }
