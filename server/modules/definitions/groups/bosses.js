@@ -11,7 +11,7 @@ const givePhosphate = (amount) => {
         handler: ({ body, killers, killTools }) => {
             if (killers.length > 0) {
                 for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers.phosphate + amount
+                    killers.phosphate = killers.phosphate + amount
                 }
             }
         }
