@@ -11,7 +11,7 @@ const givePhosphate = (amount) => {
         handler: ({ body, killers, killTools }) => {
             if (killers.length > 0) {
                 for (let i = 0; i < killers.length + 1; i++) {
-                    killers[i].phosphate = killers[i].phosphate + 200
+                    killers[i].phosphate = killers.phosphate + amount
                 }
             }
         }
@@ -19,16 +19,7 @@ const givePhosphate = (amount) => {
 }
 
 Class.miniboss = {
-    ON: [{
-        event: "death",
-        handler: ({ body, killers, killTools }) => {
-            if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    console.log(killers)
-                }
-            }
-        }
-    }],
+    ON: givePhosphate(200),
     PARENT: "genericBoss",
     CONTROLLERS: ["nearestDifferentMaster", "minion", "canRepel"],
     AI: { NO_LEAD: true },
