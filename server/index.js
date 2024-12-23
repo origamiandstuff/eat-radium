@@ -204,8 +204,12 @@ let ticks = 0;
 const gameloop = () => {
     for (let i = 0; i < entities.length; i++) {
         let instance = entities[i];
-        if (instance.phosphate > 1000) {
-            instance.shield.regenerate();
+        if (instance.phosphate > 999) {
+          let loops = Math.floor(instance.phosphate / 1000)
+            for (let ii = 1; ii < loops + 1; ii++) {
+                instance.phosphate = instance.phosphate - 1000
+                instance.usablePhosphate = instance.usablePhosphate + 1
+            }
         }
     }
     logs.loops.tally();
