@@ -637,14 +637,16 @@ module.exports = ({ Config, Events }) => {
 		entity.maxChildren = value;
 	});
 
-	commands.add('buy', [1, 2], { doc: 'Buy a shop item\nDoc: /buy ITEM' }, ({ args, body, command }) => {
-		const skill = args.getNumber(0, 0);
-		const entity = args.getEntity(1, body);
-		if (!entity) return;
-		const oldSkills = entity.skill.points;
-		entity.skill.points += skill;
-		const delta = entity.skill.points - oldSkills;
-		command.send(`Changed ${entity.name}'s skill ${oldSkills} -> ${entity.skill.points} (${delta > 0 ? '+' : ''}${delta})`);
+	commands.add('buy', [1, 2], { doc: 'Buy a shop item\nDoc: /buy ITEM AMOUNT' }, ({ args, body, command }) => {
+    const item = args.getString(0, "nil");
+    const amount = args.getString(1, 1);
+    if (item = "skill") {
+        if (body.phosphate > 2)
+		        body.skill.points += amount;
+	        	command.send(`Bought ${amount} skill points`);
+    } else if (item = "skill") {
+        
+    }
 	});
 
 	const allowedBodyAttributes = ['speed', 'acceleration', 'health', 'regen', 'shield', 'resist', 'range', 'pushability', 'damage'];
