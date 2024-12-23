@@ -7710,14 +7710,16 @@ Class.role_heavy = {
         }
     ]
 }
+Class.supportHealAura = addAura(-1, 2)
+}
 Class.role_support = {
     PARENT: "genericTank",
     LABEL: "Healer",
     STAT_NAMES: statnames.heal,
     TURRETS: [
         {
-            POSITION: [13, 0, 0, 0, 360, 1],
-            TYPE: "healerSymbol"
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "supportHealAura"
         }
     ],
     GUNS: [
@@ -7735,9 +7737,15 @@ Class.role_support = {
                 WIDTH: 10
             },
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.single, { damage: -2.5, pen: 2.5, health: 2.5 }]),
                 TYPE: "healerBullet"
             }
+        },
+        {
+            POSITION: [15, 4, 1, 0, 0, 0, 0]
+        },
+        {
+            POSITION: [5.5, 12, -1.53, 6.5, 0, 0, 0]
         }
     ]
 }
