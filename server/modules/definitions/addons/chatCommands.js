@@ -637,7 +637,7 @@ module.exports = ({ Config, Events }) => {
 		entity.maxChildren = value;
 	});
 
-	commands.add('buy', [1, 2], { doc: 'Buy a shop item\nDoc: /buy ITEM AMOUNT' }, ({ args, body, command }) => {
+	commands.add('buy', [1, 2], { doc: 'Buy a shop item\nDoc: /buy ITEM AMOUNT', perms: perm.user }, ({ args, body, command }) => {
     let item = args.getString(0);
     let amount = args.getNumber(1, 1);
     
@@ -662,7 +662,7 @@ module.exports = ({ Config, Events }) => {
         }
     }
 	});
-  commands.add('shop', [], { doc: 'View all shop items\nDoc: /shop' }, ({ args, body, command }) => {
+  commands.add('shop', [], { doc: 'View all shop items\nDoc: /shop', perms: perm.user }, ({ args, body, command }) => {
     command.send(`summon a rouge boss on your team | cost: 5 phosphate`);
     command.send(`/buy egg`);
     command.send(`get a skill point | cost: 1 phosphate`);
