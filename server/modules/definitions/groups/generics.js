@@ -222,6 +222,9 @@ Class.collectiblePhosphate = {
     FACING_TYPE: "turnWithSpeed",
     VARIES_IN_SIZE: true,
     IS_IMMUNE_TO_TILES: false,
+    COLOR: "gold",
+    SHAPE: 0,
+    SIZE: 3,
     LEVEL_CAP: 1,
     BODY: {
         STEALTH: 30,
@@ -236,6 +239,7 @@ Class.collectiblePhosphate = {
              handler: ({ body, instance, other }) => {
                  if (other.type == "tank") {
                      other.phosphate = other.phosphate + 50;
+                     console.log(other.phosphate);
                      body.kill();
                      
                  }

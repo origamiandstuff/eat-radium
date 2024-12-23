@@ -12,8 +12,9 @@ const spawnPhosphate = (amount) => {
             if (killers.length > 0) {
                 for (let i = 0; i < amount + 1; i++) {
                     let angle = Math.random() * 360;
-                    let distance = Math.random() * 12
-                    let token = new Entity ({x: body.x + (Math.cos(angle) * distance), y: body.y + (Math.sin(angle) * distance)}, body.master)
+                    let distance = Math.random() * 12;
+                    let token = new Entity ({x: body.x + (Math.cos(angle) * distance), y: body.y + (Math.sin(angle) * distance)});
+                    token.define(Class.collectiblePhosphate);
                 }
             }
         }
