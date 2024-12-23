@@ -659,16 +659,30 @@ module.exports = ({ Config, Events }) => {
           egg.team = body.team;
           egg.define(Class[boss]);
 	        command.send(`Bought ${boss}`);
+        } else {
+	        command.send(`Insufficient phosphate`);
         }
     } else if (item == "role") {
         const roles = ["sniper", "heavy", "support"]
-        if ()
-          let role = args.getString(1);
-	    	  body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
-          body.define(Class["role_" + role])
+        let role = args.getString(1);
+        if (roles.includes(role)) {
+          if (body.usablePhosphate > 14) {
+            body.usablePhosphate = body.usablePhosphate - 15
+	    	    body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
+            body.define(Class["role_" + role])
+            command.send(`Bought ${role} role`)
+          } else {
+            command.send("Insufficient phosphate")
+          }
+        } else {
+          command.send("Invalid role")
+        }
     }
 	});
   commands.add('shop', [], { doc: 'View all shop items\nDoc: /shop', perms: perm.user }, ({ args, body, command }) => {
+    command.send(`buy a role | cost: 15 phosphate`);
+    command.send(`roles: sniper, heavy, support`);
+    command.send(`/buy role [ROLE]`);
     command.send(`summon a rouge boss on your team | cost: 8 phosphate`);
     command.send(`/buy egg`);
     command.send(`get a skill point | cost: 2 phosphate`);
