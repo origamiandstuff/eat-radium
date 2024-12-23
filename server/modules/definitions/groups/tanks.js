@@ -5067,7 +5067,7 @@ Class.turbinate = {
                 DELAY: 0
             },
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic]),
+                SHOOT_SETTINGS: combineStats([g.basic, {reload: 1.8}]),
                 TYPE: "whirlet",
             }
         },
@@ -7594,8 +7594,7 @@ Class.tankWpnUpgrades.UPGRADES_TIER_1 = ["basic", "director", "trapper"]
 
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "pounder", "desmos", "healer"]
     Class.basic.UPGRADES_TIER_5 = ["advanced"]
-        Class.advanced.UPGRADES_TIER_5 = ["fog"]
-        Class.advanced.UPGRADES_TIER_6 = ["turbinate"]
+        Class.advanced.UPGRADES_TIER_5 = ["fog", "turbinate"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
     Class.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "helix", "daze"]
