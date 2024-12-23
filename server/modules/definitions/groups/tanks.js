@@ -7593,8 +7593,9 @@ Class.tank.UPGRADES_TIER_0 = [["tankBodyUpgrades", "tankWpnUpgrades"], "morphers
 Class.tankWpnUpgrades.UPGRADES_TIER_1 = ["basic", "director", "trapper"]
 
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "pounder", "desmos", "healer"]
-    Class.basic.UPGRADES_TIER_4 = ["advanced"]
-        Class.advanced.UPGRADES_TIER_4 = ["fog", "turbinate"]
+    Class.basic.UPGRADES_TIER_5 = ["advanced"]
+        Class.advanced.UPGRADES_TIER_5 = ["fog"]
+        Class.advanced.UPGRADES_TIER_6 = ["turbinate"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
     Class.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "helix", "daze"]
