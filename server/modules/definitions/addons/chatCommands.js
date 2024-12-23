@@ -662,7 +662,7 @@ module.exports = ({ Config, Events }) => {
           let egg = new Entity(body);
           egg.team = body.team;
           egg.define(Class[boss]);
-	        sockets.broadcast(`Player ${body.name} bought a ${rougeBossNames[bossNo]}`);
+	        sockets.broadcast(`Player ${body.name} bought a ${rougeBossNames[bossNo]}!`);
         } else {
 	        command.send(`Insufficient phosphate`);
         }
@@ -674,7 +674,7 @@ module.exports = ({ Config, Events }) => {
             body.usablePhosphate = body.usablePhosphate - 15
 	    	    body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
             body.define(Class["role_" + role])
-	        sockets.broadcast(`Player ${body.name} bought ${role} role`);
+	          sockets.broadcast(`Player ${body.name} bought the role ${role}!`);
           } else {
             command.send("Insufficient phosphate")
           }
