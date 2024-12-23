@@ -213,6 +213,35 @@ Class.food = {
     RATEFFECTS: false,
     HEALTH_WITH_LEVEL: false,
 };
+Class.collectiblePhosphate = {
+    TYPE: "food",
+    DAMAGE_CLASS: 1,
+    CONTROLLERS: ["moveInCircles"],
+    HITS_OWN_TYPE: "repel",
+    MOTION_TYPE: "drift",
+    FACING_TYPE: "turnWithSpeed",
+    VARIES_IN_SIZE: true,
+    IS_IMMUNE_TO_TILES: false,
+    LEVEL_CAP: 1,
+    BODY: {
+        STEALTH: 30,
+        PUSHABILITY: 1,
+        REGEN: 0
+    },
+    ON: [
+          {
+             event: "collide",
+             handler: ({ instance, other }) => {
+                 if (other.type == "tank") {
+                     other.phosphate = other.phosphate + 50
+                 }
+             }
+          },
+        ],
+    DAMAGE_EFFECTS: false,
+    RATEFFECTS: false,
+    HEALTH_WITH_LEVEL: false,
+};
 
 Class.bullet = {
     LABEL: "Bullet",

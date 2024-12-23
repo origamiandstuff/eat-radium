@@ -5,7 +5,7 @@ require('./generics.js');
 require('./tanks.js');
 require('./turrets.js');
 
-const givePhosphate = (amount) => {
+const spawnPhosphate = (amount) => {
   return [{
         event: "death",
         handler: ({ body, killers, killTools }) => {
@@ -19,7 +19,7 @@ const givePhosphate = (amount) => {
 }
 
 Class.miniboss = {
-    ON: givePhosphate(200),
+    ON: spawnPhosphate(4),
     PARENT: "genericBoss",
     CONTROLLERS: ["nearestDifferentMaster", "minion", "canRepel"],
     AI: { NO_LEAD: true },
