@@ -7675,17 +7675,17 @@ Class.snipersniper = {
     BODY: {
         FOV: 1.2 * base.FOV
     },
-    CONTROLLERS: [["zoom", {dynamic: true}]],
+    CONTROLLERS: [["zoom", {dynamic: true, distance: 410}]],
     GUNS: [
         {
-            POSITION: {
-                LENGTH: 24,
-                WIDTH: 8.5
-            },
+            POSITION: [30, 8.5, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.sniper]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.sniper, g.sniper, g.sniper, g.sniper, { damage: 2.5, pen: 2.5, health: 2.5 }]),
                 TYPE: "bullet"
             }
+        },
+        {
+            POSITION: [5.5, 8.5, -1.8, 6.5, 0, 0, 0]
         }
     ]
 }
