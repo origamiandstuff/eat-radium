@@ -7668,7 +7668,7 @@ Class.morphers.UPGRADES_TIER_3 = ["bipod0", "battery0", "radius0", "speedPenta0"
 
 // Role tanks
 
-Class.snipersniper = {
+Class.role_sniper = {
     PARENT: "genericTank",
     LABEL: "Sniper",
     BODY: {
@@ -7691,7 +7691,7 @@ Class.snipersniper = {
         }
     ]
 }
-Class.pounderpounder = {
+Class.role_heavy = {
     PARENT: "genericTank",
     LABEL: "Pounder",
     GUNS: [
@@ -7703,11 +7703,44 @@ Class.pounderpounder = {
             }
         },
         {
-            POSITION: [5.5, 8.5, -1.8, 6.5, 0, 0, 0]
+            POSITION: [17.5, 6, 1, 0, 0, 0, 0]
+        },
+        {
+            POSITION: [5.5, 12, -1.275, 6.5, 0, 0, 0]
         }
     ]
 }
-
+Class.role_support = {
+    PARENT: "genericTank",
+    LABEL: "Healer",
+    STAT_NAMES: statnames.heal,
+    TURRETS: [
+        {
+            POSITION: [13, 0, 0, 0, 360, 1],
+            TYPE: "healerSymbol"
+        }
+    ],
+    GUNS: [
+        {
+            POSITION: {
+                LENGTH: 8,
+                WIDTH: 9,
+                ASPECT: -0.5,
+                X: 12.5
+            }
+        },
+        {
+            POSITION: {
+                LENGTH: 18,
+                WIDTH: 10
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
+                TYPE: "healerBullet"
+            }
+        }
+    ]
+}
 
 
 
