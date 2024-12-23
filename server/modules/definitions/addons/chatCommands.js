@@ -643,7 +643,7 @@ module.exports = ({ Config, Events }) => {
     
     if (item == "skill") {
         amount = args.getNumber(1, 1);
-        if (body.usablePhosphate > amount - 1) {
+        if (body.usablePhosphate > (amount * 2) - 1) {
           body.usablePhosphate = body.usablePhosphate - amount;
 		      body.skill.points += amount;
 	        command.send(`Bought ${amount} skill points`);
@@ -652,7 +652,7 @@ module.exports = ({ Config, Events }) => {
         }
     } else if (item == "egg") {
         const rougeBosses = ["roguePalisade", "rogueArmada"]
-        if (body.usablePhosphate > 4) {
+        if (body.usablePhosphate > 7) {
           body.usablePhosphate = body.usablePhosphate - 5
           let boss = ran.chooseN(rougeBosses, 1);
           let egg = new Entity(body);
@@ -663,9 +663,9 @@ module.exports = ({ Config, Events }) => {
     }
 	});
   commands.add('shop', [], { doc: 'View all shop items\nDoc: /shop', perms: perm.user }, ({ args, body, command }) => {
-    command.send(`summon a rouge boss on your team | cost: 5 phosphate`);
+    command.send(`summon a rouge boss on your team | cost: 8 phosphate`);
     command.send(`/buy egg`);
-    command.send(`get a skill point | cost: 1 phosphate`);
+    command.send(`get a skill point | cost: 2 phosphate`);
     command.send(`/buy skill [AMOUNT]`);
 	});
 
