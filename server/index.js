@@ -202,6 +202,12 @@ function collide(collision) {
 // The most important loop. Lots of looping.
 let ticks = 0;
 const gameloop = () => {
+    for (let i = 0; i < entities.length; i++) {
+        let instance = entities[i];
+        if (instance.phosphate > 1000) {
+            instance.shield.regenerate();
+        }
+    }
     logs.loops.tally();
     logs.master.startTracking();
     logs.activation.startTracking();
