@@ -10,8 +10,10 @@ const spawnPhosphate = (amount) => {
         event: "death",
         handler: ({ body, killers, killTools }) => {
             if (killers.length > 0) {
-                for (let i = 0; i < killers.length + 1; i++) {
-                    killers.phosphate = killers.phosphate + amount
+                for (let i = 0; i < amount + 1; i++) {
+                    let angle = Math.random() * 360;
+                    let distance = Math.random() * 12
+                    let token = new Entity ({x: body.x + (Math.cos(angle) * distance), y: body.y + (Math.sin(angle) * distance)}, body.master)
                 }
             }
         }
@@ -19,7 +21,7 @@ const spawnPhosphate = (amount) => {
 }
 
 Class.miniboss = {
-    ON: spawnPhosphate(4),
+    ON: spawnPhosphate(6),
     PARENT: "genericBoss",
     CONTROLLERS: ["nearestDifferentMaster", "minion", "canRepel"],
     AI: { NO_LEAD: true },

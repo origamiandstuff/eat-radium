@@ -226,14 +226,18 @@ Class.collectiblePhosphate = {
     BODY: {
         STEALTH: 30,
         PUSHABILITY: 1,
-        REGEN: 0
+        REGEN: 0,
+        HEALTH: 10e100,
+        DAMAGE: 0,
     },
     ON: [
           {
              event: "collide",
-             handler: ({ instance, other }) => {
+             handler: ({ body, instance, other }) => {
                  if (other.type == "tank") {
-                     other.phosphate = other.phosphate + 50
+                     other.phosphate = other.phosphate + 50;
+                     body.kill();
+                     
                  }
              }
           },
