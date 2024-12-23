@@ -639,8 +639,10 @@ module.exports = ({ Config, Events }) => {
 
 	commands.add('buy', [1, 2], { doc: 'Buy a shop item\nDoc: /buy ITEM AMOUNT' }, ({ args, body, command }) => {
     let item = args.getString(0);
+    let amount = args.getNumber(1, 1);
+    
     if (item == "skill") {
-        let amount = args.getNumber(1, 1);
+        amount = args.getNumber(1, 1);
         if (body.usablePhosphate > amount - 1) {
           body.usablePhosphate = body.usablePhosphate - amount;
 		      body.skill.points += amount;
@@ -649,10 +651,14 @@ module.exports = ({ Config, Events }) => {
 	        command.send(`Insufficient phosphate`);
         }
     } else if (item == "egg") {
-        let boss = args.getString(1);
-        boss = ensureIsClass(boss);
+        const rougeBosses = ["roguePalisade", "rogueArmada"]
         if (body.usablePhosphate > 4) {
-          if (boss == Class.)
+          body.usablePhosphate = body.usablePhosphate - 5
+          let boss = ran.chooseN(rougeBosses, 1);
+          let egg = new Entity(body);
+          egg.team = body.team;
+          egg.define(Class[boss]);
+	        command.send(`Bought ${boss}`);
         }
     }
 	});
