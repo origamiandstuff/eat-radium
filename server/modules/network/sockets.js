@@ -1058,8 +1058,8 @@ function flatten(data) {
         );
         if (data.type & 0x04) {
             output.push(
-                /* 26 */ data.name,
-                /* 27 */ data.score
+                /* 27 */ data.name,
+                /* 28 */ data.score
             );
         }
     }

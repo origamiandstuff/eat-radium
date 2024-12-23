@@ -710,6 +710,7 @@ class Entity extends EventEmitter {
         this.collectibles = [];
         this.phosphate = 0;
         this.usablePhosphate = 0;
+        this.openedMenu = 0;
         this.isGhost = false;
         this.killCount = {
             solo: 0,
@@ -1666,6 +1667,7 @@ class Entity extends EventEmitter {
             collectibles: this.collectibles,
             phosphate: this.phosphate || 0,//what why
             usablePhosphate: this.usablePhosphate,
+            openedMenu: this.openedMenu,
             maxHealthN: this.health.max,
             alpha: this.alpha,
             facing: this.facing,
