@@ -666,6 +666,7 @@ module.exports = ({ Config, Events }) => {
     command.send(`summon a rouge boss on your team | cost: 5 phosphate`);
     command.send(`/buy egg`);
     command.send(`get a skill point | cost: 1 phosphate`);
+    command.send(`/buy skill [AMOUNT]`);
 	});
 
 	const allowedBodyAttributes = ['speed', 'acceleration', 'health', 'regen', 'shield', 'resist', 'range', 'pushability', 'damage'];
