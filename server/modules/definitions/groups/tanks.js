@@ -7667,7 +7667,28 @@ Class.tankBodyUpgrades.UPGRADES_TIER_1 = ["auraTank", "smasher"]
 
 Class.morphers.UPGRADES_TIER_3 = ["bipod0", "battery0", "radius0", "speedPenta0", "ritual0", "extender0"]
 
+// Role tanks
 
+Class.snipersniper = {
+    PARENT: "genericTank",
+    LABEL: "Sniper",
+    BODY: {
+        FOV: 1.2 * base.FOV
+    },
+    CONTROLLERS: [["zoom", {dynamic: true}]],
+    GUNS: [
+        {
+            POSITION: {
+                LENGTH: 24,
+                WIDTH: 8.5
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
 
 
 
