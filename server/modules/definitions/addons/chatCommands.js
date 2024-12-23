@@ -660,6 +660,12 @@ module.exports = ({ Config, Events }) => {
           egg.define(Class[boss]);
 	        command.send(`Bought ${boss}`);
         }
+    } else if (item == "role") {
+        const roles = ["sniper", "heavy", "support"]
+        if ()
+          let role = args.getString(1);
+	    	  body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
+          body.define(Class["role_" + role])
     }
 	});
   commands.add('shop', [], { doc: 'View all shop items\nDoc: /shop', perms: perm.user }, ({ args, body, command }) => {
