@@ -654,11 +654,13 @@ module.exports = ({ Config, Events }) => {
         const rougeBosses = ["roguePalisade", "rogueArmada"]
         if (body.usablePhosphate > 7) {
           body.usablePhosphate = body.usablePhosphate - 5
-          let boss = ran.chooseN(rougeBosses, 1);
+          let bossNo = Math.floor(Math.random * 2);
+          if (bossNo > 1) bossNo = 1
+          let boss = rougeBosses[bossNo];
           let egg = new Entity(body);
           egg.team = body.team;
           egg.define(Class[boss]);
-	        command.send(`Bought ${boss}`);
+	        sockets.broadcast(`Player ${body.name} bought ${boss}`);
         } else {
 	        command.send(`Insufficient phosphate`);
         }
