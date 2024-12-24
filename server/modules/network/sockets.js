@@ -548,7 +548,14 @@ function incoming(message, socket) {
                 player.body.sendMessage("There are no special tanks in this mode that you can control.");
             }
             break;
-
+        case "Z":
+            let role = m[0];
+            if (role == 362) {
+              player.body.define(Class.role_sniper);
+            } else {
+              player.body.sendMessage("hrffusghfyu WHAT")
+            }
+            break;
         case "M":
             if (player.body == null) return 1;
             let abort, message = m[0], original = m[0];
