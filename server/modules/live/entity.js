@@ -710,7 +710,7 @@ class Entity extends EventEmitter {
         this.collectibles = [];
         this.phosphate = 0;
         this.usablePhosphate = 0;
-        this.openedMenu = 0;
+        this.openedMenu = "close";
         this.isGhost = false;
         this.killCount = {
             solo: 0,

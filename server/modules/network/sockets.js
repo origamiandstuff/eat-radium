@@ -582,7 +582,19 @@ function incoming(message, socket) {
                } 
             } else if (item == 6) {
                 player.body.openedMenu = "close"
-            } 
+            } else if (item == 7) {
+                if (player.body.usablePhosphate >= 1) {
+                  player.body.usablePhosphate -= 1;
+		              player.body.skill.points += 1;
+	                player.body.sendMessage(`Bought a skill point`);
+                  player.body.openedMenu = "close"
+                } else {
+	                player.body.sendMessage(`Insufficient phosphate`);
+                  player.body.openedMenu = "close"
+                }
+            } else if (item == 8) {
+                player.body.openedMenu = "open"
+            }
             break;
         case "M":
             if (player.body == null) return 1;
