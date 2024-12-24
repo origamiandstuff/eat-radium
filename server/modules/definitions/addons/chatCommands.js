@@ -683,7 +683,7 @@ module.exports = ({ Config, Events }) => {
         }
     }
 	});
-  commands.add('shop', ["open", 1], { doc: 'View all shop items\nDoc: /shop', perms: perm.user }, ({ args, body, command }) => {
+  commands.add('shop', [1, 1], { doc: 'View all shop items\nDoc: /shop', perms: perm.user }, ({ args, body, command }) => {
     /*command.send(`buy a role | cost: 15 phosphate`);
     command.send(`roles: sniper, heavy, support`);
     command.send(`/buy role [ROLE]`);
@@ -692,11 +692,9 @@ module.exports = ({ Config, Events }) => {
     command.send(`get a skill point | cost: 2 phosphate`);
     command.send(`/buy skill [AMOUNT]`);*/
     let menu = args.getString(0);
-    let shopMenus = ["close", "roles", "open"];
+    let shopMenus = ["close", "roles", "open", "help"];
     if (shopMenus.includes(menu)) {
-      
       body.openedMenu = menu
-    }
     }
 	});
 
