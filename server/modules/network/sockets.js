@@ -549,11 +549,19 @@ function incoming(message, socket) {
             }
             break;
         case "Z":
-            let role = m[0];
-            if (role == 362) {
-              player.body.define(Class.role_sniper);
-            } else {
-              player.body.sendMessage("hrffusghfyu WHAT")
+            let item = m[0];
+            if (item <= 3) {
+              if (player.body.usablePhosphate > 14) {
+                if (item == 1) {
+                    player.body.define(Class.role_sniper);
+                } else if (item == 2) {
+                    player.body.define(Class.role_heavy);
+                } else if (item == 3) {
+                    player.body.define(Class.role_support);
+                }
+              } else {
+                player.body.sendMessage("Insufficient phosphate.");
+              }
             }
             break;
         case "M":
