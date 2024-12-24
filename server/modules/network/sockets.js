@@ -551,16 +551,26 @@ function incoming(message, socket) {
         case "Z":
             let item = m[0];
             if (item <= 3) {
-              if (player.body.usablePhosphate > 14) {
-                if (item == 1) {
-                    player.body.define(Class.role_sniper);
-                } else if (item == 2) {
-                    player.body.define(Class.role_heavy);
-                } else if (item == 3) {
-                    player.body.define(Class.role_support);
-                }
+              const roles = ["sniper", "heavy", "support"];
+              if (player.body.usablePhosphate >= 15) {
+                player.body.define(Class["role_" + roles[item - 1]]);
+                player.body.usablePhosphate -= 15;
               } else {
                 player.body.sendMessage("Insufficient phosphate.");
+              }
+            } else if (item == 4) {
+              if (player.body.usablePhosphate >= 8) {
+               const rougeBosses = ["roguePalisade", "rogueArmada"]
+                const rougeBossNames = ["Rouge Palisade", "Rouge Armada"]
+                  player.body.usablePhosphate -= 8
+                  let bossNo = Math.floor(Math.random() * 2);
+                 if (bossNo > 1) bossNo = 1
+                 console.log(bossNo)
+                 let boss = rougeBosses[bossNo];
+                 let egg = new Entity(body);
+                 egg.team = body.team;
+                 egg.define(Class[boss]);
+	               sockets.broadcast(`Player ${body.name} bought a ${rougeBossNames[bossNo]}!`);
               }
             }
             break;
