@@ -556,8 +556,10 @@ function incoming(message, socket) {
                 player.body.define(Class["role_" + roles[item - 1]]);
                 player.body.usablePhosphate -= 15;
 	              sockets.broadcast(`Player ${player.body.name} bought the ${roles[item - 1]} role!`);
+                player.body.openedMenu = "close"
               } else {
                 player.body.sendMessage("Insufficient phosphate.");
+                player.body.openedMenu = "close"
               }
             } else if (item == 4) {
                 player.body.openedMenu = "roles"
@@ -569,12 +571,18 @@ function incoming(message, socket) {
                    let bossNo = Math.floor(Math.random() * 2);
                    if (bossNo > 1) bossNo = 1
                    let boss = rogueBosses[bossNo];
-                   let egg = new Entity(body);
+                   let egg = new Entity(player.body);
                    egg.team = player.body.team;
                    egg.define(Class[boss]);
 	                 sockets.broadcast(`Player ${player.body.name} bought a ${rogueBossNames[bossNo]}!`);
-              }
-            }
+                   player.body.openedMenu = "close"
+               } else {
+                  player.body.sendMessage("Insufficient phosphate.");
+                  player.body.openedMenu = "close"
+               } 
+            } else if (item == 6) {
+                player.body.openedMenu = "close"
+            } 
             break;
         case "M":
             if (player.body == null) return 1;
