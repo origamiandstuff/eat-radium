@@ -22,7 +22,7 @@ module.exports = {
     LOGS: false, // just dont
   
     // The domain of the client
-    CLIENT_ADDRESS: 'https://eat-plutonium.glitch.me',
+    CLIENT_ADDRESS: 'https://phosphia.glitch.me',
 
     // The \modules\setup\gamemodeconfigs\ files to load.
     // To change specific things about specific gamemodes (such as team count for tdm), edit their config file in \modules\setup\gamemodeconfigs\.
